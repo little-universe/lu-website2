@@ -20,30 +20,38 @@ body {
 .peek {
   z-index: 1; }
   .peek.peek-work .peek-case-study {
-    transform: translate(0) scale(1); }
+    transform: translate(0) scale(1);
+    opacity: 1; }
 
 .peek-case-study {
-  height: 200px;
-  width: 200px;
+  height: 300px;
+  width: 300px;
   background: #d5e9cc;
   position: fixed;
   transition: all 0.15s ease-in-out; }
   .peek-case-study.peek-case-study1 {
     top: 20%;
-    left: -150px;
-    transform: translateX(-50px) scale(0.9); }
+    left: -100px;
+    transform: translateX(-100px) scale(0.9);
+    opacity: 0; }
   .peek-case-study.peek-case-study2 {
     left: 40%;
-    top: -150px;
-    transform: translateY(-50px) scale(0.9); }
+    top: -100px;
+    transform: translateY(-100px) scale(0.9);
+    opacity: 0;
+    transition-delay: .03s; }
   .peek-case-study.peek-case-study3 {
     top: 60%;
-    right: -150px;
-    transform: translateX(50px) scale(0.9); }
+    right: -100px;
+    transform: translateX(100px) scale(0.9);
+    opacity: 0;
+    transition-delay: .06s; }
   .peek-case-study.peek-case-study4 {
     left: 35%;
-    bottom: -150px;
-    transform: translateY(50px) scale(0.9); }
+    bottom: -100px;
+    transform: translateY(100px) scale(0.9);
+    opacity: 0;
+    transition-delay: .09s; }
 
 .page {
   max-width: 1400px;
