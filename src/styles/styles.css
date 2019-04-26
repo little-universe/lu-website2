@@ -1,0 +1,57 @@
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif; }
+
+.nav {
+  padding: 16px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 10; }
+
+.nav-content {
+  height: calc(100vh - 32px); }
+
+.nav-link {
+  margin-right: 16px;
+  cursor: pointer; }
+
+.peek {
+  z-index: 1; }
+  .peek.peek-work .peek-case-study {
+    transform: translate(0) scale(1); }
+
+.peek-case-study {
+  height: 200px;
+  width: 200px;
+  background: #d5e9cc;
+  position: fixed;
+  transition: all 0.15s ease-in-out; }
+  .peek-case-study.peek-case-study1 {
+    top: 20%;
+    left: -150px;
+    transform: translateX(-50px) scale(0.9); }
+  .peek-case-study.peek-case-study2 {
+    left: 40%;
+    top: -150px;
+    transform: translateY(-50px) scale(0.9); }
+  .peek-case-study.peek-case-study3 {
+    top: 60%;
+    right: -150px;
+    transform: translateX(50px) scale(0.9); }
+  .peek-case-study.peek-case-study4 {
+    left: 35%;
+    bottom: -150px;
+    transform: translateY(50px) scale(0.9); }
+
+.page {
+  max-width: 1400px;
+  margin: 0 auto; }
+
+.case-study {
+  background: #d5e9cc;
+  padding: 32px;
+  margin: 32px 0; }
+
+/*# sourceMappingURL=styles.css.map */
