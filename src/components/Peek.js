@@ -14,19 +14,19 @@ class Peek extends Component {
         ${peekedWork && "peek-work"}
       `}>
 
-        <Transporter name="caseStudy1" show={peekedWork} noTransition>
+        <Transporter name="caseStudy1" show={route !== 'work'}>
           <div className="peek-case-study peek-case-study1" />
         </Transporter>
 
-        <Transporter name="caseStudy2" show={peekedWork} noTransition>
+        <Transporter name="caseStudy2" show={route !== 'work'}>
           <div className="peek-case-study peek-case-study2" />
         </Transporter>
 
-        <Transporter name="caseStudy3" show={peekedWork} noTransition>
+        <Transporter name="caseStudy3" show={route !== 'work'}>
           <div className="peek-case-study peek-case-study3" />
         </Transporter>
 
-        <Transporter name="caseStudy4" show={peekedWork} noTransition>
+        <Transporter name="caseStudy4" show={route !== 'work'}>
           <div className="peek-case-study peek-case-study4" />
         </Transporter>
 

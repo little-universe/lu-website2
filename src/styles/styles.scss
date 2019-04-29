@@ -94,36 +94,44 @@ body {
   &.peek-work {
     .peek-case-study {
       transform: translate(0) scale(1);
+      opacity: 1;
     }
   }
 }
 
 .peek-case-study {
-  height: 200px;
-  width: 200px;
+  height: 300px;
+  width: 300px;
   background: $primaryColor;
   position: fixed;
   transition: $transition;
 
   &.peek-case-study1 {
     top: 20%;
-    left: -150px;
-    transform: translateX(-50px) scale(.9);
+    left: -100px;
+    transform: translateX(-100px) scale(.9);
+    opacity: 0;
   }
   &.peek-case-study2 {
     left: 40%;
-    top: -150px;
-    transform: translateY(-50px) scale(.9);
+    top: -100px;
+    transform: translateY(-100px) scale(.9);
+    opacity: 0;
+    transition-delay: .03s;
   }
   &.peek-case-study3 {
     top: 60%;
-    right: -150px;
-    transform: translateX(50px) scale(.9);
+    right: -100px;
+    transform: translateX(100px) scale(.9);
+    opacity: 0;
+    transition-delay: .06s;
   }
   &.peek-case-study4 {
     left: 35%;
-    bottom: -150px;
-    transform: translateY(50px) scale(.9);
+    bottom: -100px;
+    transform: translateY(100px) scale(.9);
+    opacity: 0;
+    transition-delay: .09s;
   }
 }
 

@@ -139,11 +139,11 @@ export class Transporter extends React.Component {
             ...newNode.styles,
             transform: `translate(0px, 0px) scale(1, 1)`
           },
-          ease: easing.easeInOut,
+          ease: easing.linear,
           duration: 1000
         }).start({
           update: (v) => {
-            // debugger
+            debugger
             this.setState({
               anim: 'showing', style: {
                 ...v,
@@ -151,15 +151,20 @@ export class Transporter extends React.Component {
                 left: newNode.position.left,
                 // height: newNode.position.height,
                 // width: newNode.position.width,
+                // boxSizing: 'border-box',
                 margin: 0,
-                maxWidth: null,
-                position: 'fixed',
+                // padding: 0,
+                // maxWidth: null,
+                position: 'relative',
                 transformOrigin: 'top left',
                 ...overrides
               }
             })
             console.warn('setting position', name, 'top', newNode.position.top + translateY, 'left', newNode.position.left + translateX)
+            console.warn('setting height/width', name, 'height', newNode.position.height * scaleY, 'width', newNode.position.width * scaleX)
             console.warn('old', name, oldNode.position)
+            console.warn('new', name, newNode.position)
+            console.warn('v', v)
           },
           complete: () => {
             if (this.childRef.current) {
@@ -227,7 +232,7 @@ export class Transporter extends React.Component {
     const { show, name, children, properties = relevantProps } = this.props
     if (prevProps.show !== show) {
       if (show) {
-        if (nodes[name]) {
+        if (nodes[name] && ReactDOM.findDOMNode(this.childRef && this.childRef.current)) {
           console.warn('previous node exists, using traditional mount', name)
           this.setState({ anim: 'showing' })
           const old = nodes[name]
@@ -270,12 +275,15 @@ export class Transporter extends React.Component {
             },
             complete: () => {
               // debugger
-              const node = {
-                styles: getStyles(ReactDOM.findDOMNode(this.childRef.current), properties),
-                position: ReactDOM.findDOMNode(this.childRef.current).getBoundingClientRect()
+              if (ReactDOM.findDOMNode(this.childRef && this.childRef.current)) {
+                const node = {
+                  styles: getStyles(ReactDOM.findDOMNode(this.childRef.current), properties),
+                  position: ReactDOM.findDOMNode(this.childRef.current).getBoundingClientRect()
+                }
+                console.warn('setting node', name, node)
+                nodes[name] = node
               }
-              console.warn('setting node', name, node)
-              nodes[name] = node
+              
               this.setState({ anim: 'shown', style: {}, placeholderStyle: {}, currentNodeStyle: nodes[name] })
             }
           })
@@ -316,10 +324,13 @@ export class Transporter extends React.Component {
           console.warn('this is the first time node is present')
           this.setState({ anim: 'shown' })
         }
-        nodes[name] = {
-          styles: getStyles(ReactDOM.findDOMNode(this.childRef.current), properties),
-          position: ReactDOM.findDOMNode(this.childRef.current).getBoundingClientRect()
+        if (ReactDOM.findDOMNode(this.childRef && this.childRef.current)) {
+          nodes[name] = {
+            styles: getStyles(ReactDOM.findDOMNode(this.childRef.current), properties),
+            position: ReactDOM.findDOMNode(this.childRef.current).getBoundingClientRect()
+          }
         }
+        
         return this.setState({ currentNodeStyle: nodes[name] })
       }
       console.warn('showing', show, nodes[name], this.state.currentNodeStyle)
@@ -367,7 +378,7 @@ export class Transporter extends React.Component {
 
     if (noTransition) {
       console.warn('no transition', name)
-      return child
+      if (show) return child
       console.warn('not showing', name)
       return null
     }
@@ -379,10 +390,10 @@ export class Transporter extends React.Component {
         style: { ...this.props.children.props.style, ...this.state.style }
       })
       return (
-        <>
+        <div style={{position: 'fixed', height: '100vh', width: '100vw', top: 0, left: 0}}>
           {child}
           <div style={{ ...placeholderStyle, backgroundColor: debug ? 'purple' : undefined, opacity: debug ? 0.3 : undefined }}></div>
-        </>
+        </div>
       )
     }
     if (anim === 'hiding') {
