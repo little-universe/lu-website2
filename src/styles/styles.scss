@@ -88,6 +88,9 @@ body {
 
 .peek {
   z-index: $peekZIndex;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
   &.peek-work {
     .peek-case-study {
       transform: translate(0) scale(1);
@@ -136,6 +139,7 @@ body {
 // WORK PAGE
 
 .case-study {
+  width: calc(100% - #{$buffer*8});
   background: $primaryColor;
   padding: $buffer*4;
   margin: $buffer*4 0;

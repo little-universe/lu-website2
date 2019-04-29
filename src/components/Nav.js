@@ -7,7 +7,7 @@ class Nav extends Component {
   }
 
   render() {
-    const { onHovered } = this.props;
+    const { onHovered, onRouteChange } = this.props;
 
     return (
       <div className="nav">
@@ -24,12 +24,23 @@ class Nav extends Component {
           <Grid item>
             <Grid container>
               <div
+                onClick={() => onRouteChange('work')}
                 onMouseEnter={() => onHovered('work')}
                 onMouseLeave={() => onHovered('')}
                 className="nav-link"
               >our work</div>
-              <div className="nav-link">about us</div>
-              <div className="nav-link">our approach</div>
+              <div
+                className="nav-link"
+                onClick={() => onRouteChange('about')}
+                onMouseEnter={() => onHovered('about')}
+                onMouseLeave={() => onHovered('')}
+              >about us</div>
+              <div
+                onClick={() => onRouteChange('approach')}
+                onMouseEnter={() => onHovered('approach')}
+                onMouseLeave={() => onHovered('')}
+                className="nav-link"
+              >our approach</div>
             </Grid>
           </Grid>
         </Grid>

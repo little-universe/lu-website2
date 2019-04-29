@@ -87,7 +87,16 @@ export class Transporter extends React.Component {
     this.childRef = React.createRef()
   }
   componentDidMount() {
-    const { name, show, properties = relevantProps, guaranteedFirst, overrides = {}, overrideOldPosition, onlyX, onlyY } = this.props
+    const { name, show, properties = relevantProps, guaranteedFirst, overrides = {}, overrideOldPosition, onlyX, onlyY, noTransition } = this.props
+    if (noTransition) {
+      if (ReactDOM.findDOMNode(this.childRef.current)) {
+        nodes[name] = {
+          styles: getStyles(ReactDOM.findDOMNode(this.childRef.current), properties),
+          position: ReactDOM.findDOMNode(this.childRef.current).getBoundingClientRect()
+        }
+      }
+      return
+    }
     console.warn('mounting', name, nodes[name])
     if (show && this.childRef.current) {
       if (nodes[name] && !guaranteedFirst) { // If entry already exists, transform from it
@@ -117,34 +126,40 @@ export class Transporter extends React.Component {
           transform: `translate(${translateX}px, ${translateY}px) scale(${scaleX}, ${scaleY})`
         }
 
-        console.warn('transforming', name, oldStyles, {
-          ...newNode.styles,
-          margin: 0,
-          maxWidth: null,
-          transform: `translate(0px, 0px) scale(1, 1)`
-        })
+        // console.warn('transforming', name, oldStyles, {
+        //   ...newNode.styles,
+        //   margin: 0,
+        //   maxWidth: null,
+        //   transform: `translate(0px, 0px) scale(1, 1)`
+        // })
 
         tween({
           from: oldStyles,
           to: {
             ...newNode.styles,
-            margin: 0,
-            maxWidth: null,
             transform: `translate(0px, 0px) scale(1, 1)`
           },
           ease: easing.easeInOut,
           duration: 1000
         }).start({
           update: (v) => {
+            // debugger
             this.setState({
               anim: 'showing', style: {
                 ...v,
                 top: newNode.position.top,
                 left: newNode.position.left,
+                // height: newNode.position.height,
+                // width: newNode.position.width,
+                margin: 0,
+                maxWidth: null,
                 position: 'fixed',
+                transformOrigin: 'top left',
                 ...overrides
               }
             })
+            console.warn('setting position', name, 'top', newNode.position.top + translateY, 'left', newNode.position.left + translateX)
+            console.warn('old', name, oldNode.position)
           },
           complete: () => {
             if (this.childRef.current) {
@@ -156,6 +171,38 @@ export class Transporter extends React.Component {
             }
           }
         })
+
+        // Do placeholder again: TODO: REMOVE
+        const expectedSize = {
+          height: `${newNode.position.height}px`,
+          width: `${newNode.position.width}px`
+        }
+        tween({
+          from: {
+            height: `${newNode.position.height}px`,
+            width: `${newNode.position.width}px`,
+            transform: `scale(0, 0)`
+          },
+          to: {
+            transform: `scale(1, 1)`
+          },
+          ease: easing.easeInOut,
+          duration: 1000
+        }).start({
+          update: (v) => {
+            this.setState({
+              placeholderStyle: {
+                ...v,
+                ...expectedSize,
+                top: oldNode.position.top,
+                left: oldNode.position.left
+              },
+            })
+          },
+          complete: () => {
+            this.setState({ placeholderStyle: {} })
+          }
+        })
       }
       nodes[name] = { // Set entry in nodes object
         styles: getStyles(ReactDOM.findDOMNode(this.childRef.current), properties),
@@ -165,12 +212,15 @@ export class Transporter extends React.Component {
     }
   }
   componentWillUnmount() {
-    const { name, properties } = this.props
+    const { name, properties, annihilate } = this.props
     if (nodes[name] && this.childRef && this.childRef.current) {
       nodes[name] = { // Set entry in nodes object
         styles: getStyles(ReactDOM.findDOMNode(this.childRef.current), properties),
         position: ReactDOM.findDOMNode(this.childRef.current).getBoundingClientRect()
       }
+    }
+    if (annihilate) {
+      delete nodes[name]
     }
   }
   componentDidUpdate(prevProps, prevState, snapshot) {
@@ -189,10 +239,7 @@ export class Transporter extends React.Component {
           let translateX = old.position.left - newPosition.left
           let translateY = old.position.top - newPosition.top
           const scaleX = clamp(old.position.width / newPosition.width, 0, 1000) || 0
-          console.warn(name, old.position.height, newPosition.height, clamp(old.position.height / newPosition.height, 0, 1) || 0)
           const scaleY = clamp(old.position.height / newPosition.height, 0, 1000) || 0
-          console.warn(name, old.position.width, newPosition.width, clamp(old.position.width / newPosition.width, 0, 1) || 0)
-          console.warn(name, 'old', old.position, 'new', newPosition, scaleX, scaleY)
 
           let oldStyles = {
             ...old.styles,
@@ -238,6 +285,7 @@ export class Transporter extends React.Component {
             height: `${newPosition.height}px`,
             width: `${newPosition.width}px`
           }
+          // console.warn('expected placeholder size', expectedSize)
           tween({
             from: {
               height: `${newPosition.height}px`,
@@ -251,7 +299,14 @@ export class Transporter extends React.Component {
             duration: 1000
           }).start({
             update: (v) => {
-              this.setState({ placeholderStyle: { ...v, ...expectedSize }, })
+              this.setState({
+                placeholderStyle: {
+                  ...v,
+                  ...expectedSize,
+                  top: old.position.top,
+                  left: old.position.left
+                },
+              })
             },
             complete: () => {
               this.setState({ placeholderStyle: {} })
@@ -270,7 +325,7 @@ export class Transporter extends React.Component {
       console.warn('showing', show, nodes[name], this.state.currentNodeStyle)
       if (!show && nodes[name] && this.state.currentNodeStyle && this.state.currentNodeStyle.position) {
         this.setState({ anim: 'hiding' })
-        const { height, width } = this.state.currentNodeStyle.position
+        const { height, width, top, left } = this.state.currentNodeStyle.position
         console.warn('transforming?', name, { height, width })
         // Animate style of phantom (shrink to nothing)
         tween({
@@ -286,7 +341,14 @@ export class Transporter extends React.Component {
           duration: 1000
         }).start({
           update: (v) => {
-            this.setState({ placeholderStyle: { ...v } })
+            this.setState({
+              placeholderStyle: {
+                ...v,
+                top: top,
+                left: left,
+                position: 'fixed'
+              }
+            })
           },
           complete: () => {
             this.setState({ placeholderStyle: {}, style: {}, anim: null })
@@ -297,11 +359,19 @@ export class Transporter extends React.Component {
   }
 
   render() {
-    const { children, show, name } = this.props
+    const { children, show, name, noTransition } = this.props
     const { anim, placeholderStyle } = this.state
     const child = React.cloneElement(children, {
       ref: this.childRef
     })
+
+    if (noTransition) {
+      console.warn('no transition', name)
+      return child
+      console.warn('not showing', name)
+      return null
+    }
+    const debug = false
 
     if (anim === 'showing') {
       const child = React.cloneElement(children, {
@@ -311,12 +381,12 @@ export class Transporter extends React.Component {
       return (
         <>
           {child}
-          <div style={{ ...placeholderStyle }}></div>
+          <div style={{ ...placeholderStyle, backgroundColor: debug ? 'purple' : undefined, opacity: debug ? 0.3 : undefined }}></div>
         </>
       )
     }
     if (anim === 'hiding') {
-      return <div style={{ ...this.state.placeholderStyle }}></div>
+      return <div style={{ ...this.state.placeholderStyle, backgroundColor: debug ? 'red' : undefined }}></div>
     }
     return (
       show ? child : null
