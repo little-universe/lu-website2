@@ -100,115 +100,117 @@ export class Transporter extends React.Component {
     console.warn('mounting', name, nodes[name])
     if (show && this.childRef.current) {
       if (nodes[name] && !guaranteedFirst) { // If entry already exists, transform from it
-        console.warn('node already exists')
-        const oldNode = nodes[name]
-        const newNode = {
-          styles: getStyles(ReactDOM.findDOMNode(this.childRef.current), properties),
-          position: ReactDOM.findDOMNode(this.childRef.current).getBoundingClientRect().toJSON()
-        }
-        console.warn('oldNode', oldNode, 'newNode', newNode)
-
-        let translateX = onlyY ? 0 : oldNode.position.left - newNode.position.left || 0
-        let translateY = onlyX ? 0 : oldNode.position.top - newNode.position.top || 0
-        let scaleX = clamp(oldNode.position.width / newNode.position.width, 0, 1000) || 0
-        let scaleY = clamp(oldNode.position.height / newNode.position.height, 0, 1000) || 0
-
-        if (overrideOldPosition) {
-          console.warn('overriding old position', name, overrideOldPosition)
-          translateX = onlyY ? 0 : overrideOldPosition.left - newNode.position.left || 0
-          translateY = onlyX ? 0 : overrideOldPosition.top - newNode.position.top || 0
-          scaleX = clamp(overrideOldPosition.width / newNode.position.width, 0, 1000) || 0
-          scaleY = clamp(overrideOldPosition.height / newNode.position.height, 0, 1000) || 0
-
-        }
-        const oldStyles = {
-          ...oldNode.styles,
-          transform: `translate(${translateX}px, ${translateY}px) scale(${scaleX}, ${scaleY})`
-        }
-
-        // console.warn('transforming', name, oldStyles, {
-        //   ...newNode.styles,
-        //   margin: 0,
-        //   maxWidth: null,
-        //   transform: `translate(0px, 0px) scale(1, 1)`
-        // })
-
-        tween({
-          from: oldStyles,
-          to: {
-            ...newNode.styles,
-            transform: `translate(0px, 0px) scale(1, 1)`
-          },
-          ease: easing.linear,
-          duration: 1000
-        }).start({
-          update: (v) => {
-            debugger
-            this.setState({
-              anim: 'showing', style: {
-                ...v,
-                top: newNode.position.top,
-                left: newNode.position.left,
-                // height: newNode.position.height,
-                // width: newNode.position.width,
-                // boxSizing: 'border-box',
-                margin: 0,
-                // padding: 0,
-                // maxWidth: null,
-                position: 'relative',
-                transformOrigin: 'top left',
-                ...overrides
-              }
-            })
-            console.warn('setting position', name, 'top', newNode.position.top + translateY, 'left', newNode.position.left + translateX)
-            console.warn('setting height/width', name, 'height', newNode.position.height * scaleY, 'width', newNode.position.width * scaleX)
-            console.warn('old', name, oldNode.position)
-            console.warn('new', name, newNode.position)
-            console.warn('v', v)
-          },
-          complete: () => {
-            if (this.childRef.current) {
-              nodes[name] = {
-                styles: getStyles(ReactDOM.findDOMNode(this.childRef.current), properties),
-                position: ReactDOM.findDOMNode(this.childRef.current).getBoundingClientRect()
-              }
-              this.setState({ anim: 'shown', style: {}, placeholderStyle: {}, currentNodeStyle: nodes[name] })
-            }
-          }
-        })
-
-        // Do placeholder again: TODO: REMOVE
-        const expectedSize = {
-          height: `${newNode.position.height}px`,
-          width: `${newNode.position.width}px`
-        }
-        tween({
-          from: {
-            height: `${newNode.position.height}px`,
-            width: `${newNode.position.width}px`,
-            transform: `scale(0, 0)`
-          },
-          to: {
-            transform: `scale(1, 1)`
-          },
-          ease: easing.easeInOut,
-          duration: 1000
-        }).start({
-          update: (v) => {
-            this.setState({
-              placeholderStyle: {
-                ...v,
-                ...expectedSize,
-                top: oldNode.position.top,
-                left: oldNode.position.left
-              },
-            })
-          },
-          complete: () => {
-            this.setState({ placeholderStyle: {} })
-          }
-        })
+        this.animateChild()
       }
+      // console.warn('node already exists')
+      // const oldNode = nodes[name]
+      // const newNode = {
+      //   styles: getStyles(ReactDOM.findDOMNode(this.childRef.current), properties),
+      //   position: ReactDOM.findDOMNode(this.childRef.current).getBoundingClientRect().toJSON()
+      // }
+      // console.warn('oldNode', oldNode, 'newNode', newNode)
+
+      // let translateX = onlyY ? 0 : oldNode.position.left - newNode.position.left || 0
+      // let translateY = onlyX ? 0 : oldNode.position.top - newNode.position.top || 0
+      // let scaleX = clamp(oldNode.position.width / newNode.position.width, 0, 1000) || 0
+      // let scaleY = clamp(oldNode.position.height / newNode.position.height, 0, 1000) || 0
+
+      // if (overrideOldPosition) {
+      //   console.warn('overriding old position', name, overrideOldPosition)
+      //   translateX = onlyY ? 0 : overrideOldPosition.left - newNode.position.left || 0
+      //   translateY = onlyX ? 0 : overrideOldPosition.top - newNode.position.top || 0
+      //   scaleX = clamp(overrideOldPosition.width / newNode.position.width, 0, 1000) || 0
+      //   scaleY = clamp(overrideOldPosition.height / newNode.position.height, 0, 1000) || 0
+
+      // }
+      // const oldStyles = {
+      //   ...oldNode.styles,
+      //   transform: `translate(${translateX}px, ${translateY}px) scale(${scaleX}, ${scaleY})`
+      // }
+
+      // // console.warn('transforming', name, oldStyles, {
+      // //   ...newNode.styles,
+      // //   margin: 0,
+      // //   maxWidth: null,
+      // //   transform: `translate(0px, 0px) scale(1, 1)`
+      // // })
+
+      // tween({
+      //   from: oldStyles,
+      //   to: {
+      //     ...newNode.styles,
+      //     transform: `translate(0px, 0px) scale(1, 1)`
+      //   },
+      //   ease: easing.linear,
+      //   duration: 1000
+      // }).start({
+      //   update: (v) => {
+      //     debugger
+      //     this.setState({
+      //       anim: 'showing', style: {
+      //         ...v,
+      //         top: newNode.position.top,
+      //         left: newNode.position.left,
+      //         // height: newNode.position.height,
+      //         // width: newNode.position.width,
+      //         // boxSizing: 'border-box',
+      //         margin: 0,
+      //         // padding: 0,
+      //         // maxWidth: null,
+      //         position: 'relative',
+      //         transformOrigin: 'top left',
+      //         ...overrides
+      //       }
+      //     })
+      //     console.warn('setting position', name, 'top', newNode.position.top + translateY, 'left', newNode.position.left + translateX)
+      //     console.warn('setting height/width', name, 'height', newNode.position.height * scaleY, 'width', newNode.position.width * scaleX)
+      //     console.warn('old', name, oldNode.position)
+      //     console.warn('new', name, newNode.position)
+      //     console.warn('v', v)
+      //   },
+      //   complete: () => {
+      //     if (this.childRef.current) {
+      //       nodes[name] = {
+      //         styles: getStyles(ReactDOM.findDOMNode(this.childRef.current), properties),
+      //         position: ReactDOM.findDOMNode(this.childRef.current).getBoundingClientRect()
+      //       }
+      //       this.setState({ anim: 'shown', style: {}, placeholderStyle: {}, currentNodeStyle: nodes[name] })
+      //     }
+      //   }
+      // })
+
+      // Do placeholder again: TODO: REMOVE
+      //   const expectedSize = {
+      //     height: `${newNode.position.height}px`,
+      //     width: `${newNode.position.width}px`
+      //   }
+      //   tween({
+      //     from: {
+      //       height: `${newNode.position.height}px`,
+      //       width: `${newNode.position.width}px`,
+      //       transform: `scale(0, 0)`
+      //     },
+      //     to: {
+      //       transform: `scale(1, 1)`
+      //     },
+      //     ease: easing.easeInOut,
+      //     duration: 1000
+      //   }).start({
+      //     update: (v) => {
+      //       this.setState({
+      //         placeholderStyle: {
+      //           ...v,
+      //           ...expectedSize,
+      //           top: oldNode.position.top,
+      //           left: oldNode.position.left
+      //         },
+      //       })
+      //     },
+      //     complete: () => {
+      //       this.setState({ placeholderStyle: {} })
+      //     }
+      //   })
+      // }
       nodes[name] = { // Set entry in nodes object
         styles: getStyles(ReactDOM.findDOMNode(this.childRef.current), properties),
         position: ReactDOM.findDOMNode(this.childRef.current).getBoundingClientRect()
@@ -233,93 +235,94 @@ export class Transporter extends React.Component {
     if (prevProps.show !== show) {
       if (show) {
         if (nodes[name] && ReactDOM.findDOMNode(this.childRef && this.childRef.current)) {
-          console.warn('previous node exists, using traditional mount', name)
-          this.setState({ anim: 'showing' })
-          const old = nodes[name]
-          const currentRef = ReactDOM.findDOMNode(this.childRef.current)
-          let newStyles = getStyles(currentRef, properties)
-          let newPosition = currentRef.getBoundingClientRect()
+          this.animateChild()
+          // console.warn('previous node exists, using traditional mount', name)
+          // this.setState({ anim: 'showing' })
+          // const old = nodes[name]
+          // const currentRef = ReactDOM.findDOMNode(this.childRef.current)
+          // let newStyles = getStyles(currentRef, properties)
+          // let newPosition = currentRef.getBoundingClientRect()
 
-          // Is it ok to clamp old and new position to positive values? Is there any reason we would want negative ones?
-          let translateX = old.position.left - newPosition.left
-          let translateY = old.position.top - newPosition.top
-          const scaleX = clamp(old.position.width / newPosition.width, 0, 1000) || 0
-          const scaleY = clamp(old.position.height / newPosition.height, 0, 1000) || 0
+          // // Is it ok to clamp old and new position to positive values? Is there any reason we would want negative ones?
+          // let translateX = old.position.left - newPosition.left
+          // let translateY = old.position.top - newPosition.top
+          // const scaleX = clamp(old.position.width / newPosition.width, 0, 1000) || 0
+          // const scaleY = clamp(old.position.height / newPosition.height, 0, 1000) || 0
 
-          let oldStyles = {
-            ...old.styles,
-            transform: `translate(${translateX}px, ${translateY}px) scale(${scaleX}, ${scaleY})`
-          }
+          // let oldStyles = {
+          //   ...old.styles,
+          //   transform: `translate(${translateX}px, ${translateY}px) scale(${scaleX}, ${scaleY})`
+          // }
 
-          // Change the size/position of the new element, move and scale it from position/size of old element to normal
-          tween({
-            from: oldStyles,
-            to: {
-              ...newStyles,
-              transform: `translate(0px, 0px) scale(1, 1)`
-            },
-            ease: easing.easeInOut,
-            duration: 1000
-          }).start({
-            update: (v) => {
-              this.setState({
-                style: {
-                  ...v, top: newPosition.top,
-                  left: newPosition.left,
-                  position: 'fixed',
-                  // minWidth: null,
-                  // maxWidth: null,
-                  margin: 0
-                }
-              })
-            },
-            complete: () => {
-              // debugger
-              if (ReactDOM.findDOMNode(this.childRef && this.childRef.current)) {
-                const node = {
-                  styles: getStyles(ReactDOM.findDOMNode(this.childRef.current), properties),
-                  position: ReactDOM.findDOMNode(this.childRef.current).getBoundingClientRect()
-                }
-                console.warn('setting node', name, node)
-                nodes[name] = node
-              }
-              
-              this.setState({ anim: 'shown', style: {}, placeholderStyle: {}, currentNodeStyle: nodes[name] })
-            }
-          })
+          // // Change the size/position of the new element, move and scale it from position/size of old element to normal
+          // tween({
+          //   from: oldStyles,
+          //   to: {
+          //     ...newStyles,
+          //     transform: `translate(0px, 0px) scale(1, 1)`
+          //   },
+          //   ease: easing.easeInOut,
+          //   duration: 1000
+          // }).start({
+          //   update: (v) => {
+          //     this.setState({
+          //       style: {
+          //         ...v, top: newPosition.top,
+          //         left: newPosition.left,
+          //         position: 'fixed',
+          //         // minWidth: null,
+          //         // maxWidth: null,
+          //         margin: 0
+          //       }
+          //     })
+          //   },
+          //   complete: () => {
+          //     // debugger
+          //     if (ReactDOM.findDOMNode(this.childRef && this.childRef.current)) {
+          //       const node = {
+          //         styles: getStyles(ReactDOM.findDOMNode(this.childRef.current), properties),
+          //         position: ReactDOM.findDOMNode(this.childRef.current).getBoundingClientRect()
+          //       }
+          //       console.warn('setting node', name, node)
+          //       nodes[name] = node
+          //     }
+
+          //     this.setState({ anim: 'shown', style: {}, placeholderStyle: {}, currentNodeStyle: nodes[name] })
+          //   }
+          // })
 
           // Change size of placeholder (make it bigger!)
-          const expectedSize = {
-            height: `${newPosition.height}px`,
-            width: `${newPosition.width}px`
-          }
-          // console.warn('expected placeholder size', expectedSize)
-          tween({
-            from: {
-              height: `${newPosition.height}px`,
-              width: `${newPosition.width}px`,
-              transform: `scale(0, 0)`
-            },
-            to: {
-              transform: `scale(1, 1)`
-            },
-            ease: easing.easeInOut,
-            duration: 1000
-          }).start({
-            update: (v) => {
-              this.setState({
-                placeholderStyle: {
-                  ...v,
-                  ...expectedSize,
-                  top: old.position.top,
-                  left: old.position.left
-                },
-              })
-            },
-            complete: () => {
-              this.setState({ placeholderStyle: {} })
-            }
-          })
+          // const expectedSize = {
+          //   height: `${newPosition.height}px`,
+          //   width: `${newPosition.width}px`
+          // }
+          // // console.warn('expected placeholder size', expectedSize)
+          // tween({
+          //   from: {
+          //     height: `${newPosition.height}px`,
+          //     width: `${newPosition.width}px`,
+          //     transform: `scale(0, 0)`
+          //   },
+          //   to: {
+          //     transform: `scale(1, 1)`
+          //   },
+          //   ease: easing.easeInOut,
+          //   duration: 1000
+          // }).start({
+          //   update: (v) => {
+          //     this.setState({
+          //       placeholderStyle: {
+          //         ...v,
+          //         ...expectedSize,
+          //         top: old.position.top,
+          //         left: old.position.left
+          //       },
+          //     })
+          //   },
+          //   complete: () => {
+          //     this.setState({ placeholderStyle: {} })
+          //   }
+          // })
         } else {
           console.warn('this is the first time node is present')
           this.setState({ anim: 'shown' })
@@ -330,7 +333,7 @@ export class Transporter extends React.Component {
             position: ReactDOM.findDOMNode(this.childRef.current).getBoundingClientRect()
           }
         }
-        
+
         return this.setState({ currentNodeStyle: nodes[name] })
       }
       console.warn('showing', show, nodes[name], this.state.currentNodeStyle)
@@ -369,6 +372,106 @@ export class Transporter extends React.Component {
     }
   }
 
+  animateChild = () => {
+    const { name, properties, onlyX, onlyY, overrides, overrideOldPosition } = this.props
+    const oldNode = nodes[name]
+    const newNode = {
+      styles: getStyles(ReactDOM.findDOMNode(this.childRef.current), properties),
+      position: ReactDOM.findDOMNode(this.childRef.current).getBoundingClientRect().toJSON()
+    }
+
+    let translateX = onlyY ? 0 : oldNode.position.left - newNode.position.left || 0
+    let translateY = onlyX ? 0 : oldNode.position.top - newNode.position.top || 0
+    let scaleX = clamp(oldNode.position.width / newNode.position.width, 0, 1000) || 0
+    let scaleY = clamp(oldNode.position.height / newNode.position.height, 0, 1000) || 0
+
+    if (overrideOldPosition) {
+      translateX = onlyY ? 0 : overrideOldPosition.left - newNode.position.left || 0
+      translateY = onlyX ? 0 : overrideOldPosition.top - newNode.position.top || 0
+      scaleX = clamp(overrideOldPosition.width / newNode.position.width, 0, 1000) || 0
+      scaleY = clamp(overrideOldPosition.height / newNode.position.height, 0, 1000) || 0
+
+    }
+    const oldStyles = {
+      ...oldNode.styles,
+      transform: `translate(${translateX}px, ${translateY}px) scale(${scaleX}, ${scaleY})`
+    }
+    console.warn('animating child', name, translateX, translateY, scaleX, scaleY)
+    this.setState({ anim: 'showing' })
+    tween({
+      from: oldStyles,
+      to: {
+        ...newNode.styles,
+        transform: `translate(0px, 0px) scale(1, 1)`
+      },
+      ease: easing.linear,
+      duration: 1000
+    }).start({
+      update: (v) => {
+        debugger
+        this.setState({
+          anim: 'showing', style: {
+            ...v,
+            top: newNode.position.top,
+            left: newNode.position.left,
+            margin: 0,
+            maxWidth: null,
+            position: 'relative',
+            transformOrigin: 'top left',
+            ...overrides
+          }
+        })
+      },
+      complete: () => {
+        if (this.childRef.current) {
+          nodes[name] = {
+            styles: getStyles(ReactDOM.findDOMNode(this.childRef.current), properties),
+            position: ReactDOM.findDOMNode(this.childRef.current).getBoundingClientRect()
+          }
+          this.setState({ anim: 'shown', style: {}, placeholderStyle: {}, currentNodeStyle: nodes[name] })
+        }
+      }
+    })
+  }
+
+  animateGrowingPhantom = () => {
+    // NOTE: Need to move this outside of position: fixed hover box for it to have any effect
+    const { name } = this.props
+    const old = nodes[name]
+    const newPosition = ReactDOM.findDOMNode(this.childRef.current).getBoundingClientRect().toJSON()
+    const expectedSize = {
+      height: `${newPosition.height}px`,
+      width: `${newPosition.width}px`
+    }
+    // console.warn('expected placeholder size', expectedSize)
+    tween({
+      from: {
+        height: `${newPosition.height}px`,
+        width: `${newPosition.width}px`,
+        transform: `scale(0, 0)`
+      },
+      to: {
+        transform: `scale(1, 1)`
+      },
+      ease: easing.easeInOut,
+      duration: 1000
+    }).start({
+      update: (v) => {
+        this.setState({
+          placeholderStyle: {
+            ...v,
+            ...expectedSize,
+            top: old.position.top,
+            left: old.position.left
+          },
+        })
+      },
+      complete: () => {
+        this.setState({ placeholderStyle: {} })
+      }
+    })
+  }
+
   render() {
     const { children, show, name, noTransition } = this.props
     const { anim, placeholderStyle } = this.state
@@ -390,7 +493,7 @@ export class Transporter extends React.Component {
         style: { ...this.props.children.props.style, ...this.state.style }
       })
       return (
-        <div style={{position: 'fixed', height: '100vh', width: '100vw', top: 0, left: 0}}>
+        <div style={{ position: 'fixed', height: '100vh', width: '100vw', top: 0, left: 0 }}>
           {child}
           <div style={{ ...placeholderStyle, backgroundColor: debug ? 'purple' : undefined, opacity: debug ? 0.3 : undefined }}></div>
         </div>

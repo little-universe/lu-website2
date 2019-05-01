@@ -27,9 +27,20 @@ body {
   width: 100vw;
   position: fixed;
 }
-.peek.peek-work .peek-case-study-enter-done {
-  transform: translate(0) scale(1);
+.peek .peek-case-study.peeked {
   opacity: 1;
+}
+.peek .peek-case-study.peeked.peek-case-study1 {
+  left: -100px;
+}
+.peek .peek-case-study.peeked.peek-case-study2 {
+  top: -100px;
+}
+.peek .peek-case-study.peeked.peek-case-study3 {
+  right: -100px;
+}
+.peek .peek-case-study.peeked.peek-case-study4 {
+  bottom: -100px;
 }
 
 .peek-case-study {
@@ -37,34 +48,26 @@ body {
   width: 300px;
   background: #d5e9cc;
   position: fixed;
-  transition: all 0.15s ease-in-out;
 }
 .peek-case-study.peek-case-study1 {
   top: 20%;
-  left: -100px;
-  transform: translateX(-100px) scale(0.9);
-  opacity: 0;
+  left: -300px;
+  opacity: 0.5;
 }
 .peek-case-study.peek-case-study2 {
   left: 40%;
-  top: -100px;
-  transform: translateY(-100px) scale(0.9);
-  opacity: 0;
-  transition-delay: 0.03s;
+  top: -300px;
+  opacity: 0.5;
 }
 .peek-case-study.peek-case-study3 {
   top: 60%;
-  right: -100px;
-  transform: translateX(100px) scale(0.9);
-  opacity: 0;
-  transition-delay: 0.06s;
+  right: -300px;
+  opacity: 0.5;
 }
 .peek-case-study.peek-case-study4 {
   left: 35%;
-  bottom: -100px;
-  transform: translateY(100px) scale(0.9);
-  opacity: 0;
-  transition-delay: 0.09s;
+  bottom: -300px;
+  opacity: 0.5;
 }
 
 .page {
