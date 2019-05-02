@@ -88,6 +88,7 @@ body {
 
 .peek {
   z-index: $peekZIndex;
+  pointer-events: none;
   height: 100vh;
   width: 100vw;
   position: fixed;
@@ -160,4 +161,14 @@ body {
   background: $primaryColor;
   padding: $buffer*4;
   margin: $buffer*4 0;
+  min-height: 800px;
+
+  h1, p {
+    opacity: 0;
+    transition: opacity .3s ease-in;
+    &.shown {
+      color: 'blue';
+      opacity: 1;
+    }
+  }
 }

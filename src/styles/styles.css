@@ -23,6 +23,7 @@ body {
 
 .peek {
   z-index: 1;
+  pointer-events: none;
   height: 100vh;
   width: 100vw;
   position: fixed;
@@ -80,6 +81,15 @@ body {
   background: #d5e9cc;
   padding: 32px;
   margin: 32px 0;
+  min-height: 800px;
+}
+.case-study h1, .case-study p {
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
+}
+.case-study h1.shown, .case-study p.shown {
+  color: "blue";
+  opacity: 1;
 }
 
 /*# sourceMappingURL=styles.css.map */

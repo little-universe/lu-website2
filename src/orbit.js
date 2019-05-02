@@ -15,8 +15,14 @@ function getStyles(node, properties) {
   }
   let styles = {}
   properties.forEach((property) => {
-    styles[camelCase(property)] = computed.getPropertyValue(property)
+    const c = computed.getPropertyValue(property)
+    if (property === 'opacity') {
+      styles[camelCase(property)] = parseFloat(c)
+    } else {
+      styles[camelCase(property)] = c
+    }
   })
+  console.warn('styles', node, properties, styles)
   return styles
 }
 
@@ -123,19 +129,24 @@ export class Transporter extends React.Component {
     }
   }
   componentDidUpdate(prevProps, prevState, snapshot) {
+    const { anim } = this.state
     const { show, name, children, properties = relevantProps } = this.props
+    // if (['showing', 'hiding'].includes(anim)) {
+    //   console.warn('already animating', name, anim)
+    //   return
+    // }
     if (prevProps.show !== show) {
       if (!show && !ReactDOM.findDOMNode(this.childRef && this.childRef.current)) {
-        console.warn('ughh, child is already gone', name)
+        // console.warn('ughh, child is already gone', name)
         return
       }
       if (show) {
-        console.warn('showing', show, nodes[name], this.state.currentNodeStyle)
+        // console.warn('showing', show, nodes[name], this.state.currentNodeStyle)
         if (nodes[name] && ReactDOM.findDOMNode(this.childRef && this.childRef.current)) {
-          console.warn('prev node exists, animating', name, nodes[name], this.childRef)
+          // console.warn('prev node exists, animating', name, nodes[name], this.childRef)
           this.animateChild()
         } else {
-          console.warn('this is the first time node is present, short circuiting', name, nodes[name], this.childRef)
+          //console.warn('this is the first time node is present, short circuiting', name, nodes[name], this.childRef)
           this.setState({ anim: 'shown' })
         }
         // if (ReactDOM.findDOMNode(this.childRef && this.childRef.current)) {
@@ -150,7 +161,7 @@ export class Transporter extends React.Component {
       if (!show && nodes[name] && this.state.currentNodeStyle && this.state.currentNodeStyle.position) {
         this.setState({ anim: 'hiding' })
         const { height, width, top, left } = this.state.currentNodeStyle.position
-        console.warn('transforming?', name, { height, width })
+        // console.warn('transforming?', name, { height, width })
         // Animate style of phantom (shrink to nothing)
         tween({
           from: {
@@ -206,7 +217,8 @@ export class Transporter extends React.Component {
       ...oldNode.styles,
       transform: `translate(${translateX}px, ${translateY}px) scale(${scaleX}, ${scaleY})`
     }
-    console.warn('animating child', name, translateX, translateY, scaleX, scaleY)
+    console.warn('animating child', name, oldNode, newNode, translateX, translateY, scaleX, scaleY)
+
     this.setState({ anim: 'showing' })
     tween({
       from: oldStyles,
@@ -218,6 +230,7 @@ export class Transporter extends React.Component {
       duration
     }).start({
       update: (v) => {
+        // console.warn('v', v)
         this.setState({
           anim: 'showing', style: {
             ...v,
@@ -233,7 +246,7 @@ export class Transporter extends React.Component {
       },
       complete: () => {
         if (this.childRef.current && ReactDOM.findDOMNode(this.childRef.current)) {
-          console.warn('updating node', name, )
+          // console.warn('updating node', name, )
           nodes[name] = {
             styles: getStyles(ReactDOM.findDOMNode(this.childRef.current), properties),
             position: ReactDOM.findDOMNode(this.childRef.current).getBoundingClientRect()
@@ -288,7 +301,8 @@ export class Transporter extends React.Component {
     const { children, show, name, noTransition } = this.props
     const { anim, placeholderStyle } = this.state
     const child = React.cloneElement(children, {
-      ref: this.childRef
+      ref: this.childRef,
+      anim
     })
 
     if (noTransition) {
@@ -312,7 +326,7 @@ export class Transporter extends React.Component {
       )
     }
     if (anim === 'hiding') {
-      return <div style={{ ...this.state.placeholderStyle, backgroundColor: debug ? 'red' : undefined }}></div>
+      return <div ref={this.childRef} style={{ ...this.state.placeholderStyle, backgroundColor: debug ? 'red' : undefined }}></div>
     }
     return (
       show ? child : null
