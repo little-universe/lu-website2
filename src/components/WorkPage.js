@@ -10,10 +10,10 @@ class CaseStudy extends Component {
   }
   render() {
     const { display } = this.state
-    const { title, body, style, anim } = this.props
+    const { title, body, style, anim, onClick } = this.props
     const show = display && anim === 'shown'
     return (
-      <div style={style} className="case-study">
+      <div style={style} className="case-study" onClick={onClick}>
         <h1 className={show ? 'shown' : ''}>{title}</h1>
         <p className={show ? 'shown' : ''}>
           {body}
@@ -28,10 +28,12 @@ class WorkPage extends Component {
   }
 
   render() {
+    const { navigate } = this.props
     return (
       <div className="page page-work">
         <Transporter name="caseStudy1" show={true}>
           <CaseStudy
+            onClick={() => navigate('strive')}
             title="Strive Digital"
             body="Strive Digital is multi-channel messaging platform used by nonprofits and campaigns across the country to recruit and activate their supporters."
           />

@@ -1,6 +1,6 @@
 // CONSTANTS
 
-$primaryColor: #d5e9cc;
+$primaryColor: #f0f2ff;
 $primaryColorInteracted: lighten($primaryColor, 7%);
 $primaryColorLightened: lighten($primaryColor, 38%);
 $secondaryColor: #dce2e8;
@@ -18,6 +18,12 @@ $successColor: #A7C958;
 $warningColor: $primaryColor;
 $warningLight: lighten($warningColor, 15%);
 $successColor: #A5C850;
+$accentColorLight: #ECECE6;
+$fontSizeHeadline: 48px;
+$lineHeightHeadline: $fontSizeHeadline*1.5;
+$fontFamilySecondary: 'Playfair Display';
+$fontSizeSubHeadline: 36px;
+$accentColor: #ffde7c;
 
 $fontColor: #333333;
 $fontColorLight: #fff;
@@ -161,7 +167,7 @@ body {
   background: $primaryColor;
   padding: $buffer*4;
   margin: $buffer*4 0;
-  min-height: 800px;
+  min-height: 300px;
 
   h1, p {
     opacity: 0;
@@ -171,4 +177,168 @@ body {
       opacity: 1;
     }
   }
+}
+
+.logo {
+  width: 40px;
+  fill: $fontColor;
+}
+
+.hero {
+  padding: $buffer*2;
+  height: 80vh;
+  min-height: 600px;
+  background-size: cover;
+  background-position: center;
+  color: $fontColor;
+  overflow: hidden;
+  position: relative;
+  z-index: -1;
+
+  @media only screen and (max-width: 640px) {
+    padding: $buffer;
+    height: 80vh;
+    min-height: 200px;
+    align-items: flex-end !important;
+
+    .container {
+      padding: 0;
+    }
+    h1.headline {
+      font-size: 200% !important;
+      line-height: 160% !important;
+      z-index: 100;
+    }
+    p.subhead {
+      font-size: 120%;
+      line-height: 100%;
+      margin-bottom: 0;
+      z-index: 100;
+    }
+  }
+  &.hero-index {
+    background-color: $accentColorLight;
+    z-index: 10 !important;
+    // background-color: linear-gradient($accentColor, #FEC62E);
+    // background: linear-gradient(#FFD667  10%, 50%,$accentColor 80%);
+    .headline {
+      font-size: $fontSizeHeadline;
+      line-height: $lineHeightHeadline;
+      color: $fontColor;
+      font-weight: $fontWeightHeavy;
+      font-family: $fontFamilySecondary;
+    }
+    .subhead {
+      color: $fontColor;
+      font-size: $fontSizeSubHeadline;
+      line-height: $fontSizeSubHeadline*2;
+    }
+  }
+  &.hero-workWith {
+    // height: 3vh !important;
+    // min-height: 400px;
+    .headline {
+      margin: 0;
+      margin-bottom: $buffer;
+    }
+  }
+
+  &.hero-workPage {
+    // height: 3vh !important;
+    // min-height: 400px;
+    .headline {
+      margin: 0;
+      margin-bottom: $buffer;
+    }
+  }
+
+  &.project-hero {
+    margin-top: -$navHeight;
+    padding-top: $navHeight;
+  }
+
+  &.hero-betterfin {
+    background-color: #DBE3E0;
+    align-items: center !important;
+    .hero-image {
+      max-width: 250px;
+    }
+  }
+  &.hero-myxfitness {
+    background-color: #f1f5f4;
+  }
+  &.hero-instructrr {
+    background-color: #FFBB65;
+  }
+  &.hero-strive {
+    background-color: #f0f2ff;
+    align-items: center !important;
+    .hero-image {
+      max-width: 250px;
+    }
+  }
+  &.hero-dv01 {
+    background-color: #fafafa;
+  }
+  &.hero-agency {
+    .hero-image {
+      max-width: 100vw;
+      margin-top: -$navHeight;
+      z-index: -100;
+    }
+    @media only screen and (max-width: 640px) {
+      h1.headline {
+        // font-size: 140%;
+        // line-height: 180%;
+        // font-size: $fontSize !important;
+        // line-height: $lineHeight !important;
+      }
+    }
+  &.hero-h1 {
+    background-color: #060464;
+  }
+}
+}
+
+.hero-image {
+  max-width: 600px;
+}
+
+.emphasis {
+  border-bottom: 3px solid $accentColor;
+  font-weight: $fontWeightHeavy;
+}
+
+.hero-screenshot {
+  position: absolute;
+  height: 60vh;
+  bottom: 0;
+  right: calc(10%);
+}
+
+.hero-portfolio {
+    background: $bgColorLightened;
+    // color: $fontColorLight;
+    p.subhead {
+      // color: $fontColorLightened;
+    }
+    p.explaination {
+      color: $fontColor;
+      font-weight: $fontWeightHeavy;
+      background: $accentColor;
+      font-size: $fontSizeSmall;
+      padding: $buffer*.75;
+      margin-bottom: $buffer*2;
+      position: absolute;
+      bottom: 0;
+      border-radius: 3px;
+      @media only screen and (max-width: 640px) {
+        position: relative;
+        font-size: $fontSizeSmall !important;
+        padding: $buffer*.25;
+        margin-bottom: 0;
+        margin-top: $buffer;
+        text-align: center;
+      }
+    }
 }

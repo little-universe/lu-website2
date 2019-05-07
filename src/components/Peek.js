@@ -8,7 +8,7 @@ class Peek extends Component {
 
   render() {
     const { peekPage, route } = this.props;
-    const peekedWork = peekPage == "work" && route !== 'work'
+    const peekedWork = peekPage == "work" && !['work', 'strive'].includes(route)
 
     return (
       <div className={`peek
@@ -18,7 +18,7 @@ class Peek extends Component {
         <Transporter name="caseStudy1" properties={['opacity']} show={peekedWork} duration={300}>
           <div className="peek-case-study peek-case-study1 peeked"></div>
         </Transporter>
-        <Transporter name="caseStudy1" properties={['opacity']} show={!peekedWork} duration={300}>
+        <Transporter name="caseStudy1" properties={['opacity']} show={!peekedWork && route !== 'strive'} duration={300}>
           <div className="peek-case-study peek-case-study1 unpeeked"></div>
         </Transporter>
 

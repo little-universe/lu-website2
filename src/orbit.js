@@ -231,6 +231,7 @@ export class Transporter extends React.Component {
     }).start({
       update: (v) => {
         // console.warn('v', v)
+        // debugger
         this.setState({
           anim: 'showing', style: {
             ...v,
@@ -245,6 +246,7 @@ export class Transporter extends React.Component {
         })
       },
       complete: () => {
+        debugger
         if (this.childRef.current && ReactDOM.findDOMNode(this.childRef.current)) {
           // console.warn('updating node', name, )
           nodes[name] = {
@@ -319,10 +321,12 @@ export class Transporter extends React.Component {
         style: { ...this.props.children.props.style, ...this.state.style }
       })
       return (
+        <>
+        <div style={{ ...placeholderStyle, backgroundColor: debug ? 'purple' : undefined, opacity: debug ? 0.3 : undefined }} ></div>
         <div style={{ position: 'fixed', height: '100vh', width: '100vw', top: 0, left: 0 }}>
           {child}
-          <div style={{ ...placeholderStyle, backgroundColor: debug ? 'purple' : undefined, opacity: debug ? 0.3 : undefined }}></div>
         </div>
+        </>
       )
     }
     if (anim === 'hiding') {

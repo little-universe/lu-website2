@@ -3,6 +3,7 @@ import { Transporter } from '../orbit';
 import Nav from './Nav';
 import Peek from './Peek';
 import WorkPage from './WorkPage';
+import StrivePage from './StrivePage';
 
 class Homepage extends Component {
   state = {
@@ -21,9 +22,15 @@ class Homepage extends Component {
     const { route } = this.state
     switch (route) {
       case 'work':
-        return <WorkPage />
+        return <WorkPage navigate={this.updateRoute}/>
+      case 'strive':
+        return <StrivePage />
       default:
-        return <div><h1>homepage</h1></div>
+        return (
+          <div>
+            <h1 style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)'}}>homepage</h1>
+          </div>
+        )
     }
   }
 
@@ -32,7 +39,7 @@ class Homepage extends Component {
 
     return (
       <>
-        <Nav onHovered={this.updateHovered} onRouteChange={this.updateRoute}/>
+        <Nav onHovered={this.updateHovered} onRouteChange={this.updateRoute} />
 
         <Peek peekPage={hovered} route={route} />
 
