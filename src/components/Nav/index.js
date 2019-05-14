@@ -11,9 +11,27 @@ class Nav extends Component {
     return (
       <div className="nav">
         <ul className="nav-list">
-          <a className="nav-link" href=""><li className="nav-item">Our Work</li></a>
-          <a className="nav-link" href=""><li className="nav-item">About Us</li></a>
-          <a className="nav-link" href=""><li className="nav-item">Approach</li></a>
+          <a
+            onClick={() => onRouteChange('work')}
+            // onMouseEnter={() => onHovered('work')}
+            // onMouseLeave={() => onHovered('')}
+            className="nav-link" href="">
+              <li className="nav-item">Our Work</li>
+          </a>
+          <a
+            onClick={() => onRouteChange('about')}
+            // onMouseEnter={() => onHovered('about')}
+            // onMouseLeave={() => onHovered('')}
+            className="nav-link" href="">
+              <li className="nav-item">About Us</li>
+          </a>
+          <a
+            onClick={() => onRouteChange('approach')}
+            // onMouseEnter={() => onHovered('approach')}
+            // onMouseLeave={() => onHovered('')}
+            className="nav-link" href="">
+              <li className="nav-item">Approach</li>
+          </a>
         </ul>
       </div>
     )
