@@ -16,13 +16,13 @@ export default class Hero extends Component {
                 }
                 {headline &&
                     <div classname="container">
-                        <Grid className={`hero ${className}`} container alignItems="center">
-                            <Grid item md={8} xs={12}>
+                        <Grid className={`hero ${className}`} container justify="center" alignItems="center">
+                            <Grid item md={12} xs={12}>
                                 <div className="container">
-                                    <Fade bottom distance="20px" duration={500}>
+                                    <Fade bottom distance="5px" duration={250}>
                                         <h1 className="headline">{headline}</h1>
                                         <p className="subhead">{subhead}</p>
-                                        <p className="explaination">{explaination}</p>
+
                                     </Fade>
                                 </div>
                             </Grid>

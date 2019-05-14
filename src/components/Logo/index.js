@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Grid from '@material-ui/core/Grid';
 
-class Nav extends Component {
+class Logo extends Component {
   state = {
   }
 
@@ -9,11 +9,12 @@ class Nav extends Component {
     const { onHovered, onRouteChange } = this.props;
 
     return (
-      <div className="hero-text">
-      hi
+      <div className="logo">
+        <div className="universe"></div>
+        <div className="agency-name">Little Universe</div>
       </div>
     )
   }
 }
 
-export default HeroText;
+export default Logo;
