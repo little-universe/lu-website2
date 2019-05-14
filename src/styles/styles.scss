@@ -26,7 +26,7 @@ $fontColor: #222222;
 $fontColorLight: #fff;
 $fontColorLightened: #aaa;
 $fontSize: 14px;
-$fontSizeDesktop: 16px;
+$fontSizeDesktop: 18px;
 $fontSizeSmall: 13px;
 $fontSizeSmallDesktop: 14px;
 $fontSizeExtraSmall: 11px;
@@ -69,7 +69,7 @@ $pageZIndex: 50;
 // GLOBAL STYLES
 
 body {
-  margin: $buffer*3;
+  margin: 0;
   font-family: $fontFamily;
   font-weight: $fontWeightLight;
 }
@@ -82,7 +82,7 @@ body {
   top: 0;
   left: 0;
   .universe {
-    width: $buffer; height: $buffer;
+    width: 6px; height: 6px;
     border-radius: $radiusFull;
     background: $primaryColor;
     margin: 0 auto;
@@ -99,7 +99,7 @@ body {
 .nav {
   margin: $buffer*6;
   position: fixed;
-  right: 0;
+  left: 0;
   bottom: 0;
   z-index: $navZIndex;
   .nav-list {
@@ -196,12 +196,22 @@ body {
   margin: 0 auto;
 }
 
+.content-container {
+  padding: $buffer*3;
+}
+
 
 // WORK PAGE
 
 .hero {
   height: 90vh;
   text-align: center;
+  &.betterfin-hero {
+    background: $bgColorWorkCard;
+  }
+  img.hero-image {
+    height: 100%;
+  }
   h1 {
     font-weight: 300;
     font-size: $fontSizeHeadline;
@@ -249,5 +259,16 @@ button {
   &.mailUs {
 
   }
+}
 
+.work-opener {
+  height: 50vh;
+  .opener-list {
+    color: $fontColorLightened;
+    font-size: $fontSizeDesktop;
+  }
+  .opener-paragraph {
+    font-size: $fontSizeLargeDesktop;
+    line-height: $lineHeightDesktop;
+  }
 }

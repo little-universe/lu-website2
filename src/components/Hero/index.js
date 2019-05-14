@@ -7,7 +7,7 @@ export default class Hero extends Component {
         const { className, headline, subhead, explaination, bgImage } = this.props
         return (
             <>
-                {bgImage &&
+                {bgImage, className &&
                     <Grid className={`hero ${className}`} container justify="center" alignItems="center">
                         <div className="container">
                             <img className="hero-image" src={bgImage} />
