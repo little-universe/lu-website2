@@ -10,6 +10,7 @@ import WorkImageLeft from '../../components/WorkImageLeft';
 import WorkImageRight from '../../components/WorkImageRight';
 import WorkTextQuote from '../../components/WorkTextQuote';
 import WorkTextMetric from '../../components/WorkTextMetric';
+import WorkNextProject from '../../components/WorkNextProject';
 import WorkTogether from '../../components/WorkTogether';
 
 class Betterfin extends Component {
@@ -36,8 +37,9 @@ class Betterfin extends Component {
           <WorkImageRight image="" headline="Hello Small Business!" description="Betterfin exchanges data for value, and their onboarding flow captures that data in a clean and efficient manner."/>
           <WorkTextMetric metricNumber="2x" metricName="Increased Conversion"/>
           <WorkBigImage className="workImage"/>
-          <WorkTogether headline="Let's get to know each other"/>
+          <WorkNextProject className="next-strive" projectName="Strive Digital" projectType="Digital Product" projectIndustry="Advocacy Tech"/>
         </div>
+        <WorkTogether headline="Let's get to know each other"/>
       </>
     )
   }
