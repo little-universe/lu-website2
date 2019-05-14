@@ -285,3 +285,23 @@ button {
     line-height: $lineHeightDesktop;
   }
 }
+
+.work-image-left, .work-image-right {
+  height: 90vh;
+  .work-image {
+    height: 90vh;
+    background: $bgColorWorkCard;
+  }
+  .work-image-text {
+    height: 90vh;
+    .work-image-headline {
+      font-size: $fontSizeLargeDesktop;
+      line-height: $lineHeightDesktop;
+    }
+    .work-image-description {
+      color: $fontColorLightened;
+      font-size: $fontSizeDesktop;
+      line-height: $lineHeightDesktop;
+    }
+  }
+}
