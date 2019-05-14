@@ -77,10 +77,15 @@ body {
 // LOGO STYLES
 
 .logo {
+  margin: $buffer*6;
+  position: absolute;
+  top: 0;
+  left: 0;
   .universe {
     width: $buffer; height: $buffer;
     border-radius: $radiusFull;
     background: $primaryColor;
+    margin: 0 auto;
   }
   .agency-name {
     margin-top: $buffer*2;
