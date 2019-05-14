@@ -272,3 +272,16 @@ button {
     line-height: $lineHeightDesktop;
   }
 }
+.work-text-centered {
+  height: 50vh;
+  .work-text-title {
+    color: $fontColorLightened;
+    font-size: $fontSizeDesktop;
+    margin-bottom: $buffer*6;
+    text-align: center;
+  }
+  .work-text-paragraph {
+    font-size: $fontSizeLargeDesktop;
+    line-height: $lineHeightDesktop;
+  }
+}
