@@ -262,7 +262,7 @@ button {
 }
 
 .work-opener {
-  height: 50vh;
+  height: 60vh;
   .opener-list {
     color: $fontColorLightened;
     font-size: $fontSizeDesktop;
@@ -272,9 +272,15 @@ button {
     line-height: $lineHeightDesktop;
   }
 }
-.work-text-centered {
-  height: 50vh;
-  .work-text-title {
+.work-text-centered, .work-text-quote {
+  height: 60vh;
+  .work-text-author {
+    color: $fontColorLightened;
+    font-size: $fontSizeDesktop;
+    margin-top: $buffer*6;
+    text-align: center;
+  }
+  .work-text-title{
     color: $fontColorLightened;
     font-size: $fontSizeDesktop;
     margin-bottom: $buffer*6;
@@ -294,6 +300,8 @@ button {
   }
   .work-image-text {
     height: 90vh;
+    align-items: center;
+    display: flex;
     .work-image-headline {
       font-size: $fontSizeLargeDesktop;
       line-height: $lineHeightDesktop;
@@ -303,5 +311,18 @@ button {
       font-size: $fontSizeDesktop;
       line-height: $lineHeightDesktop;
     }
+  }
+}
+
+.work-text-metric {
+  height: 60vh;
+  text-align: center;
+  .work-metric-number {
+    font-size: $fontSizeHeadline;
+    font-weight: $fontWeightLight;
+  }
+  .work-metric-name {
+    font-size: $fontSizeDesktop;
+    color: $fontColorLightened;
   }
 }
