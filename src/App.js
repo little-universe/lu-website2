@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import './styles/styles.css';
-import Homepage from './components/Homepage';
+import './styles/styles.scss';
+import Homepage from './pages/homepage';
 
 let styles = {}
 

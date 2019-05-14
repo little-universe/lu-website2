@@ -13,7 +13,6 @@ export default class StrivePage extends Component {
                     <div style={{ width: '100%', minHeight: '1vh' }}>
                         <Hero
                             className="hero-strive project-hero"
-                            bgImage={require("./bg-strive.png")}
                         />
 
 

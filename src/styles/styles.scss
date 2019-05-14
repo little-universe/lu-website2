@@ -1,6 +1,6 @@
 // CONSTANTS
 
-$primaryColor: #f0f2ff;
+$primaryColor: #f5f5f5;
 $primaryColorInteracted: lighten($primaryColor, 7%);
 $primaryColorLightened: lighten($primaryColor, 38%);
 $secondaryColor: #dce2e8;
@@ -36,14 +36,14 @@ $fontSizeExtraSmall: 11px;
 $fontSizeExtraSmallDesktop: 12px;
 $fontSizeLarge: 18px;
 $fontSizeLargeDesktop: 20px;
-$fontFamily: "Roboto", sans-serif;
+$fontFamily: "Apercu", sans-serif;
 $fontWeightHeavy: 700;
 $fontWeightNormal: 400;
 $fontWeightLight: 200;
 $lineHeight: 22px;
 $lineHeightDesktop: 24px;
 
-$buffer: 8px;
+$buffer: 10px;
 $radius: 4px;
 $radiusFull: 100px;
 $border: 1px solid $stroke;
@@ -68,26 +68,42 @@ $pageZIndex: 50;
 // GLOBAL STYLES
 
 body {
-  margin: 0;
+  margin: $buffer*2;
   font-family: $fontFamily;
 }
 
 // NAV STYLES
 
 .nav {
-  padding: $buffer*2;
+  margin: $buffer*6;
   position: fixed;
-  top: 0;
   left: 0;
   bottom: 0;
   z-index: $navZIndex;
-}
-.nav-content {
-  height: calc(100vh - #{$buffer*4});
-}
-.nav-link {
-  margin-right: $buffer*2;
-  cursor: pointer;
+  .nav-list {
+    list-style-type: none;
+    margin: 0; padding: 0;
+    display: flex;
+    .nav-link {
+      float: left;
+      padding: $buffer*2 $buffer*3;
+      text-decoration: none;
+      color: $fontColor;
+      background: $primaryColor;
+      &:first-child {
+        border-radius: $radius 0 0 $radius;
+      }
+      &:last-child {
+        border-radius: 0 $radius $radius 0;
+      }
+      &:hover {
+        background: $primaryColorInteracted;
+      }
+      .nav-item {
+
+      }
+    }
+  }
 }
 
 // PEEK STYLES
