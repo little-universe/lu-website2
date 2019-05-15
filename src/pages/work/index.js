@@ -4,6 +4,7 @@ import Nav from '../../components/Nav';
 import Hero from '../../components/Hero';
 import WorkCard from '../../components/WorkCard';
 import WorkTogether from '../../components/WorkTogether';
+import { Transporter } from '../../orbit'
 
 class Work extends Component {
   state = {
@@ -18,10 +19,11 @@ class Work extends Component {
     return (
       <>
         <Logo/>
-        <Nav/>
         <Hero headline="Our Work" subhead="We make a difference for our clients"/>
         <div className="content-container">
-        <WorkCard projectName="Betterfin" projectType="Digital Product" projectIndustry="Fintech"/>
+        <Transporter name="caseStudy1" show={true}>
+          <WorkCard projectName="Betterfin" projectType="Digital Product" projectIndustry="Fintech"/>
+        </Transporter>
         <WorkCard projectName="Strive Digital" projectType="Digital Product" projectIndustry="Advocacy Tech"/>
         <WorkCard projectName="Motivote" projectType="Digital Product" projectIndustry="Advocacy Tech"/>
         <WorkCard projectName="Vote Crew" projectType="Digital Product" projectIndustry="Advocacy Tech"/>

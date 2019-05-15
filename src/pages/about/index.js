@@ -22,7 +22,6 @@ class About extends Component {
     return (
       <>
         <Logo/>
-        <Nav/>
         <Hero headline="About Us" subhead="We're a cool bunch of folks who abosolutely love product"/>
         <div className="content-container">
           <WorkBigImage className="group-photo"/>

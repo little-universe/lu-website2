@@ -108,7 +108,7 @@ export class Transporter extends React.Component {
       if (nodes[name] && !guaranteedFirst) { // If entry already exists, transform from it
         this.animateChild()
       }
-      
+
       nodes[name] = { // Set entry in nodes object
         styles: getStyles(ReactDOM.findDOMNode(this.childRef.current), properties),
         position: ReactDOM.findDOMNode(this.childRef.current).getBoundingClientRect()
@@ -246,7 +246,7 @@ export class Transporter extends React.Component {
         })
       },
       complete: () => {
-        debugger
+        // debugger
         if (this.childRef.current && ReactDOM.findDOMNode(this.childRef.current)) {
           // console.warn('updating node', name, )
           nodes[name] = {

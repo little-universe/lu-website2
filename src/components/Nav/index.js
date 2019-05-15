@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from "react-router-dom";
 import Grid from '@material-ui/core/Grid';
 
 class Nav extends Component {
@@ -6,32 +7,37 @@ class Nav extends Component {
   }
 
   render() {
+    console.warn(this.props);
+
     const { onHovered, onRouteChange } = this.props;
 
     return (
       <div className="nav">
         <ul className="nav-list">
-          <a
-            onClick={() => onRouteChange('work')}
-            // onMouseEnter={() => onHovered('work')}
-            // onMouseLeave={() => onHovered('')}
+          <Link
+            // onClick={() => onRouteChange('work')}
+            onMouseEnter={() => onHovered('work')}
+            onMouseLeave={() => onHovered('')}
+            to="/work"
             className="nav-link" href="">
-              <li className="nav-item">Our Work</li>
-          </a>
-          <a
-            onClick={() => onRouteChange('about')}
-            // onMouseEnter={() => onHovered('about')}
-            // onMouseLeave={() => onHovered('')}
+            <li className="nav-item">Our Work</li>
+          </Link>
+          <Link
+            // onClick={() => onRouteChange('about')}
+            onMouseEnter={() => onHovered('about')}
+            onMouseLeave={() => onHovered('')}
+            to="/about"
             className="nav-link" href="">
               <li className="nav-item">About Us</li>
-          </a>
-          <a
-            onClick={() => onRouteChange('approach')}
-            // onMouseEnter={() => onHovered('approach')}
-            // onMouseLeave={() => onHovered('')}
+          </Link>
+          <Link
+            // onClick={() => onRouteChange('approach')}
+            onMouseEnter={() => onHovered('approach')}
+            onMouseLeave={() => onHovered('')}
+            to="/approach"
             className="nav-link" href="">
               <li className="nav-item">Approach</li>
-          </a>
+          </Link>
         </ul>
       </div>
     )

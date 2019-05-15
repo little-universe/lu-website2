@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Nav from '../../components/Nav';
-import Peek from '../../Peek';
+import Logo from '../../components/Logo';
+
 import Work from '../work';
 import Betterfin from '../betterfin';
 
@@ -38,9 +39,9 @@ class Homepage extends Component {
 
     return (
       <>
+        <Logo/>
         <Nav/>
-        <Peek peekPage={hovered} route={route} />
-        {this.renderRoute()}
+
       </>
     )
   }

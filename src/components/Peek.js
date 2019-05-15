@@ -7,8 +7,10 @@ class Peek extends Component {
   }
 
   render() {
-    const { peekPage, route } = this.props;
-    const peekedWork = peekPage == "work" && !['work', 'strive'].includes(route)
+    const { peekPage, location } = this.props;
+    console.warn(this.props);
+    const route = location.pathname;
+    const peekedWork = peekPage == "work" && !['/work'].includes(route)
 
     return (
       <div className={`peek
