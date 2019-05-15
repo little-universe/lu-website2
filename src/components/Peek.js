@@ -20,7 +20,7 @@ class Peek extends Component {
         <Transporter name="caseStudy1" properties={['opacity']} show={peekedWork} duration={300}>
           <div className="peek-case-study peek-case-study1 peeked"></div>
         </Transporter>
-        <Transporter name="caseStudy1" properties={['opacity']} show={!peekedWork && route !== 'strive'} duration={300}>
+        <Transporter name="caseStudy1" properties={['opacity']} show={!peekedWork} duration={300}>
           <div className="peek-case-study peek-case-study1 unpeeked"></div>
         </Transporter>
 
@@ -36,13 +36,6 @@ class Peek extends Component {
         </Transporter>
         <Transporter name="caseStudy3" properties={['opacity']} show={!peekedWork} duration={300}>
           <div className="peek-case-study peek-case-study3 unpeeked" />
-        </Transporter>
-
-        <Transporter name="caseStudy4" properties={['opacity']} show={peekedWork} duration={300}>
-          <div className="peek-case-study peek-case-study4 peeked" />
-        </Transporter>
-        <Transporter name="caseStudy4" properties={['opacity']} show={!peekedWork} duration={300}>
-          <div className="peek-case-study peek-case-study4 unpeeked" />
         </Transporter>
         </>}
       </div>
