@@ -171,19 +171,19 @@ body {
     left: 40vw;
     top: -30vw;
     opacity: 0;
-    -webkit-transform: rotate(2deg);
+    -webkit-transform: rotate(0deg);
   }
   &.peek-case-study2 {
     left: 20vw;
     top: 5vw;
     opacity: 0;
-    -webkit-transform: rotate(-5deg);
+    -webkit-transform: rotate(0deg);
   }
   &.peek-case-study3 {
     left: 40vw;
     bottom: -10vw;
     opacity: 0;
-    -webkit-transform: rotate(2deg);
+    -webkit-transform: rotate(0deg);
   }
 }
 
