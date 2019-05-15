@@ -9,9 +9,11 @@ export default class ApproachStatement extends Component {
             <>
                 {title &&
                     <Grid className={`approach-statement ${className}`} container justify="center" alignItems="center">
-                      <Grid container justify="center">
-                        <Grid item md={12} xs={12} className="approach-statement-title">{title}</Grid>
-                        <Grid item md={6} xs={12} className="approach-statement-paragraph">{paragraph}</Grid>
+                      <Grid item md={12} xs={12} className="approach-card">
+                        <Grid container justify="center" alignItems="center">
+                            <Grid item md={12} xs={12} className="approach-statement-title">{title}</Grid>
+                            <Grid item md={6} xs={12} className="approach-statement-paragraph">{paragraph}</Grid>
+                        </Grid>
                       </Grid>
                     </Grid>
                 }

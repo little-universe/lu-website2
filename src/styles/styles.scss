@@ -39,10 +39,11 @@ $fontWeightNormal: 400;
 $fontWeightLight: 200;
 $lineHeight: 22px;
 $lineHeightDesktop: 38px;
-$fontSizeHeadline: 100px;
+$fontSizeHeadline: 5vw;
 $lineHeightHeadline: $fontSizeHeadline*1.5;
 $fontSizeSubHeadline: 22px;
 $fontSizeStatement: 42px;
+$lineHeightStatement: $fontSizeStatement*1.5;
 
 $buffer: 10px;
 $radius: 4px;
@@ -405,13 +406,20 @@ button {
 //Approach
 
 .approach-statement {
-  height: 60vh;
+  height: 70vh;
+  // background: #00000a;
+  .approach-card {
   background: #f5f5f5;
-  margin-bottom: $buffer*3;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  }
   .approach-statement-title {
     color: $fontColorLightened;
     font-size: $fontSizeLargeDesktop;
     line-height: $lineHeightDesktop;
+    // font-size: $fontSizeHeadline;
+    // line-height: $lineHeightHeadline;
     text-align: center;
     margin-bottom: $buffer*6;
   }
