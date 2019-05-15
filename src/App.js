@@ -3,6 +3,8 @@ import './styles/styles.scss';
 import Homepage from './pages/homepage';
 import Work from './pages/work';
 import Betterfin from './pages/betterfin';
+import About from './pages/about';
+import Approach from './pages/approach';
 import Logo from './components/Logo';
 
 let styles = {}
@@ -17,7 +19,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Betterfin />
+        <Approach />
       </div>
     );
   }
