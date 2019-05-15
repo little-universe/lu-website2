@@ -9,10 +9,12 @@ class Logo extends Component {
     const { onHovered, onRouteChange } = this.props;
 
     return (
+      <a href="/">
       <div className="logo">
         <div className="universe"></div>
         <div className="agency-name">Little Universe</div>
       </div>
+      </a>
     )
   }
 }
