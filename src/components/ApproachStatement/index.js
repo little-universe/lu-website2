@@ -4,9 +4,9 @@ import Fade from 'react-reveal/Fade';
 
 export default class ApproachStatement extends Component {
     render() {
-        const { className, title, paragraph } = this.props
+        const { className, title, paragraph, style } = this.props
         return (
-            <>
+            <div className="content-container" style={style}>
                 {title &&
                     <Grid className={`approach-statement ${className}`} container justify="center" alignItems="center">
                       <Grid item md={12} xs={12} className="approach-card">
@@ -17,7 +17,7 @@ export default class ApproachStatement extends Component {
                       </Grid>
                     </Grid>
                 }
-            </>
+            </div>
         )
     }
 }

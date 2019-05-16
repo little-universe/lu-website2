@@ -73,7 +73,7 @@ $pageZIndex: 50;
 // GLOBAL STYLES
 
 body {
-  margin: 0;
+  margin: 0 auto;
   font-family: $fontFamily;
   font-weight: $fontWeightLight;
 }
@@ -117,6 +117,9 @@ body {
       color: $fontColorLight;
       background: $primaryColor;
       @include transition;
+      &.active {
+        background: $primaryColorInteracted;
+      }
       &:first-child {
         border-radius: $radius 0 0 $radius;
       }
@@ -318,10 +321,6 @@ body {
 }
 
 .content-container {
-  // padding: $buffer*3;
-}
-
-.work-container-test {
   // margin: 0 $buffer*3 0 $buffer*3;
   margin: $buffer*3;
 }

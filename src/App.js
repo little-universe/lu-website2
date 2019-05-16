@@ -15,6 +15,23 @@ let styles = {}
 const RouterNav = withRouter(props => <Nav {...props}/>);
 const RouterPeek = withRouter(props => <Peek {...props}/>);
 
+class Lens extends Component {
+  render() {
+    const { hovered, location, children } = this.props
+    let blur = !!hovered
+    if (location.pathname === '/work' && hovered === 'work') blur = false
+    if (location.pathname === '/about' && hovered === 'about') blur = false
+    if (location.pathname === '/approach' && hovered === 'approach') blur = false
+    return (
+      <div style={blur ? { opacity: 0.5 } : {}}>
+        {children}
+      </div>
+    )
+  }
+}
+
+const RouterLens = withRouter(props => <Lens {...props} />)
+
 class App extends Component {
   state = {
     first: true,
@@ -32,11 +49,13 @@ class App extends Component {
     return (
       <div className="App">
         <Router>
+          <RouterLens hovered={hovered}>
           <Route exact path="/" component={Homepage}/>
           <Route path="/work" component={Work}/>
           <Route path="/betterfin" component={Betterfin}/>
           <Route path="/about" component={About}/>
           <Route path="/approach" component={Approach}/>
+          </RouterLens>
           <RouterNav
             onHovered={this.updateHovered}
           />

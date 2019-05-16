@@ -23,7 +23,6 @@ class About extends Component {
       <>
         <Logo/>
         <Hero headline="About Us" subhead="We're a cool bunch of folks who abosolutely love product"/>
-        <div className="content-container">
           <WorkBigImage className="group-photo"/>
           <AboutMemberLeft className="zach-member" name="Zach Smith" title="Founder" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." interests="hiking, biking, kayaking"/>
           <AboutMemberRight className="zach-member" name="Zach Smith" title="Founder" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." interests="hiking, biking, kayaking"/>
@@ -34,7 +33,6 @@ class About extends Component {
           <AboutMemberHistory className="eugene-alana" description="Eugene and Alana have built 12 products together."/>
           <AboutMemberHistory className="taylor-adrian" description="Taylor and Adrian have designed 1,000 user flows together."/>
           <WorkTextOpener className="workImage" list="hi" paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."/>
-        </div>
         <WorkTogether headline="Let's get to know each other"/>
       </>
     )

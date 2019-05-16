@@ -9,7 +9,7 @@ class Nav extends Component {
   render() {
     console.warn(this.props);
 
-    const { onHovered, onRouteChange } = this.props;
+    const { onHovered, onRouteChange, location } = this.props;
 
     return (
       <div className="nav">
@@ -19,7 +19,7 @@ class Nav extends Component {
             onMouseEnter={() => onHovered('work')}
             onMouseLeave={() => onHovered('')}
             to="/work"
-            className="nav-link" href="">
+            className={`nav-link ${location.pathname === "/work" && "active"}`} href="">
             <li className="nav-item">Our Work</li>
           </Link>
           <Link
@@ -27,7 +27,7 @@ class Nav extends Component {
             onMouseEnter={() => onHovered('about')}
             onMouseLeave={() => onHovered('')}
             to="/about"
-            className="nav-link" href="">
+            className={`nav-link ${location.pathname === "/about" && "active"}`} href="">
               <li className="nav-item">About Us</li>
           </Link>
           <Link
@@ -35,7 +35,7 @@ class Nav extends Component {
             onMouseEnter={() => onHovered('approach')}
             onMouseLeave={() => onHovered('')}
             to="/approach"
-            className="nav-link" href="">
+            className={`nav-link ${location.pathname === "/approach" && "active"}`} href="">
               <li className="nav-item">Approach</li>
           </Link>
         </ul>

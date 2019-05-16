@@ -4,9 +4,10 @@ import Fade from 'react-reveal/Fade';
 
 export default class WorkCard extends Component {
     render() {
-        const { className, projectName, projectType, projectIndustry, bgImage, style } = this.props
+        const { className, projectName, projectType, projectIndustry, bgImage, style, anim } = this.props
+        // console.warn(this.props)
         return (
-            <div className="work-container-test" style={style}>
+            <div className="content-container" style={style}>
                 {bgImage &&
                     <Grid className={`work-card ${className}`} container justify="center" alignItems="center">
                         <div className="container">
@@ -18,12 +19,13 @@ export default class WorkCard extends Component {
                     <div classname="container">
                         <Grid className={`work-card ${className}`} container alignItems="flex-end">
                             <Grid item md={12} xs={12}>
+                                {anim !== "showing" &&
                                 <div className="container">
                                         <p className="project-details">
                                           <span className="project-name">{projectName}</span><br/>
                                           <span className="project-type">{projectType} • {projectIndustry}</span>
                                         </p>
-                                </div>
+                                </div>}
                             </Grid>
                         </Grid>
                     </div>

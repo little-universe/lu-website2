@@ -321,11 +321,12 @@ export class Transporter extends React.Component {
       console.warn('not showing', name)
       return null
     }
-    const debug = true
+    const debug = false
 
     if (anim === 'showing') {
       const child = React.cloneElement(children, {
         ref: this.childRef,
+        anim,
         style: { ...this.props.children.props.style, ...this.state.style }
       })
       return (
