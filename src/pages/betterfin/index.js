@@ -25,7 +25,6 @@ class Betterfin extends Component {
 
     return (
       <>
-        <Logo/>
         <Hero className="betterfin-hero"/>
         <div className="content-container">
           <WorkTextOpener list={["Digital Product", "UX/UI"]} paragraph="Betterfin is a service for business owners to get educated on small business lending and navigate commercial products with confidence. They provide transparency into lending through data analytics to help owners secure business financing they understand."/>

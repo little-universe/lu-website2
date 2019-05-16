@@ -21,7 +21,6 @@ class Approach extends Component {
 
     return (
       <>
-        <Logo/>
         <Hero headline="Approach" subhead="Small Team. Full Stack. Big Impact."/>
           <ApproachStatement className="" title="We Love Product" paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."/>
           <WorkImageLeft className="bottle" headline="We focus on results and work towards them." description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."/>

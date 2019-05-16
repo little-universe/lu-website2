@@ -4,7 +4,7 @@ import Fade from 'react-reveal/Fade';
 
 export default class AboutMemberLeft extends Component {
     render() {
-        const { className, image, name, title, description, interests, style } = this.props
+        const { className, image, name, title, description, interests, style, anim } = this.props
         return (
             <div className="content-container" style={style}>
                 {image, name, title, description &&
@@ -13,6 +13,7 @@ export default class AboutMemberLeft extends Component {
                           <Grid container justify="center" alignItems="flex-start">
                             <Grid item md={5} xs={12} className="member-image"><img src={image} /></Grid>
                             <Grid item md={7} xs={12} className="member-image-text" justify="center" alignItems="center">
+                            {anim !== "showing" &&
                               <Grid container justify="center">
                                 <Grid item md={6} xs={12} className="image-text">
                                   <p className="member-image-name">{name} • {title}</p>
@@ -20,6 +21,7 @@ export default class AboutMemberLeft extends Component {
                                   <p className="member-image-interests">{interests}</p>
                                 </Grid>
                               </Grid>
+                            }
                             </Grid>
                           </Grid>
                         </Grid>

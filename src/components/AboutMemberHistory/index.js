@@ -10,7 +10,7 @@ export default class AboutMemberHistory extends Component {
                 {bgImage, className &&
                     <Grid className={`about-member-history ${className}`} container justify="center" alignItems="center">
                         <div className="container">
-                        <Grid item md={8} xs={12} justify="center" alignItems="center">
+                        <Grid item md={12} xs={12} justify="center" alignItems="center">
                           <div className="member-history-container">
                             <img className="member-history-image" src={bgImage} />
                           </div>

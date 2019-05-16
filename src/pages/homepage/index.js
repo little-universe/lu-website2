@@ -39,8 +39,7 @@ class Homepage extends Component {
 
     return (
       <>
-        <Logo/>
-        
+
 
       </>
     )
