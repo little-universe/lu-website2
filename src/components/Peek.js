@@ -21,11 +21,11 @@ class Peek extends Component {
         ${peekedWork && "peek-work"}
       `}>
       {route !== 'work' && <>
-        <Transporter name="caseStudy1" properties={['opacity']} show={peekedWork} duration={250}>
+        <Transporter name="caseStudy1" properties={['opacity', 'margin']} show={peekedWork} duration={250}>
           <div className="peek-case-study peek-case-study1 peeked">
           </div>
         </Transporter>
-        <Transporter name="caseStudy1" properties={['opacity']} show={!peekedWork} duration={250}>
+        <Transporter name="caseStudy1" properties={['opacity', 'margin']} show={!peekedWork} duration={250}>
           <div className="peek-case-study peek-case-study1 unpeeked">
           </div>
         </Transporter>

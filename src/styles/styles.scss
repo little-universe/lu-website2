@@ -42,6 +42,7 @@ $fontWeightLight: 200;
 $lineHeight: 22px;
 $lineHeightDesktop: 38px;
 $fontSizeHeadline: 5vw;
+// $fontSizeHeadline: 20px;
 $lineHeightHeadline: $fontSizeHeadline*1.5;
 $fontSizeSubHeadline: 22px;
 $fontSizeStatement: 42px;
@@ -317,7 +318,12 @@ body {
 }
 
 .content-container {
-  padding: $buffer*3;
+  // padding: $buffer*3;
+}
+
+.work-container-test {
+  // margin: 0 $buffer*3 0 $buffer*3;
+  margin: $buffer*3;
 }
 
 
@@ -344,10 +350,9 @@ body {
 }
 
 .work-card {
-  height: 90vh;
+  height: 80vh;
   background: $bgColorWorkCard;
   padding: $buffer*6;
-  margin-bottom: $buffer*3;
   font-size: $fontSizeLarge;
   .project-details {
     line-height: $lineHeightDesktop;

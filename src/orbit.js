@@ -107,6 +107,7 @@ export class Transporter extends React.Component {
     if (show && this.childRef.current) {
       if (nodes[name] && !guaranteedFirst) { // If entry already exists, transform from it
         this.animateChild()
+        this.animateGrowingPhantom()
       }
 
       nodes[name] = { // Set entry in nodes object
@@ -145,6 +146,7 @@ export class Transporter extends React.Component {
         if (nodes[name] && ReactDOM.findDOMNode(this.childRef && this.childRef.current)) {
           // console.warn('prev node exists, animating', name, nodes[name], this.childRef)
           this.animateChild()
+          this.animateGrowingPhantom()
         } else {
           //console.warn('this is the first time node is present, short circuiting', name, nodes[name], this.childRef)
           this.setState({ anim: 'shown' })
@@ -218,7 +220,7 @@ export class Transporter extends React.Component {
       transform: `translate(${translateX}px, ${translateY}px) scale(${scaleX}, ${scaleY})`
     }
     console.warn('animating child', name, oldNode, newNode, translateX, translateY, scaleX, scaleY)
-
+    // debugger
     this.setState({ anim: 'showing' })
     tween({
       from: oldStyles,
@@ -237,8 +239,11 @@ export class Transporter extends React.Component {
             ...v,
             top: newNode.position.top,
             left: newNode.position.left,
+            width: newNode.position.width,
+            height: newNode.position.height,
             margin: 0,
             maxWidth: null,
+            // width: null,
             position: 'relative',
             transformOrigin: 'top left',
             ...overrides
@@ -263,14 +268,16 @@ export class Transporter extends React.Component {
 
   animateGrowingPhantom = () => {
     // NOTE: Need to move this outside of position: fixed hover box for it to have any effect
-    const { name } = this.props
+    const { name, duration } = this.props
     const old = nodes[name]
     const newPosition = ReactDOM.findDOMNode(this.childRef.current).getBoundingClientRect().toJSON()
+    const styles = getStyles(ReactDOM.findDOMNode(this.childRef.current), ['margin'])
     const expectedSize = {
       height: `${newPosition.height}px`,
       width: `${newPosition.width}px`
     }
     // console.warn('expected placeholder size', expectedSize)
+    console.warn('string styles', name, styles)
     tween({
       from: {
         height: `${newPosition.height}px`,
@@ -281,7 +288,7 @@ export class Transporter extends React.Component {
         transform: `scale(1, 1)`
       },
       ease: easing.easeInOut,
-      duration: 1000
+      duration
     }).start({
       update: (v) => {
         this.setState({
@@ -289,7 +296,8 @@ export class Transporter extends React.Component {
             ...v,
             ...expectedSize,
             top: old.position.top,
-            left: old.position.left
+            left: old.position.left,
+            margin: styles.margin
           },
         })
       },
@@ -313,7 +321,7 @@ export class Transporter extends React.Component {
       console.warn('not showing', name)
       return null
     }
-    const debug = false
+    const debug = true
 
     if (anim === 'showing') {
       const child = React.cloneElement(children, {

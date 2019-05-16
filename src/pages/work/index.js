@@ -20,16 +20,19 @@ class Work extends Component {
       <>
         <Logo/>
         <Hero headline="Our Work" subhead="We make a difference for our clients"/>
-        <div className="content-container">
-        <Transporter name="caseStudy1" show={true}>
+        <Transporter name="caseStudy1" show={true} duration={500} properties={['margin']}>
           <WorkCard projectName="Betterfin" projectType="Digital Product" projectIndustry="Fintech"/>
         </Transporter>
-        <WorkCard projectName="Strive Digital" projectType="Digital Product" projectIndustry="Advocacy Tech"/>
-        <WorkCard projectName="Motivote" projectType="Digital Product" projectIndustry="Advocacy Tech"/>
+        <Transporter name="caseStudy2" show={true} duration={350} properties={['margin']}>
+          <WorkCard projectName="Strive Digital" projectType="Digital Product" projectIndustry="Advocacy Tech"/>
+        </Transporter>
+        <Transporter name="caseStudy3" show={true} duration={250} properties={['margin']}>
+          <WorkCard projectName="Motivote" projectType="Digital Product" projectIndustry="Advocacy Tech"/>
+        </Transporter>
         <WorkCard projectName="Vote Crew" projectType="Digital Product" projectIndustry="Advocacy Tech"/>
         <WorkCard projectName="Dv01" projectType="Digital Product" projectIndustry="Fintech"/>
         <WorkCard projectName="Farmigo" projectType="Digital Product" projectIndustry="Food"/>
-        </div>
+
         <WorkTogether headline="Let's get to know each other"/>
       </>
     )
