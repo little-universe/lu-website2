@@ -134,7 +134,7 @@ body {
         border-radius: 0 $radius $radius 0;
       }
       &:hover {
-        background: $primaryColorInteracted;
+        background: $secondaryColor;
         @include transition;
       }
       .nav-item {
@@ -645,8 +645,8 @@ button {
     padding: $buffer*3 0;
     .article-title {
       color: $fontColorLightened;
-      font-size: $fontSizeSmallDesktop;
-      line-height: $lineHeight;
+      font-size: $fontSizeDesktop;
+      line-height: $lineHeight*1.5;
     }
     .article-summary {
       font-size: $fontSizeLargeDesktop;
@@ -659,7 +659,7 @@ button {
     height: 90vh;
     margin-bottom: $buffer*3;
     .approach-image {
-      // background: #ccc;
+      background: #ccc;
       overflow: hidden;
       width: 100%;
       height: 90vh;
@@ -685,7 +685,7 @@ button {
   }
   .approach-image-description {
     color: $fontColorLightened;
-    font-size: $fontSizeDesktop;
+    font-size: $fontSizeLargeDesktop;
     line-height: $lineHeightDesktop;
   }
 }

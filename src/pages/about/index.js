@@ -24,20 +24,20 @@ class About extends Component {
       <>
         <Hero headline="About Us" subhead="We're a cool bunch of folks who abosolutely love product"/>
           <AboutBigImage className="group-photo"/>
-          <Transporter name="member-zach" show={true} duration={4000} properties={['margin']}>
+          <Transporter name="member-zach" show={true} duration={4000} properties={[]}>
             <AboutMemberLeft className="zach-member" name="Zach Smith" title="Founder" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." interests="hiking, biking, kayaking" image={require("../../assets/team/1.jpg")}/>
           </Transporter>
-          <Transporter name="member-adrian" show={true} duration={4000} properties={['margin']}>
+          <Transporter name="member-adrian" show={true} duration={4000} properties={[]}>
             <AboutMemberRight className="adrian-member" name="Adrian Del Balso" title="Founder" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." interests="hiking, biking, kayaking" image={require("../../assets/team/adrian-grey.png")}/>
           </Transporter>
           <AboutMemberHistory className="zach-adrian" description="Zach and Adrian have written over 1M lines of code together."/>
-          <Transporter name="member-eugene" show={true} duration={4000} properties={['margin']}>
+          <Transporter name="member-eugene" show={true} duration={4000} properties={[]}>
             <AboutMemberLeft className="zach-eugene" name="Eugene Butler" title="Senior Developer" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." interests="hiking, biking, kayaking"/>
           </Transporter>
-          <Transporter name="member-alana" show={true} duration={4000} properties={['margin']}>
+          <Transporter name="member-alana" show={true} duration={4000} properties={[]}>
             <AboutMemberRight className="alana-member" name="Alana Simoncelli" title="Senior Developer" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." interests="hiking, biking, kayaking"/>
           </Transporter>
-          <Transporter name="member-taylor" show={true} duration={4000} properties={['margin']}>
+          <Transporter name="member-taylor" show={true} duration={4000} properties={[]}>
             <AboutMemberLeft className="taylor-member" name="Taylor Zanke" title="Product Designer" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." interests="hiking, biking, kayaking"/>
           </Transporter>
           <AboutMemberHistory className="eugene-alana" description="Eugene and Alana have built 12 products together."/>
