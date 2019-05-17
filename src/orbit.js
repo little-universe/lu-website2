@@ -1,6 +1,6 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { tween, easing } from 'popmotion'
-import { camelCase, clamp, cloneDeep } from 'lodash'
+import { camelCase, clamp, cloneDeep, debounce } from 'lodash'
 import React from 'react'
 import ReactDOM from 'react-dom'
 
@@ -91,9 +91,10 @@ export class Transporter extends React.Component {
       placeholderStyle: {}
     }
     this.childRef = React.createRef()
+    this.onScroll = debounce(this.onScroll, 100)
   }
   componentDidMount() {
-    const { name, show, properties = relevantProps, guaranteedFirst, overrides = {}, overrideOldPosition, onlyX, onlyY, noTransition } = this.props
+    const { name, show, properties = relevantProps, guaranteedFirst, overrides = {}, overrideOldPosition, onlyX, onlyY, noTransition, unstableOnUnmount } = this.props
     if (noTransition) {
       if (ReactDOM.findDOMNode(this.childRef.current)) {
         nodes[name] = {
@@ -117,15 +118,31 @@ export class Transporter extends React.Component {
       }
       // console.warn('setting dom node', name, nodes[name])
     }
+    if (unstableOnUnmount) {
+      window.addEventListener('scroll', this.onScroll)
+    }
   }
-  componentWillUnmount() {
-    const { name, properties, annihilate } = this.props
+  onScroll = () => {
+    const { name, properties } = this.props
+    console.warn('scrolling', name)
     if (nodes[name] && this.childRef && this.childRef.current && ReactDOM.findDOMNode(this.childRef.current)) {
       nodes[name] = { // Set entry in nodes object
         styles: getStyles(ReactDOM.findDOMNode(this.childRef.current), properties),
         position: ReactDOM.findDOMNode(this.childRef.current).getBoundingClientRect()
       }
-      console.warn('unmounting', name, nodes[name])
+      console.warn('updating due to scroll', name, nodes[name])
+    }
+  }
+  componentWillUnmount() {
+    const { name, properties, annihilate, unstableOnUnmount } = this.props
+    if (!unstableOnUnmount) {
+      if (nodes[name] && this.childRef && this.childRef.current && ReactDOM.findDOMNode(this.childRef.current)) {
+        nodes[name] = { // Set entry in nodes object
+          styles: getStyles(ReactDOM.findDOMNode(this.childRef.current), properties),
+          position: ReactDOM.findDOMNode(this.childRef.current).getBoundingClientRect()
+        }
+        console.warn('unmounting', name, nodes[name])
+      }
     }
     if (annihilate) {
       delete nodes[name]

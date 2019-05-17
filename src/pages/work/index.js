@@ -22,7 +22,7 @@ class Work extends Component {
       <>
         <Hero headline="Our Work" subhead="We make a difference for our clients"/>
         <Link to="../betterfin" className="work-card-link">
-          <Transporter name="caseStudy1" show={true} duration={750} properties={['margin']}>
+          <Transporter name="caseStudy1" show={true} duration={750} unstableOnUnmount>
               <WorkCard className="betterfin-card" projectName="Betterfin" projectType="Digital Product" projectIndustry="Fintech"/>
           </Transporter>
         </Link>
