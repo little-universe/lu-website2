@@ -4,9 +4,9 @@ import Fade from 'react-reveal/Fade';
 
 export default class WorkTextCentered extends Component {
     render() {
-        const { className, title, paragraph } = this.props
+        const { className, title, paragraph, style } = this.props
         return (
-            <>
+            <div className="content-container" style={style}>
                 {title, paragraph &&
                     <div classname="container">
                         <Grid className={`work-text-centered ${className}`} container alignItems="center">
@@ -17,7 +17,7 @@ export default class WorkTextCentered extends Component {
                         </Grid>
                     </div>
                 }
-            </>
+            </div>
         )
     }
 }

@@ -4,9 +4,9 @@ import Fade from 'react-reveal/Fade';
 
 export default class WorkTextQuote extends Component {
     render() {
-        const { className, author, paragraph } = this.props
+        const { className, author, paragraph, style } = this.props
         return (
-            <>
+            <div className="content-container" style={style}>
                 {author, paragraph &&
                     <div classname="container">
                         <Grid className={`work-text-quote ${className}`} container alignItems="center">
@@ -17,7 +17,7 @@ export default class WorkTextQuote extends Component {
                         </Grid>
                     </div>
                 }
-            </>
+            </div>
         )
     }
 }

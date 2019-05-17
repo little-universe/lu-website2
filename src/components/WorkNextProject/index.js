@@ -4,9 +4,9 @@ import Fade from 'react-reveal/Fade';
 
 export default class WorkNextProject extends Component {
     render() {
-        const { className, projectName, projectType, projectIndustry, image } = this.props
+        const { className, projectName, projectType, projectIndustry, image, style } = this.props
         return (
-            <>
+            <div className="content-container" style={style}>
                 {image, className &&
                     <Grid className={`work-next-project ${className}`} container justify="center" alignItems="center">
                       <Grid item md={5} xs={12} className="image-container">
@@ -19,7 +19,7 @@ export default class WorkNextProject extends Component {
                       </Grid>
                     </Grid>
                 }
-            </>
+            </div>
         )
     }
 }

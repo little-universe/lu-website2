@@ -35,6 +35,7 @@ $fontSizeExtraSmall: 11px;
 $fontSizeExtraSmallDesktop: 12px;
 $fontSizeLarge: 24px;
 $fontSizeLargeDesktop: 22px;
+// $fontSizeLargeDesktop: 1.vw;
 $fontFamily: "Apercu", sans-serif;
 $fontWeightHeavy: 700;
 $fontWeightNormal: 400;
@@ -435,6 +436,11 @@ button {
   .opener-paragraph {
     font-size: $fontSizeLargeDesktop;
     line-height: $lineHeightDesktop;
+  }
+  @include breakpoint(sm) {
+    .opener-list {
+      margin-bottom: $buffer*3;
+    }
   }
 }
 .work-text-centered, .work-text-quote {
