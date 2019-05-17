@@ -97,7 +97,7 @@ body {
     color: $primaryColor;
     font-weight: $fontWeightNormal;
   }
-  @include breakpoint(sm) {
+  @include breakpoint(xs) {
     margin: $buffer*3;
   }
 }
@@ -139,8 +139,8 @@ body {
       }
     }
   }
-  @include breakpoint(sm) {
-    margin: $buffer*1;
+  @include breakpoint(xs) {
+    margin: $buffer*3;
     .nav-list {
       .nav-link {
         padding: $buffer*2;
@@ -319,6 +319,9 @@ body {
 .content-container {
   // margin: 0 $buffer*3 0 $buffer*3;
   margin: $buffer*3;
+  @include breakpoint(xs) {
+    margin: $buffer*1.5;
+  }
 }
 
 
@@ -358,9 +361,9 @@ body {
   height: 80vh;
   background: $bgColorWorkCard;
   padding: $buffer*6;
-  font-size: $fontSizeLarge;
+  font-size: $fontSizeLargeDesktop;
+  line-height: $lineHeightDesktop;
   .project-details {
-    line-height: $lineHeightDesktop;
     margin-bottom: 0;
     .project-name {
       color: $fontColor;
@@ -368,6 +371,12 @@ body {
     .project-type {
       color: $fontColorLightened;
     }
+  }
+  @include breakpoint(xs) {
+    font-size: $fontSizeDesktop;
+    line-height: $lineHeight;
+    padding: $buffer*3;
+    height: 60vh;
   }
 }
 
@@ -377,6 +386,9 @@ body {
   h1 {
     font-weight: 300;
     font-size: $fontSizeStatement;
+  }
+  @include breakpoint(xs) {
+    height: 90vh;
   }
 }
 
@@ -388,6 +400,7 @@ button {
   border: $border;
   cursor: pointer;
   &.mailUs {
+    background: $bgColorLight;
     width: 200px !important;
     @include transition;
     svg {
