@@ -35,7 +35,20 @@ class Lens extends Component {
   }
 }
 
+class ScrollToTop extends Component {
+  componentDidUpdate(prevProps) {
+    if (this.props.location.pathname !== prevProps.location.pathname) {
+      window.scrollTo(0, 0);
+    }
+  }
+
+  render() {
+    return this.props.children || null;
+  }
+}
+
 const RouterLens = withRouter(props => <Lens {...props} />)
+const RouterScroll = withRouter(props => <ScrollToTop {...props} />)
 
 class App extends Component {
   state = {
@@ -55,6 +68,7 @@ class App extends Component {
       <div className="App">
       <Logo/>
         <Router>
+          <RouterScroll/>
           <RouterLens hovered={hovered}>
           <Route exact path="/" component={Homepage}/>
           <Route path="/work" component={Work}/>

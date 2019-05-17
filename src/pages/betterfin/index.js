@@ -14,7 +14,7 @@ import WorkNextProject from '../../components/WorkNextProject';
 import WorkTogether from '../../components/WorkTogether';
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import { Transporter } from '../../orbit'
-import {Link} from "react-router-dom";
+import Grid from '@material-ui/core/Grid';
 
 class Betterfin extends Component {
   state = {
@@ -22,7 +22,7 @@ class Betterfin extends Component {
     route: 'betterfin'
 
   }
-
+  
   render() {
     const { hovered, route } = this.state;
 
@@ -42,11 +42,11 @@ class Betterfin extends Component {
           <WorkImageRight image="" headline="Hello Small Business!" description="Betterfin exchanges data for value, and their onboarding flow captures that data in a clean and efficient manner."/>
           <WorkTextMetric metricNumber="2x" metricName="Increased Conversion"/>
           <WorkBigImage className="workImage"/>
-          <Transporter name="caseStudy2" show={true} duration={500} properties={[]}>
-          <Link to="../strive" className="work-next-link">
-            <WorkNextProject className="next-strive" projectName="Strive Digital" projectType="Digital Product" projectIndustry="Advocacy Tech"/>
-            </Link>
-          </Transporter>
+          <Grid className={`work-next-project`} container justify="center" alignItems="center">
+            <Transporter name="caseStudy2" show={true} duration={500} properties={[]} unstableOnUnmount noTransition>
+              <WorkNextProject className="next-strive" projectName="Strive Digital" projectType="Digital Product" projectIndustry="Advocacy Tech" destination="../strive"/>
+            </Transporter>
+          </Grid>
         <WorkTogether headline="Let's get to know each other"/>
       </>
     )

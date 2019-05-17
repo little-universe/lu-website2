@@ -95,6 +95,10 @@ export class Transporter extends React.Component {
   }
   componentDidMount() {
     const { name, show, properties = relevantProps, guaranteedFirst, overrides = {}, overrideOldPosition, onlyX, onlyY, noTransition, unstableOnUnmount } = this.props
+    if (unstableOnUnmount) {
+      window.addEventListener('scroll', this.onScroll)
+    }
+
     if (noTransition) {
       if (ReactDOM.findDOMNode(this.childRef.current)) {
         nodes[name] = {
@@ -102,6 +106,7 @@ export class Transporter extends React.Component {
           position: ReactDOM.findDOMNode(this.childRef.current).getBoundingClientRect()
         }
       }
+      this.setState({ anim: 'shown' })
       return
     }
     console.warn('mounting', name, nodes[name])
@@ -118,14 +123,13 @@ export class Transporter extends React.Component {
       }
       // console.warn('setting dom node', name, nodes[name])
     }
-    if (unstableOnUnmount) {
-      window.addEventListener('scroll', this.onScroll)
-    }
+
   }
   onScroll = () => {
     const { name, properties } = this.props
-    console.warn('scrolling', name)
-    if (nodes[name] && this.childRef && this.childRef.current && ReactDOM.findDOMNode(this.childRef.current)) {
+    const { anim } = this.state
+    console.warn('scrolling', name, anim, anim === "show",  this.childRef && this.childRef.current && ReactDOM.findDOMNode(this.childRef.current))
+    if (anim === "shown" && this.childRef && this.childRef.current && ReactDOM.findDOMNode(this.childRef.current)) {
       nodes[name] = { // Set entry in nodes object
         styles: getStyles(ReactDOM.findDOMNode(this.childRef.current), properties),
         position: ReactDOM.findDOMNode(this.childRef.current).getBoundingClientRect()
@@ -143,7 +147,11 @@ export class Transporter extends React.Component {
         }
         console.warn('unmounting', name, nodes[name])
       }
+    } else {
+      console.warn("unlistening", name)
+      window.removeEventListener("scroll", this.onScroll)
     }
+
     if (annihilate) {
       delete nodes[name]
     }
@@ -238,7 +246,7 @@ export class Transporter extends React.Component {
       ...oldNode.styles,
       transform: `translate(${translateX}px, ${translateY}px) scale(${scaleX}, ${scaleY})`
     }
-    // console.warn('animating child', name, oldNode, newNode, translateX, translateY, scaleX, scaleY)
+    console.warn('animating child', name, oldNode, newNode, translateX, translateY, scaleX, scaleY)
     // debugger
     this.setState({ anim: 'showing' })
     tween({

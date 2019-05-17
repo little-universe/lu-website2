@@ -84,7 +84,8 @@ body {
 
 .logo {
   margin: $buffer*6;
-  position: absolute;
+  position: fixed;
+  z-index: $navZIndex;
   top: 0;
   left: 0;
   .universe {
@@ -320,6 +321,8 @@ body {
 .content-container {
   // margin: 0 $buffer*3 0 $buffer*3;
   margin: $buffer*3;
+  justify-content: center;
+  align-items: center;
   @include breakpoint(xs) {
     margin: $buffer*1.5;
   }
@@ -508,13 +511,14 @@ button {
   }
 }
 
-.work-next-link {
-  text-decoration: none;
-  color: $fontColor;
-}
 
 .work-next-project {
   height: 80vh;
+  width: 30vw;
+  .work-next-link {
+    text-decoration: none;
+    color: $fontColor;
+  }
   .image-container {
     -webkit-transform: rotate(1deg);
     @include transition;

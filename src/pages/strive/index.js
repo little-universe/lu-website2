@@ -26,10 +26,8 @@ class Betterfin extends Component {
 
     return (
       <>
-      <Transporter name="caseStudy2" show={true} duration={500} properties={[]}>
-      <div style={{ width: '100%', minHeight: '1vh' }}>
+      <Transporter name="caseStudy2" show={true} duration={250} properties={[]}>
         <Hero className="project-hero strive-hero"/>
-        </div>
       </Transporter>
           <WorkTextOpener list={["Digital Product", "UX/UI"]} paragraph="Strive Digital is a service for business owners to get educated on small business lending and navigate commercial products with confidence. They provide transparency into lending through data analytics to help owners secure business financing they understand."/>
           <WorkBigImage className="workImage"/>
@@ -39,7 +37,7 @@ class Betterfin extends Component {
           <WorkImageRight image="" headline="Hello Small Business!" description="Betterfin exchanges data for value, and their onboarding flow captures that data in a clean and efficient manner."/>
           <WorkTextMetric metricNumber="2x" metricName="Increased Conversion"/>
           <WorkBigImage className="workImage"/>
-          <WorkNextProject className="next-strive" projectName="Strive Digital" projectType="Digital Product" projectIndustry="Advocacy Tech"/>
+          <WorkNextProject className="next-strive" projectName="Motivote" projectType="Digital Product" projectIndustry="Advocacy Tech"/>
         <WorkTogether headline="Let's get to know each other"/>
       </>
     )
