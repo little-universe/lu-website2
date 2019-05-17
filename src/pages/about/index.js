@@ -28,7 +28,7 @@ class About extends Component {
             <AboutMemberLeft className="zach-member" name="Zach Smith" title="Founder" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." interests="hiking, biking, kayaking" image={require("../../assets/team/1.jpg")}/>
           </Transporter>
           <Transporter name="member-adrian" show={true} duration={4000} properties={['margin']}>
-            <AboutMemberRight className="adrian-member" name="Adrian Del Balso" title="Founder" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." interests="hiking, biking, kayaking" image={require("../../assets/team/2.jpg")}/>
+            <AboutMemberRight className="adrian-member" name="Adrian Del Balso" title="Founder" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." interests="hiking, biking, kayaking" image={require("../../assets/team/adrian-grey.png")}/>
           </Transporter>
           <AboutMemberHistory className="zach-adrian" description="Zach and Adrian have written over 1M lines of code together."/>
           <Transporter name="member-eugene" show={true} duration={4000} properties={['margin']}>
@@ -42,7 +42,7 @@ class About extends Component {
           </Transporter>
           <AboutMemberHistory className="eugene-alana" description="Eugene and Alana have built 12 products together."/>
           <AboutMemberHistory className="taylor-adrian" description="Taylor and Adrian have designed 1,000 user flows together."/>
-          <WorkTextOpener className="workImage" list="hi" paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."/>
+          <WorkTextOpener className="workImage" list={["this"]} paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."/>
         <WorkTogether headline="Let's get to know each other"/>
       </>
     )

@@ -41,7 +41,7 @@ $fontWeightNormal: 400;
 $fontWeightLight: 200;
 $lineHeight: 22px;
 $lineHeightDesktop: 38px;
-$fontSizeHeadline: 5vw;
+$fontSizeHeadline: 100px;
 // $fontSizeHeadline: 20px;
 $lineHeightHeadline: $fontSizeHeadline*1.5;
 $fontSizeSubHeadline: 22px;
@@ -76,6 +76,7 @@ body {
   margin: 0 auto;
   font-family: $fontFamily;
   font-weight: $fontWeightLight;
+  overflow-x: hidden;
 }
 
 // LOGO STYLES
@@ -96,12 +97,16 @@ body {
     color: $primaryColor;
     font-weight: $fontWeightNormal;
   }
+  @include breakpoint(sm) {
+    margin: $buffer*3;
+  }
 }
 
 // NAV STYLES
 
 .nav {
   margin: $buffer*6;
+  font-size: $fontSize;
   position: fixed;
   left: 0;
   bottom: 0;
@@ -131,6 +136,14 @@ body {
         @include transition;
       }
       .nav-item {
+      }
+    }
+  }
+  @include breakpoint(sm) {
+    margin: $buffer*1;
+    .nav-list {
+      .nav-link {
+        padding: $buffer*2;
       }
     }
   }
@@ -314,7 +327,7 @@ body {
 .hero {
   height: 90vh;
   text-align: center;
-  &.betterfin-hero {
+  &.project-hero {
     background: $bgColorWorkCard;
   }
   img.hero-image {
@@ -331,22 +344,26 @@ body {
   }
 }
 
+.work-card-link {
+  &:hover {
+    @include transition;
+    opacity: .95;
+    cursor: pointer;
+    @include transition;
+  }
+  text-decoration: none;
+}
 .work-card {
   margin: 0 auto;
   height: 80vh;
   background: $bgColorWorkCard;
   padding: $buffer*6;
   font-size: $fontSizeLarge;
-  @include transition;
-  &:hover {
-    opacity: .95;
-    cursor: pointer;
-    @include transition;
-  }
   .project-details {
     line-height: $lineHeightDesktop;
     margin-bottom: 0;
     .project-name {
+      color: $fontColor;
     }
     .project-type {
       color: $fontColorLightened;
@@ -371,15 +388,36 @@ button {
   border: $border;
   cursor: pointer;
   &.mailUs {
-
+    width: 200px !important;
+    @include transition;
+    svg {
+      stroke: $stroke;
+      @include transition;
+    }
+    &:hover {
+      cursor: pointer;
+      border: 1px solid $fontColor;
+      @include transition;
+      svg {
+        stroke: $fontColor;
+        @include transition;
+      }
+    }
   }
 }
 
 .work-opener {
   height: 80vh;
   .opener-list {
-    color: $fontColorLightened;
-    font-size: $fontSizeDesktop;
+    ul {
+      list-style-type: none;
+      margin: 0; padding: 0;
+      li {
+        color: $fontColorLightened;
+        font-size: $fontSizeDesktop;
+        line-height: $lineHeight*1.25;
+      }
+    }
   }
   .opener-paragraph {
     font-size: $fontSizeLargeDesktop;
@@ -410,8 +448,17 @@ button {
   height: 100vh;
   margin-bottom: $buffer*3;
   .work-image {
-    height: 100vh;
     background: $bgColorWorkCard;
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    img {
+      width: 100%;
+      position: absolute;
+    }
   }
   .work-image-text {
     height: 100vh;
@@ -423,7 +470,7 @@ button {
     }
     .work-image-description {
       color: $fontColorLightened;
-      font-size: $fontSizeDesktop;
+      font-size: $fontSizeLargeDesktop;
       line-height: $lineHeightDesktop;
     }
   }
@@ -442,10 +489,21 @@ button {
   }
 }
 
+.work-next-link {
+  text-decoration: none;
+  color: $fontColor;
+}
+
 .work-next-project {
   height: 80vh;
   .image-container {
     -webkit-transform: rotate(1deg);
+    @include transition;
+    &:hover {
+      @include transition;
+      -webkit-transform: rotate(0deg);
+      cursor: pointer !important;
+    }
     .next-project-label {
       color: $fontColorLightened;
       font-size: $fontSizeDesktop;
@@ -572,4 +630,40 @@ button {
       line-height: $lineHeightDesktop;
     }
   }
+}
+
+.approach-image-left {
+    height: 90vh;
+    margin-bottom: $buffer*3;
+    .approach-image {
+      // background: #ccc;
+      overflow: hidden;
+      width: 100%;
+      height: 90vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      img {
+        // height: 100%;
+        width: 100%;
+        position: absolute;
+        opacity: .90;
+      }
+}
+.approach-image-text {
+  height: 90vh;
+  align-items: center;
+  display: flex;
+  .approach-image-headline {
+    font-size: $fontSizeLargeDesktop;
+    line-height: $lineHeightDesktop;
+    margin-bottom: 0;
+  }
+  .approach-image-description {
+    color: $fontColorLightened;
+    font-size: $fontSizeDesktop;
+    line-height: $lineHeightDesktop;
+  }
+}
 }

@@ -4,9 +4,9 @@ import Fade from 'react-reveal/Fade';
 
 export default class WorkImageLeft extends Component {
     render() {
-        const { className, image, headline, description } = this.props
+        const { className, image, headline, description, style } = this.props
         return (
-            <>
+            <div className="content-container" style={style}>
                 {image, headline, description &&
                     <div classname="container">
                         <Grid className={`work-image-left ${className}`} container justify="center" alignItems="center">
@@ -24,7 +24,7 @@ export default class WorkImageLeft extends Component {
                         </Grid>
                     </div>
                 }
-            </>
+            </div>
         )
     }
 }

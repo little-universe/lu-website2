@@ -5,6 +5,11 @@ import Peek from './components/Peek';
 import Homepage from './pages/homepage';
 import Work from './pages/work';
 import Betterfin from './pages/betterfin';
+import Strive from './pages/strive';
+import Motivote from './pages/motivote';
+import VoteCrew from './pages/votecrew';
+import Farmigo from './pages/farmigo';
+
 import About from './pages/about';
 import Approach from './pages/approach';
 import Logo from './components/Logo';
@@ -53,9 +58,13 @@ class App extends Component {
           <RouterLens hovered={hovered}>
           <Route exact path="/" component={Homepage}/>
           <Route path="/work" component={Work}/>
-          <Route path="/betterfin" component={Betterfin}/>
           <Route path="/about" component={About}/>
           <Route path="/approach" component={Approach}/>
+          <Route path="/betterfin" component={Betterfin}/>
+          <Route path="/strive" component={Strive}/>
+          <Route path="/motivote" component={Motivote}/>
+          <Route path="/votecrew" component={VoteCrew}/>
+          <Route path="/farmigo" component={Farmigo}/>
           </RouterLens>
           <RouterNav
             onHovered={this.updateHovered}

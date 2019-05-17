@@ -4,9 +4,9 @@ import Fade from 'react-reveal/Fade';
 
 export default class Hero extends Component {
     render() {
-        const { className, headline, subhead, explaination, bgImage } = this.props
+        const { className, headline, subhead, explaination, bgImage, style } = this.props
         return (
-            <>
+            <div style={style}>
                 {bgImage, className &&
                     <Grid className={`hero ${className}`} container justify="center" alignItems="center">
                         <div className="container">
@@ -29,7 +29,7 @@ export default class Hero extends Component {
                         </Grid>
                     </div>
                 }
-            </>
+            </div>
         )
     }
 }

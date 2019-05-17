@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Grid from '@material-ui/core/Grid'
 import Fade from 'react-reveal/Fade';
 import Button from '../ui/Button';
+import { Mail } from "react-feather";
 
 export default class WorkTogether extends Component {
     render() {
@@ -14,7 +15,7 @@ export default class WorkTogether extends Component {
                             <Grid item md={12} xs={12}>
                                 <div className="container">
                                         <h1 className="headline">{headline}</h1>
-                                        <Button className="mailUs">hi hi hi</Button>
+                                        <Button className="mailUs"><Mail size={24}/></Button>
                                 </div>
                             </Grid>
                         </Grid>

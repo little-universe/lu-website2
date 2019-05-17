@@ -49,25 +49,25 @@ class Peek extends Component {
         ${peekedAbout && "peek-about"}
       `}>
       {route !== 'about' && <>
-        <Transporter name="member-zach" properties={['opacity']} show={peekedAbout} duration={250}>
+        <Transporter name="member-zach" properties={['opacity', 'margin']} show={peekedAbout} duration={250}>
           <div className="peek-member-image peek-member-zach peeked">
             <img src={require("../assets/team/1.jpg")} />
           </div>
         </Transporter>
-        <Transporter name="member-zach" properties={['opacity']} show={!peekedAbout} duration={250}>
+        <Transporter name="member-zach" properties={['opacity', 'margin']} show={!peekedAbout} duration={250}>
           <div className="peek-member-image peek-member-zach unpeeked">
             <img src={require("../assets/team/1.jpg")} />
           </div>
         </Transporter>
 
-        <Transporter name="member-adrian" properties={['opacity']} show={peekedAbout} duration={100}>
+        <Transporter name="member-adrian" properties={['opacity', 'margin']} show={peekedAbout} duration={100}>
           <div className="peek-member-image peek-member-adrian peeked">
-            <img src={require("../assets/team/2.jpg")} />
+            <img src={require("../assets/team/adrian-grey.png")} />
           </div>
         </Transporter>
-        <Transporter name="member-adrian" properties={['opacity']} show={!peekedAbout} duration={100}>
+        <Transporter name="member-adrian" properties={['opacity', 'margin']} show={!peekedAbout} duration={100}>
           <div className="peek-member-image peek-member-adrian unpeeked">
-            <img src={require("../assets/team/2.jpg")}/>
+            <img src={require("../assets/team/adrian-grey.png")}/>
           </div>
         </Transporter>
 

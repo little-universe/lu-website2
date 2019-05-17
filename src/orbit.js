@@ -22,7 +22,7 @@ function getStyles(node, properties) {
       styles[camelCase(property)] = c
     }
   })
-  console.warn('styles', node, properties, styles)
+  // console.warn('styles', node, properties, styles)
   return styles
 }
 
@@ -106,6 +106,7 @@ export class Transporter extends React.Component {
     console.warn('mounting', name, nodes[name])
     if (show && this.childRef.current) {
       if (nodes[name] && !guaranteedFirst) { // If entry already exists, transform from it
+        console.warn('previous entry exists', name)
         this.animateChild()
         this.animateGrowingPhantom()
       }
@@ -114,7 +115,7 @@ export class Transporter extends React.Component {
         styles: getStyles(ReactDOM.findDOMNode(this.childRef.current), properties),
         position: ReactDOM.findDOMNode(this.childRef.current).getBoundingClientRect()
       }
-      console.warn('setting dom node', name, nodes[name])
+      // console.warn('setting dom node', name, nodes[name])
     }
   }
   componentWillUnmount() {
@@ -124,6 +125,7 @@ export class Transporter extends React.Component {
         styles: getStyles(ReactDOM.findDOMNode(this.childRef.current), properties),
         position: ReactDOM.findDOMNode(this.childRef.current).getBoundingClientRect()
       }
+      console.warn('unmounting', name, nodes[name])
     }
     if (annihilate) {
       delete nodes[name]
@@ -219,7 +221,7 @@ export class Transporter extends React.Component {
       ...oldNode.styles,
       transform: `translate(${translateX}px, ${translateY}px) scale(${scaleX}, ${scaleY})`
     }
-    console.warn('animating child', name, oldNode, newNode, translateX, translateY, scaleX, scaleY)
+    // console.warn('animating child', name, oldNode, newNode, translateX, translateY, scaleX, scaleY)
     // debugger
     this.setState({ anim: 'showing' })
     tween({
@@ -260,7 +262,7 @@ export class Transporter extends React.Component {
           }
           this.setState({ anim: 'shown', style: {}, placeholderStyle: {}, currentNodeStyle: nodes[name] })
         } else {
-          console.warn('node disappeared', name, ReactDOM.findDOMNode(this.childRef.current))
+          // console.warn('node disappeared', name, ReactDOM.findDOMNode(this.childRef.current))
         }
       }
     })
@@ -277,7 +279,7 @@ export class Transporter extends React.Component {
       width: `${newPosition.width}px`
     }
     // console.warn('expected placeholder size', expectedSize)
-    console.warn('string styles', name, styles)
+    // console.warn('string styles', name, styles)
     tween({
       from: {
         height: `${newPosition.height}px`,
@@ -316,9 +318,9 @@ export class Transporter extends React.Component {
     })
 
     if (noTransition) {
-      console.warn('no transition', name)
+      // console.warn('no transition', name)
       if (show) return child
-      console.warn('not showing', name)
+      // console.warn('not showing', name)
       return null
     }
     const debug = false
