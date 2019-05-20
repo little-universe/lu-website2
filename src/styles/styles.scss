@@ -385,7 +385,10 @@ body {
 }
 
 .work-together {
-  height: 70vh;
+  padding: $buffer*30 $buffer*3;
+  @include breakpoint(xs) {
+    padding: $buffer*3 $buffer*2;
+  }
   text-align: center;
   h1 {
     font-weight: 300;
@@ -424,7 +427,11 @@ button {
 }
 
 .work-opener {
-  height: 80vh;
+  // height: 80vh;
+  padding: $buffer*30 0;
+  @include breakpoint(xs) {
+    padding: $buffer*3 0;
+  }
   .opener-list {
     ul {
       list-style-type: none;
@@ -447,7 +454,10 @@ button {
   }
 }
 .work-text-centered, .work-text-quote {
-  height: 80vh;
+  padding: $buffer*30 0;
+  @include breakpoint(xs) {
+    padding: $buffer*3 0;
+  }
   .work-text-author {
     color: $fontColorLightened;
     font-size: $fontSizeDesktop;
@@ -467,7 +477,10 @@ button {
 }
 
 .work-image-left, .work-image-right {
-  height: 100vh;
+  padding: $buffer*30 0;
+  @include breakpoint(xs) {
+    padding: $buffer*3 0;
+  }
   margin-bottom: $buffer*3;
   .work-image {
     background: $bgColorWorkCard;
@@ -483,7 +496,10 @@ button {
     }
   }
   .work-image-text {
-    height: 100vh;
+    padding: $buffer*30 0;
+    @include breakpoint(xs) {
+      padding: $buffer*3 0;
+    }
     align-items: center;
     display: flex;
     .work-image-headline {
@@ -499,7 +515,10 @@ button {
 }
 
 .work-text-metric {
-  height: 80vh;
+  padding: $buffer*30 0;
+  @include breakpoint(xs) {
+    padding: $buffer*3 0;
+  }
   text-align: center;
   .work-metric-number {
     font-size: $fontSizeHeadline;
@@ -513,7 +532,10 @@ button {
 
 
 .work-next-project {
-  height: 80vh;
+  padding: $buffer*30 $buffer*3;
+  @include breakpoint(xs) {
+    padding: $buffer*3 $buffer*2;
+  }
   width: 30vw;
   .work-next-link {
     text-decoration: none;
