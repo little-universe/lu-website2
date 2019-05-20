@@ -428,7 +428,7 @@ button {
 
 .work-opener {
   // height: 80vh;
-  padding: $buffer*30 0;
+  padding: $buffer*20 0;
   @include breakpoint(xs) {
     padding: $buffer*3 0;
   }
@@ -454,7 +454,7 @@ button {
   }
 }
 .work-text-centered, .work-text-quote {
-  padding: $buffer*30 0;
+  padding: $buffer*20 0;
   @include breakpoint(xs) {
     padding: $buffer*3 0;
   }
@@ -477,31 +477,43 @@ button {
 }
 
 .work-image-left, .work-image-right {
-  padding: $buffer*30 0;
+  height: 100vh;
   @include breakpoint(xs) {
+    padding: $buffer*20 0;
     padding: $buffer*3 0;
+    height: 100%;
   }
   margin-bottom: $buffer*3;
   .work-image {
-    background: $bgColorWorkCard;
     overflow: hidden;
-    width: 100%;
     height: 100vh;
+    width: 100%;
+    background: $bgColorWorkCard;
+    padding: $buffer*30 0;
     display: flex;
     justify-content: center;
+    align-items: center;
     position: relative;
+    @include breakpoint(xs) {
+      padding: $buffer*20 0;
+      padding: $buffer*3 0;
+      height: 50vh;
+
+    }
     img {
-      width: 100%;
+      width: 80%;
       position: absolute;
     }
   }
   .work-image-text {
-    padding: $buffer*30 0;
-    @include breakpoint(xs) {
-      padding: $buffer*3 0;
-    }
     align-items: center;
+    height: 100vh;
     display: flex;
+    @include breakpoint(xs) {
+      padding: $buffer*20 0;
+      padding: $buffer*3 0;
+      height: auto;
+    }
     .work-image-headline {
       font-size: $fontSizeLargeDesktop;
       line-height: $lineHeightDesktop;
@@ -515,10 +527,7 @@ button {
 }
 
 .work-text-metric {
-  padding: $buffer*30 0;
-  @include breakpoint(xs) {
-    padding: $buffer*3 0;
-  }
+  height: 60vh;
   text-align: center;
   .work-metric-number {
     font-size: $fontSizeHeadline;
@@ -582,7 +591,7 @@ button {
 
 .member-image-left, .member-image-right {
   margin-bottom: $buffer*3;
-   height: 90vh;
+  height: 90vh;
    .member-image {
      background: $bgColorWorkCard;
      overflow: hidden;
@@ -592,7 +601,7 @@ button {
      justify-content: center;
      position: relative;
      img {
-       width: 100%;
+       height: 100%;
        position: absolute;
      }
    }
