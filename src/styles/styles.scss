@@ -34,7 +34,7 @@ $fontSizeSmallDesktop: 14px;
 $fontSizeExtraSmall: 11px;
 $fontSizeExtraSmallDesktop: 12px;
 $fontSizeLarge: 24px;
-$fontSizeLargeDesktop: 22px;
+$fontSizeLargeDesktop: 28px;
 // $fontSizeLargeDesktop: 1.vw;
 $fontFamily: "Apercu", sans-serif;
 $fontWeightHeavy: 700;
@@ -541,9 +541,10 @@ button {
 
 
 .work-next-project {
-  padding: $buffer*30 $buffer*3;
+  height: 60vh;
   @include breakpoint(xs) {
-    padding: $buffer*3 $buffer*2;
+    padding: $buffer*30 $buffer*3;
+    // padding: $buffer*3 $buffer*2;
   }
   width: 30vw;
   .work-next-link {
@@ -584,31 +585,78 @@ button {
 //About
 
 .about-image {
-  margin: 0 auto;
-  height: 90vh;
-  background: $bgColorWorkCard;
+  overflow: hidden;
+  img {
+    padding: 0;
+    width: 100%;
+  }
 }
+
+.member-image-left {
+  .member-image {
+    display: flex;
+    justify-content: flex-start !important;
+  }
+}
+.member-image-right {
+  .member-image {
+    display: flex;
+    justify-content: flex-end !important;
+  }
+}
+
 
 .member-image-left, .member-image-right {
   margin-bottom: $buffer*3;
-  height: 90vh;
+  height: 100vh;
+  @include breakpoint(xs) {
+    padding: 0;
+    padding: 0;
+    height: 100%;
+  }
+  .d-none-xs {
+    @include breakpoint(xs) {
+      display: none !important;
+    }
+  }
+  .d-show-xs {
+    display: none !important;
+    @include breakpoint(xs) {
+      display: block !important;
+    }
+  }
    .member-image {
-     background: $bgColorWorkCard;
+     // background: $bgColorWorkCard;
      overflow: hidden;
      width: 100%;
-     height: 90vh;
+     height: 100vh;
      display: flex;
      justify-content: center;
+     align-items: center;
      position: relative;
+     @include breakpoint(xs) {
+       padding: 0;
+       height: 80vh;
+     }
      img {
-       height: 100%;
+       // width: 100%;
+       height: 100vh;
+       @include breakpoint(xs) {
+         padding: 0;
+         height: auto;
+         width: 100%;
+       }
        position: absolute;
      }
    }
    .member-image-text {
-     height: 90vh;
+     height: 100vh;
      align-items: center;
      display: flex;
+     @include breakpoint(xs) {
+       padding: 0;
+       height: auto;
+     }
      .member-image-name {
        font-size: $fontSizeLargeDesktop;
        line-height: $lineHeightDesktop;
@@ -628,11 +676,19 @@ button {
 }
 
 .about-member-history {
-  height: 100vh;
+  // height: 100vh;
+  padding: $buffer*20 0;
+  @include breakpoint(md) {
+    padding: $buffer*10 0;
+    height: 100%;
+  }
   .member-history-container {
-    background: $bgColorWorkCard;
-    width: 50vw;
-    height: 600px;
+    // width: 50vw;
+    display: flex;
+    justify-content: center;
+    .member-history-image {
+      height: 40vh;
+    }
   }
   .description {
     text-align: center;
