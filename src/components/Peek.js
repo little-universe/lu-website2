@@ -23,6 +23,7 @@ class Peek extends Component {
       {route !== 'work' && <>
         <Transporter name="caseStudy1" properties={['opacity', 'margin']} show={peekedWork} duration={250}>
           <div className="peek-case-study peek-case-study1 peeked">
+          <img src={require("../assets/projects/betterfin/betterfin-hero.png")}/>
           </div>
         </Transporter>
         <Transporter name="caseStudy1" properties={['opacity', 'margin']} show={!peekedWork} duration={250}>
@@ -49,58 +50,17 @@ class Peek extends Component {
         ${peekedAbout && "peek-about"}
       `}>
       {route !== 'about' && <>
-        <Transporter name="member-zach" properties={['opacity', 'margin']} show={peekedAbout} duration={250}>
-          <div className="peek-member-image peek-member-zach peeked">
-            <img src={require("../assets/team/1.jpg")} />
+        <Transporter name="member-team" properties={['opacity', 'margin']} show={peekedAbout} duration={250}>
+          <div className="peek-member-image peek-member-team peeked">
+            <img src={require("../assets/team/team.jpg")} />
           </div>
         </Transporter>
-        <Transporter name="member-zach" properties={['opacity', 'margin']} show={!peekedAbout} duration={250}>
-          <div className="peek-member-image peek-member-zach unpeeked">
-            <img src={require("../assets/team/1.jpg")} />
-          </div>
-        </Transporter>
-
-        <Transporter name="member-adrian" properties={['opacity', 'margin']} show={peekedAbout} duration={100}>
-          <div className="peek-member-image peek-member-adrian peeked">
-            <img src={require("../assets/team/adrian-grey.png")} />
-          </div>
-        </Transporter>
-        <Transporter name="member-adrian" properties={['opacity', 'margin']} show={!peekedAbout} duration={100}>
-          <div className="peek-member-image peek-member-adrian unpeeked">
-            <img src={require("../assets/team/adrian-grey.png")}/>
+        <Transporter name="member-team" properties={['opacity', 'margin']} show={!peekedAbout} duration={250}>
+          <div className="peek-member-image peek-member-team unpeeked">
+            <img src={require("../assets/team/team.jpg")} />
           </div>
         </Transporter>
 
-        <Transporter name="member-alana" properties={['opacity']} show={peekedAbout} duration={150}>
-          <div className="peek-member-image peek-member-alana peeked">
-            <img src={require("../assets/team/3.jpg")}/>
-          </div>
-        </Transporter>
-        <Transporter name="member-alana" properties={['opacity']} show={!peekedAbout} duration={150}>
-          <div className="peek-member-image peek-member-alana unpeeked">
-            <img src={require("../assets/team/3.jpg")}/>
-          </div>
-        </Transporter>
-        <Transporter name="member-eugene" properties={['opacity']} show={peekedAbout} duration={150}>
-          <div className="peek-member-image peek-member-eugene peeked">
-          <img src={require("../assets/team/4.jpg")}/>
-          </div>
-        </Transporter>
-        <Transporter name="member-eugene" properties={['opacity']} show={!peekedAbout} duration={150}>
-          <div className="peek-member-image peek-member-eugene unpeeked">
-          <img src={require("../assets/team/4.jpg")}/>
-          </div>
-        </Transporter>
-        <Transporter name="member-taylor" properties={['opacity']} show={peekedAbout} duration={150}>
-          <div className="peek-member-image peek-member-taylor peeked">
-          <img src={require("../assets/team/5.jpg")}/>
-          </div>
-        </Transporter>
-        <Transporter name="member-taylor" properties={['opacity']} show={!peekedAbout} duration={150}>
-          <div className="peek-member-image peek-member-taylor unpeeked">
-          <img src={require("../assets/team/5.jpg")}/>
-          </div>
-        </Transporter>
         </>}
       </div>
       <div className={`peek

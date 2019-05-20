@@ -6,8 +6,9 @@ import ApproachStatement from '../../components/ApproachStatement';
 import WorkTextCentered from '../../components/WorkTextCentered';
 import ApproachArticle from '../../components/ApproachArticle';
 import ApproachImageLeft from '../../components/ApproachImageLeft';
-import WorkImageRight from '../../components/WorkImageRight';
+import ApproachImageRight from '../../components/ApproachImageRight';
 import WorkTogether from '../../components/WorkTogether';
+import Fade from 'react-reveal/Fade';
 
 class Approach extends Component {
   state = {
@@ -22,11 +23,12 @@ class Approach extends Component {
     return (
       <>
         <Hero headline="Approach" subhead="Small Team. Full Stack. Big Impact."/>
+        <Fade bottom distance="30px" duration={500}>
           <ApproachStatement className="" title="We Love Product" paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."/>
           <ApproachImageLeft className="bottle" headline="We focus on results and work towards them." description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." image={require("../../assets/office/desk-cool.jpg")}/>
           <WorkTextCentered title="Process Meets Purpose" paragraph="We're experts in design and development processes which make the most of resources and keep an eye to deadlines. As a result, we make sure to lead with a flexible working attitude that is responsive to outcomes and goals. We won't mindlessly build features just to ship something, we break down big goals into milestones and work with purpose towards them."/>
           <ApproachStatement className="" title="We Focus On Results" paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."/>
-          <WorkImageRight className="bottle" headline="We focus on results and work towards them." description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." image={require("../../assets/office/brainstorm.jpg")}/>
+          <ApproachImageRight className="bottle" headline="We focus on results and work towards them." description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." image={require("../../assets/office/brainstorm.jpg")}/>
           <div className="articles-section">
             <ApproachArticle title={["Motion JS: A Context Preserving Animation Framework", ""]} paragraph="Motion JS is a React library which helps designers and developers retain user context in web applications and in other web domains, structuring keyframes and transitions around key objects and durations."/>
             <ApproachArticle title={["Wireframing Does More Than Develop Design", ""]} paragraph="Motion JS is a React library which helps designers and developers retain user context in web applications and in other web domains, structuring keyframes and transitions around key objects and durations."/>
@@ -34,6 +36,7 @@ class Approach extends Component {
           </div>
           <ApproachStatement className="" title="Make Meaningful Work" paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."/>
         <WorkTogether headline="Let's get to know each other"/>
+        </Fade>
       </>
     )
   }

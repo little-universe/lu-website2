@@ -12,7 +12,7 @@ class Nav extends Component {
     const { onHovered, onRouteChange, location } = this.props;
 
     return (
-      <div className="nav">
+      <div className="nav is-visible">
         <ul className="nav-list">
           <Link
             // onClick={() => onRouteChange('work')}

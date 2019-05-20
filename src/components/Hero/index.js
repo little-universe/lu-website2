@@ -7,14 +7,7 @@ export default class Hero extends Component {
         const { className, headline, subhead, explaination, bgImage, style } = this.props
         return (
             <div style={style}>
-                {bgImage, className &&
-                    <Grid className={`hero ${className}`} container justify="center" alignItems="center">
-                        <div className="container">
-                            <img className="hero-image" src={bgImage} />
-                        </div>
-                    </Grid>
-                }
-                {headline &&
+                {headline, subhead &&
                     <div classname="container">
                         <Grid className={`hero ${className}`} container justify="center" alignItems="center">
                             <Grid item md={12} xs={12}>
@@ -22,8 +15,18 @@ export default class Hero extends Component {
                                     <Fade bottom distance="5px" duration={250}>
                                         <h1 className="headline">{headline}</h1>
                                         <p className="subhead">{subhead}</p>
-
                                     </Fade>
+                                </div>
+                            </Grid>
+                        </Grid>
+                    </div>
+                }
+                {bgImage &&
+                    <div classname="container">
+                        <Grid className={`hero ${className}`} container justify="center" alignItems="center">
+                            <Grid item md={12} xs={12}>
+                                <div className="container">
+                                <img className="hero-image" src={bgImage}/>
                                 </div>
                             </Grid>
                         </Grid>

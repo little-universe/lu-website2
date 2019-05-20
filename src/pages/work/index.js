@@ -23,7 +23,7 @@ class Work extends Component {
         <Hero headline="Our Work" subhead="We make a difference for our clients"/>
         <Link to="../betterfin" className="work-card-link">
           <Transporter name="caseStudy1" show={true} duration={750} unstableOnUnmount>
-              <WorkCard className="betterfin-card" projectName="Betterfin" projectType="Digital Product" projectIndustry="Fintech"/>
+              <WorkCard bgImage={require("../../assets/projects/betterfin/betterfin-hero.png")} className="betterfin-card" projectName="Betterfin" projectType="Digital Product" projectIndustry="Fintech"/>
           </Transporter>
         </Link>
         <Link to="../strive" className="work-card-link">

@@ -8,14 +8,7 @@ export default class WorkCard extends Component {
         // console.warn(this.props)
         return (
             <div className="content-container" style={style}>
-                {bgImage &&
-                    <Grid className={`work-card ${className}`} container justify="center" alignItems="center">
-                        <div className="container">
-                            <img className="work-card-image" src={bgImage} />
-                        </div>
-                    </Grid>
-                }
-                {projectName &&
+                {bgImage, projectName &&
                     <div classname="container">
                         <Grid className={`work-card ${className}`} container alignItems="flex-end">
                             <Grid item md={12} xs={12}>
@@ -26,6 +19,7 @@ export default class WorkCard extends Component {
                                           <span className="project-type">{projectType} • {projectIndustry}</span>
                                         </p>
                                 </div>}
+                                <img className="work-card-image" src={bgImage} />
                             </Grid>
                         </Grid>
                     </div>
