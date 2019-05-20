@@ -12,7 +12,7 @@ export default class Hero extends Component {
                         <Grid className={`hero ${className}`} container justify="center" alignItems="center">
                             <Grid item md={12} xs={12}>
                                 <div className="container">
-                                    <Fade bottom distance="5px" duration={250}>
+                                    <Fade bottom distance="10px" duration={500}>
                                         <h1 className="headline">{headline}</h1>
                                         <p className="subhead">{subhead}</p>
                                     </Fade>

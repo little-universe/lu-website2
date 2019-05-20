@@ -11,7 +11,7 @@ export default class ApproachImageRight extends Component {
                     <div classname="container">
                         <Grid className={`approach-image-right ${className}`} container justify="center" alignItems="center">
                           <Grid container justify="center" alignItems="flex-start">
-                            <Grid item md={7} xs={12} className="approach-image-text" justify="center" alignItems="center">
+                            <Grid item md={6} xs={12} className="approach-image-text" justify="center" alignItems="center">
                               <Grid container justify="center">
                                 <Grid item md={6} xs={12} className="image-text">
                                   <p className="approach-image-headline">{headline}</p>
@@ -19,7 +19,7 @@ export default class ApproachImageRight extends Component {
                                 </Grid>
                               </Grid>
                             </Grid>
-                            <Grid item md={5} xs={12} className="approach-image"><img src={image} /></Grid>
+                            <Grid item md={6} xs={12} className="approach-image"><img src={image} /></Grid>
                           </Grid>
                         </Grid>
                     </div>

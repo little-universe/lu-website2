@@ -15,6 +15,7 @@ import WorkTogether from '../../components/WorkTogether';
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import { Transporter } from '../../orbit'
 import Grid from '@material-ui/core/Grid';
+import Fade from 'react-reveal/Fade';
 
 class Betterfin extends Component {
   state = {
@@ -33,11 +34,12 @@ class Betterfin extends Component {
               <Hero bgImage={require("../../assets/projects/betterfin/betterfin-hero.png")} className="project-hero betterfin-hero"/>
             </div>
           </Transporter>
+          <Fade bottom distance="30px" duration={500}>
           <WorkTextOpener list={["Digital Product", "UX/UI", "User Testing", "Product Strategy"]} paragraph="Betterfin is a service for business owners to get educated on small business lending and navigate commercial products with confidence. They provide transparency into lending through data analytics to help owners secure business financing they understand."/>
           <WorkBigImage bgImage={require("../../assets/projects/betterfin/betterfin-hero.png")} className="workImage"/>
           <WorkTextCentered title="Building Trust" paragraph="Betterfin had built complex tech. They were frustrated that it was not packaged into a product that could build trust with their customers, satisfy their investors, and - of course - make their team proud. We worked closely with them to create a powerful, clean and polished product."/>
           <WorkImageLeft image={require("../../assets/projects/betterfin/betterfin-1.png")} headline="Hello Small Business!" description="Betterfin exchanges data for value, and their onboarding flow captures that data in a clean and efficient manner."/>
-          <WorkTextQuote author="Eric G., Betterfin CEO" paragraph="Little Universe is an absolute pleasure to work with. Every time I threw a challenge a them, they came back with an opportunity and a plan to execute."/>
+          <WorkTextOpener list={["Eric G", "Betterfin CEO"]} paragraph="Little Universe is an absolute pleasure to work with. Every time I threw a challenge a them, they came back with an opportunity and a plan to execute."/>
           <WorkImageRight image={require("../../assets/projects/betterfin/betterfin-1.png")} headline="Hello Small Business!" description="Betterfin exchanges data for value, and their onboarding flow captures that data in a clean and efficient manner."/>
           <WorkTextMetric metricNumber="2x" metricName="Increased Conversion"/>
           <WorkBigImage bgImage={require("../../assets/projects/betterfin/betterfin-hero.png")} className="workImage"/>
@@ -47,6 +49,7 @@ class Betterfin extends Component {
             </Transporter>
           </Grid>
         <WorkTogether headline="Let's get to know each other"/>
+        </Fade>
       </>
     )
   }

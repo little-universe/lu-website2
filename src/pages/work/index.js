@@ -7,6 +7,7 @@ import WorkTogether from '../../components/WorkTogether';
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import { Transporter } from '../../orbit'
 import {Link} from "react-router-dom";
+import Fade from 'react-reveal/Fade';
 
 class Work extends Component {
   state = {
@@ -36,6 +37,7 @@ class Work extends Component {
             <WorkCard projectName="Motivote" projectType="Digital Product" projectIndustry="Advocacy Tech"/>
           </Transporter>
         </Link>
+        <Fade bottom distance="30px" duration={500}>
         <Link to="../votecrew" className="work-card-link">
           <WorkCard projectName="Vote Crew" projectType="Digital Product" projectIndustry="Advocacy Tech"/>
         </Link>
@@ -47,6 +49,7 @@ class Work extends Component {
         </Link>
 
         <WorkTogether headline="Let's get to know each other"/>
+        </Fade>
       </>
     )
   }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Link} from "react-router-dom";
 import Grid from '@material-ui/core/Grid';
+import Fade from 'react-reveal/Fade';
 
 class Nav extends Component {
   state = {
@@ -12,6 +13,7 @@ class Nav extends Component {
     const { onHovered, onRouteChange, location } = this.props;
 
     return (
+      <Fade bottom distance="10px" duration={1000} delay={250}>
       <div className="nav is-visible">
         <ul className="nav-list">
           <Link
@@ -40,6 +42,7 @@ class Nav extends Component {
           </Link>
         </ul>
       </div>
+      </Fade>
     )
   }
 }
