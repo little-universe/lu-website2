@@ -29,7 +29,7 @@ class Strive extends Component {
     return (
       <>
       <Transporter name="caseStudy2" show={true} duration={250} properties={[]}>
-        <Hero className="project-hero strive-hero"/>
+        <Hero headline="strive" bgImage={require("../../assets/projects/strive/strive-hero.png")} className="project-hero strive-hero"/>
       </Transporter>
       <Fade bottom distance="30px" duration={500}>
           <WorkTextOpener list={["Digital Product", "UX/UI"]} paragraph="Strive Digital is a service for business owners to get educated on small business lending and navigate commercial products with confidence. They provide transparency into lending through data analytics to help owners secure business financing they understand."/>

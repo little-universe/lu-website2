@@ -12,8 +12,10 @@ import WorkTextQuote from '../../components/WorkTextQuote';
 import WorkTextMetric from '../../components/WorkTextMetric';
 import WorkNextProject from '../../components/WorkNextProject';
 import WorkTogether from '../../components/WorkTogether';
-
-class Betterfin extends Component {
+import { CSSTransition, TransitionGroup } from 'react-transition-group'
+import { Transporter } from '../../orbit'
+import Fade from 'react-reveal/Fade';
+class Motivote extends Component {
   state = {
     hovered: undefined,
     route: 'motivote'
@@ -25,9 +27,13 @@ class Betterfin extends Component {
 
     return (
       <>
-        <Hero className="betterfin-hero"/>
-        <div className="content-container">
-          <WorkTextOpener list={["Digital Product", "UX/UI"]} paragraph="Betterfin is a service for business owners to get educated on small business lending and navigate commercial products with confidence. They provide transparency into lending through data analytics to help owners secure business financing they understand."/>
+        <Transporter name="caseStudy3" show={true} duration={500} properties={['margin']}>
+          <div style={{ width: '100%', minHeight: '1vh' }}>
+            <Hero headline="motivote" bgImage={require("../../assets/projects/motivote/motivote-hero.png")} className="project-hero motivote-hero"/>
+          </div>
+        </Transporter>
+        <Fade bottom distance="30px" duration={500}>
+          <WorkTextOpener list={["Digital Product", "UX/UI", "Branding", "Strategy"]} paragraph="Betterfin is a service for business owners to get educated on small business lending and navigate commercial products with confidence. They provide transparency into lending through data analytics to help owners secure business financing they understand."/>
           <WorkBigImage className="workImage"/>
           <WorkTextCentered title="Building Trust" paragraph="Betterfin had built complex tech. They were frustrated that it was not packaged into a product that could build trust with their customers, satisfy their investors, and - of course - make their team proud. We worked closely with them to create a powerful, clean and polished product."/>
           <WorkImageLeft image="" headline="Hello Small Business!" description="Betterfin exchanges data for value, and their onboarding flow captures that data in a clean and efficient manner."/>
@@ -36,11 +42,11 @@ class Betterfin extends Component {
           <WorkTextMetric metricNumber="2x" metricName="Increased Conversion"/>
           <WorkBigImage className="workImage"/>
           <WorkNextProject className="next-strive" projectName="Strive Digital" projectType="Digital Product" projectIndustry="Advocacy Tech"/>
-        </div>
         <WorkTogether headline="Let's get to know each other"/>
+        </Fade>
       </>
     )
   }
 }
 
-export default Betterfin;
+export default Motivote;

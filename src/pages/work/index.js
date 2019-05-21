@@ -29,12 +29,12 @@ class Work extends Component {
         </Link>
         <Link to="../strive" className="work-card-link">
           <Transporter name="caseStudy2" show={true} duration={500} properties={['margin']}>
-            <WorkCard projectName="Strive Digital" projectType="Digital Product" projectIndustry="Advocacy Tech"/>
+            <WorkCard bgImage={require("../../assets/projects/strive/strive-hero.png")} className="strive-card" projectName="Strive Digital" projectType="Digital Product" projectIndustry="Advocacy Tech"/>
           </Transporter>
         </Link>
         <Link to="../motivote" className="work-card-link">
           <Transporter name="caseStudy3" show={true} duration={250} properties={['margin']}>
-            <WorkCard projectName="Motivote" projectType="Digital Product" projectIndustry="Advocacy Tech"/>
+            <WorkCard bgImage={require("../../assets/projects/motivote/motivote-hero.png")} className="motivote-card" projectName="Motivote" projectType="Digital Product" projectIndustry="Advocacy Tech"/>
           </Transporter>
         </Link>
         <Fade bottom distance="30px" duration={500}>

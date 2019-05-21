@@ -32,14 +32,18 @@ class Peek extends Component {
         </Transporter>
 
         <Transporter name="caseStudy2" properties={['opacity']} show={peekedWork} duration={100}>
-          <div className="peek-case-study peek-case-study2 peeked" />
+          <div className="peek-case-study peek-case-study2 peeked">
+          <img src={require("../assets/projects/strive/strive-hero.png")}/>
+          </div>
         </Transporter>
         <Transporter name="caseStudy2" properties={['opacity']} show={!peekedWork} duration={100}>
           <div className="peek-case-study peek-case-study2 unpeeked" />
         </Transporter>
 
         <Transporter name="caseStudy3" properties={['opacity']} show={peekedWork} duration={150}>
-          <div className="peek-case-study peek-case-study3 peeked" />
+          <div className="peek-case-study peek-case-study3 peeked">
+          <img src={require("../assets/projects/motivote/motivote-hero.png")}/>
+          </div>
         </Transporter>
         <Transporter name="caseStudy3" properties={['opacity']} show={!peekedWork} duration={150}>
           <div className="peek-case-study peek-case-study3 unpeeked" />
@@ -52,12 +56,12 @@ class Peek extends Component {
       {route !== 'about' && <>
         <Transporter name="member-team" properties={['opacity', 'margin']} show={peekedAbout} duration={250}>
           <div className="peek-member-image peek-member-team peeked">
-            <img src={require("../assets/team/team.jpg")} />
+            <img src={require("../assets/team/team-1.jpg")} />
           </div>
         </Transporter>
         <Transporter name="member-team" properties={['opacity', 'margin']} show={!peekedAbout} duration={250}>
           <div className="peek-member-image peek-member-team unpeeked">
-            <img src={require("../assets/team/team.jpg")} />
+            <img src={require("../assets/team/team-1.jpg")} />
           </div>
         </Transporter>
 

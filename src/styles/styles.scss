@@ -162,24 +162,26 @@ body {
 // PEEK STYLES
 
 .peek-case-study {
-  width: 40vw;
-  height: 30vw;
-  background: $bgColorWorkCard;
+  width: 30vw;
+  height: 20vw;
   position: fixed;
   opacity: 0;
   &.peek-case-study1 {
     left: 40vw;
-    top: -20vw;
+    top: -5vw;
+    background: $bgColorWorkCard;
   }
   &.peek-case-study2 {
+    background: #FFF4FA;
     position: fixed;
     top: 50%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
   }
   &.peek-case-study3 {
+    background: #F3F4EF;
     left: 20vw;
-    bottom: -20vw;
+    bottom: -5vw;
   }
 }
 .peek-member-image {
@@ -263,6 +265,13 @@ body {
   }
     .peek-case-study.peeked {
       opacity: 1;
+      img {
+        position: absolute;
+        height: 100%;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+      }
       &.peek-case-study1 {
         -webkit-transform: translateX($buffer) translateY($buffer);
       }
@@ -271,13 +280,6 @@ body {
         top: 50%;
         left: 50%;
         -webkit-transform: translate(-50%, -50%);
-        img {
-          position: absolute;
-          height: 100%;
-          top: 50%;
-          left: 50%;
-          -webkit-transform: translate(-50%, -50%);
-        }
       }
       &.peek-case-study3 {
         -webkit-transform: translateX($buffer) translateY($buffer);
@@ -372,12 +374,18 @@ body {
   }
   &.project-hero {
     background: $bgColorWorkCard;
+    &.motivote-hero {
+      background: #F3F4EF;
+    }
+    &.strive-hero {
+      background: #FFF4FA;
+    }
     .headline {
       display: none;
     }
     img.hero-image {
       position: absolute;
-      height: 100%;
+      width: 100%;
       top: 50%;
       left: 50%;
       -webkit-transform: translate(-50%, -50%);
@@ -412,9 +420,15 @@ body {
   line-height: $lineHeightDesktop;
   position: relative;
   overflow: hidden;
+  &.motivote-card {
+    background: #F3F4EF;
+  }
+  &.strive-card {
+    background: #FFF4FA;
+  }
   .work-card-image, .work-big-image {
     position: absolute;
-    height: 100%;
+    width: 100%;
     top: 50%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
