@@ -45,7 +45,7 @@ class Betterfin extends Component {
           <WorkBigImage bgImage={require("../../assets/projects/betterfin/betterfin-hero.png")} className="workImage"/>
           <Grid className={`work-next-project`} container justify="center" alignItems="center">
             <Transporter name="caseStudy2" show={true} duration={500} properties={[]} unstableOnUnmount noTransition>
-              <WorkNextProject className="next-strive" projectName="Strive Digital" projectType="Digital Product" projectIndustry="Advocacy Tech" destination="../strive"/>
+              <WorkNextProject image={require("../../assets/projects/strive/strive-hero.png")}className="next-strive" projectName="Strive Digital" projectType="Digital Product" projectIndustry="Advocacy Tech" destination="../strive"/>
             </Transporter>
           </Grid>
         <WorkTogether headline="Let's get to know each other"/>

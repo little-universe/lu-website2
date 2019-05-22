@@ -10,7 +10,7 @@ export default class WorkNextProject extends Component {
             <Grid item md={5} xs={12} className="image-container" style={style}>
               <Link to={destination} className="work-next-link">
                 <div className="next-project-label">Next Project</div>
-                <div className="next-project-image" />
+                <div className="next-project-image"><img src={image}/></div>
                 <p className="project-details">
                   <span className="project-name">{projectName}</span><br/>
                   <span className="project-type">{projectType} • {projectIndustry}</span>
