@@ -426,9 +426,23 @@ body {
   &.strive-card {
     background: #FFF4FA;
   }
-  .work-card-image, .work-big-image {
+  &.workImageFill {
+    .work-big-image {
+    max-width: none;
+    width: 100% !important;
+    position: absolute;
+    }
+  }
+  .work-card-image {
     position: absolute;
     width: 100%;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+  }
+  .work-big-image {
+    position: absolute;
+    max-width: 800px;
     top: 50%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);

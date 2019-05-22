@@ -27,7 +27,7 @@ class Motivote extends Component {
 
     return (
       <>
-        <Transporter name="caseStudy3" show={true} duration={500} properties={['margin']}>
+        <Transporter name="caseStudy3" show={true} duration={500} properties={[]}>
           <div style={{ width: '100%', minHeight: '1vh' }}>
             <Hero headline="motivote" bgImage={require("../../assets/projects/motivote/motivote-hero.png")} className="project-hero motivote-hero"/>
           </div>
