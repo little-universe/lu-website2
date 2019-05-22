@@ -43,7 +43,7 @@ class Motivote extends Component {
           <WorkBigImage bgImage={require("../../assets/projects/motivote/motivote-3.png")} className="workImage"/>
           <Grid className={`work-next-project`} container justify="center" alignItems="center">
             <Transporter name="caseStudy4" show={true} duration={500} properties={[]} unstableOnUnmount noTransition>
-              <WorkNextProject image={require("../../assets/projects/strive/strive-hero.png")} className="next-votecrew" projectName="Vote Crew" projectType="Digital Product" projectIndustry="Advocacy Tech" destination="../votecrew"/>
+              <WorkNextProject image={require("../../assets/projects/votecrew/votecrew-hero.png")} className="next-votecrew" projectName="Vote Crew" projectType="Digital Product" projectIndustry="Advocacy Tech" destination="../votecrew"/>
             </Transporter>
           </Grid>
         <WorkTogether headline="Let's get to know each other"/>

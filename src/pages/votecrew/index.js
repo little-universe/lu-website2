@@ -43,7 +43,7 @@ class Votecrew extends Component {
             <WorkBigImage bgImage={require("../../assets/projects/votecrew/votecrew-4.png")} className="workImage"/>
             <Grid className={`work-next-project`} container justify="center" alignItems="center">
               <Transporter name="caseStudy6" show={true} duration={500} properties={[]} unstableOnUnmount noTransition>
-                <WorkNextProject image={require("../../assets/projects/strive/strive-hero.png")} className="next-farmigo" projectName="Farmigo" projectType="Digital Product" projectIndustry="Food" destination="../farmigo"/>
+                <WorkNextProject image={require("../../assets/projects/farmigo/farmigo-hero.png")} className="next-farmigo" projectName="Farmigo" projectType="Digital Product" projectIndustry="Food" destination="../farmigo"/>
               </Transporter>
             </Grid>
           <WorkTogether headline="Let's get to know each other"/>
