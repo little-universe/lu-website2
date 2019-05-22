@@ -39,9 +39,8 @@ class Betterfin extends Component {
           <WorkBigImage bgImage={require("../../assets/projects/betterfin/betterfin-5.png")} className="workImageFill"/>
           <WorkTextCentered title="Building Trust" paragraph="Betterfin had built complex tech. They were frustrated that it was not packaged into a product that could build trust with their customers, satisfy their investors, and - of course - make their team proud. We worked closely with them to create a powerful, clean and polished product."/>
           <WorkImageLeft image={require("../../assets/projects/betterfin/betterfin-1.png")} headline="Hello Small Business" description="Betterfin exchanges data for value, and their onboarding flow captures that data in a clean and efficient manner."/>
-          <WorkTextOpener list={["Eric G", "Betterfin CEO"]} paragraph="Little Universe is an absolute pleasure to work with. Every time I threw a challenge a them, they came back with an opportunity and a plan to execute."/>
+          <WorkTextQuote author="Eric G., Betterfin CEO" paragraph="Little Universe is an absolute pleasure to work with. Every time I threw a challenge a them, they came back with an opportunity and a plan to execute."/>
           <WorkImageRight image={require("../../assets/projects/betterfin/betterfin-3.png")} headline="Flow Optimization" description="Betterfin offers a suite of analytical tools for small business, often on aspects of a business some small business owners may not have experience with. We designed flows that accomodated Betterfin's data requirements and kept things simple for the end user."/>
-          <WorkTextMetric metricNumber="2x" metricName="Increased Conversion"/>
           <WorkBigImage bgImage={require("../../assets/projects/betterfin/betterfin-4.png")} className="workImage"/>
           <Grid className={`work-next-project`} container justify="center" alignItems="center">
             <Transporter name="caseStudy2" show={true} duration={500} properties={[]} unstableOnUnmount noTransition>

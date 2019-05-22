@@ -39,7 +39,7 @@ class Work extends Component {
         </Link>
         <Fade bottom distance="30px" duration={500}>
         <Link to="../votecrew" className="work-card-link">
-          <WorkCard projectName="Vote Crew" projectType="Digital Product" projectIndustry="Advocacy Tech"/>
+          <WorkCard bgImage={require("../../assets/projects/votecrew/votecrew-hero.png")} projectName="Vote Crew" projectType="Digital Product" projectIndustry="Advocacy Tech"/>
         </Link>
         <Link to="../dv01" className="work-card-link">
           <WorkCard projectName="Dv01" projectType="Digital Product" projectIndustry="Fintech"/>
