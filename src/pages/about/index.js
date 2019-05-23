@@ -41,7 +41,6 @@ class About extends Component {
         <AboutMemberLeft className="taylor-member" name="Taylor Zanke" title="Creative Director" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." interests={["this", "that"]} image={require("../../assets/team/taylor.png")}/>
         <AboutMemberHistory bgImage={require("../../assets/team/eugene-alana.jpg")} className="eugene-alana" description="Eugene and Alana have built 12 products together."/>
         <AboutMemberHistory bgImage={require("../../assets/team/taylor-adrian.jpg")} className="taylor-adrian" description="Taylor and Adrian have designed 1,000 user flows together."/>
-        <WorkTextOpener className="workImage" list={["260 Ainslie Street"]} paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."/>
         <WorkTogether headline="Let's get to know each other"/>
         </Fade>
       </>
