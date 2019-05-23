@@ -9,7 +9,6 @@ class Peek extends Component {
 
   render() {
     const { peekPage, location } = this.props;
-    console.warn(this.props);
     const route = location.pathname;
     const peekedWork = peekPage == "work" && !['/work'].includes(route)
     const peekedAbout = peekPage == "about" && !['/about'].includes(route)
