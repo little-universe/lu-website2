@@ -45,7 +45,7 @@ class Work extends Component {
           <WorkCard projectName="Dv01" projectType="Digital Product" projectIndustry="Fintech"/>
         </Link>
         <Link to="../farmigo" className="work-card-link">
-          <WorkCard projectName="Farmigo" projectType="Digital Product" projectIndustry="Food"/>
+          <WorkCard bgImage={require("../../assets/projects/farmigo/farmigo-hero.png")} projectName="Farmigo" projectType="Digital Product" projectIndustry="Food"/>
         </Link>
 
         <WorkTogether headline="Let's get to know each other"/>

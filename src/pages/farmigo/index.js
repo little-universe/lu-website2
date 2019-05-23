@@ -43,8 +43,8 @@ class Farmigo extends Component {
             <WorkImageRight image={require("../../assets/projects/farmigo/farmigo-3.png")} headline="Leaderboard Metrics" description="Typically a leaderboard is organized as a function of points, but with Vote Crew the leaderboard was organized based on actions taken by the users. Rather than abstracting behavior into points, this context called for a more direct approach. "/>
             <WorkBigImage bgImage={require("../../assets/projects/farmigo/farmigo-4.png")} className="workImage"/>
             <Grid className={`work-next-project`} container justify="center" alignItems="center">
-              <Transporter name="caseStudy6" show={true} duration={500} properties={[]} unstableOnUnmount noTransition>
-                <WorkNextProject image={require("../../assets/projects/strive/strive-hero.png")} className="next-farmigo" projectName="Farmigo" projectType="Digital Product" projectIndustry="Food" destination="../farmigo"/>
+              <Transporter name="caseStudy1" show={true} duration={500} properties={[]} unstableOnUnmount noTransition>
+                <WorkNextProject image={require("../../assets/projects/betterfin/betterfin-hero.png")} className="next-betterfin" projectName="Betterfin" projectType="Digital Product" projectIndustry="Food" destination="../betterfin"/>
               </Transporter>
             </Grid>
           <WorkTogether headline="Let's get to know each other"/>
