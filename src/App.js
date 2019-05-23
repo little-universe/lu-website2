@@ -44,7 +44,8 @@ class ScrollToTop extends Component {
     const { history } = props
      this.unlisten = history.listen((location, action) => {
        // Scroll window to top
-       window.requestAnimationFrame( () => window.scrollTo(0, 0))
+       window.scrollTo(0, 0)
+       // setTimeout(() => window.scrollTo(0, 0), 10)
      })
   }
    componentWillUnmount() {

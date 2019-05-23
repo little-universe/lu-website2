@@ -60,7 +60,7 @@ class Peek extends Component {
         </Transporter>
         <Transporter name="member-team" properties={['opacity', 'margin']} show={!peekedAbout && !['/about'].includes(route)} duration={250}>
           <div className="peek-member-image peek-member-team unpeeked">
-            
+
           </div>
         </Transporter>
 
