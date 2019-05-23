@@ -172,14 +172,14 @@ body {
     background: $bgColorWorkCard;
   }
   &.peek-case-study2 {
-    background: #FFF4FA;
+    background: $bgColorWorkCard;
     position: fixed;
     top: 50%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
   }
   &.peek-case-study3 {
-    background: #F3F4EF;
+    background: $bgColorWorkCard;
     left: 20vw;
     bottom: -5vw;
   }
@@ -375,10 +375,10 @@ body {
   &.project-hero {
     background: $bgColorWorkCard;
     &.motivote-hero {
-      background: #F3F4EF;
+      // background: #F3F4EF;
     }
     &.strive-hero {
-      background: #FFF4FA;
+      // background: #FFF4FA;
     }
     .headline {
       display: none;
@@ -421,14 +421,15 @@ body {
   position: relative;
   overflow: hidden;
   &.motivote-card {
-    background: #F3F4EF;
+    // background: #F3F4EF;
   }
   &.strive-card {
-    background: #FFF4FA;
+    // background: #FFF4FA;
   }
   &.workImageFill {
     .work-big-image {
     max-width: none;
+    max-height: none;
     width: 100% !important;
     position: absolute;
     }
@@ -443,6 +444,7 @@ body {
   .work-big-image {
     position: absolute;
     max-width: 60vw;
+    max-height: 70%;
     top: 50%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
@@ -451,8 +453,8 @@ body {
     margin-bottom: 0;
     z-index: $peekZIndex;
     position: absolute;
-    bottom: $buffer*3;
-    left: $buffer*3;
+    bottom: $buffer*6;
+    left: $buffer*6;
     .project-name {
       color: $fontColor;
     }

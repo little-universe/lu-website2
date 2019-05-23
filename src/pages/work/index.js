@@ -39,13 +39,19 @@ class Work extends Component {
         </Link>
         <Fade bottom distance="30px" duration={500}>
         <Link to="../votecrew" className="work-card-link">
+        <Transporter name="caseStudy4" show={true} duration={250} properties={['margin']}>
           <WorkCard bgImage={require("../../assets/projects/votecrew/votecrew-hero.png")} projectName="Vote Crew" projectType="Digital Product" projectIndustry="Advocacy Tech"/>
-        </Link>
-        <Link to="../dv01" className="work-card-link">
-          <WorkCard projectName="Dv01" projectType="Digital Product" projectIndustry="Fintech"/>
+        </Transporter>
         </Link>
         <Link to="../farmigo" className="work-card-link">
-          <WorkCard bgImage={require("../../assets/projects/farmigo/farmigo-hero.png")} projectName="Farmigo" projectType="Digital Product" projectIndustry="Food"/>
+          <Transporter name="caseStudy5" show={true} duration={250} properties={['margin']}>
+            <WorkCard bgImage={require("../../assets/projects/farmigo/farmigo-hero.png")} projectName="Farmigo" projectType="Digital Product" projectIndustry="Food"/>
+          </Transporter>
+        </Link>
+        <Link to="../instructrr" className="work-card-link">
+          <Transporter name="caseStudy6" show={true} duration={250} properties={['margin']}>
+            <WorkCard bgImage={require("../../assets/projects/instructrr/instructrr-hero.png")} projectName="Instructrr" projectType="Digital Product" projectIndustry="Fitness"/>
+          </Transporter>
         </Link>
 
         <WorkTogether headline="Let's get to know each other"/>

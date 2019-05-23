@@ -9,7 +9,7 @@ import Strive from './pages/strive';
 import Motivote from './pages/motivote';
 import VoteCrew from './pages/votecrew';
 import Farmigo from './pages/farmigo';
-
+import Instructrr from './pages/instructrr';
 import About from './pages/about';
 import Approach from './pages/approach';
 import Logo from './components/Logo';
@@ -81,6 +81,7 @@ class App extends Component {
           <Route path="/motivote" component={Motivote}/>
           <Route path="/votecrew" component={VoteCrew}/>
           <Route path="/farmigo" component={Farmigo}/>
+          <Route path="/instructrr" component={Instructrr}/>
           </RouterLens>
           <RouterNav
             onHovered={this.updateHovered}
