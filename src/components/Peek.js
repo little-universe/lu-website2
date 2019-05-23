@@ -58,7 +58,7 @@ class Peek extends Component {
             <img src={require("../assets/team/team-1.jpg")} />
           </div>
         </Transporter>
-        <Transporter name="member-team" properties={['opacity', 'margin']} show={!peekedAbout} duration={250}>
+        <Transporter name="member-team" properties={['opacity', 'margin']} show={!peekedAbout && !['/about'].includes(route)} duration={250}>
           <div className="peek-member-image peek-member-team unpeeked">
             <img src={require("../assets/team/team-1.jpg")} />
           </div>
