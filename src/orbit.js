@@ -171,7 +171,7 @@ export class Transporter extends React.Component {
   }
   componentDidUpdate(prevProps, prevState, snapshot) {
     const { anim } = this.state
-    const { show, name, children, properties = relevantProps } = this.props
+    const { show, name, children, properties = relevantProps, guaranteedFirst } = this.props
     // if (['showing', 'hiding'].includes(anim)) {
     //   console.warn('already animating', name, anim)
     //   return
@@ -183,7 +183,7 @@ export class Transporter extends React.Component {
       }
       if (show) {
         // console.warn('showing', show, nodes[name], this.state.currentNodeStyle)
-        if (nodes[name] && ReactDOM.findDOMNode(this.childRef && this.childRef.current)) {
+        if (nodes[name] && ReactDOM.findDOMNode(this.childRef && this.childRef.current) && !guaranteedFirst ) {
           // console.warn('prev node exists, animating', name, nodes[name], this.childRef)
           this.animateChild()
           this.animateGrowingPhantom()

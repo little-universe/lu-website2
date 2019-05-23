@@ -184,40 +184,25 @@ body {
     bottom: -5vw;
   }
 }
+
 .peek-member-image {
-  width: 60vw;
-  // background: #ccc;
-  position: fixed;
+  // width: 60vw;
+  // position: fixed;
   overflow: hidden;
   opacity: 0;
-  img {
-    height: 100%;
-  }
-  &.peek-member-zach{
-    top: -5vw;
-    left: 20vw;
-  }
-  &.peek-member-adrian{
-    top: -5vw;
-    right: 25vw;
-  }
-  &.peek-member-alana{
-    bottom: 10vw;
-    right: -5vw;
-  }
-  &.peek-member-eugene{
-    bottom: -10vw;
-    right: 30vw;
-  }
-  &.peek-member-taylor{
-    top: 25vw;
-    left: -5vw;
-  }
   &.peek-member-team {
     position: fixed;
     top: 50%;
     left: 50%;
     -webkit-transform: translate(-50%, -52%);
+    background-image: url("../../src/assets/team/team-1.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    width: 80vh;
+    img {
+      height: 100%;
+    }
   }
 }
 
@@ -260,7 +245,7 @@ body {
   .peeked, .unpeeked {
     overflow: hidden;
     img {
-      width: 100%;
+      // width: 100%;
     }
   }
     .peek-case-study.peeked {
@@ -290,26 +275,19 @@ body {
       overflow: hidden;
       // display: flex;
       // justify-content: center;
-      &.peek-member-zach{
-        -webkit-transform: translateX($buffer) translateY($buffer);
-      }
-      &.peek-member-adrian{
-        -webkit-transform: translateX(-$buffer) translateY($buffer);
-      }
-      &.peek-member-alana{
-        -webkit-transform: translateX(-$buffer) translateY(-$buffer);
-      }
-      &.peek-member-eugene{
-        -webkit-transform: translateX($buffer) translateY(-$buffer);
-      }
-      &.peek-member-taylor{
-        -webkit-transform: translateX($buffer) translateY($buffer);
-      }
       &.peek-member-team{
         position: fixed;
         top: 50%;
         left: 50%;
         -webkit-transform: translate(-50%, -50%);
+        background-image: url("../../src/assets/team/team-1.jpg");
+        background-size: cover;
+        background-position: center;
+        height: 60vh;
+        width: 80vh;
+        img {
+          width: 100%;
+        }
       }
     }
     .peek-approach-value.peeked {

@@ -55,12 +55,12 @@ class Peek extends Component {
       {route !== 'about' && <>
         <Transporter name="member-team" properties={['opacity', 'margin']} show={peekedAbout} duration={250}>
           <div className="peek-member-image peek-member-team peeked">
-            <img src={require("../assets/team/team-1.jpg")} />
+
           </div>
         </Transporter>
         <Transporter name="member-team" properties={['opacity', 'margin']} show={!peekedAbout} duration={250}>
           <div className="peek-member-image peek-member-team unpeeked">
-            <img src={require("../assets/team/team-1.jpg")} />
+            
           </div>
         </Transporter>
 
