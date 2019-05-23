@@ -43,53 +43,11 @@ class ScrollToTop extends Component {
     super(props)
     const { history } = props
      this.unlisten = history.listen((location, action) => {
-       console.warn('history change (freeze)', location, action)
-       if (action === 'POP') {
-         console.warn('about to freeze')
-         freezeAnimation(5000)
-       }
+       // Scroll window to top
+       window.scrollTo(0, 0)
      })
   }
-  componentDidUpdate(prevProps) {
-    if (this.props.location.pathname !== prevProps.location.pathname) {
-      // window.scrollTo(0, 0);
-    }
-    // console.warn(this.props.history.action, prevProps.history.action)
-    // if (this.props.history.action == "POP" && prevProps.history.action !== "POP") {
-    //   console.warn('back999', this.props.history);
-    //   clearAll();
-    // }
-  }
-
-
-  // componentDidMount() {
-  //   const { history } = this.props
-  //    this.unlisten = history.listen((location, action) => {
-  //      console.warn('history change (freeze)', location, action)
-  //      if (action === 'POP') {
-  //        console.warn('action was pop')
-  //        freezeAnimation(5000)
-  //      }
-  //    })
-  //   // window.onpopstate= () => {
-  //   //   console.warn('popping state')
-  //   //   freezeAnimation(9999)
-  //   // }
-  //   // window.addEventListener('popstate', this.freezeBack)
-  //   // window.addEventListener('beforeunload', this.blah)
-  //  }
-
-   // freezeBack = () => {
-   //   console.warn('FREEZING BACK BUTTON')
-   //   freezeAnimation(5000)
-   // }
-   // blah = (event) => {
-   //   console.warn('event', event)
-   // }
-
-
    componentWillUnmount() {
-     // window.removeEventListener('popstate', this.freezeBack)
      this.unlisten()
    }
 
@@ -100,6 +58,23 @@ class ScrollToTop extends Component {
 
 const RouterLens = withRouter(props => <Lens {...props} />)
 const RouterScroll = withRouter(props => <ScrollToTop {...props} />)
+
+class BackListener extends Component {
+  constructor(props) {
+    super(props)
+    window.addEventListener('popstate', this.freezeBack)
+  }
+  freezeBack = () => {
+    console.warn('FREEZING BACK BUTTON in backlistener')
+    freezeAnimation(300)
+  }
+  componentWillUnmount() {
+    window.removeEventListener('popstate', this.freezeBack)
+  }
+  render() {
+    return <span></span>
+  }
+}
 
 class App extends Component {
   state = {
@@ -117,9 +92,10 @@ class App extends Component {
     const {hovered} = this.state
     return (
       <div className="App">
+      <BackListener />
       <Logo/>
         <Router>
-          <RouterScroll>
+          <RouterScroll />
           <RouterLens hovered={hovered}>
           <Route exact path="/" component={Homepage}/>
           <Route path="/work" component={Work}/>
@@ -132,7 +108,6 @@ class App extends Component {
           <Route path="/farmigo" component={Farmigo}/>
           <Route path="/instructrr" component={Instructrr}/>
           </RouterLens>
-          </RouterScroll>
           <RouterNav
             onHovered={this.updateHovered}
           />

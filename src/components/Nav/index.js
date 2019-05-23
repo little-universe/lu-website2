@@ -8,8 +8,6 @@ class Nav extends Component {
   }
 
   render() {
-    console.warn(this.props);
-
     const { onHovered, onRouteChange, location } = this.props;
 
     return (

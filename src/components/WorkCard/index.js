@@ -5,7 +5,6 @@ import Fade from 'react-reveal/Fade';
 export default class WorkCard extends Component {
     render() {
         const { className, projectName, projectType, projectIndustry, bgImage, style, anim } = this.props
-        // console.warn(this.props)
         return (
             <div className="content-container" style={style}>
                 {bgImage, projectName &&
