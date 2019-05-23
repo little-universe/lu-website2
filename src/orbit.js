@@ -27,6 +27,19 @@ function getStyles(node, properties) {
 }
 
 let nodes = {}
+let freeze = false
+
+export function freezeAnimation(duration = 300) {
+  console.warn('freezing animation', duration)
+  freeze = true
+  setTimeout(() => { freeze = false; console.warn('unfreezing', freeze) }, duration)
+}
+
+export function clearAll() {
+  console.warn('clearing nodes', nodes)
+  nodes = {}
+  console.warn('nodes now', nodes)
+}
 
 export function orbit(name, properties) {
   let [styleState, setStyleState] = useState({})
@@ -223,6 +236,13 @@ export class Transporter extends React.Component {
   }
 
   animateChild = () => {
+    if (freeze) {
+      console.warn('animation frozen, skipping', this.props.name)
+      this.setState({ anim: 'shown' })
+      return null
+    } else {
+      console.warn('not frozen', this.props.name)
+    }
     const { name, duration = 1000, ease=easing.easeInOut, properties, onlyX, onlyY, overrides, overrideOldPosition } = this.props
     const oldNode = nodes[name]
     const newNode = {
@@ -294,6 +314,10 @@ export class Transporter extends React.Component {
   }
 
   animateGrowingPhantom = () => {
+    if (freeze) {
+      this.setState({ anim: 'shown' })
+      return null
+    }
     // NOTE: Need to move this outside of position: fixed hover box for it to have any effect
     const { name, duration } = this.props
     const old = nodes[name]

@@ -14,6 +14,7 @@ import About from './pages/about';
 import Approach from './pages/approach';
 import Logo from './components/Logo';
 import Nav from './components/Nav';
+import { freezeAnimation } from './orbit'
 
 let styles = {}
 
@@ -38,11 +39,59 @@ class Lens extends Component {
 }
 
 class ScrollToTop extends Component {
+  constructor(props) {
+    super(props)
+    const { history } = props
+     this.unlisten = history.listen((location, action) => {
+       console.warn('history change (freeze)', location, action)
+       if (action === 'POP') {
+         console.warn('about to freeze')
+         freezeAnimation(5000)
+       }
+     })
+  }
   componentDidUpdate(prevProps) {
     if (this.props.location.pathname !== prevProps.location.pathname) {
-      window.scrollTo(0, 0);
+      // window.scrollTo(0, 0);
     }
+    // console.warn(this.props.history.action, prevProps.history.action)
+    // if (this.props.history.action == "POP" && prevProps.history.action !== "POP") {
+    //   console.warn('back999', this.props.history);
+    //   clearAll();
+    // }
   }
+
+
+  // componentDidMount() {
+  //   const { history } = this.props
+  //    this.unlisten = history.listen((location, action) => {
+  //      console.warn('history change (freeze)', location, action)
+  //      if (action === 'POP') {
+  //        console.warn('action was pop')
+  //        freezeAnimation(5000)
+  //      }
+  //    })
+  //   // window.onpopstate= () => {
+  //   //   console.warn('popping state')
+  //   //   freezeAnimation(9999)
+  //   // }
+  //   // window.addEventListener('popstate', this.freezeBack)
+  //   // window.addEventListener('beforeunload', this.blah)
+  //  }
+
+   // freezeBack = () => {
+   //   console.warn('FREEZING BACK BUTTON')
+   //   freezeAnimation(5000)
+   // }
+   // blah = (event) => {
+   //   console.warn('event', event)
+   // }
+
+
+   componentWillUnmount() {
+     // window.removeEventListener('popstate', this.freezeBack)
+     this.unlisten()
+   }
 
   render() {
     return this.props.children || null;
@@ -70,7 +119,7 @@ class App extends Component {
       <div className="App">
       <Logo/>
         <Router>
-          <RouterScroll/>
+          <RouterScroll>
           <RouterLens hovered={hovered}>
           <Route exact path="/" component={Homepage}/>
           <Route path="/work" component={Work}/>
@@ -83,6 +132,7 @@ class App extends Component {
           <Route path="/farmigo" component={Farmigo}/>
           <Route path="/instructrr" component={Instructrr}/>
           </RouterLens>
+          </RouterScroll>
           <RouterNav
             onHovered={this.updateHovered}
           />
