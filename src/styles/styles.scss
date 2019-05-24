@@ -200,37 +200,22 @@ body {
     background-position: center;
     height: 60vh;
     width: 80vh;
-    img {
-      height: 100%;
-    }
   }
 }
 
-.peek-approach-value {
-  width: 50vw;
-  height: 30vw;
-  background: #ccc;
-  position: fixed;
+.peek-approach-image {
+  overflow: hidden;
   opacity: 0;
-  &.peek-value-1{
-    top: -10vw;
-    left: -5vw;
-    -webkit-transform: rotate(1deg);
-  }
-  &.peek-value-2{
-    top: 5vw;
-    right: -5vw;
-    -webkit-transform: rotate(-1deg);
-  }
-  &.peek-value-3{
-    bottom: 10vw;
-    left: -10vw;
-    -webkit-transform: rotate(-1deg);
-  }
-  &.peek-value-4{
-    bottom: -10vw;
-    right: 5vw;
-    -webkit-transform: rotate(-1deg);
+  &.peek-approach-1{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -52%);
+    background-image: url("../../src/assets/office/office-2.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    width: 80vh;
   }
 }
 
@@ -273,8 +258,6 @@ body {
     .peek-member-image.peeked {
       opacity: 1;
       overflow: hidden;
-      // display: flex;
-      // justify-content: center;
       &.peek-member-team{
         position: fixed;
         top: 50%;
@@ -285,36 +268,44 @@ body {
         background-position: center;
         height: 60vh;
         width: 80vh;
-        img {
-          width: 100%;
-        }
       }
     }
-    .peek-approach-value.peeked {
+    .peek-approach-image.peeked {
       opacity: 1;
-      &.peek-value-1{
-        top: -5vw;
-        left: -5vw;
-        -webkit-transform: rotate(-1deg);
-      }
-      &.peek-value-2{
-        top: 5vw;
-        right: -5vw;
-        -webkit-transform: rotate(-1deg);
-      }
-      &.peek-value-3{
-        bottom: -5vw;
-        left: -10vw;
-        -webkit-transform: rotate(-1deg);
-      }
-      &.peek-value-4{
-        bottom: -15vw;
-        right: 5vw;
-        -webkit-transform: rotate(-1deg);
+      overflow: hidden;
+      &.peek-approach-1{
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        background-image: url("../../src/assets/office/office-2.jpg");
+        background-size: cover;
+        background-position: center;
+        height: 60vh;
+        width: 80vh;
       }
     }
 }
 
+
+p.copiedText {
+  opacity: 1;
+  // animation: fadeInLeft 2s ease-in;
+  // margin-left: $buffer/2;
+  font-size: $fontSizeSmall;
+  margin-top: $buffer*3;
+  color: $fontColorLightened;
+  @include transition();
+
+  &.fadeOut {
+    opacity: 0;
+    @include transition();
+  }
+}
+
+button:focus {
+  outline: none !important;
+}
 
 
 

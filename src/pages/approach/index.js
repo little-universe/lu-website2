@@ -9,6 +9,7 @@ import ApproachImageLeft from '../../components/ApproachImageLeft';
 import ApproachImageRight from '../../components/ApproachImageRight';
 import WorkTogether from '../../components/WorkTogether';
 import AboutBigImage from '../../components/AboutBigImage';
+import { Transporter } from '../../orbit';
 import Fade from 'react-reveal/Fade';
 
 class Approach extends Component {
@@ -24,7 +25,10 @@ class Approach extends Component {
     return (
       <>
         <Hero headline="Approach" subhead="Small Team. Full Stack. Big Impact."/>
-        <AboutBigImage bgImage={require("../../assets/office/office-2.jpg")} className="approach-image"/>
+
+        <Transporter name="approach1" show={true} duration={500} properties={[]}>
+          <AboutBigImage bgImage={require("../../assets/office/office-2.jpg")} className="approach-image"/>
+        </Transporter>
         <Fade bottom distance="30px" duration={500}>
           <ApproachStatement className="" title="We Love Product" paragraph="Our team has gone to bat with all things startup. We’ve built, launched and scaled multiple ventures as founders, managers, operators and dreamers. We’ve seen huge successes and formidable failures. We understand what it means to operate in ambiguity, where to make tough calls, and we have the skills to back it up."/>
           <ApproachImageLeft className="" headline="A Technical Foundation" description="We're experts in design and engineering and are always searching for ways to improve. In the face of evolving markets or social contexts we stay anchored to our understanding of the fundamental principals of design and engineering as ways of seeing the world. Our ability to return to well learned foundations helps us weather rocky seas." image={require("../../assets/office/desk.jpg")}/>
