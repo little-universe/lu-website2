@@ -366,6 +366,9 @@ button:focus {
     background-size: 100vw auto;
     background-position: center;
     background-repeat: no-repeat;
+    @include breakpoint(sm) {
+      background-size: auto 100%;
+    }
     &.betterfin-hero {
       background-image: url("../../src/assets/projects/betterfin/betterfin-hero.png");
     }
@@ -398,11 +401,17 @@ button:focus {
   h1 {
     font-weight: 300;
     font-size: $fontSizeHeadline;
+    @include breakpoint(sm) {
+      font-size: $fontSizeHeadline*.5;
+    }
   }
   p.subhead {
     color: $fontColorLightened;
     font-weight: 300;
     font-size: $fontSizeSubHeadline;
+    @include breakpoint(sm) {
+      font-size: $fontSizeLargeDesktop;
+    }
   }
 }
 
@@ -428,6 +437,9 @@ button:focus {
   background-size: 100vw auto;
   background-position: center;
   background-repeat: no-repeat;
+  @include breakpoint(sm) {
+    background-size: auto 100%;
+  }
   &.betterfin-card {
     background-image: url("../../src/assets/projects/betterfin/betterfin-hero.png");
   }
@@ -475,6 +487,10 @@ button:focus {
     position: absolute;
     bottom: $buffer*6;
     left: $buffer*6;
+    @include breakpoint(sm) {
+      bottom: $buffer*2;
+      left: $buffer*2;
+    }
     .project-name {
       color: $fontColor;
     }
@@ -817,6 +833,12 @@ button {
     color: $fontColorLightened;
     font-size: $fontSizeDesktop;
     line-height: $lineHeightDesktop;
+    @include breakpoint(xs) {
+      // font-size: $fontSizeSmallDesktop;
+      padding-top: $buffer*3;
+      margin: 0 auto;
+      width: 90vw;
+    }
   }
 }
 
@@ -826,7 +848,8 @@ button {
   // height: 80vh;
   padding: $buffer*20 0;
   @include breakpoint(xs) {
-    padding: $buffer*3 0;
+    padding: $buffer*3 $buffer*2;
+    margin: 0;
   }
   .approach-card {
   // background: #f5f5f5;
@@ -879,7 +902,11 @@ button {
 }
 
 .approach-image-left, .approach-image-right {
-    height: 90vh;
+  // padding: $buffer*30 $buffer*3;
+  @include breakpoint(xs) {
+    padding: $buffer*0 $buffer*2;
+    margin: 0;
+  }
     margin-bottom: $buffer*3;
     .approach-image {
       overflow: hidden;
@@ -908,6 +935,10 @@ button {
   height: 90vh;
   align-items: center;
   display: flex;
+  @include breakpoint(xs) {
+    padding: 0;
+    height: auto;
+  }
   .approach-image-headline {
     font-size: $fontSizeLargeDesktop;
     line-height: $lineHeightDesktop;
