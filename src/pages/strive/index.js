@@ -31,7 +31,7 @@ class Strive extends Component {
       <>
       <Transporter name="caseStudy2" show={true} duration={250} properties={[]}>
       <div style={{ width: '100%', minHeight: '1vh' }}>
-        <Hero headline="strive" bgImage={require("../../assets/projects/strive/strive-hero.png")} className="project-hero strive-hero"/>
+        <Hero className="project-hero strive-hero"/>
         </div>
       </Transporter>
       <Fade bottom distance="30px" duration={500}>

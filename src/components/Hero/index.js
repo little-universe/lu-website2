@@ -21,7 +21,7 @@ export default class Hero extends Component {
                         </Grid>
                     </div>
                 }
-                {bgImage &&
+                {className &&
                     <div classname="container">
                         <Grid className={`hero ${className}`} container justify="center" alignItems="center">
                             <Grid item md={12} xs={12}>

@@ -30,7 +30,7 @@ class Motivote extends Component {
       <>
         <Transporter name="caseStudy3" show={true} duration={500} properties={[]}>
           <div style={{ width: '100%', minHeight: '1vh' }}>
-            <Hero headline="motivote" bgImage={require("../../assets/projects/motivote/motivote-hero.png")} className="project-hero motivote-hero"/>
+            <Hero className="project-hero motivote-hero"/>
           </div>
         </Transporter>
         <Fade bottom distance="30px" duration={500}>

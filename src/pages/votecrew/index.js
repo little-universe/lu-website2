@@ -30,7 +30,7 @@ class Votecrew extends Component {
       <>
       <Transporter name="caseStudy4" show={true} duration={500} properties={[]}>
         <div style={{ width: '100%', minHeight: '1vh' }}>
-          <Hero bgImage={require("../../assets/projects/votecrew/votecrew-hero.png")} className="project-hero votecrew-hero"/>
+          <Hero className="project-hero votecrew-hero"/>
         </div>
       </Transporter>
         <Fade bottom distance="30px" duration={500}>

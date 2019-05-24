@@ -31,7 +31,7 @@ class Farmigo extends Component {
       <>
       <Transporter name="caseStudy5" show={true} duration={500} properties={[]}>
         <div style={{ width: '100%', minHeight: '1vh' }}>
-          <Hero bgImage={require("../../assets/projects/farmigo/farmigo-hero.png")} className="project-hero farmigo-hero"/>
+          <Hero className="project-hero farmigo-hero"/>
         </div>
       </Transporter>
         <Fade bottom distance="30px" duration={500}>

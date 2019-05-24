@@ -25,33 +25,33 @@ class Work extends Component {
         <Hero headline="Our Work" subhead="We make a difference for our clients"/>
         <Link to="../betterfin" className="work-card-link">
           <Transporter name="caseStudy1" show={true} duration={750} unstableOnUnmount>
-              <WorkCard bgImage={require("../../assets/projects/betterfin/betterfin-hero.png")} className="betterfin-card" projectName="Betterfin" projectType="Digital Product" projectIndustry="Fintech"/>
+              <WorkCard className="betterfin-card" projectName="Betterfin" projectType="Digital Product" projectIndustry="Fintech"/>
           </Transporter>
         </Link>
         <Link to="../strive" className="work-card-link">
           <Transporter name="caseStudy2" show={true} duration={500} properties={['margin']}>
-            <WorkCard bgImage={require("../../assets/projects/strive/strive-hero.png")} className="strive-card" projectName="Strive Digital" projectType="Digital Product" projectIndustry="Advocacy Tech"/>
+            <WorkCard className="strive-card" projectName="Strive Digital" projectType="Digital Product" projectIndustry="Advocacy Tech"/>
           </Transporter>
         </Link>
         <Link to="../motivote" className="work-card-link">
           <Transporter name="caseStudy3" show={true} duration={250} properties={['margin']}>
-            <WorkCard bgImage={require("../../assets/projects/motivote/motivote-hero.png")} className="motivote-card" projectName="Motivote" projectType="Digital Product" projectIndustry="Advocacy Tech"/>
+            <WorkCard className="motivote-card" projectName="Motivote" projectType="Digital Product" projectIndustry="Advocacy Tech"/>
           </Transporter>
         </Link>
         <Fade bottom distance="30px" duration={500}>
         <Link to="../votecrew" className="work-card-link">
         <Transporter name="caseStudy4" show={true} duration={250} properties={['margin']}>
-          <WorkCard bgImage={require("../../assets/projects/votecrew/votecrew-hero.png")} projectName="Vote Crew" projectType="Digital Product" projectIndustry="Advocacy Tech"/>
+          <WorkCard className="votecrew-card" projectName="Vote Crew" projectType="Digital Product" projectIndustry="Advocacy Tech"/>
         </Transporter>
         </Link>
         <Link to="../farmigo" className="work-card-link">
           <Transporter name="caseStudy5" show={true} duration={250} properties={['margin']}>
-            <WorkCard bgImage={require("../../assets/projects/farmigo/farmigo-hero.png")} projectName="Farmigo" projectType="Digital Product" projectIndustry="Food"/>
+            <WorkCard className="farmigo-card" projectName="Farmigo" projectType="Digital Product" projectIndustry="Food"/>
           </Transporter>
         </Link>
         <Link to="../instructrr" className="work-card-link">
           <Transporter name="caseStudy6" show={true} duration={250} properties={['margin']}>
-            <WorkCard bgImage={require("../../assets/projects/instructrr/instructrr-hero.png")} projectName="Instructrr" projectType="Digital Product" projectIndustry="Fitness"/>
+            <WorkCard className="instructrr-card" projectName="Instructrr" projectType="Digital Product" projectIndustry="Fitness"/>
           </Transporter>
         </Link>
 

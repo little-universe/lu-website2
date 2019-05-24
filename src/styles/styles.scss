@@ -343,11 +343,26 @@ button:focus {
   }
   &.project-hero {
     background: $bgColorWorkCard;
+    background-size: 100vw auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    &.betterfin-hero {
+      background-image: url("../../src/assets/projects/betterfin/betterfin-hero.png");
+    }
     &.motivote-hero {
-      // background: #F3F4EF;
+      background-image: url("../../src/assets/projects/motivote/motivote-hero.png");
     }
     &.strive-hero {
-      // background: #FFF4FA;
+      background-image: url("../../src/assets/projects/strive/strive-hero.png");
+    }
+    &.votecrew-hero {
+      background-image: url("../../src/assets/projects/votecrew/votecrew-hero.png");
+    }
+    &.farmigo-hero {
+      background-image: url("../../src/assets/projects/farmigo/farmigo-hero.png");
+    }
+    &.instructrr-hero {
+      background-image: url("../../src/assets/projects/instructrr/instructrr-hero.png");
     }
     .headline {
       display: none;
@@ -389,11 +404,27 @@ button:focus {
   line-height: $lineHeightDesktop;
   position: relative;
   overflow: hidden;
-  &.motivote-card {
-    // background: #F3F4EF;
+
+  background-size: 100vw auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  &.betterfin-card {
+    background-image: url("../../src/assets/projects/betterfin/betterfin-hero.png");
   }
   &.strive-card {
-    // background: #FFF4FA;
+    background-image: url("../../src/assets/projects/strive/strive-hero.png");
+  }
+  &.motivote-card {
+    background-image: url("../../src/assets/projects/motivote/motivote-hero.png");
+  }
+  &.votecrew-card {
+    background-image: url("../../src/assets/projects/votecrew/votecrew-hero.png");
+  }
+  &.farmigo-card {
+    background-image: url("../../src/assets/projects/farmigo/farmigo-hero.png");
+  }
+  &.instructrr-card {
+    background-image: url("../../src/assets/projects/instructrr/instructrr-hero.png");
   }
   &.workImageFill {
     .work-big-image {

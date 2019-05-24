@@ -31,7 +31,7 @@ class Instructrr extends Component {
       <>
       <Transporter name="caseStudy6" show={true} duration={500} properties={[]}>
         <div style={{ width: '100%', minHeight: '1vh' }}>
-          <Hero bgImage={require("../../assets/projects/instructrr/instructrr-hero.png")} headline="instructrr" className="project-hero instructrr-hero"/>
+          <Hero className="project-hero instructrr-hero"/>
         </div>
       </Transporter>
         <Fade bottom distance="30px" duration={500}>
