@@ -183,6 +183,9 @@ body {
   height: 20vw;
   position: fixed;
   opacity: 0;
+  img {
+    width: 100%;
+  }
   &.peek-case-study1 {
     left: 40vw;
     top: -5vw;
