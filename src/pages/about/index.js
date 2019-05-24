@@ -8,6 +8,7 @@ import WorkTextOpener from '../../components/WorkTextOpener';
 import AboutMemberLeft from '../../components/AboutMemberLeft';
 import AboutMemberRight from '../../components/AboutMemberRight';
 import WorkTogether from '../../components/WorkTogether';
+import ApproachStatement from '../../components/ApproachStatement';
 import { Transporter } from '../../orbit';
 import Fade from 'react-reveal/Fade';
 
@@ -23,12 +24,13 @@ class About extends Component {
 
     return (
       <>
-        <Hero headline="About Us" subhead="We're a cool bunch of folks who abosolutely love product"/>
+        <Hero headline="About Us" subhead="Small Team. Full Stack. Big Impact."/>
 
         <Transporter name="member-team" show={true} duration={500} properties={[]}>
           <AboutBigImage bgImage={require("../../assets/team/team-1.jpg")} className="group-photo"/>
         </Transporter>
         <Fade bottom distance="30px" duration={500}>
+        <ApproachStatement className="" title="We Love Product" paragraph="Our team has gone to bat with all things startup. We’ve built, launched and scaled multiple ventures as founders, managers, operators and dreamers. We’ve seen huge successes and formidable failures. We understand what it means to operate in ambiguity, where to make tough calls, and we have the skills to back it up."/>
         <AboutMemberLeft className="zach-member" name="Zach Smith" title="Founder" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." interests={["Hiking", "Climbing"]} image={require("../../assets/team/zach.png")}/>
         <AboutMemberRight className="adrian-member" name="Adrian Del Balso" title="Founder" description="Adrian has a deep background in leading product teams for impact. His decade of product, design and frontend engineering experience have been focused on engaging users with digital tools to better their lives and communities." interests={["this", "that"]} image={require("../../assets/team/adrian.png")}/>
         <AboutMemberHistory bgImage={require("../../assets/team/zach-adrian.jpg")} className="zach-adrian" description="Zach and Adrian have written over 50,000 lines of code together."/>
