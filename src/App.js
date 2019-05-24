@@ -31,7 +31,7 @@ class Lens extends Component {
     if (location.pathname === '/about' && hovered === 'about') blur = false
     if (location.pathname === '/approach' && hovered === 'approach') blur = false
     return (
-      <div style={blur ? { opacity: 0.5 } : {}}>
+      <div style={blur ? { opacity: 0.5, transition: "ease .5s all" } : {}}>
         {children}
       </div>
     )
@@ -92,7 +92,7 @@ class App extends Component {
   render() {
     const {hovered} = this.state
     return (
-      <div className="App">
+      <div className="App" >
       <BackListener />
       <Logo/>
         <Router>
