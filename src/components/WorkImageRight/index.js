@@ -13,7 +13,7 @@ export default class WorkImageRight extends Component {
                           <Grid container justify="center" alignItems="flex-start">
                             <Grid item md={7} xs={12} className="work-image-text" justify="center" alignItems="center">
                               <Grid container justify="center">
-                                <Grid item md={5} xs={12} className="image-text">
+                                <Grid item md={6} xs={12} className="image-text">
                                   <p className="work-image-headline">{headline}</p>
                                   <p className="work-image-description">{description}</p>
                                 </Grid>

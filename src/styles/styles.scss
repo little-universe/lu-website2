@@ -37,12 +37,13 @@ $fontSizeExtraSmallDesktop: 12px;
 $fontSizeLarge: 24px;
 $fontSizeLargeDesktop: 24px;
 // $fontSizeLargeDesktop: 1.vw;
-$fontFamily: "Apercu", sans-serif;
+$fontFamily: "Marr Sans Web", sans-serif;
 $fontWeightHeavy: 700;
 $fontWeightNormal: 400;
-$fontWeightLight: 200;
+$fontWeightLight: 300;
 $lineHeight: 22px;
-$lineHeightDesktop: 38px;
+$lineHeightDesktop: 32px;
+$lineHeightLargeDesktop: 38px;
 $fontSizeHeadline: 100px;
 // $fontSizeHeadline: 20px;
 $lineHeightHeadline: $fontSizeHeadline*1.5;
@@ -71,6 +72,22 @@ $xxs: 640px;
 $peekZIndex: 1;
 $navZIndex: 10;
 $pageZIndex: 50;
+
+
+@font-face {
+    font-family: 'Marr Sans Web';
+    src: url('https://s3.us-east-2.amazonaws.com/lu-assets/fonts/MarrSansWeb-Regular.woff2') format('woff2'),
+        url('https://s3.us-east-2.amazonaws.com/lu-assets/fonts/MarrSansWeb-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Marr Sans Web';
+    src: url('https://s3.us-east-2.amazonaws.com/lu-assets/fonts/MarrSansWeb-Medium.woff2') format('woff2'),
+        url('https://s3.us-east-2.amazonaws.com/lu-assets/fonts/MarrSansWeb-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
 
 // GLOBAL STYLES
 
@@ -166,6 +183,9 @@ body {
   height: 20vw;
   position: fixed;
   opacity: 0;
+  img {
+    width: 100%;
+  }
   &.peek-case-study1 {
     left: 40vw;
     top: -5vw;
@@ -346,6 +366,9 @@ button:focus {
     background-size: 100vw auto;
     background-position: center;
     background-repeat: no-repeat;
+    @include breakpoint(sm) {
+      background-size: auto 100%;
+    }
     &.betterfin-hero {
       background-image: url("../../src/assets/projects/betterfin/betterfin-hero.png");
     }
@@ -378,11 +401,17 @@ button:focus {
   h1 {
     font-weight: 300;
     font-size: $fontSizeHeadline;
+    @include breakpoint(sm) {
+      font-size: $fontSizeHeadline*.5;
+    }
   }
   p.subhead {
     color: $fontColorLightened;
     font-weight: 300;
     font-size: $fontSizeSubHeadline;
+    @include breakpoint(sm) {
+      font-size: $fontSizeLargeDesktop;
+    }
   }
 }
 
@@ -408,6 +437,9 @@ button:focus {
   background-size: 100vw auto;
   background-position: center;
   background-repeat: no-repeat;
+  @include breakpoint(sm) {
+    background-size: auto 100%;
+  }
   &.betterfin-card {
     background-image: url("../../src/assets/projects/betterfin/betterfin-hero.png");
   }
@@ -455,6 +487,10 @@ button:focus {
     position: absolute;
     bottom: $buffer*6;
     left: $buffer*6;
+    @include breakpoint(sm) {
+      bottom: $buffer*2;
+      left: $buffer*2;
+    }
     .project-name {
       color: $fontColor;
     }
@@ -531,7 +567,7 @@ button {
   }
   .opener-paragraph {
     font-size: $fontSizeLargeDesktop;
-    line-height: $lineHeightDesktop;
+    line-height: $lineHeightLargeDesktop;
   }
   @include breakpoint(sm) {
     .opener-list {
@@ -558,7 +594,7 @@ button {
   }
   .work-text-paragraph {
     font-size: $fontSizeLargeDesktop;
-    line-height: $lineHeightDesktop;
+    line-height: $lineHeightLargeDesktop;
   }
 }
 
@@ -797,6 +833,12 @@ button {
     color: $fontColorLightened;
     font-size: $fontSizeDesktop;
     line-height: $lineHeightDesktop;
+    @include breakpoint(xs) {
+      // font-size: $fontSizeSmallDesktop;
+      padding-top: $buffer*3;
+      margin: 0 auto;
+      width: 90vw;
+    }
   }
 }
 
@@ -806,7 +848,8 @@ button {
   // height: 80vh;
   padding: $buffer*20 0;
   @include breakpoint(xs) {
-    padding: $buffer*3 0;
+    padding: $buffer*3 $buffer*2;
+    margin: 0;
   }
   .approach-card {
   // background: #f5f5f5;
@@ -817,7 +860,7 @@ button {
   .approach-statement-title {
     color: $fontColorLightened;
     font-size: $fontSizeLargeDesktop;
-    line-height: $lineHeightDesktop;
+    line-height: $lineHeightLargeDesktop;
     // font-size: $fontSizeHeadline;
     // line-height: $lineHeightHeadline;
     text-align: center;
@@ -826,7 +869,7 @@ button {
   .approach-statement-paragraph {
     color: $fontColor;
     font-size: $fontSizeLargeDesktop;
-    line-height: $lineHeightDesktop;
+    line-height: $lineHeightLargeDesktop;
   }
 }
 .articles-section {
@@ -840,7 +883,7 @@ button {
     }
     .article-summary {
       font-size: $fontSizeLargeDesktop;
-      line-height: $lineHeightDesktop;
+      line-height: $lineHeightLargeDesktop;
     }
   }
 }
@@ -859,7 +902,11 @@ button {
 }
 
 .approach-image-left, .approach-image-right {
-    height: 90vh;
+  // padding: $buffer*30 $buffer*3;
+  @include breakpoint(xs) {
+    padding: $buffer*0 $buffer*2;
+    margin: 0;
+  }
     margin-bottom: $buffer*3;
     .approach-image {
       overflow: hidden;
@@ -888,6 +935,10 @@ button {
   height: 90vh;
   align-items: center;
   display: flex;
+  @include breakpoint(xs) {
+    padding: 0;
+    height: auto;
+  }
   .approach-image-headline {
     font-size: $fontSizeLargeDesktop;
     line-height: $lineHeightDesktop;

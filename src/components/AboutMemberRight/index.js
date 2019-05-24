@@ -14,7 +14,7 @@ export default class AboutMemberLeft extends Component {
                             <Grid item md={6} xs={12} className="member-image-text d-none-xs" justify="center" alignItems="center">
                             {anim !== "showing" &&
                               <Grid container justify="center">
-                                <Grid item md={6} xs={12} className="image-text">
+                                <Grid item md={7} xs={12} className="image-text">
                                   <p className="member-image-name">{name} • {title}</p>
                                   <p className="member-image-description">{description}</p>
 
@@ -26,7 +26,7 @@ export default class AboutMemberLeft extends Component {
                             <Grid item md={6} xs={12} className="member-image-text d-show-xs" justify="center" alignItems="center">
                             {anim !== "showing" &&
                               <Grid container justify="center">
-                                <Grid item md={6} xs={12} className="image-text">
+                                <Grid item md={7} xs={12} className="image-text">
                                   <p className="member-image-name">{name} • {title}</p>
                                   <p className="member-image-description">{description}</p>
 

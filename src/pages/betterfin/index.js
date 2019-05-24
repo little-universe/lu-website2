@@ -29,7 +29,7 @@ class Betterfin extends Component {
 
     return (
       <>
-          <Transporter name="caseStudy1" show={true} duration={500} properties={[]}>
+          <Transporter name="caseStudy3" show={true} duration={500} properties={[]}>
             <div style={{ width: '100%', minHeight: '1vh' }}>
               <Hero className="project-hero betterfin-hero"/>
             </div>
@@ -45,8 +45,8 @@ class Betterfin extends Component {
           <WorkTextCentered title="A Dashboard For Small Business" paragraph="Small businesses may not always have access to a clear display of analytics on their operations and expenses. Betterfin seeks to offer this. We designed UX and UI for a dashboard which offers a variety of important information as well as links to financing opportunities. As with everything, we kept in mind scalability of tech and design."/>
           <WorkBigImage bgImage={require("../../assets/projects/betterfin/betterfin-4.png")} className="workImage"/>
           <Grid className={`work-next-project`} container justify="center" alignItems="center">
-            <Transporter name="caseStudy2" show={true} duration={500} properties={[]} unstableOnUnmount noTransition>
-              <WorkNextProject image={require("../../assets/projects/strive/strive-hero.png")} className="next-strive" projectName="Strive Digital" projectType="Digital Product" projectIndustry="Advocacy Tech" destination="../strive"/>
+            <Transporter name="caseStudy4" show={true} duration={500} properties={[]} unstableOnUnmount noTransition>
+              <WorkNextProject image={require("../../assets/projects/votecrew/votecrew-hero.png")} className="next-votecrew" projectName="Votecrew" projectType="Digital Product" projectIndustry="Advocacy Tech" destination="../votecrew"/>
             </Transporter>
           </Grid>
         <WorkTogether headline="Let's get to know each other"/>
