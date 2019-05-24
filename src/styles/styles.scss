@@ -37,12 +37,13 @@ $fontSizeExtraSmallDesktop: 12px;
 $fontSizeLarge: 24px;
 $fontSizeLargeDesktop: 24px;
 // $fontSizeLargeDesktop: 1.vw;
-$fontFamily: "Apercu", sans-serif;
+$fontFamily: "Marr Sans Web", sans-serif;
 $fontWeightHeavy: 700;
 $fontWeightNormal: 400;
-$fontWeightLight: 200;
+$fontWeightLight: 300;
 $lineHeight: 22px;
 $lineHeightDesktop: 32px;
+$lineHeightLargeDesktop: 38px;
 $fontSizeHeadline: 100px;
 // $fontSizeHeadline: 20px;
 $lineHeightHeadline: $fontSizeHeadline*1.5;
@@ -71,6 +72,22 @@ $xxs: 640px;
 $peekZIndex: 1;
 $navZIndex: 10;
 $pageZIndex: 50;
+
+
+@font-face {
+    font-family: 'Marr Sans Web';
+    src: url('https://s3.us-east-2.amazonaws.com/lu-assets/fonts/MarrSansWeb-Regular.woff2') format('woff2'),
+        url('https://s3.us-east-2.amazonaws.com/lu-assets/fonts/MarrSansWeb-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Marr Sans Web';
+    src: url('https://s3.us-east-2.amazonaws.com/lu-assets/fonts/MarrSansWeb-Medium.woff2') format('woff2'),
+        url('https://s3.us-east-2.amazonaws.com/lu-assets/fonts/MarrSansWeb-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
 
 // GLOBAL STYLES
 
@@ -531,7 +548,7 @@ button {
   }
   .opener-paragraph {
     font-size: $fontSizeLargeDesktop;
-    line-height: $lineHeightDesktop;
+    line-height: $lineHeightLargeDesktop;
   }
   @include breakpoint(sm) {
     .opener-list {
@@ -558,7 +575,7 @@ button {
   }
   .work-text-paragraph {
     font-size: $fontSizeLargeDesktop;
-    line-height: $lineHeightDesktop;
+    line-height: $lineHeightLargeDesktop;
   }
 }
 
