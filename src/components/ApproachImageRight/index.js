@@ -13,7 +13,7 @@ export default class ApproachImageRight extends Component {
                           <Grid container justify="center" alignItems="flex-start">
                             <Grid item md={6} xs={12} className="approach-image-text" justify="center" alignItems="center">
                               <Grid container justify="center">
-                                <Grid item md={6} xs={12} className="image-text">
+                                <Grid item md={7} xs={12} className="image-text">
                                   <p className="approach-image-headline">{headline}</p>
                                   <p className="approach-image-description">{description}</p>
                                 </Grid>
