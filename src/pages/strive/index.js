@@ -29,7 +29,7 @@ class Strive extends Component {
 
     return (
       <>
-      <Transporter name="caseStudy2" show={true} duration={250} properties={[]}>
+      <Transporter name="caseStudy1" show={true} duration={250} properties={[]}>
       <div style={{ width: '100%', minHeight: '1vh' }}>
         <Hero className="project-hero strive-hero"/>
         </div>
@@ -43,7 +43,7 @@ class Strive extends Component {
           <WorkImageRight image={require("../../assets/projects/strive/strive-2.png")} headline="Multi Channel" description="Strive allowed users to Design and develop custom messaging capabilities optimized for their needs, including powerful machine learning, platform extensions, and deep integrations with a CRM."/>
           <WorkBigImage bgImage={require("../../assets/projects/strive/strive-3.png")} className="workImage"/>
           <Grid className={`work-next-project`} container justify="center" alignItems="center">
-            <Transporter name="caseStudy3" show={true} duration={500} properties={[]} unstableOnUnmount noTransition>
+            <Transporter name="caseStudy2" show={true} duration={500} properties={[]} unstableOnUnmount noTransition>
               <WorkNextProject image={require("../../assets/projects/motivote/motivote-hero.png")} className="next-motivote" projectName="Motivote" projectType="Digital Product" projectIndustry="Advocacy Tech" destination="../motivote"/>
             </Transporter>
           </Grid>

@@ -22,7 +22,7 @@ class Peek extends Component {
       {route !== 'work' && <>
         <Transporter name="caseStudy1" properties={['opacity', 'margin']} show={peekedWork} duration={250}>
           <div className="peek-case-study peek-case-study1 peeked">
-          <img src={require("../assets/projects/betterfin/betterfin-hero.png")}/>
+          <img src={require("../assets/projects/strive/strive-hero.png")}/>
           </div>
         </Transporter>
         <Transporter name="caseStudy1" properties={['opacity', 'margin']} show={!peekedWork && !['/work'].includes(route)} duration={250}>
@@ -32,7 +32,7 @@ class Peek extends Component {
 
         <Transporter name="caseStudy2" properties={['opacity']} show={peekedWork} duration={100}>
           <div className="peek-case-study peek-case-study2 peeked">
-          <img src={require("../assets/projects/strive/strive-hero.png")}/>
+          <img src={require("../assets/projects/motivote/motivote-hero.png")}/>
           </div>
         </Transporter>
         <Transporter name="caseStudy2" properties={['opacity']} show={!peekedWork && !['/work'].includes(route)} duration={100}>
@@ -41,7 +41,7 @@ class Peek extends Component {
 
         <Transporter name="caseStudy3" properties={['opacity']} show={peekedWork} duration={150}>
           <div className="peek-case-study peek-case-study3 peeked">
-          <img src={require("../assets/projects/motivote/motivote-hero.png")}/>
+          <img src={require("../assets/projects/betterfin/betterfin-hero.png")}/>
           </div>
         </Transporter>
         <Transporter name="caseStudy3" properties={['opacity']} show={!peekedWork && !['/work'].includes(route)} duration={150}>

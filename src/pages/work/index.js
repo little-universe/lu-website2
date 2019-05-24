@@ -23,19 +23,19 @@ class Work extends Component {
       <>
 
         <Hero headline="Our Work" subhead="We make a difference for our clients"/>
-        <Link to="../betterfin" className="work-card-link">
-          <Transporter name="caseStudy1" show={true} duration={750} unstableOnUnmount>
-              <WorkCard className="betterfin-card" projectName="Betterfin" projectType="Digital Product" projectIndustry="Fintech"/>
-          </Transporter>
-        </Link>
         <Link to="../strive" className="work-card-link">
-          <Transporter name="caseStudy2" show={true} duration={500} properties={['margin']}>
+          <Transporter name="caseStudy1" show={true} duration={500} properties={['margin']}>
             <WorkCard className="strive-card" projectName="Strive Digital" projectType="Digital Product" projectIndustry="Advocacy Tech"/>
           </Transporter>
         </Link>
         <Link to="../motivote" className="work-card-link">
-          <Transporter name="caseStudy3" show={true} duration={250} properties={['margin']}>
+          <Transporter name="caseStudy2" show={true} duration={250} properties={['margin']}>
             <WorkCard className="motivote-card" projectName="Motivote" projectType="Digital Product" projectIndustry="Advocacy Tech"/>
+          </Transporter>
+        </Link>
+        <Link to="../betterfin" className="work-card-link">
+          <Transporter name="caseStudy3" show={true} duration={750} unstableOnUnmount>
+              <WorkCard className="betterfin-card" projectName="Betterfin" projectType="Digital Product" projectIndustry="Fintech"/>
           </Transporter>
         </Link>
         <Fade bottom distance="30px" duration={500}>
