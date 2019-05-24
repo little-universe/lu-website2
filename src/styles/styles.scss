@@ -860,7 +860,7 @@ button {
   .approach-statement-title {
     color: $fontColorLightened;
     font-size: $fontSizeLargeDesktop;
-    line-height: $lineHeightDesktop;
+    line-height: $lineHeightLargeDesktop;
     // font-size: $fontSizeHeadline;
     // line-height: $lineHeightHeadline;
     text-align: center;
@@ -869,7 +869,7 @@ button {
   .approach-statement-paragraph {
     color: $fontColor;
     font-size: $fontSizeLargeDesktop;
-    line-height: $lineHeightDesktop;
+    line-height: $lineHeightLargeDesktop;
   }
 }
 .articles-section {
@@ -883,7 +883,7 @@ button {
     }
     .article-summary {
       font-size: $fontSizeLargeDesktop;
-      line-height: $lineHeightDesktop;
+      line-height: $lineHeightLargeDesktop;
     }
   }
 }

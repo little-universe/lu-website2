@@ -24,7 +24,7 @@ class Approach extends Component {
 
     return (
       <>
-        <Hero headline="Approach" subhead="We build trust to deliver impactful results."/>
+        <Hero headline="Approach" subhead="We build trust to deliver impactful results"/>
 
         <Transporter name="approach1" show={true} duration={500} properties={[]}>
           <AboutBigImage bgImage={require("../../assets/office/office-2.jpg")} className="approach-image"/>
