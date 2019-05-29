@@ -9,7 +9,7 @@ export default class StrivePage extends Component {
     render() {
         return (
             <div style={{width: '100%'}}>
-                <Transporter name="caseStudy1" show={true} overrides={{marginTop: '80px'}}>
+                <Transporter name="caseStudyStrive" show={true} overrides={{marginTop: '80px'}}>
                     <div style={{ width: '100%', minHeight: '1vh' }}>
                         <Hero
                             className="hero-strive project-hero"

@@ -29,7 +29,7 @@ class Instructrr extends Component {
 
     return (
       <>
-      <Transporter name="caseStudy6" show={true} duration={500} properties={[]}>
+      <Transporter name="caseStudyInstructrr" show={true} duration={500} properties={[]}>
         <div style={{ width: '100%', minHeight: '1vh' }}>
           <Hero className="project-hero instructrr-hero"/>
         </div>
@@ -44,7 +44,7 @@ class Instructrr extends Component {
             <WorkTextCentered title="Active Lifestyle, Active Performance" paragraph="Beyond building workouts, which is an artform in itself, instructors need to know how to queue and sync class participants with music and exertion in a live setting. We developed concepts for a live view of the workouts to be used by instructors in a sweaty, heat-of-the-moment class setting."/>
             <WorkBigImage bgImage={require("../../assets/projects/instructrr/instructrr-5.png")} className="workImage"/>
             <Grid className={`work-next-project`} container justify="center" alignItems="center">
-              <Transporter name="caseStudy1" show={true} duration={500} properties={[]} unstableOnUnmount noTransition>
+              <Transporter name="caseStudyStrive" show={true} duration={500} properties={[]} unstableOnUnmount noTransition>
                 <WorkNextProject image={require("../../assets/projects/strive/strive-hero.png")} className="next-strive" projectName="Strive Digital" projectType="Digital Product" projectIndustry="Advocacy Tech" destination="../strive"/>
               </Transporter>
             </Grid>

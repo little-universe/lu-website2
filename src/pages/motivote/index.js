@@ -28,7 +28,7 @@ class Motivote extends Component {
 
     return (
       <>
-        <Transporter name="caseStudy2" show={true} duration={500} properties={[]}>
+        <Transporter name="caseStudyMotivote" show={true} duration={500} properties={[]}>
           <div style={{ width: '100%', minHeight: '1vh' }}>
             <Hero className="project-hero motivote-hero"/>
           </div>
@@ -43,7 +43,7 @@ class Motivote extends Component {
           <WorkTextCentered title="Making A Good First Impression" paragraph="We were aware that while working on Motivote's product they were in the midst of fundraising, which meant pitch decks. We designed a deck in close collaboration with Jess, Motivote's CEO, in order to make sure visual design and layout of her deck was slick and covered all the bases."/>
           <WorkBigImage bgImage={require("../../assets/projects/motivote/motivote-5.png")} className="workImage"/>
           <Grid className={`work-next-project`} container justify="center" alignItems="center">
-            <Transporter name="caseStudy3" show={true} duration={500} properties={[]} unstableOnUnmount noTransition>
+            <Transporter name="caseStudyBetterfin" show={true} duration={500} properties={[]} unstableOnUnmount noTransition>
               <WorkNextProject image={require("../../assets/projects/betterfin/betterfin-hero.png")} className="next-betterfin" projectName="Betterfin" projectType="Digital Product" projectIndustry="Fintech" destination="../betterfin"/>
             </Transporter>
           </Grid>

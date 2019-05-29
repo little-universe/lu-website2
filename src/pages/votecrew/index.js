@@ -28,7 +28,7 @@ class Votecrew extends Component {
 
     return (
       <>
-      <Transporter name="caseStudy4" show={true} duration={500} properties={[]}>
+      <Transporter name="caseStudyVotecrew" show={true} duration={500} properties={[]}>
         <div style={{ width: '100%', minHeight: '1vh' }}>
           <Hero className="project-hero votecrew-hero"/>
         </div>
@@ -42,7 +42,7 @@ class Votecrew extends Component {
             <WorkTextCentered title="Including Guidance" paragraph="For young voters some of the primary uncertainty in voting comes from not knowing who is on the ballot, what their policies are, and how to make a decision about them. We included a ballot guide for upcoming elections that users could look through and use to make conclusions about which candidates they liked."/>
             <WorkBigImage bgImage={require("../../assets/projects/votecrew/votecrew-4.png")} className="workImage"/>
             <Grid className={`work-next-project`} container justify="center" alignItems="center">
-              <Transporter name="caseStudy5" show={true} duration={500} properties={[]} unstableOnUnmount noTransition>
+              <Transporter name="caseStudyFarmigo" show={true} duration={500} properties={[]} unstableOnUnmount noTransition>
                 <WorkNextProject image={require("../../assets/projects/farmigo/farmigo-hero.png")} className="next-farmigo" projectName="Farmigo" projectType="Digital Product" projectIndustry="Food" destination="../farmigo"/>
               </Transporter>
             </Grid>

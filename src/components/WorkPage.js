@@ -31,7 +31,7 @@ class WorkPage extends Component {
     const { navigate } = this.props
     return (
       <div className="page page-work">
-        <Transporter name="caseStudy1" show={true}>
+        <Transporter name="caseStudyStrive" show={true}>
           <CaseStudy
             onClick={() => navigate('strive')}
             title="Strive Digital"
@@ -39,21 +39,21 @@ class WorkPage extends Component {
           />
         </Transporter>
 
-        <Transporter name="caseStudy2" show={true}>
+        <Transporter name="caseStudyMotivote" show={true}>
           <CaseStudy
             title="Betterfin"
             body="Betterfin is a service for business owners to get educated on small business lending and navigate commercial products with confidence. They provide transparency into lending through data analytics to help owners secure business financing they understand."
           />
         </Transporter>
 
-        <Transporter name="caseStudy4" show={true}>
+        <Transporter name="caseStudyVotecrew" show={true}>
           <CaseStudy
             title="H1 Insights"
             body="We built a strong foundation for H1's data engineering infrastructure, while mentoring the team on Apache Spark best practices. As they grew their pipeline, we helped them build the engineering team."
           />
         </Transporter>
 
-        <Transporter name="caseStudy3" show={true}>
+        <Transporter name="caseStudyBetterfin" show={true}>
           <CaseStudy
             title="Motion Design"
             body="We devised a technique for better state transitions on the web."

@@ -29,7 +29,7 @@ class Farmigo extends Component {
 
     return (
       <>
-      <Transporter name="caseStudy5" show={true} duration={500} properties={[]}>
+      <Transporter name="caseStudyFarmigo" show={true} duration={500} properties={[]}>
         <div style={{ width: '100%', minHeight: '1vh' }}>
           <Hero className="project-hero farmigo-hero"/>
         </div>
@@ -46,7 +46,7 @@ class Farmigo extends Component {
             <WorkTextCentered title="Packing, Shipping, Handing Off" paragraph="Farmigo's fulfillment team needed to keep up to demand in order to ensure orders were being packed and delivered to be picked up on time. In order to help with this process we designed a UI for in-house use which tracked how far ahead or behind food was being packed."/>
             <WorkBigImage bgImage={require("../../assets/projects/farmigo/farmigo-4.png")} className="workImage"/>
             <Grid className={`work-next-project`} container justify="center" alignItems="center">
-              <Transporter name="caseStudy6" show={true} duration={500} properties={[]} unstableOnUnmount noTransition>
+              <Transporter name="caseStudyInstructrr" show={true} duration={500} properties={[]} unstableOnUnmount noTransition>
                 <WorkNextProject image={require("../../assets/projects/instructrr/instructrr-hero.png")} className="next-instructrr" projectName="Instructrr" projectType="Digital Product" projectIndustry="Fitness" destination="../instructrr"/>
               </Transporter>
             </Grid>
