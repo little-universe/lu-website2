@@ -11,7 +11,7 @@ class Nav extends Component {
     const { onHovered, onRouteChange, location } = this.props;
 
     return (
-      <Fade top distance="10px" duration={1000} delay={250}>
+      <Fade bottom distance="10px" duration={1000} delay={250}>
       <div className="nav is-visible">
         <ul className="nav-list">
           <Link
