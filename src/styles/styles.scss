@@ -130,8 +130,8 @@ body {
   margin: $buffer*6;
   font-size: $fontSize;
   position: fixed;
-  left: 0;
-  bottom: 0;
+  right: 0;
+  top: 0;
   z-index: $navZIndex;
   &.is-visible {
     opacity: 1;
@@ -370,9 +370,17 @@ button:focus {
     background-position: center;
     background-repeat: no-repeat;
   }
-  &.featured-full {
+  &.featured-full { //style for full width images
     background: $bgColorWork;
     height: 90vh;
+    &.featured-full-matte {
+      .image-background {
+        margin: 0 auto;
+        max-width: 50%;
+        background-size: contain;
+      }
+    }
+    //WORK PAGE
     &.featured-strive {
       .image-background {
       background-image: url("../../src/assets/projects/strive/strive-hero.png");
@@ -403,14 +411,68 @@ button:focus {
       background-image: url("../../src/assets/projects/instructrr/instructrr-hero.png");
       }
     }
-  }
-  &.featured-center {
-    height: 60vh;
-    .image-background {
-    background-image: url("../../src/assets/team/team-2.jpg");
+    //PROJECT PAGES
+    //BETTERFIN
+    &.betterfin-5 {
+      .image-background {
+      background-image: url("../../src/assets/projects/betterfin/betterfin-5.png");
+      }
     }
-  }
+    &.betterfin-4 {
+      .image-background {
+      background-image: url("../../src/assets/projects/betterfin/betterfin-4.png");
+      }
+    }
+    //ABOUT US PAGE
+    &.group-photo {
+      .image-background {
+        background-image: url("../../src/assets/team/team-1.jpg");
+        background-position: bottom;
+      }
+    }
+    //APPROACH PAGE
+    &.approach-photo {
+      .image-background {
+        background-image: url("../../src/assets/office/office-2.jpg");
+        background-position: bottom;
+      }
+    }
+  } //featured-full
+  &.featured-center { //style for centered images
+    height: 50vh;
+    @include breakpoint(sm) {
+      max-width: 100%;
+    }
+    max-width: 70vw;
+    margin: 0 auto;
+    //WORK PAGE
+    //ABOUT US PAGE
+    &.zach-adrian {
+      .image-background {
+        background-image: url("../../src/assets/team/zach-adrian.jpg");
+      }
+    }
+    &.eugene-alana {
+      .image-background {
+        background-image: url("../../src/assets/team/eugene-alana.jpg");
+      }
+    }
+    &.taylor-adrian {
+      .image-background {
+        background-image: url("../../src/assets/team/taylor-adrian.jpg");
+      }
+    }
+    //APPROACH PAGE
+  } //featured-center
 }
+.featured-caption { //style for featured image captions
+  .image-caption {
+    text-align: center;
+    font-size: $fontSizeDesktop;
+    margin-top: $buffer*3;
+    color: $fontColorLightened;
+  }
+} //featured-caption
 
 ///// REFACTOR 190529
 

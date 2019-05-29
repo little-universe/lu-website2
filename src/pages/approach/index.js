@@ -9,6 +9,7 @@ import ApproachImageLeft from '../../components/ApproachImageLeft';
 import ApproachImageRight from '../../components/ApproachImageRight';
 import WorkTogether from '../../components/WorkTogether';
 import AboutBigImage from '../../components/AboutBigImage';
+import FeaturedImage from '../../components/FeaturedImage';
 import { Transporter } from '../../orbit';
 import Fade from 'react-reveal/Fade';
 
@@ -27,7 +28,7 @@ class Approach extends Component {
         <Hero headline="Approach" subhead="We build trust to deliver impactful results"/>
 
         <Transporter name="approach1" show={true} duration={500} properties={[]}>
-          <AboutBigImage bgImage={require("../../assets/office/office-2.jpg")} className="approach-image"/>
+          <FeaturedImage featuredFull className="approach-photo"/>
         </Transporter>
         <Fade bottom distance="30px" duration={500}>
           <ApproachStatement className="" title="Driven by Principles" paragraph="Through our cumulative decades of experience we have built a foundation of strong principles and have developed a deep intuition for product. We bring this knowledge to every project we work on and seek to learn from every team we partner with."/>
