@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import Grid from '@material-ui/core/Grid';
+import {Link} from "react-router-dom";
 
 export default class FeaturedImage extends Component {
   render() {
-    const { featuredFull, featuredFullProject, featuredFullMatte, featuredCenter, featuredLeft, featuredRight, className, projectName, projectCategory, projectIndustry, caption, style, anim} = this.props
+    const { featuredFull, featuredFullProject, featuredFullMatte, featuredCenter, featuredLeft, featuredRight, className, projectName, projectCategory, projectIndustry, caption, destination, style, anim} = this.props
     return (
     <div className="margin-container" style={style}>
-      { featuredFullProject, projectName, projectCategory, projectIndustry &&
+      { featuredFullProject && projectName && projectCategory && projectIndustry &&
         <div className="container">
           <Grid className={`featured-image featured-full ${className}`} container>
             <Grid item className={`image-background`}md={12}>
@@ -42,6 +43,22 @@ export default class FeaturedImage extends Component {
           <Grid className={`featured-caption`} container justify="center" alignItems="center">
             <Grid item className={`image-caption`} md={8}>{caption}</Grid>
           </Grid>
+        </div>
+      }
+      { featuredCenter && projectName && projectCategory && projectIndustry && destination &&
+        <div className="container">
+        <Grid className="next-work-container" container justify="center" alignItems="center">
+          <Link to={destination} className="work-next-link">
+            <div className="next-project-label">Next Project</div>
+            <Grid className={`featured-image featured-center featured-center-nextwork ${className}`} container justify="center" alignItems="center">
+              <Grid item className={`image-background`} md={12}></Grid>
+            </Grid>
+            <p className="project-details">
+              <span className="project-name">{projectName}</span><br/>
+              <span className="project-type">{projectCategory} • {projectIndustry}</span>
+            </p>
+          </Link>
+        </Grid>
         </div>
       }
     </div>

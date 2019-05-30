@@ -34,7 +34,7 @@ class Work extends Component {
           </Transporter>
         </Link>
         <Link to="../betterfin" className="work-card-link">
-          <Transporter name="caseStudyBetterfin" show={true} duration={750} unstableOnUnmount>
+          <Transporter name="caseStudyBetterfin" show={true} duration={750} properties={['margin']}>
             <FeaturedImage featuredFullProject className="featured-betterfin" projectName="Betterfin" projectCategory="Digital Product" projectIndustry="Fintech"/>
           </Transporter>
         </Link>

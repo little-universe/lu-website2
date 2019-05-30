@@ -17,6 +17,9 @@ $bgColor: #f3f3f3;
 $bgColorDarker: darken($bgColor, 1%);
 $bgColorHeavy: $secondaryColor;
 $bgColorWorkCard: #f0f2f5;
+
+$bgColorNextWork: #ccc;
+
 $bgColorWork: #f0f2f5;
 $successColor: #A7C958;
 $warningColor: $primaryColor;
@@ -38,7 +41,7 @@ $fontSizeExtraSmallDesktop: 12px;
 $fontSizeLarge: 24px;
 $fontSizeLargeDesktop: 24px;
 // $fontSizeLargeDesktop: 1.vw;
-$fontFamily: "Apercu", sans-serif;
+$fontFamily: "Marr Sans Web", sans-serif;
 $fontWeightHeavy: 700;
 $fontWeightNormal: 400;
 $fontWeightLight: 200;
@@ -58,8 +61,8 @@ $radiusFull: 100px;
 $border: 1px solid $stroke;
 $borderLight: 1px solid $strokeLight;
 $navHeight: 80px;
-$timing: .15s;
-$easing: ease-in-out;
+$timing: .25s;
+$easing: cubic-bezier(0.645, 0.045, 0.355, 1);;
 $transition: all $timing $easing;
 
 $maxPageWidth: 1400px;
@@ -75,6 +78,22 @@ $navZIndex: 10;
 $pageZIndex: 50;
 
 // GLOBAL STYLES
+
+@font-face {
+    font-family: 'Marr Sans Web';
+    src: url('https://s3.us-east-2.amazonaws.com/lu-assets/fonts/MarrSansWeb-Regular.woff2') format('woff2'),
+        url('https://s3.us-east-2.amazonaws.com/lu-assets/fonts/MarrSansWeb-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Marr Sans Web';
+    src: url('https://s3.us-east-2.amazonaws.com/lu-assets/fonts/MarrSansWeb-Medium.woff2') format('woff2'),
+        url('https://s3.us-east-2.amazonaws.com/lu-assets/fonts/MarrSansWeb-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
 
 body {
   margin: 0 auto;
@@ -326,6 +345,7 @@ button:focus {
   }
 } //wrapper for non-full width elements
 
+
 .featured-image {
   position: relative;
   font-size: $fontSizeLargeDesktop;
@@ -353,6 +373,7 @@ button:focus {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    @include transition;
   }
   &.featured-full { //style for full width images
     background: $bgColorWork;
@@ -396,15 +417,70 @@ button:focus {
       }
     }
     //PROJECT PAGES
+    //STRIVE
+    &.strive-1 {
+      .image-background {
+      background-image: url("../../src/assets/projects/strive/strive-1.png");
+      }
+    }
+    &.strive-3 {
+      .image-background {
+      background-image: url("../../src/assets/projects/strive/strive-3.png");
+      }
+    }
+    //MOTIVOTE
+    &.motivote-4 {
+      .image-background {
+      background-image: url("../../src/assets/projects/motivote/motivote-4.png");
+      }
+    }
+    &.motivote-5 {
+      .image-background {
+      background-image: url("../../src/assets/projects/motivote/motivote-5.png");
+      }
+    }
     //BETTERFIN
+    &.betterfin-4 {
+      .image-background {
+      background-image: url("../../src/assets/projects/betterfin/betterfin-4.png");
+      }
+    }
     &.betterfin-5 {
       .image-background {
       background-image: url("../../src/assets/projects/betterfin/betterfin-5.png");
       }
     }
-    &.betterfin-4 {
+    //VOTECREW
+    &.votecrew-1 {
       .image-background {
-      background-image: url("../../src/assets/projects/betterfin/betterfin-4.png");
+      background-image: url("../../src/assets/projects/votecrew/votecrew-1.png");
+      }
+    }
+    &.votecrew-4 {
+      .image-background {
+      background-image: url("../../src/assets/projects/votecrew/votecrew-4.png");
+      }
+    }
+    //FARMIGO
+    &.farmigo-1 {
+      .image-background {
+      background-image: url("../../src/assets/projects/farmigo/farmigo-1.png");
+      }
+    }
+    &.farmigo-4 {
+      .image-background {
+      background-image: url("../../src/assets/projects/farmigo/farmigo-4.png");
+      }
+    }
+    //INSTRUCTRR
+    &.instructrr-6 {
+      .image-background {
+      background-image: url("../../src/assets/projects/instructrr/instructrr-6.png");
+      }
+    }
+    &.instructrr-5 {
+      .image-background {
+      background-image: url("../../src/assets/projects/instructrr/instructrr-5.png");
       }
     }
     //ABOUT US PAGE
@@ -429,7 +505,37 @@ button:focus {
     }
     max-width: 70vw;
     margin: 0 auto;
-    //WORK PAGE
+    //WORKS
+    &.strive-next {
+      .image-background {
+        background-image: url("../../src/assets/projects/strive/strive-hero.png");
+      }
+    }
+    &.votecrew-next {
+      .image-background {
+        background-image: url("../../src/assets/projects/votecrew/votecrew-hero.png");
+      }
+    }
+    &.instructrr-next {
+      .image-background {
+        background-image: url("../../src/assets/projects/instructrr/instructrr-hero.png");
+      }
+    }
+    &.betterfin-next {
+      .image-background {
+        background-image: url("../../src/assets/projects/betterfin/betterfin-hero.png");
+      }
+    }
+    &.motivote-next {
+      .image-background {
+        background-image: url("../../src/assets/projects/motivote/motivote-hero.png");
+      }
+    }
+    &.farmigo-next {
+      .image-background {
+        background-image: url("../../src/assets/projects/farmigo/farmigo-hero.png");
+      }
+    }
     //ABOUT US PAGE
     &.zach-adrian {
       .image-background {
@@ -449,6 +555,47 @@ button:focus {
     //APPROACH PAGE
   } //featured-center
 }
+.next-work-container {
+  margin: 0 auto;
+  max-width: 50vw;
+  color: $fontColorLightened;
+  font-size: $fontSizeDesktop;
+  line-height: $lineHeightDesktop;
+  @include breakpoint(sm) {
+    max-width: 100vw !important;
+  }
+  .work-next-link {
+    width: 100%;
+    text-decoration: none;
+    color: $fontColor;
+  }
+  .next-project-label {
+    margin-bottom: $buffer*3;
+  }
+  .project-details {
+    .project-name {
+      color: $fontColor;
+    }
+    .project-type {
+      color: $fontColorLightened;
+    }
+  }
+  .featured-center-nextwork {
+    clip-path: inset(0);
+    height: 50vh;
+    background: $bgColorWork;
+    margin-bottom: $buffer*3;
+    @include transition;
+    &:hover {
+      .image-background {
+        -webkit-transform: scale(1.15);
+        @include transition;
+      }
+      clip-path: inset(0 $buffer);
+      @include transition;
+    }
+  }
+} //next-work-container
 .featured-caption { //style for featured image captions
   .image-caption {
     text-align: center;
@@ -457,6 +604,175 @@ button:focus {
     color: $fontColorLightened;
   }
 } //featured-caption
+.iwt-container {
+  // height: 100vh;
+  position: relative;
+  .image-image-wrapper {
+    background: $bgColorWork;
+    width: 100%;
+    height: 100%;
+    .image-background {
+      height: 100vh;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      &.image-background-full {
+        width: 100%;
+      }
+      &.image-background-matte {
+        // width: 80% !important;
+        margin: 0 auto;
+        max-width: 80% !important;
+        background-size: contain;
+      }
+    }
+  }
+  .image-text-wrapper {
+    .image-text {
+      line-height: $lineHeightDesktop;
+      .text-headline, .member-name{
+        font-size: $fontSizeLargeDesktop;
+      }
+      .text-description{
+        font-size: $fontSizeDesktop;
+        color: $fontColorLightened;
+      }
+    }
+  }
+  //STRIVE
+  &.strive-2 {
+    .image-background {
+      background-image: url("../../src/assets/projects/strive/strive-2.png");
+    }
+  }
+  &.strive-4 {
+    .image-background {
+      background-image: url("../../src/assets/projects/strive/strive-4.png");
+    }
+  }
+  //MOTIVOTE
+  &.motivote-1 {
+    .image-background {
+      background-image: url("../../src/assets/projects/motivote/motivote-1.png");
+    }
+  }
+  &.motivote-2 {
+    .image-background {
+      background-image: url("../../src/assets/projects/motivote/motivote-2.png");
+    }
+  }
+  //BETTERFIN
+  &.betterfin-1 {
+    .image-background {
+      background-image: url("../../src/assets/projects/betterfin/betterfin-1.png");
+    }
+  }
+  &.betterfin-2 {
+    .image-background {
+      background-image: url("../../src/assets/projects/betterfin/betterfin-2.png");
+    }
+  }
+  &.betterfin-3 {
+    .image-background {
+      background-image: url("../../src/assets/projects/betterfin/betterfin-3.png");
+    }
+  }
+  //VOTECREW
+  &.votecrew-2 {
+    .image-background {
+      background-image: url("../../src/assets/projects/votecrew/votecrew-2.png");
+    }
+  }
+  &.votecrew-3 {
+    .image-background {
+      background-image: url("../../src/assets/projects/votecrew/votecrew-3.png");
+    }
+  }
+  //FARMIGO
+  &.farmigo-2 {
+    .image-background {
+      background-image: url("../../src/assets/projects/farmigo/farmigo-2.png");
+    }
+  }
+  &.farmigo-3 {
+    .image-background {
+      background-image: url("../../src/assets/projects/farmigo/farmigo-3.png");
+    }
+  }
+  &.farmigo-m-4 {
+    .image-background {
+      background-image: url("../../src/assets/projects/farmigo/farmigo-m-4.png");
+    }
+  }
+  &.farmigo-m-5 {
+    .image-background {
+      background-image: url("../../src/assets/projects/farmigo/farmigo-m-5.png");
+    }
+  }
+  //INSTRUCTRR
+  &.instructrr-1 {
+    .image-background {
+      background-image: url("../../src/assets/projects/instructrr/instructrr-1.png");
+    }
+  }
+  &.instructrr-2 {
+    .image-background {
+      background-image: url("../../src/assets/projects/instructrr/instructrr-2.png");
+    }
+  }
+  &.instructrr-3 {
+    .image-background {
+      background-image: url("../../src/assets/projects/instructrr/instructrr-3.png");
+    }
+  }
+  //ABOUT
+  &.zach-member {
+    .image-background {
+      background-image: url("../../src/assets/team/zach.png");
+    }
+  }
+  &.adrian-member {
+    .image-background {
+      background-image: url("../../src/assets/team/adrian.png");
+    }
+  }
+  &.eugene-member {
+    .image-background {
+      background-image: url("../../src/assets/team/eugene.png");
+    }
+  }
+  &.alana-member {
+    .image-background {
+      background-image: url("../../src/assets/team/alana.png");
+    }
+  }
+  &.taylor-member {
+    .image-background {
+      background-image: url("../../src/assets/team/taylor.png");
+    }
+  }
+  //APPROACH
+  &.approach-1 {
+    .image-background {
+      background-image: url("../../src/assets/office/desk.jpg");
+    }
+  }
+  &.approach-2 {
+    .image-background {
+      background-image: url("../../src/assets/office/process.jpg");
+    }
+  }
+  &.approach-3 {
+    .image-background {
+      background-image: url("../../src/assets/office/intention.jpg");
+    }
+  }
+  &.approach-4 {
+    .image-background {
+      background-image: url("../../src/assets/office/office.jpg");
+    }
+  }
+}//iwt-container
 
 ///// REFACTOR 190529
 

@@ -12,6 +12,8 @@ import WorkTextQuote from '../../components/WorkTextQuote';
 import WorkTextMetric from '../../components/WorkTextMetric';
 import WorkNextProject from '../../components/WorkNextProject';
 import WorkTogether from '../../components/WorkTogether';
+import FeaturedImage from '../../components/FeaturedImage';
+import ImageWithText from '../../components/ImageWithText';
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import { Transporter } from '../../orbit'
 import Grid from '@material-ui/core/Grid';
@@ -35,18 +37,18 @@ class Motivote extends Component {
         </Transporter>
         <Fade bottom distance="30px" duration={500}>
           <WorkTextOpener list={["Digital Product", "UX/UI", "Branding", "Strategy", "Front End", "Back End"]} paragraph="Motivote is a digital platform built by a former student organizer and non-voter which gets millenials to vote by offering incentives. By creating a seamless digital experience on a product which could be whitelabeled to fit partnership goals, we bridge the gap between intention and action for young voters."/>
-          <WorkBigImage bgImage={require("../../assets/projects/motivote/motivote-4.png")} className="workImage"/>
+          <FeaturedImage featuredFullMatte className="motivote-4"/>
           <WorkTextCentered title="Fleshing Out A Strong Idea" paragraph="Motivote came to us with a great MVP and a solid conceptual understanding of what they needed their product to do. We worked very closely with the founders in order to turn ideas into actionable tasks, developing a brand guide, UX and UI, and implementing all the front end and back end code."/>
-          <WorkImageLeft image={require("../../assets/projects/motivote/motivote-1.png")} headline="Sign Up and Win Cool Stuff" description="Motivote's gamified model is immediately surfaced to the end user as a primary element of the app. At the sign up page the user is greeted with a punchy, illustrated, call to action. "/>
+          <ImageWithText imageLeft imageMatte className="motivote-1"  headline="Sign Up and Win Cool Stuff" description="Motivote's gamified model is immediately surfaced to the end user as a primary element of the app. At the sign up page the user is greeted with a punchy, illustrated, call to action."/>
           <WorkTextQuote author="Jess Riegel, Motivote CEO" paragraph="Little Universe is an amazing team that perfectly balances execution with process. I'd hire them again in a minute to design and build anything."/>
-          <WorkImageRight image={require("../../assets/projects/motivote/motivote-2.png")} headline="Inaction to Action Dashboard" description="We build a robust, whitelabel-able dashboard integrating gamification, leaderboards, voting resources, into executable action lists for users. Users can see what they need to do to make an impact through voting all in one place."/>
+          <ImageWithText imageRight imageMatte className="motivote-2"  headline="Inaction to Action Dashboard" description="We build a robust, whitelabel-able dashboard integrating gamification, leaderboards, voting resources, into executable action lists for users. Users can see what they need to do to make an impact through voting all in one place."/>
           <WorkTextCentered title="Making A Good First Impression" paragraph="We were aware that while working on Motivote's product they were in the midst of fundraising, which meant pitch decks. We designed a deck in close collaboration with Jess, Motivote's CEO, in order to make sure visual design and layout of her deck was slick and covered all the bases."/>
-          <WorkBigImage bgImage={require("../../assets/projects/motivote/motivote-5.png")} className="workImage"/>
-          <Grid className={`work-next-project`} container justify="center" alignItems="center">
+          <FeaturedImage featuredFullMatte className="motivote-5"/>
+
             <Transporter name="caseStudyBetterfin" show={true} duration={500} properties={[]} unstableOnUnmount noTransition>
-              <WorkNextProject image={require("../../assets/projects/betterfin/betterfin-hero.png")} className="next-betterfin" projectName="Betterfin" projectType="Digital Product" projectIndustry="Fintech" destination="../betterfin"/>
+            <FeaturedImage featuredCenter className="betterfin-next" projectName="Betterfin" projectCategory="Digital Product" projectIndustry="Fintech" destination="../betterfin"/>
             </Transporter>
-          </Grid>
+
         <WorkTogether headline="Let's get to know each other"/>
         </Fade>
       </>
