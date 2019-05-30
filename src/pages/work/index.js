@@ -21,7 +21,6 @@ class Work extends Component {
 
     return (
       <>
-
         <Hero heroText className="about-hero" headline="Our Work" subhead="We make a difference for our clients"/>
         <Link to="../strive" className="work-card-link">
           <Transporter name="caseStudyStrive" show={true} duration={500} properties={['margin']}>
