@@ -35,7 +35,7 @@ class Instructrr extends Component {
       <>
       <Transporter name="caseStudyInstructrr" show={true} duration={500} properties={[]}>
         <div style={{ width: '100%', minHeight: '1vh' }}>
-          <Hero className="project-hero instructrr-hero"/>
+          <Hero heroImage className="instructrr-hero" projectName="Instructrr" projectCategory="Digital Product" projectIndustry="Fitness"/>
         </div>
       </Transporter>
         <Fade bottom distance="30px" duration={500}>

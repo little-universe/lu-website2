@@ -35,7 +35,7 @@ class Betterfin extends Component {
       <>
           <Transporter name="caseStudyBetterfin" show={true} duration={500} properties={[]}>
             <div style={{ width: '100%', minHeight: '1vh' }}>
-              <Hero className="project-hero betterfin-hero"/>
+              <Hero heroImage className="betterfin-hero" projectName="Betterfin" projectCategory="Digital Product" projectIndustry="Fintech"/>
             </div>
           </Transporter>
           <Fade bottom distance="30px" duration={500}>

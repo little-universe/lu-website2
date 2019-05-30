@@ -35,7 +35,7 @@ class Votecrew extends Component {
       <>
       <Transporter name="caseStudyVotecrew" show={true} duration={500} properties={[]}>
         <div style={{ width: '100%', minHeight: '1vh' }}>
-          <Hero className="project-hero votecrew-hero"/>
+          <Hero heroImage className="votecrew-hero" projectName="Vote Crew" projectCategory="Digital Product" projectIndustry="Advocacy Tech"/>
         </div>
       </Transporter>
         <Fade bottom distance="30px" duration={500}>

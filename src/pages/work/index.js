@@ -22,7 +22,7 @@ class Work extends Component {
     return (
       <>
 
-        <Hero headline="Our Work" subhead="We make a difference for our clients"/>
+        <Hero heroText className="about-hero" headline="Our Work" subhead="We make a difference for our clients"/>
         <Link to="../strive" className="work-card-link">
           <Transporter name="caseStudyStrive" show={true} duration={500} properties={['margin']}>
             <FeaturedImage featuredFullProject className="featured-strive" projectName="Strive Digital" projectCategory="Digital Product" projectIndustry="Advocacy Tech"/>

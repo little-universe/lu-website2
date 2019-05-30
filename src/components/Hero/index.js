@@ -4,33 +4,34 @@ import Fade from 'react-reveal/Fade';
 
 export default class Hero extends Component {
     render() {
-        const { className, headline, subhead, explaination, bgImage, style } = this.props
+        const { heroText, heroImage, className, headline, subhead, projectName, projectCategory, projectIndustry, style, anim } = this.props
         return (
-            <div style={style}>
-                {headline, subhead &&
-                    <div classname="container">
-                        <Grid className={`hero ${className}`} container justify="center" alignItems="center">
-                            <Grid item md={12} xs={12}>
-                                <div className="container">
-                                    <Fade bottom distance="10px" duration={500}>
-                                        <h1 className="headline">{headline}</h1>
-                                        <p className="subhead">{subhead}</p>
-                                    </Fade>
-                                </div>
-                            </Grid>
-                        </Grid>
-                    </div>
+            <div className="nomargin-container" style={style}>
+                {heroText && headline && subhead &&
+                  <div classname="container">
+                    <Fade bottom distance="10px" duration={1000}>
+                      <Grid className={`hero text-hero ${className}`} container justify="center" alignItems="center">
+                          <Grid item md={12} xs={12}>
+                            <p className="headline">{headline}</p>
+                            <p className="subhead">{subhead}</p>
+                          </Grid>
+                      </Grid>
+                    </Fade>
+                  </div>
                 }
-                {className &&
-                    <div classname="container">
-                        <Grid className={`hero ${className}`} container justify="center" alignItems="center">
-                            <Grid item md={12} xs={12}>
-                                <div className="container">
-                                <img className="hero-image" src={bgImage}/>
-                                </div>
-                            </Grid>
-                        </Grid>
-                    </div>
+                {heroImage &&
+                  <div classname="container">
+                      <Grid className={`hero image-hero ${className}`} container justify="center" alignItems="center">
+                          <Grid item className="image-background" md={12}>
+                          {anim !== "showing" &&
+                            <div className="project-details">
+                              <span className="project-name">{projectName}</span><br/>
+                              <span className="project-type">{projectCategory} • {projectIndustry}</span>
+                            </div>
+                          }
+                          </Grid>
+                      </Grid>
+                  </div>
                 }
             </div>
         )

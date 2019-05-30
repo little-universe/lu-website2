@@ -31,9 +31,9 @@ class Strive extends Component {
 
     return (
       <>
-      <Transporter name="caseStudyStrive" show={true} duration={250} properties={[]}>
+      <Transporter name="caseStudyStrive" show={true} duration={1000} properties={[]}>
       <div style={{ width: '100%', minHeight: '1vh' }}>
-        <Hero className="project-hero strive-hero"/>
+        <Hero heroImage className="strive-hero" projectName="Strive Digital" projectCategory="Digital Product" projectIndustry="Advocacy Tech"/>
         </div>
       </Transporter>
       <Fade bottom distance="30px" duration={500}>

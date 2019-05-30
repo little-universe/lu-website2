@@ -28,7 +28,7 @@ class Approach extends Component {
 
     return (
       <>
-        <Hero headline="Approach" subhead="We build trust to deliver impactful results"/>
+        <Hero heroText className="about-hero" headline="Approach" subhead="We build trust to deliver impactful results"/>
 
         <Transporter name="approach1" show={true} duration={500} properties={[]}>
           <FeaturedImage featuredFull className="approach-photo"/>
