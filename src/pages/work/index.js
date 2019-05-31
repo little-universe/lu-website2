@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import Logo from '../../components/Logo';
-import Nav from '../../components/Nav';
 import Hero from '../../components/Hero';
 import WorkTogether from '../../components/WorkTogether';
 import FeaturedImage from '../../components/FeaturedImage';

@@ -52,7 +52,7 @@ $fontSizeHeadline: 100px;
 // $fontSizeHeadline: 20px;
 $lineHeightHeadline: $fontSizeHeadline*1.5;
 $fontSizeSubHeadline: 28px;
-$fontSizeStatement: 42px;
+$fontSizeStatement: 38px;
 $lineHeightStatement: $fontSizeStatement*1.5;
 
 $buffer: 10px;
@@ -153,7 +153,7 @@ body {
       color: $fontColorLight;
       background: $primaryColor;
       @include transition;
-      &.active {
+      &:active {
         background: $primaryColorInteracted;
       }
       &:first-child {
@@ -345,29 +345,28 @@ button:focus {
   }
 } //wrapper for non-full width elements
 
-.project-details {
-  position: absolute;
-  margin-bottom: 0;
-  z-index: $peekZIndex;
-  bottom: $buffer*6;
-  left: $buffer*6;
-  font-size: $fontSizeLargeDesktop;
-  line-height: $lineHeightLargeDesktop;
-  @include breakpoint(sm) {
-    bottom: $buffer*2;
-    left: $buffer*2;
-  }
-  .project-name {
-    color: $fontColor;
-  }
-  .project-type {
-    color: $fontColorLightened;
-  }
-}//project-details
-
 .hero {
   height: 90vh;
   position: relative;
+  .project-details {
+    position: absolute;
+    margin-bottom: 0;
+    z-index: $peekZIndex;
+    bottom: $buffer*6;
+    left: $buffer*6;
+    font-size: $fontSizeLargeDesktop;
+    line-height: $lineHeightLargeDesktop;
+    @include breakpoint(sm) {
+      bottom: $buffer*3;
+      left: $buffer*3;
+    }
+    .project-name {
+      color: $fontColor;
+    }
+    .project-type {
+      color: $fontColorLightened;
+    }
+  }//project-details
   &.text-hero {
     text-align: center;
     .headline {
@@ -425,6 +424,25 @@ button:focus {
 
 .featured-image {
   position: relative;
+  .project-details {
+    position: absolute;
+    margin-bottom: 0;
+    z-index: $peekZIndex;
+    bottom: $buffer*6;
+    left: $buffer*6;
+    font-size: $fontSizeLargeDesktop;
+    line-height: $lineHeightLargeDesktop;
+    @include breakpoint(sm) {
+      bottom: $buffer*2;
+      left: $buffer*2;
+    }
+    .project-name {
+      color: $fontColor;
+    }
+    .project-type {
+      color: $fontColorLightened;
+    }
+  }//project-details
   .image-background {
     width: 100%;
     height: 100%;
@@ -834,6 +852,56 @@ button:focus {
   }
 }//iwt-container
 
+.featured-text {
+  // height: 70vh;
+  margin: $buffer*30 0;
+  position: relative;
+  .text-body {
+    .text-list {
+      ul {
+        list-style-type: none;
+        margin: 0; padding: 0;
+        color: $fontColorLightened;
+        font-size: $fontSizeDesktop;
+        line-height: $lineHeightDesktop;
+      }
+    }
+    .text-statement {
+      font-size: $fontSizeStatement;
+      line-height: $lineHeightStatement;
+    }
+    .text-header {
+      font-size: $fontSizeLargeDesktop;
+      line-height: $lineHeightDesktop;
+      color: $fontColorLightened;
+    }
+    .text-caption {
+      font-size: $fontSizeDesktop;
+      line-height: $lineHeightDesktop;
+      color: $fontColorLightened;
+    }
+  }
+  .text-additional {
+    margin-top: $buffer*6;
+    .additional-text-1 {
+      color: $fontColorLightest;
+    }
+    .additional-text-2 {
+      .linkTo {
+        text-decoration: none !important;
+        color: $fontColor;
+        @include transition;
+        &:hover {
+          color: $fontColor;
+          color: $fontColorLightened;
+          @include transition;
+        }
+      }
+    }
+  }
+  &.text-with-list {}
+}
+
 ///// REFACTOR 190529
 
 
@@ -857,10 +925,7 @@ button:focus {
   }
 }
 
-
 // WORK PAGE
-
-
 .work-card-link {
   &:hover {
     @include transition;
