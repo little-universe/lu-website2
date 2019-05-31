@@ -21,13 +21,13 @@ class Motivote extends Component {
 
     return (
       <>
-        <Transporter name="caseStudyMotivote" show={true} duration={500} properties={[]}>
+        <Transporter name="caseStudyMotivote" show={true} duration={1000} properties={[]}>
           <div style={{ width: '100%', minHeight: '1vh' }}>
             <Hero heroImage className="motivote-hero" projectName="Motivote" projectCategory="Digital Product" projectIndustry="Advocacy Tech"/>
           </div>
         </Transporter>
         <Fade bottom distance="30px" duration={500}>
-          <FeaturedText textWithList list={["Digital Product", "UX/UI", "Branding", "Strategy", "Front End", "Back End"]} text="Motivote is a digital platform built by a former student organizer and non-voter which gets millenials to vote by offering incentives. By creating a seamless digital experience on a product which could be whitelabeled to fit partnership goals, we bridge the gap between intention and action for young voters." status="Ongoing Partnership"/>
+          <FeaturedText textWithList list={["Digital Product", "UX/UI", "Branding", "Strategy", "Front End", "Back End"]} text="Motivote is a digital platform built by a former student organizer and non-voter which gets millenials to vote by offering incentives. By creating a seamless digital experience on a product which can be whitelabeled to fit partnership goals, we bridge the gap between intention and action for young voters." status="Ongoing Partnership"/>
           <FeaturedImage featuredFullMatte className="motivote-4"/>
           <FeaturedText textWithHeader header="Fleshing Out A Strong Idea" text="Motivote came to us with a great MVP and a solid conceptual understanding of what they needed their product to do. We worked very closely with the founders in order to turn ideas into actionable tasks, developing a brand guide, UX and UI, and implementing all the front end and back end code."/>
           <ImageWithText imageLeft imageMatte className="motivote-1"  headline="Sign Up and Win Cool Stuff" description="Motivote's gamified model is immediately surfaced to the end user as a primary element of the app. At the sign up page the user is greeted with a punchy, illustrated, call to action."/>

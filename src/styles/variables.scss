@@ -1,0 +1,74 @@
+$primaryColor: #0577FB;
+$primaryColorInteracted: lighten($primaryColor, 7%);
+$primaryColorLightened: lighten($primaryColor, 38%);
+$secondaryColor: #166ACB;
+$secondaryColorInteracted: lighten($secondaryColor, 10%);
+$secondaryColorLightened: lighten($secondaryColor, 33%);
+$stroke: #dfdad8;
+$strokeLight: lighten($stroke, 8%);
+$strokeDarkened: darken($stroke, 8%);
+$bgColorLight: #fff;
+$bgColorLightened: #f5f5f5;
+$bgColor: #f3f3f3;
+$bgColorDarker: darken($bgColor, 1%);
+$bgColorHeavy: $secondaryColor;
+$bgColorWorkCard: #f0f2f5;
+
+$bgColorNextWork: #ccc;
+
+$bgColorWork: #f0f2f5;
+$successColor: #A7C958;
+$warningColor: $primaryColor;
+$warningLight: lighten($warningColor, 15%);
+$successColor: #A5C850;
+$accentColorLight: #ECECE6;
+$accentColor: #ffde7c;
+
+$fontColor: #222222;
+$fontColorLight: #fff;
+$fontColorLightened: #aaa;
+$fontColorLightest: #ddd;
+$fontSize: 14px;
+$fontSizeDesktop: 18px;
+$fontSizeSmall: 13px;
+$fontSizeSmallDesktop: 14px;
+$fontSizeExtraSmall: 11px;
+$fontSizeExtraSmallDesktop: 12px;
+$fontSizeLarge: 24px;
+$fontSizeLargeDesktop: 24px;
+// $fontSizeLargeDesktop: 1.vw;
+$fontFamily: "Marr Sans Web", sans-serif;
+$fontWeightHeavy: 700;
+$fontWeightNormal: 400;
+$fontWeightLight: 200;
+$lineHeight: 22px;
+$lineHeightDesktop: 32px;
+$lineHeightLargeDesktop: $fontSizeLargeDesktop*2;
+$fontSizeHeadline: 100px;
+// $fontSizeHeadline: 20px;
+$lineHeightHeadline: $fontSizeHeadline*1.5;
+$fontSizeSubHeadline: 28px;
+$fontSizeStatement: 38px;
+$lineHeightStatement: $fontSizeStatement*1.5;
+
+$buffer: 10px;
+$radius: 4px;
+$radiusFull: 100px;
+$border: 1px solid $stroke;
+$borderLight: 1px solid $strokeLight;
+$navHeight: 80px;
+$timing: .25s;
+$easing: cubic-bezier(0.645, 0.045, 0.355, 1);;
+$transition: all $timing $easing;
+
+$maxPageWidth: 1400px;
+$navWidth: 300px;
+$navWidthMobile: 200px;
+$navHeightMobile: 90px;
+$containedWidth: 600px;
+$xs: 960px;
+$xxs: 640px;
+
+$peekZIndex: 1;
+$navZIndex: 10;
+$pageZIndex: 50;

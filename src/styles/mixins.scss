@@ -1,3 +1,5 @@
+@import '/variables.scss';
+
 @mixin test {
   border: 1px solid blue !important;
 }
@@ -5,6 +7,62 @@
 @mixin transition {
   transition: all $timing $easing;
 }
+
+@keyframes navLinkCollapsed {
+  0% {
+  }
+  50% {
+    border-radius: $radius !important;
+  }
+  100% {
+    padding: 0;
+    border-radius: $radius !important;
+    margin: 3px;
+  }
+}
+@keyframes navLinkUnCollapsed {
+  0% {
+    padding: 0;
+    border-radius: $radius !important;
+    margin: 3px;
+  }
+  50% {
+    border-radius: $radius !important;
+  }
+  100% {
+  }
+}
+@keyframes navItemCollapsed {
+  0% {
+    opacity: 1;
+  }
+  55% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    width: 6px;
+    height: 6px;
+  }
+}
+@keyframes navItemUnCollapsed {
+  0% {
+    opacity: 0;
+    width: 6px;
+    height: 6px;
+  }
+  55% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@mixin animation($duration, $delay, $animation) {
+  animation: $duration $easing $delay 1 $animation forwards;
+}
+
 
 @mixin ellipsis($width) {
   width: $width;
