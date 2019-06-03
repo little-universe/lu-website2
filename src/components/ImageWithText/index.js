@@ -8,7 +8,7 @@ export default class ImageWithText extends Component {
     return (
     <div className="margin-container" style={style}>
       { imageLeft && imageFull && headline && description &&
-        <div className="container">
+        <div className="container iwt-left-right-container">
           <Grid className={`iwt-container iwt-left ${className}`} container alignItems="center">
             <Grid item className="image-image-wrapper" md={5} justify="center" alignItems="center">
               <Grid container justify="center" alignItems="center">

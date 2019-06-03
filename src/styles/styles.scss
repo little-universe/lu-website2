@@ -87,7 +87,13 @@ body {
           font-size: $fontSizeStatement;
           line-height: $lineHeightStatement*3;
           text-align: center;
+          &:focus {
+            outline: none !important;
+          }
           .menu-nav-link {
+            // &:focus {
+            //   outline: none !important;
+            // }
             color: $fontColorLight;
             text-decoration: none;
           }
@@ -372,6 +378,9 @@ button:focus {
 
 ///// REFACTOR 190529
 
+.homepage-teaser {
+}
+
 .nomargin-container {
   margin: 0;
 }// wrapper for full width elements
@@ -446,6 +455,10 @@ button:focus {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+  }
+  &.homepage-hero {
+    .image-background {
+    }
   }
   &.strive-hero {
     .image-background {
