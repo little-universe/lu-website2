@@ -54,12 +54,44 @@ body {
 // NAV STYLES
 
 .nav {
-  margin: $buffer*6;
+  padding: $buffer*6;
   font-size: $fontSize;
   position: fixed;
   right: 0;
   top: 0;
   z-index: $navZIndex;
+  @include breakpoint(sm) {
+    &.is-collapsed {
+      .nav-list {
+        .nav-link {
+          border-radius: $radius !important;
+          pointer-events: none !important;
+          .nav-item {
+            visibility: hidden;
+          }
+        }
+      }
+    }
+    &.is-uncollapsed {
+      .nav-link {
+        pointer-events: none !important;
+        .nav-item {
+          visibility: hidden;
+        }
+      }
+    }
+    .nav-link {
+      border-radius: $radius !important;
+      pointer-events: none !important;
+      padding: 0 !important;
+      margin: 3px;
+      .nav-item {
+        pointer-events: none;
+        opacity: 0;
+        width: 6px !important; height: 6px !important;
+      }
+    }
+  }//breakpoint
   &.is-collapsed {
     &.nav:hover {
       .nav-link {
@@ -74,12 +106,11 @@ body {
         }
         .nav-item {
         @include animation(.25s, 0s, navItemUnCollapsed);
+        pointer-events: none !important;
         }
       }
     }
     .nav-link {
-      // margin: 0 $buffer;
-      // border-radius: $radius !important;
       @include animation(.25s, 0s, navLinkCollapsed);
       border-radius: $radius !important;
       .nav-item {
