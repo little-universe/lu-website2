@@ -61,6 +61,8 @@ body {
   top: 0;
   z-index: $navZIndex;
   @include breakpoint(sm) {
+    padding: 0;
+    margin: $buffer*6;
     &.is-collapsed {
       .nav-list {
         .nav-link {
@@ -136,6 +138,9 @@ body {
       text-decoration: none;
       color: $fontColorLight;
       background: $primaryColor;
+      &.active {
+        background: $primaryColorInteracted;
+      }
       &:active {
         background: $primaryColorInteracted;
       }
@@ -689,6 +694,17 @@ button:focus {
 .iwt-container {
   // height: 100vh;
   position: relative;
+  &.iwt-right-mobile {
+    display: none;
+  }
+  @include breakpoint(sm) {
+    &.iwt-right-desktop {
+      display: none !important;
+    }
+    &.iwt-right-mobile {
+      display: block !important;
+    }
+  }
   .image-image-wrapper {
     background: $bgColorWork;
     width: 100%;

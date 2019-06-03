@@ -5,6 +5,15 @@ import Fade from 'react-reveal/Fade';
 import classnames from "classnames";
 
 
+var mq = window.matchMedia( "(max-width: 768px)" );
+if (mq.matches) {
+  // window width is at less than 570px
+
+}
+else {
+  // window width is greater than 570px
+}
+
 export default class Nav extends Component {
   constructor(props) {
     super(props);
