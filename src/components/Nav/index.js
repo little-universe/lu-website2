@@ -12,7 +12,8 @@ export default class Nav extends Component {
     this.state = {
       prevScrollpos: window.pageYOffset,
       visible: true,
-      scrolledUp: false
+      scrolledUp: false,
+      showHideSidenav: "menu-closed"
     };
   }
 
@@ -46,9 +47,10 @@ getInitialState(){
   return {"showHideSidenav":"menu-closed"};
 }
 
-toggleSidenav() {
-    var css = (this.props.showHideSidenav === "menu-closed") ? "menu-open" : "menu-closed";
+toggleSidenav = () => {
+    var css = (this.state.showHideSidenav === "menu-closed") ? "menu-opened" : "menu-closed";
     this.setState({"showHideSidenav":css});
+    console.log("clicked");
 }
 
 
@@ -91,17 +93,19 @@ toggleSidenav() {
         </ul>
         </Fade>
       </div>
-      <div className={`nav nav-mobile menu-closed ${this.props.showHideSidenav}`}>
+      <div className={`nav nav-mobile ${this.state.showHideSidenav}`} onClick={this.toggleSidenav}>
         <Fade top distance="10px" duration={1000} delay={0}>
-        <ul className="nav-list mobile-nav-list">
-          <li className="nav-item"/>
-          <li className="nav-item"/>
-          <li className="nav-item"/>
-        </ul>
+        <div className="" onClick={this.toggleSidenav}>
+          <ul className="nav-list mobile-nav-list">
+            <li className="nav-item"/>
+            <li className="nav-item"/>
+            <li className="nav-item"/>
+          </ul>
+        </div>
         </Fade>
         <div className="nav-mobile-menu">
         <Fade top distance="10px" duration={1000} delay={150}>
-          <ul className="mobile-menu-list" onClick={() => this.toggleSidenav.bind(this)}>
+          <ul className="mobile-menu-list" >
             <Link
               to="/work"
               className={`menu-nav-link ${location.pathname === "/work" && "active"}`} href=""
