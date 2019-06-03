@@ -5,15 +5,6 @@ import Fade from 'react-reveal/Fade';
 import classnames from "classnames";
 
 
-var mq = window.matchMedia( "(max-width: 768px)" );
-if (mq.matches) {
-  // window width is at less than 570px
-
-}
-else {
-  // window width is greater than 570px
-}
-
 export default class Nav extends Component {
   constructor(props) {
     super(props);
@@ -51,6 +42,15 @@ export default class Nav extends Component {
   };
 
 
+getInitialState(){
+  return {"showHideSidenav":"menu-closed"};
+}
+
+toggleSidenav() {
+    var css = (this.props.showHideSidenav === "menu-closed") ? "menu-open" : "menu-closed";
+    this.setState({"showHideSidenav":css});
+}
+
 
 
 
@@ -58,10 +58,11 @@ export default class Nav extends Component {
     const { onHovered, onRouteChange, location } = this.props;
 
     return (
-      <Fade top distance="10px" duration={1000} delay={250}>
-      <div className={classnames("nav", {
+      <>
+      <div className={classnames("nav", "nav-desktop",{
           "is-collapsed": !this.state.visible
         }, {"is-uncollapsed" : this.state.scrolledUp})}>
+        <Fade top distance="10px" duration={1000} delay={150}>
         <ul className="nav-list">
           <Link
             // onClick={() => onRouteChange('work')}
@@ -88,8 +89,42 @@ export default class Nav extends Component {
               <li className="nav-item">Approach</li>
           </Link>
         </ul>
+        </Fade>
       </div>
-      </Fade>
+      <div className={`nav nav-mobile menu-closed ${this.props.showHideSidenav}`}>
+        <Fade top distance="10px" duration={1000} delay={0}>
+        <ul className="nav-list mobile-nav-list">
+          <li className="nav-item"/>
+          <li className="nav-item"/>
+          <li className="nav-item"/>
+        </ul>
+        </Fade>
+        <div className="nav-mobile-menu">
+        <Fade top distance="10px" duration={1000} delay={150}>
+          <ul className="mobile-menu-list" onClick={() => this.toggleSidenav.bind(this)}>
+            <Link
+              to="/work"
+              className={`menu-nav-link ${location.pathname === "/work" && "active"}`} href=""
+            >
+              <li className="menu-list-item">Work</li>
+            </Link>
+            <Link
+              to="/about"
+              className={`menu-nav-link ${location.pathname === "/about" && "active"}`} href=""
+            >
+              <li className="menu-list-item">About Us</li>
+            </Link>
+            <Link
+              to="/approach"
+              className={`menu-nav-link ${location.pathname === "/approach" && "active"}`} href=""
+            >
+              <li className="menu-list-item">Approach</li>
+            </Link>
+          </ul>
+          </Fade>
+        </div>
+      </div>
+      </>
     )
   }
 }
