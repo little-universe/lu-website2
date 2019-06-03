@@ -28,7 +28,7 @@ export default class Hero extends Component {
                       <Grid className={`hero image-hero ${className}`} container justify="center" alignItems="center">
                           <Grid item className="image-background" md={12}>
                           {anim === "shown" &&
-                          <Fade bottom distance="30px" duration={1000} delay={350}>
+                          <Fade bottom distance="10px" duration={1000} delay={250}>
                             <div className="project-details">
                               <span className="project-name">{projectName}</span><br/>
                               <span className="project-type">{projectCategory} • {projectIndustry}</span>
