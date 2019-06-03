@@ -11,7 +11,7 @@ class Logo extends Component {
 
     return (
       <a href="/">
-      <Fade top distance="10px" duration={1000}>
+      <Fade top distance="10px" duration={500}>
       <div className="logo">
         <div className="universe"></div>
         <div className="agency-name">Little Universe</div>

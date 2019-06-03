@@ -64,7 +64,7 @@ toggleSidenav = () => {
       <div className={classnames("nav", "nav-desktop",{
           "is-collapsed": !this.state.visible
         }, {"is-uncollapsed" : this.state.scrolledUp})}>
-        <Fade top distance="10px" duration={1000} delay={150}>
+        <Fade top distance="10px" duration={500} delay={250}>
         <ul className="nav-list">
           <Link
             // onClick={() => onRouteChange('work')}
@@ -94,7 +94,7 @@ toggleSidenav = () => {
         </Fade>
       </div>
       <div className={`nav nav-mobile ${this.state.showHideSidenav}`} onClick={this.toggleSidenav}>
-        <Fade top distance="10px" duration={1000} delay={0}>
+        <Fade top distance="10px" duration={500} delay={250}>
         <div className="" onClick={this.toggleSidenav}>
           <ul className="nav-list mobile-nav-list">
             <li className="nav-item"/>

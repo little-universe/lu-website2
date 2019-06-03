@@ -7,6 +7,9 @@
 @mixin transition {
   transition: all $timing $easing;
 }
+@mixin transitionFast {
+  transition: all $timing/2 $easing;
+}
 
 @keyframes navLinkCollapsed {
   0% {
