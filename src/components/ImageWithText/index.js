@@ -27,7 +27,7 @@ export default class ImageWithText extends Component {
         </div>
       }
       { imageLeft && imageMatte && headline && description &&
-        <div className="container">
+        <div className="container iwt-left-right-container">
           <Grid className={`iwt-container iwt-left ${className}`} container alignItems="center">
             <Grid item className="image-image-wrapper" md={5} justify="center" alignItems="center">
               <Grid container justify="center" alignItems="center">
@@ -46,7 +46,7 @@ export default class ImageWithText extends Component {
         </div>
       }
       { imageRight && imageFull && headline && description &&
-        <div className="container">
+        <div className="container iwt-left-right-container">
           <Grid className={`iwt-container iwt-right-desktop ${className}`} container alignItems="center">
             <Grid item className="image-text-wrapper" md={7} justify="center" alignItems="center">
               <Grid container justify="center" alignItems="center">
@@ -114,7 +114,7 @@ export default class ImageWithText extends Component {
         </div>
       }
       { imageLeft && imageFull && memberName && memberTitle && description &&
-        <div className="container">
+        <div className="container iwt-left-right-container">
           <Grid className={`iwt-container iwt-left ${className}`} container alignItems="center">
             <Grid item className="image-image-wrapper" md={5} justify="center" alignItems="center">
               <Grid container justify="center" alignItems="center">
@@ -133,7 +133,7 @@ export default class ImageWithText extends Component {
         </div>
       }
       { imageRight && imageFull && memberName && memberTitle && description &&
-        <div className="container">
+        <div className="container iwt-left-right-container">
           <Grid className={`iwt-container iwt-right iwt-right-desktop ${className}`} container alignItems="center">
             <Grid item className="image-text-wrapper" md={7} justify="center" alignItems="center">
               <Grid container justify="center" alignItems="center">

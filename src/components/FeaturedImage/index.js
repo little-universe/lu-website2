@@ -36,7 +36,7 @@ export default class FeaturedImage extends Component {
         </div>
       }
       { featuredCenter, caption &&
-        <div className="container">
+        <div className="container featured-center-caption">
           <Grid className={`featured-image featured-center ${className}`} container justify="center" alignItems="center">
             <Grid item className="image-background" md={8}></Grid>
           </Grid>

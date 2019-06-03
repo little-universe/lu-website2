@@ -366,6 +366,16 @@ button:focus {
     margin: $buffer*2;
   }
 } //wrapper for non-full width elements
+.featured-center-caption {
+  margin-bottom: $buffer*20;
+}
+.iwt-left-right-container {
+  margin-bottom: $buffer*20;
+  @include breakpoint(sm) {
+    margin-bottom: 0;
+  }
+}
+
 
 .hero {
   height: 90vh;
