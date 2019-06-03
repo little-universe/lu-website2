@@ -20,10 +20,8 @@ class Strive extends Component {
 
     return (
       <>
-      <Transporter name="caseStudyStrive" show={true} duration={1000} properties={[]}>
-      <div style={{ width: '100%', minHeight: '1vh' }}>
+      <Transporter name="caseStudyStrive" show={true} duration={500} properties={[]}>
         <Hero heroImage className="strive-hero" projectName="Strive Digital" projectCategory="Digital Product" projectIndustry="Advocacy Tech"/>
-        </div>
       </Transporter>
       <Fade bottom distance="30px" duration={500}>
           <FeaturedText textWithList list={["Digital Product", "UX/UI", "Front End", "Back End", "Data Architecture"]} text="Strive is multi-channel messaging platform used by nonprofits and campaigns across the country to recruit and activate their supporters." linkTo="https://www.strivedigital.org/" linkName="Visit live site" status="Ongoing Partnership"/>
@@ -33,9 +31,7 @@ class Strive extends Component {
           <FeaturedText textWithList list={["Jedd Countey", "Strive Founder"] } text="Little Universe was a game-changer for Strive Digital. As a young startup, we needed an agency that could step in and make an immediate impact. Perfectly balancing strategy with execution, they went far beyond our expectations by establishing a strategic foundation and product vision we're still benefitting from today."/>
           <ImageWithText imageRight imageMatte className="strive-2" headline="Multi Channel" description="Strive allowed users to Design and develop custom messaging capabilities optimized for their needs, including powerful machine learning, platform extensions, and deep integrations with a CRM."/>
           <FeaturedImage featuredFullMatte className="strive-3"/>
-          <Transporter name="caseStudyMotivote" show={true} duration={500} properties={[]} unstableOnUnmount noTransition>
-          <FeaturedImage featuredCenter className="motivote-next" projectName="Motivote" projectCategory="Digital Product" projectIndustry="Advocacy Tech" destination="../motivote"/>
-          </Transporter>
+          <FeaturedImage featuredCenter className="motivote-next" projectName="Motivote" projectCategory="Digital Product" projectIndustry="Advocacy Tech" destination="../motivote" caseStudyName="caseStudyMotivote"/>
         <WorkTogether headline="Let's get to know each other"/>
         </Fade>
       </>

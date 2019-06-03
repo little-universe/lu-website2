@@ -21,10 +21,8 @@ class Motivote extends Component {
 
     return (
       <>
-        <Transporter name="caseStudyMotivote" show={true} duration={1000} properties={[]}>
-          <div style={{ width: '100%', minHeight: '1vh' }}>
-            <Hero heroImage className="motivote-hero" projectName="Motivote" projectCategory="Digital Product" projectIndustry="Advocacy Tech"/>
-          </div>
+        <Transporter name="caseStudyMotivote" show={true} duration={500} properties={[]}>
+          <Hero heroImage className="motivote-hero" projectName="Motivote" projectCategory="Digital Product" projectIndustry="Advocacy Tech"/>
         </Transporter>
         <Fade bottom distance="30px" duration={500}>
           <FeaturedText textWithList list={["Digital Product", "UX/UI", "Branding", "Strategy", "Front End", "Back End"]} text="Motivote is a digital platform built by a former student organizer and non-voter which gets millenials to vote by offering incentives. By creating a seamless digital experience on a product which can be whitelabeled to fit partnership goals, we bridge the gap between intention and action for young voters." status="Ongoing Partnership"/>
@@ -35,10 +33,7 @@ class Motivote extends Component {
           <ImageWithText imageRight imageMatte className="motivote-2"  headline="Inaction to Action Dashboard" description="We build a robust, whitelabel-able dashboard integrating gamification, leaderboards, voting resources, into executable action lists for users. Users can see what they need to do to make an impact through voting all in one place."/>
           <FeaturedText textWithHeader header="Making A Good First Impression" text="We were aware that while working on Motivote's product they were in the midst of fundraising, which meant pitch decks. We designed a deck in close collaboration with Jess, Motivote's CEO, in order to make sure visual design and layout of her deck was slick and covered all the bases."/>
           <FeaturedImage featuredFullMatte className="motivote-5"/>
-
-            <Transporter name="caseStudyBetterfin" show={true} duration={500} properties={[]} unstableOnUnmount noTransition>
-            <FeaturedImage featuredCenter className="betterfin-next" projectName="Betterfin" projectCategory="Digital Product" projectIndustry="Fintech" destination="../betterfin"/>
-            </Transporter>
+          <FeaturedImage featuredCenter className="betterfin-next" projectName="Betterfin" projectCategory="Digital Product" projectIndustry="Fintech" destination="../betterfin" caseStudyName="caseStudyBetterfin"/>
 
         <WorkTogether headline="Let's get to know each other"/>
         </Fade>

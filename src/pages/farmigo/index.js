@@ -22,9 +22,7 @@ class Farmigo extends Component {
     return (
       <>
       <Transporter name="caseStudyFarmigo" show={true} duration={500} properties={[]}>
-        <div style={{ width: '100%', minHeight: '1vh' }}>
-          <Hero heroImage className="farmigo-hero" projectName="Farmigo" projectCategory="Digital Product" projectIndustry="Food"/>
-        </div>
+        <Hero heroImage className="farmigo-hero" projectName="Farmigo" projectCategory="Digital Product" projectIndustry="Food"/>
       </Transporter>
         <Fade bottom distance="30px" duration={500}>
             <FeaturedText textWithList list={["Digital Product", "UX/UI", "User Testing", "Front End"]} text="Farmigo is an ecommerce marketplace for farm fresh food which targets urban communities who othewise may not have access to goods of a high quality. Through a web application, several mobile applications, and an on-the-ground coordination of pick up points, Farmigo supplies food and community to urban contexts." status="Complete"/>
@@ -37,9 +35,7 @@ class Farmigo extends Component {
             <ImageWithText imageRight imageMatte className="farmigo-m-5" headline="Checkout, Checkout Again" description="With food, sometimes you know what you like, and you know you want it! We used the unique gesture functionality of touch mobile devices to encourage users to order their favorites on a recurring schedule, allowing farmers, suppliers, and Farmigo's fulfillment staff alike to plan ahead."/>
             <FeaturedText textWithHeader header="Packing, Shipping, Handing Off" text="Farmigo's fulfillment team needed to keep up to demand in order to ensure orders were being packed and delivered to be picked up on time. In order to help with this process we designed a UI for in-house use which tracked how far ahead or behind food was being packed."/>
             <FeaturedImage featuredFullMatte className="farmigo-4"/>
-            <Transporter name="caseStudyInstructrr" show={true} duration={500} properties={[]} unstableOnUnmount noTransition>
-              <FeaturedImage featuredCenter className="instructrr-next" projectName="Instructrr" projectCategory="Mobile Application" projectIndustry="Fitness" destination="../instructrr"/>
-            </Transporter>
+            <FeaturedImage featuredCenter className="instructrr-next" projectName="Instructrr" projectCategory="Mobile Application" projectIndustry="Fitness" destination="../instructrr" caseStudyName="caseStudyInstructrr"/>
           <WorkTogether headline="Let's get to know each other"/>
           </Fade>
       </>

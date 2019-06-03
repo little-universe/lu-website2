@@ -22,9 +22,7 @@ class Instructrr extends Component {
     return (
       <>
       <Transporter name="caseStudyInstructrr" show={true} duration={500} properties={[]}>
-        <div style={{ width: '100%', minHeight: '1vh' }}>
-          <Hero heroImage className="instructrr-hero" projectName="Instructrr" projectCategory="Digital Product" projectIndustry="Fitness"/>
-        </div>
+        <Hero heroImage className="instructrr-hero" projectName="Instructrr" projectCategory="Digital Product" projectIndustry="Fitness"/>
       </Transporter>
         <Fade bottom distance="30px" duration={500}>
             <FeaturedText textWithList list={["Ideation","Digital Product", "UX/UI"]} text="Instructrr is a workout building and queueing tool for spin instructors. Fitness instructors often have to juggle a number of roles including DJ, coach, and choreographer. Instructrr takes the demands of these roles and offers a fix-all tool to busy fitness professionals." status="Complete"/>
@@ -35,9 +33,7 @@ class Instructrr extends Component {
             <ImageWithText imageLeft imageMatte className="instructrr-3" headline="Complexity Born From Simplicity" description="A good spin class has motion and dynamism. It takes you through a story which is both physical and sonic. With the help of the domain expertise of the Instructrr team we distilled workout construction into three simple building blocks, from which an endless variety of workouts could be constructed."/>
             <FeaturedText textWithHeader header="Active Lifestyle, Active Performance" text="Beyond building workouts, which is an artform in itself, instructors need to know how to queue and sync class participants with music and exertion in a live setting. We developed concepts for a live view of the workouts to be used by instructors in a sweaty, heat-of-the-moment class setting."/>
             <FeaturedImage featuredFullMatte className="instructrr-5"/>
-            <Transporter name="caseStudyStrive" show={true} duration={500} properties={[]} unstableOnUnmount noTransition>
-              <FeaturedImage featuredCenter className="strive-next" projectName="Strive Digital" projectCategory="Digital Product" projectIndustry="Advocacy Tech" destination="../strive"/>
-            </Transporter>
+            <FeaturedImage featuredCenter className="strive-next" projectName="Strive Digital" projectCategory="Digital Product" projectIndustry="Advocacy Tech" destination="../strive" caseStudyName="caseStudyStrive"/>
 
           <WorkTogether headline="Let's get to know each other"/>
           </Fade>

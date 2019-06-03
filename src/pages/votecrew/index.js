@@ -22,9 +22,7 @@ class Votecrew extends Component {
     return (
       <>
       <Transporter name="caseStudyVotecrew" show={true} duration={500} properties={[]}>
-        <div style={{ width: '100%', minHeight: '1vh' }}>
-          <Hero heroImage className="votecrew-hero" projectName="Vote Crew" projectCategory="Digital Product" projectIndustry="Advocacy Tech"/>
-        </div>
+        <Hero heroImage className="votecrew-hero" projectName="Vote Crew" projectCategory="Digital Product" projectIndustry="Advocacy Tech"/>
       </Transporter>
         <Fade bottom distance="30px" duration={500}>
             <FeaturedText textWithList list={["Digital Product", "UX/UI", "Front End", "Back End"]} text="Vote Crew is a team-based advocacy platform used by political campaigns to raise awareness about voting. Through Vote Crew organizations can target specific groups of individuals by affiliation, whether it be through schools, campus clubs, or extra-curricular activity." linkTo="https://votecrew.org/" linkName="Visit live site" status="Complete"/>
@@ -34,9 +32,7 @@ class Votecrew extends Component {
             <ImageWithText imageRight imageMatte className="votecrew-3" headline="Leaderboard Metrics" description="Typically a leaderboard is organized as a function of points, but with Vote Crew the leaderboard was organized based on actions taken by the users. Rather than abstracting behavior into points, this context called for a more direct approach."/>
             <FeaturedText textWithHeader header="Including Guidance" text="For young voters some of the primary uncertainty in voting comes from not knowing who is on the ballot, what their policies are, and how to make a decision about them. We included a ballot guide for upcoming elections that users could look through and use to make conclusions about which candidates they liked."/>
             <FeaturedImage featuredFullMatte className="votecrew-4"/>
-            <Transporter name="caseStudyFarmigo" show={true} duration={500} properties={[]} unstableOnUnmount noTransition>
-              <FeaturedImage featuredCenter className="farmigo-next" projectName="Farmigo" projectCategory="Digital Product" projectIndustry="Food" destination="../farmigo"/>
-            </Transporter>
+            <FeaturedImage featuredCenter className="farmigo-next" projectName="Farmigo" projectCategory="Digital Product" projectIndustry="Food" destination="../farmigo" caseStudyName="caseStudyFarmigo"/>
           <WorkTogether headline="Let's get to know each other"/>
           </Fade>
       </>

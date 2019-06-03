@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import Grid from '@material-ui/core/Grid'
 import Fade from 'react-reveal/Fade';
 
+
+
 export default class Hero extends Component {
     render() {
         const { heroText, heroImage, className, headline, subhead, projectName, projectCategory, projectIndustry, style, anim } = this.props
@@ -25,11 +27,13 @@ export default class Hero extends Component {
                   <div classname="container">
                       <Grid className={`hero image-hero ${className}`} container justify="center" alignItems="center">
                           <Grid item className="image-background" md={12}>
-                          {anim !== "showing" &&
+                          {anim === "shown" &&
+                          <Fade bottom distance="30px" duration={1000} delay={350}>
                             <div className="project-details">
                               <span className="project-name">{projectName}</span><br/>
                               <span className="project-type">{projectCategory} • {projectIndustry}</span>
                             </div>
+                            </Fade>
                           }
                           </Grid>
                       </Grid>

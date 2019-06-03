@@ -22,9 +22,7 @@ class Betterfin extends Component {
     return (
       <>
           <Transporter name="caseStudyBetterfin" show={true} duration={500} properties={[]}>
-            <div style={{ width: '100%', minHeight: '1vh' }}>
-              <Hero heroImage className="betterfin-hero" projectName="Betterfin" projectCategory="Digital Product" projectIndustry="Fintech"/>
-            </div>
+            <Hero heroImage className="betterfin-hero" projectName="Betterfin" projectCategory="Digital Product" projectIndustry="Fintech"/>
           </Transporter>
           <Fade bottom distance="30px" duration={500}>
           <FeaturedText textWithList list={["Digital Product", "UX/UI", "User Testing", "Product Strategy", "Front End"]} text="Betterfin is a service for business owners to get educated on small business lending and navigate commercial products with confidence. They provide transparency into lending through data analytics to help owners secure business financing they understand." linkTo="https://www.betterfin.com/" linkName="Visit live site" status="Ongoing Partnership"/>
@@ -36,9 +34,7 @@ class Betterfin extends Component {
           <ImageWithText imageLeft imageMatte className="betterfin-2" headline="Time Management" description="By simplifying the order of operations of analyzing their business for the end user, we allowed Betterfin's complex data analysis model to shine not as an overwhelming process, but as clear calls to action with clear time-to-completion."/>
           <FeaturedText textWithHeader header="A Dashboard For Small Business" text="Small businesses may not always have access to a clear display of analytics on their operations and expenses. Betterfin seeks to offer this. We designed UX and UI for a dashboard which offers a variety of important information as well as links to financing opportunities. As with everything, we kept in mind scalability of tech and design."/>
           <FeaturedImage featuredFullMatte className="betterfin-4"/>
-          <Transporter name="caseStudyVotecrew" show={true} duration={500} properties={[]} unstableOnUnmount noTransition>
-            <FeaturedImage featuredCenter className="votecrew-next" projectName="Vote Crew" projectCategory="Digital Product" projectIndustry="Advocacy Tech" destination="../votecrew"/>
-          </Transporter>
+          <FeaturedImage featuredCenter className="votecrew-next" projectName="Vote Crew" projectCategory="Digital Product" projectIndustry="Advocacy Tech" destination="../votecrew" caseStudyName="caseStudyVotecrew"/>
           <WorkTogether headline="Let's get to know each other"/>
         </Fade>
       </>
