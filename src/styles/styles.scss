@@ -64,6 +64,9 @@ body {
   right: 0;
   top: 0;
   z-index: $navZIndex;
+  @include breakpoint(md) {
+    font-size: $fontSize*.75;
+  }
   &.nav-mobile {
     display: none;
   }
@@ -206,7 +209,7 @@ body {
         align-items: center;
         justify-content: center;
         display: flex;
-        width: 5vw;
+        // width: 5vw;
         height: 2vh;
       }
     }
