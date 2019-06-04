@@ -13,15 +13,7 @@ class Homepage extends Component {
 
     return (
       <>
-      <div className="hero-homepage-text">
-      <Grid container>
-      <Grid item md={6} xs={12} className="text-container">
-      <Fade bottom distance="10px" duration={1000} delay={250}>
-      <p>We build digital products and real trust with ambitious organizations.</p>
-      </Fade>
-      </Grid>
-      </Grid>
-      </div>
+      <Hero heroText className="homepage-hero" headline="We Make Digital Products" subhead="Little Universe is a digital product design and development agency located in Brooklyn, NY."/>
       </>
     )
   }

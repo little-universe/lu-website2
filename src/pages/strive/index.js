@@ -24,7 +24,7 @@ class Strive extends Component {
         <Hero heroImage className="strive-hero" projectName="Strive Digital" projectCategory="Digital Product" projectIndustry="Advocacy Tech"/>
       </Transporter>
       <Fade bottom distance="30px" duration={500}>
-          <FeaturedText textWithList list={["Digital Product", "UX/UI", "Front End", "Back End", "Data Architecture"]} text="Strive is multi-channel messaging platform used by nonprofits and campaigns across the country to recruit and activate their supporters." linkTo="https://www.strivedigital.org/" linkName="Visit live site" status="Ongoing Partnership"/>
+          <FeaturedText textWithList list={["Digital Product", "UX/UI", "Front End", "Back End", "Data Architecture"]} text="Strive is a multi-channel messaging platform used by nonprofits and campaigns across the country to recruit and activate their supporters." linkTo="https://www.strivedigital.org/" linkName="Visit live site" status="Ongoing Partnership"/>
           <FeaturedImage featuredFullMatte className="strive-1"/>
           <FeaturedText textWithHeader header="Partnership & Progress" text="Our process with Strive fostered a deeper strategic partnership between our two teams, where growth and product enjoyed a shared interest in success and creative problem solving."/>
           <ImageWithText imageLeft imageMatte className="strive-4" headline="Powerful Messaging Tools" description="We built a call and text tool which enabled organizers to send messages to huge audiences, getting their outreach done on a channel with increasing engagement potential."/>

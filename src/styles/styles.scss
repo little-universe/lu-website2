@@ -379,28 +379,6 @@ button:focus {
 
 ///// REFACTOR 190529
 
-.hero-homepage-text {
-  font-size: $fontSizeStatement;
-  line-height: $lineHeightStatement;
-  color: $fontColorLightened;
-  @include breakpoint(sm) {
-    font-size: $fontSizeLargeDesktop;
-    line-height: $lineHeightLargeDesktop;
-  }
-  .text-container {
-    width: 100vw;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    p {
-      margin: $buffer*6;
-      @include breakpoint(sm) {
-        margin: $buffer*6 $buffer*3;
-      }
-    }
-  }
-}
-
 .nomargin-container {
   margin: 0;
 }// wrapper for full width elements
@@ -452,7 +430,7 @@ button:focus {
     text-align: center;
     .headline {
       font-size: $fontSizeHeadline;
-      line-height: $lineHeightDesktop;
+      line-height: $lineHeightHeadline;
       @include breakpoint(sm) {
         font-size: $fontSizeHeadline*.5;
       }
@@ -460,6 +438,24 @@ button:focus {
     .subhead {
       font-size: $fontSizeSubHeadline;
       color: $fontColorLightened;
+      @include breakpoint(sm) {
+        font-size: $fontSizeDesktop;
+      }
+    }
+  }
+  &.homepage-hero {
+    padding: $buffer*3;
+    .headline {
+      font-size: $fontSizeHeadline*.5;
+      line-height: $lineHeightHeadline*.5;
+      @include breakpoint(sm) {
+        font-size: $fontSizeHeadline*.5;
+      }
+    }
+    .subhead {
+      font-size: $fontSizeSubHeadline*.75;
+      color: $fontColorLightened;
+      line-height: $lineHeightDesktop;
       @include breakpoint(sm) {
         font-size: $fontSizeDesktop;
       }
@@ -1088,4 +1084,14 @@ button {
     }
   }
 }//button
+.footer-area {
+  padding: $buffer*6;
+  background: $bgColorWork;
+  color: $fontColorLightened;
+  font-size: $fontSizeDesktop;
+  line-height: $lineHeightDesktop;
+  p {
+    margin-bottom: 0;
+  }
+}
 ///// REFACTOR 190529

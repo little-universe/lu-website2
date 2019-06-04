@@ -5,7 +5,7 @@ import {Link} from "react-router-dom";
 
 export default class FeaturedImage extends Component {
   render() {
-    const { featuredFull, featuredFullProject, featuredFullMatte, featuredCenter, featuredLeft, featuredRight, className, projectName, projectCategory, projectIndustry, caption, destination, caseStudyName="caseStudyBetterfin", style, anim} = this.props
+    const { featuredFull, featuredFullProject, featuredFullMatte, featuredCenter, featuredLeft, featuredRight, className, projectName, projectCategory, projectIndustry, caption, destination, caseStudyName, style, anim} = this.props
     return (
     <div className="margin-container" style={style}>
       { featuredFullProject && projectName && projectCategory && projectIndustry &&
