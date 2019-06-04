@@ -1,6 +1,7 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { tween, easing } from 'popmotion'
-import { camelCase, clamp, cloneDeep, debounce } from 'lodash'
+import PropTypes from 'prop-types'
+import { forEach, camelCase, clamp, cloneDeep, debounce } from 'lodash'
 import React from 'react'
 import ReactDOM from 'react-dom'
 
@@ -26,74 +27,67 @@ function getStyles(node, properties) {
   return styles
 }
 
+// Global containing all the nodes
+// (could maybe be a const, but probably doesn't matter)
 let nodes = {}
-let freeze = false
 
-export function freezeAnimation(duration = 300) {
-  console.warn('freezing animation', duration)
-  freeze = true
-  setTimeout(() => { freeze = false; console.warn('unfreezing', freeze) }, duration)
-}
-
-export function clearAll() {
-  console.warn('clearing nodes', nodes)
-  nodes = {}
-  console.warn('nodes now', nodes)
-}
-
-export function orbit(name, properties) {
-  let [styleState, setStyleState] = useState({})
-  let ref = useRef(null)
-
-  useLayoutEffect(() => {
-    let old = nodes[name]
-    delete nodes[name]
-
-    let newNode = ref.current
-
-    if (old && newNode) { // we've got a new node and old styles! So it's time to animate!
-      let newStyles = getStyles(newNode, properties)
-      let newPosition = newNode.getBoundingClientRect()
-
-      console.log(newPosition)
-
-      let translateX = old.position.left - newPosition.left
-      let translateY = old.position.top - newPosition.top
-
-      let oldStyles = {
-        ...old.styles,
-        transform: `translate(${translateX}px, ${translateY}px)`
-      }
-
-      console.log(`translate(${translateX}px, ${translateY}px)`)
-
-      setStyleState(oldStyles)
-
-      tween({
-        from: oldStyles,
-        to: {
-          ...newStyles,
-          transform: `translate(0px, 0px)`
-        },
-        ease: easing.easeInOut,
-        duration: 3000
-      }).start((v) => setStyleState({ ...v }))
-    }
-    return () => {
-      nodes[name] = {
-        styles: getStyles(ref.current, properties),
-        position: ref.current.getBoundingClientRect()
+function setNode(name, ref, properties = []) {
+  if (name !== undefined) {
+    if (ref) {
+      const node = ReactDOM.findDOMNode(ref)
+      if (node) {
+        nodes[name] = {
+          styles: getStyles(node, properties),
+          position: node.getBoundingClientRect()
+        }
       }
     }
-  }, [])
-
-  return {
-    ref,
-    style: styleState
   }
 }
 
-const relevantProps = []
+export function clearAll() {
+  nodes = {}
+}
+
+// Freeze: disable all animations when true
+let freeze = false
+
+export function freezeAnimation(duration = 300) {
+  freeze = true
+  setTimeout(() => { freeze = false }, duration)
+}
+
+// Global containing node animations
+let animations = {}
+
+export function get(name) {
+  if (animations[name]) {
+    return animations[name]
+  }
+}
+export function stop(name) {
+  if (animations[name]) {
+    animations[name].stop()
+  }
+}
+
+export function stopAll() {
+  forEach(animations, (v, k) => {
+    v.stop()
+  })
+}
+
+export function finish(name) {
+  if (animations[name]) {
+    animations[name].seek(1)
+  }
+}
+
+export function finishAll() {
+  forEach(animations, (v, k) => {
+    v.seek(1)
+  })
+}
 
 export class Transporter extends React.Component {
   constructor(props) {
@@ -107,61 +101,93 @@ export class Transporter extends React.Component {
     this.onScroll = debounce(this.onScroll, 100)
   }
   componentDidMount() {
-    const { name, show, properties = relevantProps, guaranteedFirst, overrides = {}, overrideOldPosition, onlyX, onlyY, noTransition, unstableOnUnmount } = this.props
+    const {
+      name,
+      show,
+      properties = [],
+      guaranteedFirst,
+      overrides = {},
+      overrideOldPosition,
+      onlyX,
+      onlyY,
+      noTransition,
+      unstableOnUnmount
+    } = this.props
+
+    // If "unstable on unmount", movement/unmounting of sibling components will change position
+    // on page. Use expensive scroll listener to update page location instead of updating once
+    // on unmount.
     if (unstableOnUnmount) {
       window.addEventListener('scroll', this.onScroll)
     }
 
+    // If "no transition", skip directly to shown status on mount.
     if (noTransition) {
-      if (ReactDOM.findDOMNode(this.childRef.current)) {
-        nodes[name] = {
-          styles: getStyles(ReactDOM.findDOMNode(this.childRef.current), properties),
-          position: ReactDOM.findDOMNode(this.childRef.current).getBoundingClientRect()
-        }
-      }
+      setNode(name, this.childRef.current, properties)
       this.setState({ anim: 'shown' })
       return
     }
-    console.warn('mounting', name, nodes[name])
+
+    // If DOM node exists, show is true, previous node state exists, and node is not guaranteed to be first in series,
+    // animate phantom growth at child location, animate child from old location to new.
     if (show && this.childRef.current) {
-      if (nodes[name] && !guaranteedFirst) { // If entry already exists, transform from it
-        console.warn('previous entry exists', name)
+      if (nodes[name] && !guaranteedFirst) {
         this.animateChild()
         this.animateGrowingPhantom()
       }
-
-      nodes[name] = { // Set entry in nodes object
-        styles: getStyles(ReactDOM.findDOMNode(this.childRef.current), properties),
-        position: ReactDOM.findDOMNode(this.childRef.current).getBoundingClientRect()
-      }
-      // console.warn('setting dom node', name, nodes[name])
+      setNode(name, this.childRef.current, properties)
     }
 
   }
-  onScroll = () => {
-    const { name, properties } = this.props
+
+  componentDidUpdate(prevProps, prevState, snapshot) {
     const { anim } = this.state
-    console.warn('scrolling', name, anim, anim === "shown",  this.childRef && this.childRef.current && ReactDOM.findDOMNode(this.childRef.current))
-    if (anim === "shown" && this.childRef && this.childRef.current && ReactDOM.findDOMNode(this.childRef.current)) {
-      nodes[name] = { // Set entry in nodes object
-        styles: getStyles(ReactDOM.findDOMNode(this.childRef.current), properties),
-        position: ReactDOM.findDOMNode(this.childRef.current).getBoundingClientRect()
+    const {
+      show,
+      name,
+      children,
+      properties = [],
+      guaranteedFirst,
+      ease = easing.easeInOut,
+      duration = 1000
+    } = this.props
+
+    // Every update, check if show has changed.
+    if (prevProps.show !== show) {
+      // If show is false and no dom node already doesn't exist, bail.
+      // Child is already gone, we can't animate anything.
+      if (!show && !ReactDOM.findDOMNode(this.childRef && this.childRef.current)) {
+        return
       }
-      console.warn('updating due to scroll', name, nodes[name])
+
+      if (show) {
+        const notFirst = nodes[name] && ReactDOM.findDOMNode(this.childRef && this.childRef.current) && !guaranteedFirst
+        // If this isn't the first time a node of this name has existed, play animations from old position to new
+        if (notFirst) {
+          this.animateChild()
+          this.animateGrowingPhantom()
+        } else {
+          // If this is the first time the node has existed, no animation is possible. Short-circuit.
+          this.setState({ anim: 'shown' })
+        }
+
+        // Stash the current node style here for use when shrinking.
+        return this.setState({ currentNodeStyle: nodes[name] })
+      }
+
+      // If show has become false, start hiding the node.
+      if (!show && nodes[name] && this.state.currentNodeStyle && this.state.currentNodeStyle.position) {
+        this.setState({ anim: 'hiding' })
+        this.animateShrinkingPhantom()
+      }
     }
   }
+
   componentWillUnmount() {
     const { name, properties, annihilate, unstableOnUnmount } = this.props
     if (!unstableOnUnmount) {
-      if (nodes[name] && this.childRef && this.childRef.current && ReactDOM.findDOMNode(this.childRef.current)) {
-        nodes[name] = { // Set entry in nodes object
-          styles: getStyles(ReactDOM.findDOMNode(this.childRef.current), properties),
-          position: ReactDOM.findDOMNode(this.childRef.current).getBoundingClientRect()
-        }
-        console.warn('unmounting', name, nodes[name])
-      }
+      setNode(name, this.childRef.current, properties)
     } else {
-      console.warn("unlistening", name)
       window.removeEventListener("scroll", this.onScroll)
     }
 
@@ -169,81 +195,23 @@ export class Transporter extends React.Component {
       delete nodes[name]
     }
   }
-  componentDidUpdate(prevProps, prevState, snapshot) {
-    const { anim } = this.state
-    const { show, name, children, properties = relevantProps, guaranteedFirst } = this.props
-    // if (['showing', 'hiding'].includes(anim)) {
-    //   console.warn('already animating', name, anim)
-    //   return
-    // }
-    if (prevProps.show !== show) {
-      if (!show && !ReactDOM.findDOMNode(this.childRef && this.childRef.current)) {
-        // console.warn('ughh, child is already gone', name)
-        return
-      }
-      if (show) {
-        // console.warn('showing', show, nodes[name], this.state.currentNodeStyle)
-        if (nodes[name] && ReactDOM.findDOMNode(this.childRef && this.childRef.current) && !guaranteedFirst ) {
-          // console.warn('prev node exists, animating', name, nodes[name], this.childRef)
-          this.animateChild()
-          this.animateGrowingPhantom()
-        } else {
-          //console.warn('this is the first time node is present, short circuiting', name, nodes[name], this.childRef)
-          this.setState({ anim: 'shown' })
-        }
-        // if (ReactDOM.findDOMNode(this.childRef && this.childRef.current)) {
-        //   nodes[name] = {
-        //     styles: getStyles(ReactDOM.findDOMNode(this.childRef.current), properties),
-        //     position: ReactDOM.findDOMNode(this.childRef.current).getBoundingClientRect()
-        //   }
-        // }
 
-        return this.setState({ currentNodeStyle: nodes[name] })
-      }
-      if (!show && nodes[name] && this.state.currentNodeStyle && this.state.currentNodeStyle.position) {
-        this.setState({ anim: 'hiding' })
-        const { height, width, top, left } = this.state.currentNodeStyle.position
-        // console.warn('transforming?', name, { height, width })
-        // Animate style of phantom (shrink to nothing)
-        tween({
-          from: {
-            height: `${height}px`,
-            width: `${width}px`,
-            transform: `scale(1, 1)`
-          },
-          to: {
-            transform: `scale(0, 0)`
-          },
-          ease: easing.easeInOut,
-          duration: 1000
-        }).start({
-          update: (v) => {
-            this.setState({
-              placeholderStyle: {
-                ...v,
-                top: top,
-                left: left,
-                position: 'fixed'
-              }
-            })
-          },
-          complete: () => {
-            this.setState({ placeholderStyle: {}, style: {}, anim: null })
-          }
-        })
-      }
+  onScroll = () => {
+    // Expensive listener: if thing is shown, update node position and styles
+    const { name, properties } = this.props
+    const { anim } = this.state
+    if (anim === "shown" ) {
+      setNode(name, this.childRef.current, properties)
     }
   }
 
   animateChild = () => {
+    // If freeze global is set, don't do anything.
     if (freeze) {
-      console.warn('animation frozen, skipping', this.props.name)
       this.setState({ anim: 'shown' })
       return null
-    } else {
-      console.warn('not frozen', this.props.name)
     }
-    const { name, duration = 1000, ease=easing.easeInOut, properties, onlyX, onlyY, overrides, overrideOldPosition } = this.props
+    const { debug, name, duration = 1000, ease = easing.easeInOut, stopPrev = true, properties, onlyX, onlyY, overrides, overrideOldPosition } = this.props
     const oldNode = nodes[name]
     const newNode = {
       styles: getStyles(ReactDOM.findDOMNode(this.childRef.current), properties),
@@ -266,10 +234,15 @@ export class Transporter extends React.Component {
       ...oldNode.styles,
       transform: `translate(${translateX}px, ${translateY}px) scale(${scaleX}, ${scaleY})`
     }
-    console.warn('animating child', name, oldNode, newNode, translateX, translateY, scaleX, scaleY)
-    // debugger
+
     this.setState({ anim: 'showing' })
-    tween({
+    if (debug) {
+      console.warn('animating child', name, oldStyles, newNode.styles)
+    }
+    if (stopPrev) {
+      stop(name)
+    }
+    const animation = tween({
       from: oldStyles,
       to: {
         ...newNode.styles,
@@ -279,8 +252,6 @@ export class Transporter extends React.Component {
       duration
     }).start({
       update: (v) => {
-        // console.warn('v', v)
-        // debugger
         this.setState({
           anim: 'showing', style: {
             ...v,
@@ -298,19 +269,15 @@ export class Transporter extends React.Component {
         })
       },
       complete: () => {
-        // debugger
+        setNode(name, this.childRef.current, properties)
         if (this.childRef.current && ReactDOM.findDOMNode(this.childRef.current)) {
-          // console.warn('updating node', name, )
-          nodes[name] = {
-            styles: getStyles(ReactDOM.findDOMNode(this.childRef.current), properties),
-            position: ReactDOM.findDOMNode(this.childRef.current).getBoundingClientRect()
-          }
           this.setState({ anim: 'shown', style: {}, placeholderStyle: {}, currentNodeStyle: nodes[name] })
         } else {
           // console.warn('node disappeared', name, ReactDOM.findDOMNode(this.childRef.current))
         }
       }
     })
+
   }
 
   animateGrowingPhantom = () => {
@@ -318,8 +285,7 @@ export class Transporter extends React.Component {
       this.setState({ anim: 'shown' })
       return null
     }
-    // NOTE: Need to move this outside of position: fixed hover box for it to have any effect
-    const { name, duration } = this.props
+    const { name, duration, debug } = this.props
     const old = nodes[name]
     const newPosition = ReactDOM.findDOMNode(this.childRef.current).getBoundingClientRect().toJSON()
     const styles = getStyles(ReactDOM.findDOMNode(this.childRef.current), ['margin'])
@@ -327,8 +293,9 @@ export class Transporter extends React.Component {
       height: `${newPosition.height}px`,
       width: `${newPosition.width}px`
     }
-    // console.warn('expected placeholder size', expectedSize)
-    // console.warn('string styles', name, styles)
+    if (debug) {
+      console.warn('animating growing phantom', name, 'expectedSize', expectedSize)
+    }
     tween({
       from: {
         height: `${newPosition.height}px`,
@@ -358,8 +325,50 @@ export class Transporter extends React.Component {
     })
   }
 
+  animateShrinkingPhantom = () => {
+    if (freeze || !this.state.currentNodeStyle) {
+      this.setState({ anim: null })
+      return null
+    }
+    
+    const { height, width, top, left } = this.state.currentNodeStyle.position
+    const { name, debug, ease = easing.easeInOut, duration = 1000 } = this.props
+
+    if (debug) {
+      console.warn('animating shrinking phantom', name, height, width, top, left)
+    }
+    // Animate style of phantom (shrink to nothing)
+    const animation = tween({
+      from: {
+        height: `${height}px`,
+        width: `${width}px`,
+        transform: `scale(1, 1)`
+      },
+      to: {
+        transform: `scale(0, 0)`
+      },
+      ease,
+      duration
+    }).start({
+      update: (v) => {
+        this.setState({
+          placeholderStyle: {
+            ...v,
+            top: top,
+            left: left,
+            position: 'fixed'
+          }
+        })
+      },
+      complete: () => {
+        this.setState({ placeholderStyle: {}, style: {}, anim: null })
+      }
+    })
+
+  }
+
   render() {
-    const { children, show, name, noTransition } = this.props
+    const { debug, children, show, name, noTransition } = this.props
     const { anim, placeholderStyle } = this.state
     const child = React.cloneElement(children, {
       ref: this.childRef,
@@ -367,12 +376,9 @@ export class Transporter extends React.Component {
     })
 
     if (noTransition) {
-      // console.warn('no transition', name)
       if (show) return child
-      // console.warn('not showing', name)
       return null
     }
-    const debug = false
 
     if (anim === 'showing') {
       const child = React.cloneElement(children, {
@@ -396,4 +402,22 @@ export class Transporter extends React.Component {
       show ? child : null
     )
   }
+}
+
+Transporter.propTypes = {
+  debug: PropTypes.bool,
+  stopPrev : PropTypes.bool,
+  name: PropTypes.string.isRequired,
+  show: PropTypes.bool.isRequired,
+  properties: PropTypes.array,
+  overrides: PropTypes.object,
+  guaranteedFirst: PropTypes.bool,
+  overrideOldPosition: PropTypes.bool,
+  onlyX: PropTypes.bool,
+  onlyY: PropTypes.bool,
+  noTransition: PropTypes.bool,
+  unstableOnUnmount: PropTypes.bool,
+  duration: PropTypes.number,
+  ease: PropTypes.string,
+  children: PropTypes.element.isRequired
 }
