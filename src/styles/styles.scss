@@ -379,7 +379,26 @@ button:focus {
 
 ///// REFACTOR 190529
 
-.homepage-teaser {
+.hero-homepage-text {
+  font-size: $fontSizeStatement;
+  line-height: $lineHeightStatement;
+  color: $fontColorLightened;
+  @include breakpoint(sm) {
+    font-size: $fontSizeLargeDesktop;
+    line-height: $lineHeightLargeDesktop;
+  }
+  .text-container {
+    width: 100vw;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    p {
+      margin: $buffer*6;
+      @include breakpoint(sm) {
+        margin: $buffer*6 $buffer*3;
+      }
+    }
+  }
 }
 
 .nomargin-container {
