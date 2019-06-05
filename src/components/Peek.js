@@ -2,12 +2,52 @@ import React, { Component } from 'react'
 import Grid from '@material-ui/core/Grid';
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import { Transporter } from '../orbit'
+// import * as THREE from 'three'
+// import {hoverEffect} from '../vendor/displacement/hover.js'
+// import * as imagesLoaded from '../vendor/displacement/imagesloaded.pkgd.min.js';
+// <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+// import * as hover from '../vendor/displacement/hover.js';
+// import * as three from '../vendor/displacement/three.min.js'
 
-class Peek extends Component {
+export default class Peek extends Component {
   state = {
   }
 
+componentDidMount () {
+  window.hoverFunction()
+//
+//
+//     const tweenMax = document.createElement("tweenMax");
+//     tweenMax.src = "https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js";
+//     tweenMax.async = true;
+//     document.body.appendChild(tweenMax);
+//
+//     const hover = document.createElement("hover");
+//     hover.src = "../vendor/displacement/hover.js";
+//     hover.async = true;
+//     document.body.appendChild(hover);
+//
+}
+
+//
+// Array.from(document.querySelectorAll('.grid__item-img')).forEach((el) => {
+//   const imgs = Array.from(el.querySelectorAll('img'));
+//   new hoverEffect({
+//     parent: el,
+//     intensity: el.dataset.intensity || undefined,
+//     speedin: el.dataset.speedin || undefined,
+//     speedout: el.dataset.speedout || undefined,
+//     easing: el.dataset.easing || undefined,
+//     hover: el.dataset.hover || undefined,
+//     image1: imgs[0].getAttribute('src'),
+//     image2: imgs[1].getAttribute('src'),
+//     displacementImage: el.dataset.displacement
+//   });
+// });
+
+
   render() {
+
     const { peekPage, location } = this.props;
     const route = location.pathname;
     const peekedWork = peekPage == "work" && !['/work'].includes(route)
@@ -21,7 +61,8 @@ class Peek extends Component {
       `}>
       {route !== 'work' && <>
         <Transporter name="caseStudyStrive" properties={['opacity', 'margin']} show={peekedWork} duration={250}>
-          <div className="peek-case-study peek-case-study1 peeked">
+          <div className="peek-case-study peek-case-study1 peeked" data-displacement="../assets/displacement/4.png" data-intensity="0.2" data-speedin="1.6" data-speedout="1.6">
+          <img src={require("../assets/projects/motivote/motivote-hero.png")}/>
           <img src={require("../assets/projects/strive/strive-hero.png")}/>
           </div>
         </Transporter>
@@ -82,5 +123,3 @@ class Peek extends Component {
     )
   }
 }
-
-export default Peek;
