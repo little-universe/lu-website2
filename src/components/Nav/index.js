@@ -125,6 +125,12 @@ toggleSidenav = () => {
               <li className="menu-list-item">Approach</li>
             </Link>
           </ul>
+          <div className="links">
+            <ul className="links-list">
+              <li className="links-item"><a href="https://www.instagram.com/littleuniverseagency/">Instagram</a></li>
+              <li className="links-item"><a href="https://medium.com/@littleuniverse">Medium</a></li>
+            </ul>
+          </div>
           </Fade>
         </div>
       </div>

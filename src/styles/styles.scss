@@ -88,15 +88,38 @@ body {
         height: 100vh;
         // background: $primaryColor;
         z-index: -1;
-        .mobile-menu-list {
+        ul.mobile-menu-list {
           list-style-type: none;
           margin: 0; padding: 0;
+          margin-top: -$buffer*10;
           font-size: $fontSizeStatement;
           line-height: $lineHeightStatement*2;
           text-align: center;
           .menu-nav-link {
             color: $fontColorLight;
             text-decoration: none;
+          }
+        }//mobile-menu-list
+        .links {
+          position: absolute;
+          bottom: $buffer*10;
+          font-size: $fontSize;
+          color: $fontColorLight;
+          .links-list {
+            list-style-type: none;
+            display: flex;
+            align-items: center;
+            padding: 0; margin: 0;
+            .links-item {
+              margin-right: $buffer*2;
+              a {
+                color: $fontColorLight;
+                text-decoration: none;
+              }
+              &:last-child {
+                margin-right: 0;
+              }
+            }
           }
         }
       }
@@ -414,7 +437,7 @@ button:focus {
     font-size: $fontSizeLargeDesktop;
     line-height: $lineHeightLargeDesktop;
     @include breakpoint(sm) {
-      bottom: $buffer*2;
+      bottom: $buffer*8;
       left: $buffer*2;
       font-size: $fontSizeDesktop;
       line-height: $lineHeightDesktop;
