@@ -1,5 +1,5 @@
-@import '/mixins.scss';
-@import '/variables.scss';
+@import './mixins.scss';
+@import './variables.scss';
 
 // GLOBAL STYLES
 
@@ -265,7 +265,7 @@ body {
   &.peek-case-study1 {
     left: 40vw;
     top: -5vw;
-    background: $bgColorWorkCard;
+    // background: $bgColorWorkCard;
   }
   &.peek-case-study2 {
     background: $bgColorWorkCard;

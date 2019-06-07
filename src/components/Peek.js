@@ -78,7 +78,7 @@ class ThreeScene extends Component {
     // this.camera.position.z = 4
     //ADD RENDERER
     this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true })
-    // this.renderer.setClearColor('0xffffff', 1)
+    this.renderer.setClearColor('0xffffff', 0.0)
     this.renderer.setSize(width, height)
     this.mount.appendChild(this.renderer.domElement)
 
@@ -91,7 +91,7 @@ class ThreeScene extends Component {
     //   'https://s3-us-west-2.amazonaws.com/s.cdpn.io/13842/disp.jpg'
     // ];
     let cnt = 0
-    const assetUrls = [firstImageURL, secondImageURL, dispMapURL]
+    const assetUrls = ['https://upload.wikimedia.org/wikipedia/commons/6/62/Clear.png', secondImageURL, dispMapURL, firstImageURL]
     assetUrls.forEach((url, index) => {
       let img = new Image();
 
@@ -106,12 +106,13 @@ class ThreeScene extends Component {
         texture.anisotropy = this.renderer.getMaxAnisotropy();
 
         cnt++;
-        if (cnt == 3) this.start();
+        if (cnt == 4) this.start();
       }.bind(this, index, img);
 
       img.crossOrigin = "Anonymous";
       img.src = url;
     })
+    this.textureArr = textureArr
 
     this.mat = new THREE.RawShaderMaterial({
       uniforms: {
@@ -146,7 +147,13 @@ class ThreeScene extends Component {
     this.mount.removeChild(this.renderer.domElement)
   }
   start = () => {
+    const { anim } = this.props
+    if (anim !== 'shown') {
+      setTimeout(this.start, 10)
+      return
+    }
     if (!this.frameId) {
+      this.renderer.copyTextureToTexture( {x: 0, y: 0} , this.textureArr[3], this.textureArr[1] )
       this.frameId = requestAnimationFrame(this.animate)
     }
   }
@@ -254,12 +261,12 @@ export default class Peek extends Component {
             <Transporter name="caseStudyStrive" properties={['opacity', 'margin']} show={peekedWork} duration={250}>
               <ThreeScene
                 immediate
-                duration={500}
+                duration={1000}
                 bgColor='0xf0f2f5'
                 className="peek-case-study peek-case-study1 peeked"
-                firstImageURL={require("../assets/projects/motivote/motivote-hero.png")}
-                secondImageURL={require("../assets/projects/strive/strive-hero.png")}
-                dispMapURL='https://s3-us-west-2.amazonaws.com/s.cdpn.io/13842/disp.jpg'
+                firstImageURL={require('../assets/grey.png')}
+                secondImageURL={require("../assets/motivote-hero-color.png")}
+                dispMapURL={require('../assets/diffMap2.png')}
                 />
               {/* <div className="peek-case-study peek-case-study1 peeked" data-displacement="../assets/displacement/4.png" data-intensity="0.2" data-speedin="1.6" data-speedout="1.6">
                 <img src={require("../assets/projects/motivote/motivote-hero.png")} />
