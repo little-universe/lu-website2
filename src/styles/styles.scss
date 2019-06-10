@@ -290,8 +290,8 @@ body {
     position: fixed;
     top: 50%;
     left: 50%;
-    -webkit-transform: translate(-50%, -52%);
-    background-image: url("../../src/assets/team/team-1.jpg");
+    -webkit-transform: translate(-50%, -52%) rotate(10deg);
+    // background-image: url("../../src/assets/team/team-1.jpg");
     background-size: cover;
     background-position: center;
     height: 60vh;
@@ -359,7 +359,7 @@ body {
         top: 50%;
         left: 50%;
         -webkit-transform: translate(-50%, -50%);
-        background-image: url("../../src/assets/team/team-1.jpg");
+        // background-image: url("../../src/assets/team/team-1.jpg");
         background-size: cover;
         background-position: center;
         height: 60vh;

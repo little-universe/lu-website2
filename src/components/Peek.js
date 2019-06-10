@@ -35,19 +35,19 @@ uniform sampler2D uDisp;
 varying vec2 vUv;
 
 float quarticInOut(float t) {
-  return t < 0.5
-    ? +8.0 * pow(t, 4.0)
-    : -8.0 * pow(t - 1.0, 4.0) + 1.0;
+  return t < 0.2
+    ? +10.0 * pow(t, 4.0)
+    : -9.0 * pow(t - 1.0, 4.0) + 1.0;
 }
 
 void main() {
 	// https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/gl_FragCoord.xhtml
-	
-	vec4 disp = texture2D(uDisp, vec2(0., 0.5) + (vUv - vec2(0., 0.5)) * (0.2 + 0.8 * (1.0 - uTrans)) );
-	float trans = clamp(1.6  * uTrans - disp.r * 0.4 - vUv.x * 0.2, 0.0, 1.0);
+
+	vec4 disp = texture2D(uDisp, vec2(0.1, 0.5) + (vUv - vec2(0., 0.5)) * (0.1 + 0.1 * (1.0 - uTrans)) );
+	float trans = clamp(1.6  * uTrans - disp.r * 0.5 - vUv.x * 0.2, 0.0, 1.0);
 	trans = quarticInOut(trans);
 	vec4 color0 = texture2D(uTexture0, vec2(0.5 - 0.3 * trans, 0.5) + (vUv - vec2(0.5)) * (1.0 - 0.2 * trans));
-	vec4 color1 = texture2D(uTexture1, vec2(0.5 + sin( (1. - trans) * 0.1), 0.5 ) + (vUv - vec2(0.5)) * (0.9 + 0.1 * trans));
+	vec4 color1 = texture2D(uTexture1, vec2(0.5 + sin( (1. - trans) * 0.1), 0.5 ) + (vUv - vec2(0.5)) * (0.7 + 0.3 * trans));
 
 
 	gl_FragColor = mix(color0, color1 , trans);
@@ -131,10 +131,10 @@ class ThreeScene extends Component {
 
     if (immediate && anim === 'shown') {
       tween({
-        from: { trans: 0 },
-        to: { trans: 1 },
+        from: { trans: 1 },
+        to: { trans: 0 },
         duration,
-        ease: easing.linear
+        ease: easing.quarticInOut
       }).start(({ trans }) => {
         this.setState({ trans })
         this.renderScene()
@@ -302,13 +302,19 @@ export default class Peek extends Component {
       `}>
           {route !== 'about' && <>
             <Transporter name="member-team" properties={['opacity', 'margin']} show={peekedAbout} duration={250}>
-              <div className="peek-member-image peek-member-team peeked">
-
-              </div>
+						<ThreeScene
+							immediate
+							duration={2000}
+							bgColor='0xf0f2f5'
+							className="peek-member-image peek-member-team peeked"
+							firstImageURL={require('../assets/grey.png')}
+							secondImageURL={require("../assets/team/team-1.jpg")}
+							dispMapURL={require('../assets/7.jpg')}
+							/>
+						{/* <div className="peek-member-image peek-member-team peeked"> </div>*/}
             </Transporter>
             <Transporter name="member-team" properties={['opacity', 'margin']} show={!peekedAbout && !['/about'].includes(route)} duration={250}>
               <div className="peek-member-image peek-member-team unpeeked">
-
               </div>
             </Transporter>
 
