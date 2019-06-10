@@ -355,7 +355,7 @@ body {
   left: 0;
   @include transition;
   &.peek-approach, &.peek-work, &.peek-about {
-    background: #0064EB !important;
+    background: lighten($primaryColor, 10%) !important;
     @include transition;
   }
   .peek-text {

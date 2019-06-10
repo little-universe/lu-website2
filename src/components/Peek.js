@@ -265,7 +265,7 @@ export default class Peek extends Component {
                 duration={1000}
                 bgColor='0xf0f2f5'
                 className="peek-case-study peek-case-study1 peeked"
-                firstImageURL={require('../assets/motivote-hero-color.png')}
+                firstImageURL={require('../assets/blue-img.png')}
                 secondImageURL={require("../assets/motivote-hero-color.png")}
                 dispMapURL={require('../assets/7.jpg')}
                 />
