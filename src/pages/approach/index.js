@@ -21,10 +21,10 @@ class Approach extends Component {
       <>
         <Hero heroText className="about-hero" headline="Approach" subhead="We build trust to deliver impactful results"/>
 
-        <Transporter name="approach1" show={true} duration={500} properties={[]}>
-          <FeaturedImage featuredFull className="approach-photo"/>
-        </Transporter>
+
+
         <Fade bottom distance="30px" duration={500}>
+        <FeaturedImage featuredFull className="approach-photo"/>
           <FeaturedText textWithHeader header="Driven by Principles" text="Through our cumulative decades of experience we have built a foundation of strong principles and have developed a deep intuition for product. We bring this knowledge to every project we work on and seek to learn from every team we partner with."/>
           <ImageWithText imageLeft imageFull className="approach-1" headline="A Technical Foundation" description="We're experts in design and engineering and are always searching for ways to improve. In the face of evolving markets or social contexts we stay anchored to our understanding of the fundamental principals of design and engineering as ways of seeing the world. Our ability to return to well learned foundations helps us weather rocky seas."/>
           <ImageWithText imageRight imageFull className="approach-2" headline="No Process Without Context" description="We're process agnostic. We're not a huge agency here to push your project through the design and development juggernaut. We're more about sharing experiences and stories, reference and past works, and building a unique process around a context. We don't only seek out product market fit, but process context fit."/>

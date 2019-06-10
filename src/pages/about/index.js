@@ -21,10 +21,8 @@ class About extends Component {
     return (
       <>
         <Hero heroText className="about-hero" headline="About Us" subhead="Small Team. Full Stack. Big Impact."/>
-        <Transporter name="member-team" show={true} duration={500} properties={[]}>
-          <FeaturedImage featuredFull className="group-photo"/>
-        </Transporter>
         <Fade bottom distance="30px" duration={500}>
+        <FeaturedImage featuredFull className="group-photo"/>
         <FeaturedText textWithHeader header="We Love Product" text="Our team has gone to bat with all things startup. We’ve built, launched and scaled multiple ventures as founders, managers, operators and dreamers. We’ve seen huge successes and formidable failures. We understand what it means to operate in ambiguity, where to make tough calls, and we have the skills to back it up."/>
         <ImageWithText imageLeft imageFull className="zach-member" memberName="Zach Smith" memberTitle="Founder" description="Zach has a strong background in leading technical teams for companies both large and small. His experience over a decade of developing products has been focused on impact and scale."/>
         <ImageWithText imageRight imageFull className="adrian-member" memberName="Adrian Del Balso" memberTitle="Founder" description="Adrian has a deep background in leading product teams for impact. His decade of product, design and frontend engineering experience have been focused on engaging users with digital tools to better their lives and communities."/>

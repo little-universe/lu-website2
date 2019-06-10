@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link, withRouter} from "react-router-dom";
 import './styles/styles.scss';
-import Peek from './components/Peek';
+
 import Homepage from './pages/homepage';
 import Work from './pages/work';
 import Betterfin from './pages/betterfin';
@@ -19,7 +19,6 @@ import { freezeAnimation } from './orbit'
 let styles = {}
 
 const RouterNav = withRouter(props => <Nav {...props}/>);
-const RouterPeek = withRouter(props => <Peek {...props}/>);
 
 
 
@@ -97,7 +96,7 @@ class App extends Component {
       <Logo/>
         <Router>
           <RouterScroll />
-          <RouterLens hovered={hovered}>
+
           <Route exact path="/" component={Homepage}/>
           <Route path="/work" component={Work}/>
           <Route path="/about" component={About}/>
@@ -108,13 +107,11 @@ class App extends Component {
           <Route path="/votecrew" component={VoteCrew}/>
           <Route path="/farmigo" component={Farmigo}/>
           <Route path="/instructrr" component={Instructrr}/>
-          </RouterLens>
+
           <RouterNav
             onHovered={this.updateHovered}
           />
-          <RouterPeek
-            peekPage={hovered}
-          />
+
         </Router>
       </div>
     );
