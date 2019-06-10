@@ -383,7 +383,7 @@ button:focus {
   margin: 0;
 }// wrapper for full width elements
 .margin-container {
-  margin: $buffer*3;
+  margin: $buffer*10;
   @include breakpoint(xs) {
     margin: $buffer*2;
   }
@@ -403,7 +403,7 @@ button:focus {
 
 
 .hero {
-  height: 90vh;
+  height: 80vh;
   position: relative;
   .project-details {
     position: absolute;
@@ -414,7 +414,7 @@ button:focus {
     font-size: $fontSizeLargeDesktop;
     line-height: $lineHeightLargeDesktop;
     @include breakpoint(sm) {
-      bottom: $buffer*2;
+      bottom: $buffer*8;
       left: $buffer*2;
       font-size: $fontSizeDesktop;
       line-height: $lineHeightDesktop;
@@ -444,6 +444,7 @@ button:focus {
     }
   }
   &.homepage-hero {
+    height: 100vh;
     padding: $buffer*3;
     .headline {
       font-size: $fontSizeHeadline*.5;
@@ -1086,10 +1087,10 @@ button {
 }//button
 .footer-area {
   padding: $buffer*6;
-  background: $bgColorWork;
-  color: $fontColorLightened;
-  font-size: $fontSizeDesktop;
-  line-height: $lineHeightDesktop;
+  // background: $bgColorWork;
+  color: $fontColor;
+  font-size: $fontSize;
+  line-height: $lineHeight;
   p {
     margin-bottom: 0;
   }

@@ -8,6 +8,7 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import { Transporter } from '../../orbit'
 import Grid from '@material-ui/core/Grid';
 import Fade from 'react-reveal/Fade';
+import Footer from '../../components/Footer';
 
 class Instructrr extends Component {
   state = {
@@ -37,6 +38,7 @@ class Instructrr extends Component {
 
           <WorkTogether headline="Let's get to know each other"/>
           </Fade>
+          <Footer/>
       </>
     )
   }

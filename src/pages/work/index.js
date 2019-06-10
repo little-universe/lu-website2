@@ -23,19 +23,19 @@ class Work extends Component {
         <Hero heroText className="about-hero" headline="Our Work" subhead="We make a difference for our clients"/>
         <Fade bottom distance="30px" duration={500}>
         <Link to="../strive" className="work-card-link">
-        {/*<Transporter name="caseStudyStrive" show={true} duration={1000} properties={['margin']} unstableOnUnmount>*/}
+          <Transporter name="caseStudyStrive" show={true} duration={250} properties={['margin']} unstableOnUnmount>
             <FeaturedImage featuredFullProject className="featured-strive" projectName="Strive Digital" projectCategory="Digital Product" projectIndustry="Advocacy Tech"/>
-        {/*</Transporter> */}
+          </Transporter>
         </Link>
         <Link to="../motivote" className="work-card-link">
-        {/*<Transporter name="caseStudyMotivote" show={true} duration={700} properties={['margin']} unstableOnUnmount> */}
+          <Transporter name="caseStudyMotivote" show={true} duration={250} properties={['margin']} unstableOnUnmount>
             <FeaturedImage featuredFullProject className="featured-motivote" projectName="Motivote" projectCategory="Digital Product" projectIndustry="Advocacy Tech"/>
-        {/*</Transporter> */}
+          </Transporter>
         </Link>
         <Link to="../betterfin" className="work-card-link">
-        {/*<Transporter name="caseStudyBetterfin" show={true} duration={500} properties={['margin']} unstableOnUnmount>*/}
+          <Transporter name="caseStudyBetterfin" show={true} duration={250} properties={['margin']} unstableOnUnmount>
             <FeaturedImage featuredFullProject className="featured-betterfin" projectName="Betterfin" projectCategory="Digital Product" projectIndustry="Fintech"/>
-        {/*</Transporter>*/}
+          </Transporter>
         </Link>
         <Link to="../votecrew" className="work-card-link">
         <Transporter name="caseStudyVotecrew" show={true} duration={250} properties={['margin']} unstableOnUnmount>
@@ -54,6 +54,7 @@ class Work extends Component {
         </Link>
         <WorkTogether headline="Let's get to know each other"/>
         </Fade>
+        <Footer/>
       </>
     )
   }

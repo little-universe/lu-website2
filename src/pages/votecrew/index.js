@@ -8,6 +8,7 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import { Transporter } from '../../orbit'
 import Grid from '@material-ui/core/Grid';
 import Fade from 'react-reveal/Fade';
+import Footer from '../../components/Footer';
 
 class Votecrew extends Component {
   state = {
@@ -35,6 +36,7 @@ class Votecrew extends Component {
             <FeaturedImage featuredCenter className="farmigo-next" projectName="Farmigo" projectCategory="Digital Product" projectIndustry="Food" destination="../farmigo" caseStudyName="caseStudyFarmigo"/>
           <WorkTogether headline="Let's get to know each other"/>
           </Fade>
+          <Footer/>
       </>
     )
   }

@@ -8,6 +8,7 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import { Transporter } from '../../orbit'
 import Grid from '@material-ui/core/Grid';
 import Fade from 'react-reveal/Fade';
+import Footer from '../../components/Footer';
 class Strive extends Component {
   state = {
     hovered: undefined,
@@ -34,6 +35,7 @@ class Strive extends Component {
           <FeaturedImage featuredCenter className="motivote-next" projectName="Motivote" projectCategory="Digital Product" projectIndustry="Advocacy Tech" destination="../motivote" caseStudyName="caseStudyMotivote"/>
         <WorkTogether headline="Let's get to know each other"/>
         </Fade>
+        <Footer/>
       </>
     )
   }

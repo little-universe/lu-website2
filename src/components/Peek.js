@@ -16,7 +16,7 @@ class Peek extends Component {
 
     return (
       <>
-      <div className={`peek
+    {/*  <div className={`peek
         ${peekedWork && "peek-work"}
       `}>
       {route !== 'work' && <>
@@ -77,7 +77,7 @@ class Peek extends Component {
           <div className="peek-approach-image peek-approach-1 unpeeked"></div>
         </Transporter>
         </>}
-      </div>
+      </div>*/}
       </>
     )
   }

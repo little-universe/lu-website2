@@ -6,6 +6,7 @@ import FeaturedText from '../../components/FeaturedText';
 import ImageWithText from '../../components/ImageWithText';
 import { Transporter } from '../../orbit';
 import Fade from 'react-reveal/Fade';
+import Footer from '../../components/Footer';
 
 class Approach extends Component {
   state = {
@@ -32,6 +33,7 @@ class Approach extends Component {
           <ImageWithText imageRight imageFull className="approach-4" headline="Trusting Partnerships" description="We make a concerted effort to be trusting and earn trust across all our work. It is important to us to work with people who we consider partners and those who we can prove our commitment to. We listen and thoughtfully respond as much as we conceptualize, design, and implement."/>
           <WorkTogether headline="Let's get to know each other"/>
         </Fade>
+        <Footer/>
       </>
     )
   }

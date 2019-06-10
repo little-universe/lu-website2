@@ -4,6 +4,7 @@ import WorkTogether from '../../components/WorkTogether';
 import FeaturedImage from '../../components/FeaturedImage';
 import FeaturedText from '../../components/FeaturedText';
 import ImageWithText from '../../components/ImageWithText';
+import Footer from '../../components/Footer';
 
 import { Transporter } from '../../orbit';
 import Fade from 'react-reveal/Fade';
@@ -34,6 +35,7 @@ class About extends Component {
         <FeaturedImage featuredCenter className="taylor-adrian" caption="Taylor and Adrian have established a vocabulary for discussing design."/>
         <WorkTogether headline="Let's get to know each other"/>
         </Fade>
+        <Footer/>
       </>
     )
   }

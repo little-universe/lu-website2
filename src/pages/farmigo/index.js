@@ -8,6 +8,7 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import { Transporter } from '../../orbit'
 import Grid from '@material-ui/core/Grid';
 import Fade from 'react-reveal/Fade';
+import Footer from '../../components/Footer';
 
 class Farmigo extends Component {
   state = {
@@ -38,6 +39,7 @@ class Farmigo extends Component {
             <FeaturedImage featuredCenter className="instructrr-next" projectName="Instructrr" projectCategory="Mobile Application" projectIndustry="Fitness" destination="../instructrr" caseStudyName="caseStudyInstructrr"/>
           <WorkTogether headline="Let's get to know each other"/>
           </Fade>
+          <Footer/>
       </>
     )
   }
