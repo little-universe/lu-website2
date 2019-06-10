@@ -20,7 +20,9 @@ class About extends Component {
 
     return (
       <>
-        <Hero heroText className="about-hero" headline="About Us" subhead="Small Team. Full Stack. Big Impact."/>
+        <Transporter name="aboutText" show={true} duration={500} properties={[]}>
+          <Hero heroText className="about-hero" headline="Small Team. Full Stack."/>
+        </Transporter>
         <Transporter name="member-team" show={true} duration={500} properties={[]}>
           <FeaturedImage featuredFull className="group-photo"/>
         </Transporter>

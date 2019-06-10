@@ -255,29 +255,37 @@ body {
 // PEEK STYLES
 
 .peek-case-study {
-  width: 30vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80vh;
   height: 20vw;
-  position: fixed;
-  opacity: 0;
+  // position: relative;
+  // margin: 0 auto;
+  // margin-bottom: $buffer*5;
   img {
     width: 100%;
   }
   &.peek-case-study1 {
-    left: 40vw;
-    top: -5vw;
-    // background: $bgColorWorkCard;
+    opacity: 0;
+    background: $bgColorWork;
+    // background-image: url("../../src/assets/projects/motivote/motivote-hero.png");
+    background-size: cover;
+    background-position: center;
   }
   &.peek-case-study2 {
-    background: $bgColorWorkCard;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
+    opacity: 0;
+    background: $bgColorWork;
+    background-image: url("../../src/assets/projects/motivote/motivote-hero.png");
+    background-size: cover;
+    background-position: center;
   }
   &.peek-case-study3 {
-    background: $bgColorWorkCard;
-    left: 20vw;
-    bottom: -5vw;
+    opacity: 0;
+    background: $bgColorWork;
+    background-image: url("../../src/assets/projects/motivote/motivote-hero.png");
+    background-size: cover;
+    background-position: center;
   }
 }
 
@@ -301,8 +309,8 @@ body {
 
 .peek-approach-image {
   overflow: hidden;
-  opacity: 0;
   &.peek-approach-1{
+    opacity: 0;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -314,6 +322,26 @@ body {
     width: 80vh;
   }
 }
+.peeked {
+  z-index: -1;
+}
+.peek-text {
+  // overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $fontColorLight;
+  margin-top: $buffer;
+  z-index: 1000;
+  // text-align: center;s
+  font-size: $fontSizeHeadline*.75;
+  &.unpeeked {
+    opacity: 0;
+    z-index: 1000;
+  }
+}
 
 
 .peek {
@@ -322,34 +350,40 @@ body {
   height: 100vh;
   width: 100vw;
   position: fixed;
-  // display: flex;
-  .peeked, .unpeeked {
-    overflow: hidden;
-    img {
-      // width: 100%;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  @include transition;
+  &.peek-approach, &.peek-work, &.peek-about {
+    background: #0064EB !important;
+    @include transition;
+  }
+  .peek-text {
+    z-index: 1000;
+    &.peeked {
+      opacity: 1;
     }
   }
     .peek-case-study.peeked {
       opacity: 1;
-      img {
-        position: absolute;
-        height: 100%;
-        top: 50%;
-        left: 50%;
-        -webkit-transform: translate(-50%, -50%);
-      }
-      &.peek-case-study1 {
-        -webkit-transform: translateX($buffer) translateY($buffer);
-      }
-      &.peek-case-study2 {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        -webkit-transform: translate(-50%, -50%);
-      }
-      &.peek-case-study3 {
-        -webkit-transform: translateX($buffer) translateY($buffer);
-      }
+      // &.peek-case-study1 {
+      //   background: $bgColorWork;
+      //   // background-image: url("../../src/assets/projects/motivote/motivote-hero.png");
+      //   background-size: cover;
+      //   background-position: center;
+      // }
+      // &.peek-case-study2 {
+      //   background: $bgColorWork;
+      //   background-image: url("../../src/assets/projects/motivote/motivote-hero.png");
+      //   background-size: cover;
+      //   background-position: center;
+      // }
+      // &.peek-case-study3 {
+      //   background: $bgColorWork;
+      //   background-image: url("../../src/assets/projects/betterfin/betterfin-hero.png");
+      //   background-size: cover;
+      //   background-position: center;
+      // }
     }
     .peek-member-image.peeked {
       opacity: 1;
@@ -367,9 +401,11 @@ body {
       }
     }
     .peek-approach-image.peeked {
-      opacity: 1;
-      overflow: hidden;
+      // opacity: 1;
+      // overflow: hidden;
       &.peek-approach-1{
+        // overflow: visible;
+        opacity: 1;
         position: fixed;
         top: 50%;
         left: 50%;
@@ -457,7 +493,7 @@ button:focus {
   &.text-hero {
     text-align: center;
     .headline {
-      font-size: $fontSizeHeadline;
+      font-size: $fontSizeHeadline*.75;
       line-height: $lineHeightHeadline;
       @include breakpoint(sm) {
         font-size: $fontSizeHeadline*.5;

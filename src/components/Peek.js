@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Grid from '@material-ui/core/Grid';
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
+import Hero from '../components/Hero';
 import { Transporter } from '../orbit'
 import * as THREE from 'three'
 import { tween, easing } from 'popmotion'
@@ -78,7 +79,7 @@ class ThreeScene extends Component {
     // this.camera.position.z = 4
     //ADD RENDERER
     this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true })
-    this.renderer.setClearColor('0xffffff', 0.0)
+    this.renderer.setClearColor('0xffffff', 0)
     this.renderer.setSize(width, height)
     this.mount.appendChild(this.renderer.domElement)
 
@@ -131,8 +132,8 @@ class ThreeScene extends Component {
 
     if (immediate && anim === 'shown') {
       tween({
-        from: { trans: 1 },
-        to: { trans: 0 },
+        from: { trans: 0 },
+        to: { trans: 1 },
         duration,
         ease: easing.quarticInOut
       }).start(({ trans }) => {
@@ -264,9 +265,9 @@ export default class Peek extends Component {
                 duration={1000}
                 bgColor='0xf0f2f5'
                 className="peek-case-study peek-case-study1 peeked"
-                firstImageURL={require('../assets/grey.png')}
+                firstImageURL={require('../assets/motivote-hero-color.png')}
                 secondImageURL={require("../assets/motivote-hero-color.png")}
-                dispMapURL={require('../assets/diffMap2.png')}
+                dispMapURL={require('../assets/7.jpg')}
                 />
               {/* <div className="peek-case-study peek-case-study1 peeked" data-displacement="../assets/displacement/4.png" data-intensity="0.2" data-speedin="1.6" data-speedout="1.6">
                 <img src={require("../assets/projects/motivote/motivote-hero.png")} />
@@ -280,7 +281,7 @@ export default class Peek extends Component {
 
             <Transporter name="caseStudyMotivote" properties={['opacity']} show={peekedWork} duration={100}>
               <div className="peek-case-study peek-case-study2 peeked">
-                <img src={require("../assets/projects/motivote/motivote-hero.png")} />
+                {/*<img src={require("../assets/projects/motivote/motivote-hero.png")} />*/}
               </div>
             </Transporter>
             <Transporter name="caseStudyMotivote" properties={['opacity']} show={!peekedWork && !['/work'].includes(route)} duration={100}>
@@ -289,7 +290,7 @@ export default class Peek extends Component {
 
             <Transporter name="caseStudyBetterfin" properties={['opacity']} show={peekedWork} duration={150}>
               <div className="peek-case-study peek-case-study3 peeked">
-                <img src={require("../assets/projects/betterfin/betterfin-hero.png")} />
+              {/*  <img src={require("../assets/projects/betterfin/betterfin-hero.png")} />*/}
               </div>
             </Transporter>
             <Transporter name="caseStudyBetterfin" properties={['opacity']} show={!peekedWork && !['/work'].includes(route)} duration={150}>
@@ -301,11 +302,17 @@ export default class Peek extends Component {
         ${peekedAbout && "peek-about"}
       `}>
           {route !== 'about' && <>
+          <Transporter name="aboutText" properties={['opacity', 'margin']} show={peekedAbout} duration={500}>
+            <div className="peek-text peeked">Small Team. Full Stack.</div>
+          </Transporter>
+          <Transporter name="aboutText" properties={['opacity', 'margin']}  show={!peekedAbout && !['/about'].includes(route)} duration={500}>
+            <div className="peek-text unpeeked">Small Team. Full Stack.</div>
+          </Transporter>
             <Transporter name="member-team" properties={['opacity', 'margin']} show={peekedAbout} duration={250}>
 						<ThreeScene
 							immediate
-							duration={2000}
-							bgColor='0xf0f2f5'
+							duration={1000}
+							bgColor='0xffffff, 0.0'
 							className="peek-member-image peek-member-team peeked"
 							firstImageURL={require('../assets/grey.png')}
 							secondImageURL={require("../assets/team/team-1.jpg")}
@@ -324,6 +331,12 @@ export default class Peek extends Component {
         ${peekedApproach && "peek-approach"}
       `}>
           {route !== 'approach' && <>
+            <Transporter name="approachText" properties={['opacity', 'margin']} show={peekedApproach} duration={250}>
+              <div className="peek-text peeked">We Build Trust To Deliver Progress</div>
+            </Transporter>
+            <Transporter name="approachText" properties={['opacity', 'margin']} show={!peekedApproach && !['/approach'].includes(route)} duration={250}>
+              <div className="peek-text unpeeked">We Build Trust To Deliver Progress</div>
+            </Transporter>
             <Transporter name="approach1" properties={['opacity', 'margin']} show={peekedApproach} duration={250}>
               <div className="peek-approach-image peek-approach-1 peeked"></div>
             </Transporter>
