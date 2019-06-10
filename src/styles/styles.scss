@@ -517,10 +517,10 @@ button:focus {
     clip-path: inset(0);
     &:hover {
       .image-background {
-        -webkit-transform: scale(1.01);
+        // -webkit-transform: scale(1.01);
         @include transition;
       }
-      clip-path: inset($buffer*2);
+      clip-path: inset($buffer*3);
       @include transition;
     }
   }
