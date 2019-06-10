@@ -1,6 +1,6 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { tween, easing } from 'popmotion'
-import { camelCase, clamp, cloneDeep, debounce } from 'lodash'
+import { camelCase, clamp, cloneDeep, debounce, forEach } from 'lodash'
 import React from 'react'
 import ReactDOM from 'react-dom'
 
@@ -26,6 +26,20 @@ function getStyles(node, properties) {
   return styles
 }
 
+function setNode(name, ref, properties = []) {
+  if (name !== undefined) {
+    if (ref) {
+      const node = ReactDOM.findDOMNode(ref)
+      if (node) {
+        nodes[name] = {
+          styles: getStyles(node, properties),
+          position: node.getBoundingClientRect()
+        }
+      }
+    }
+  }
+}
+
 let nodes = {}
 let freeze = false
 
@@ -41,57 +55,89 @@ export function clearAll() {
   console.warn('nodes now', nodes)
 }
 
-export function orbit(name, properties) {
-  let [styleState, setStyleState] = useState({})
-  let ref = useRef(null)
+// Global containing node animations
+let animations = {}
 
-  useLayoutEffect(() => {
-    let old = nodes[name]
-    delete nodes[name]
-
-    let newNode = ref.current
-
-    if (old && newNode) { // we've got a new node and old styles! So it's time to animate!
-      let newStyles = getStyles(newNode, properties)
-      let newPosition = newNode.getBoundingClientRect()
-
-      console.log(newPosition)
-
-      let translateX = old.position.left - newPosition.left
-      let translateY = old.position.top - newPosition.top
-
-      let oldStyles = {
-        ...old.styles,
-        transform: `translate(${translateX}px, ${translateY}px)`
-      }
-
-      console.log(`translate(${translateX}px, ${translateY}px)`)
-
-      setStyleState(oldStyles)
-
-      tween({
-        from: oldStyles,
-        to: {
-          ...newStyles,
-          transform: `translate(0px, 0px)`
-        },
-        ease: easing.easeInOut,
-        duration: 3000
-      }).start((v) => setStyleState({ ...v }))
-    }
-    return () => {
-      nodes[name] = {
-        styles: getStyles(ref.current, properties),
-        position: ref.current.getBoundingClientRect()
-      }
-    }
-  }, [])
-
-  return {
-    ref,
-    style: styleState
+export function get(name) {
+  if (animations[name]) {
+    return animations[name]
   }
 }
+export function stop(name) {
+  if (animations[name]) {
+    animations[name].stop()
+  }
+}
+
+export function stopAll() {
+  forEach(animations, (v, k) => {
+    v.stop()
+  })
+}
+
+export function finish(name) {
+  if (animations[name]) {
+    animations[name].seek(1)
+  }
+}
+
+export function finishAll() {
+  forEach(animations, (v, k) => {
+    v.seek(1)
+  })
+}
+
+// export function orbit(name, properties) {
+//   let [styleState, setStyleState] = useState({})
+//   let ref = useRef(null)
+
+//   useLayoutEffect(() => {
+//     let old = nodes[name]
+//     delete nodes[name]
+
+//     let newNode = ref.current
+
+//     if (old && newNode) { // we've got a new node and old styles! So it's time to animate!
+//       let newStyles = getStyles(newNode, properties)
+//       let newPosition = newNode.getBoundingClientRect()
+
+//       console.log(newPosition)
+
+//       let translateX = old.position.left - newPosition.left
+//       let translateY = old.position.top - newPosition.top
+
+//       let oldStyles = {
+//         ...old.styles,
+//         transform: `translate(${translateX}px, ${translateY}px)`
+//       }
+
+//       console.log(`translate(${translateX}px, ${translateY}px)`)
+
+//       setStyleState(oldStyles)
+
+//       tween({
+//         from: oldStyles,
+//         to: {
+//           ...newStyles,
+//           transform: `translate(0px, 0px)`
+//         },
+//         ease: easing.easeInOut,
+//         duration: 3000
+//       }).start((v) => setStyleState({ ...v }))
+//     }
+//     return () => {
+//       nodes[name] = {
+//         styles: getStyles(ref.current, properties),
+//         position: ref.current.getBoundingClientRect()
+//       }
+//     }
+//   }, [])
+
+//   return {
+//     ref,
+//     style: styleState
+//   }
+// }
 
 const relevantProps = []
 
@@ -101,7 +147,9 @@ export class Transporter extends React.Component {
     this.state = {
       style: undefined,
       currentNodeStyle: undefined,
-      placeholderStyle: {}
+      placeholderStyle: {},
+      mounted: true,
+      mountedTimeout: undefined
     }
     this.childRef = React.createRef()
     this.onScroll = debounce(this.onScroll, 100)
@@ -110,6 +158,9 @@ export class Transporter extends React.Component {
     const { name, show, properties = relevantProps, guaranteedFirst, overrides = {}, overrideOldPosition, onlyX, onlyY, noTransition, unstableOnUnmount } = this.props
     if (unstableOnUnmount) {
       window.addEventListener('scroll', this.onScroll)
+    }
+    if (!show) {
+      this.setState({ mounted: false })
     }
 
     if (noTransition) {
@@ -171,25 +222,30 @@ export class Transporter extends React.Component {
   }
   componentDidUpdate(prevProps, prevState, snapshot) {
     const { anim } = this.state
-    const { show, name, children, properties = relevantProps, guaranteedFirst } = this.props
+    const { show, name, removeDelay, children, properties = relevantProps, guaranteedFirst } = this.props
     // if (['showing', 'hiding'].includes(anim)) {
     //   console.warn('already animating', name, anim)
     //   return
     // }
     if (prevProps.show !== show) {
+      console.warn('show?', show, name)
       if (!show && !ReactDOM.findDOMNode(this.childRef && this.childRef.current)) {
-        // console.warn('ughh, child is already gone', name)
+        console.warn('ughh, child is already gone', name)
         return
       }
       if (show) {
+        console.warn('showing', name, this.state.mounted, this.state.mountedTimeout)
         // console.warn('showing', show, nodes[name], this.state.currentNodeStyle)
         if (nodes[name] && ReactDOM.findDOMNode(this.childRef && this.childRef.current) && !guaranteedFirst ) {
           // console.warn('prev node exists, animating', name, nodes[name], this.childRef)
+          clearTimeout(this.state.mountedTimeout)
+          this.setState({ anim: 'shown', mounted: true })
           this.animateChild()
           this.animateGrowingPhantom()
         } else {
           //console.warn('this is the first time node is present, short circuiting', name, nodes[name], this.childRef)
-          this.setState({ anim: 'shown' })
+          clearTimeout(this.state.mountedTimeout)
+          this.setState({ anim: 'shown', mounted: true })
         }
         // if (ReactDOM.findDOMNode(this.childRef && this.childRef.current)) {
         //   nodes[name] = {
@@ -200,37 +256,23 @@ export class Transporter extends React.Component {
 
         return this.setState({ currentNodeStyle: nodes[name] })
       }
+      console.warn('not show', name, nodes[name], this.state.currentNodeStyle && this.state.currentNodeStyle.position)
       if (!show && nodes[name] && this.state.currentNodeStyle && this.state.currentNodeStyle.position) {
-        this.setState({ anim: 'hiding' })
-        const { height, width, top, left } = this.state.currentNodeStyle.position
-        // console.warn('transforming?', name, { height, width })
-        // Animate style of phantom (shrink to nothing)
-        tween({
-          from: {
-            height: `${height}px`,
-            width: `${width}px`,
-            transform: `scale(1, 1)`
-          },
-          to: {
-            transform: `scale(0, 0)`
-          },
-          ease: easing.easeInOut,
-          duration: 1000
-        }).start({
-          update: (v) => {
-            this.setState({
-              placeholderStyle: {
-                ...v,
-                top: top,
-                left: left,
-                position: 'fixed'
-              }
-            })
-          },
-          complete: () => {
-            this.setState({ placeholderStyle: {}, style: {}, anim: null })
-          }
-        })
+        console.warn('not showing')
+        if (!removeDelay) {
+          console.warn('no remove delay')
+          clearTimeout(this.state.mountedTimeout)
+          this.setState({ anim: 'hiding', mounted: false })
+          this.animateShrinkingPhantom()
+        } else {
+          const hideTimeout = setTimeout(() => {
+            console.warn('delayed hiding')
+            this.setState({ anim: 'hiding', mounted: false })
+            this.animateShrinkingPhantom()
+          }, removeDelay)
+          console.warn('hide timeout', hideTimeout)
+          this.setState({ mountedTimeout: hideTimeout })
+        }
       }
     }
   }
@@ -238,10 +280,11 @@ export class Transporter extends React.Component {
   animateChild = () => {
     if (freeze) {
       console.warn('animation frozen, skipping', this.props.name)
-      this.setState({ anim: 'shown' })
+      clearTimeout(this.state.mountedTimeout)
+      this.setState({ anim: 'shown', mounted: true })
       return null
     } else {
-      console.warn('not frozen', this.props.name)
+      // console.warn('not frozen', this.props.name)
     }
     const { name, duration = 1000, ease=easing.easeInOut, properties, onlyX, onlyY, overrides, overrideOldPosition } = this.props
     const oldNode = nodes[name]
@@ -266,10 +309,10 @@ export class Transporter extends React.Component {
       ...oldNode.styles,
       transform: `translate(${translateX}px, ${translateY}px) scale(${scaleX}, ${scaleY})`
     }
-    console.warn('animating child', name, oldNode, newNode, translateX, translateY, scaleX, scaleY)
+    // console.warn('animating child', name, oldNode, newNode, translateX, translateY, scaleX, scaleY)
     // debugger
     this.setState({ anim: 'showing' })
-    tween({
+    const animation = tween({
       from: oldStyles,
       to: {
         ...newNode.styles,
@@ -305,12 +348,17 @@ export class Transporter extends React.Component {
             styles: getStyles(ReactDOM.findDOMNode(this.childRef.current), properties),
             position: ReactDOM.findDOMNode(this.childRef.current).getBoundingClientRect()
           }
-          this.setState({ anim: 'shown', style: {}, placeholderStyle: {}, currentNodeStyle: nodes[name] })
+          clearTimeout(this.state.mountedTimeout)
+          this.setState({ anim: 'shown', mounted: true, style: {}, placeholderStyle: {}, currentNodeStyle: nodes[name] })
         } else {
           // console.warn('node disappeared', name, ReactDOM.findDOMNode(this.childRef.current))
         }
       }
     })
+    if (animations[name]) {
+      finish(name)
+    }
+    animations[name] = animation
   }
 
   animateGrowingPhantom = () => {
@@ -358,9 +406,46 @@ export class Transporter extends React.Component {
     })
   }
 
+  animateShrinkingPhantom = () => {
+    if (freeze) {
+      this.setState({ anim: 'shown' })
+      return null
+    }
+    const { height, width, top, left } = this.state.currentNodeStyle.position
+    const { ease = easing.easeInOut, duration = 1000 } = this.props
+    // console.warn('transforming?', name, { height, width })
+    // Animate style of phantom (shrink to nothing)
+    tween({
+      from: {
+        height: `${height}px`,
+        width: `${width}px`,
+        transform: `scale(1, 1)`
+      },
+      to: {
+        transform: `scale(0, 0)`
+      },
+      ease,
+      duration
+    }).start({
+      update: (v) => {
+        this.setState({
+          placeholderStyle: {
+            ...v,
+            top: top,
+            left: left,
+            position: 'fixed'
+          }
+        })
+      },
+      complete: () => {
+        this.setState({ placeholderStyle: {}, style: {}, anim: null })
+      }
+    })
+  }
+
   render() {
     const { children, show, name, noTransition } = this.props
-    const { anim, placeholderStyle } = this.state
+    const { anim, placeholderStyle, mounted } = this.state
     const child = React.cloneElement(children, {
       ref: this.childRef,
       anim: 'shown'
@@ -393,7 +478,7 @@ export class Transporter extends React.Component {
       return <div ref={this.childRef} style={{ ...this.state.placeholderStyle, backgroundColor: debug ? 'red' : undefined }}></div>
     }
     return (
-      show ? child : null
+      mounted ? child : null
     )
   }
 }

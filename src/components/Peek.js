@@ -60,54 +60,62 @@ class ThreeScene extends Component {
     trans: 0
   }
   componentDidMount() {
+    console.warn('RENDERING THREESCENE', new Date())
     const { firstImageURL, secondImageURL, dispMapURL, immediate, bgColor='#ffffff', duration=1000, anim } = this.props
     const width = this.mount.clientWidth
     const height = this.mount.clientHeight
 
     //ADD SCENE
     this.scene = new THREE.Scene()
+
     //ADD CAMERA
     this.camera = new THREE.OrthographicCamera( width / - 2, width / 2, height / 2, height / - 2, 1, 1000 )
     this.camera.position.z = 1
-    // this.camera = new THREE.PerspectiveCamera(
-    //   75,
-    //   width / height,
-    //   0.1,
-    //   1000
-    // )
-    // this.camera.position.z = 4
+
     //ADD RENDERER
     this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true })
-    this.renderer.setClearColor('0xffffff', 0.0)
+    this.renderer.setClearColor('#ffffff', 0.0)
     this.renderer.setSize(width, height)
     this.mount.appendChild(this.renderer.domElement)
 
     // Add Textures
-
     let textureArr = [];
-    // const assetUrls = [
-    //   'https://s3-us-west-2.amazonaws.com/s.cdpn.io/13842/water.jpg',
-    //   'https://s3-us-west-2.amazonaws.com/s.cdpn.io/13842/water2.jpg',
-    //   'https://s3-us-west-2.amazonaws.com/s.cdpn.io/13842/disp.jpg'
-    // ];
+    // function addTexture(url) { // Would it save time to pass images into this component?
+    //   const img = new Image()
+    //   const texture = new ThreeScene.Texture()
+    //   texture.flipY = false;
+    // }
     let cnt = 0
-    const assetUrls = ['https://upload.wikimedia.org/wikipedia/commons/6/62/Clear.png', secondImageURL, dispMapURL, firstImageURL]
+    const assetUrls = [firstImageURL, secondImageURL, dispMapURL]
     assetUrls.forEach((url, index) => {
       let img = new Image();
+      
+      // img.crossOrigin = "Anonymous";
+      img.src = url;
 
-      let texture = new THREE.Texture();
+      let texture = new THREE.Texture(img);
+      img.onload = function () {
+        texture.needsUpdate = true;
+      };
       texture.flipY = false;
+      texture.generateMipmaps = false;
+      texture.wrapS = texture.wrapT = THREE.ClampToEdgeWrapping;
+      texture.minFilter = THREE.LinearFilter;
+      // texture.image = img
+      // texture.needsUpdate = true;
+      texture.anisotropy = this.renderer.capabilities.getMaxAnisotropy();
       textureArr.push(texture);
 
-      img.onload = function (_index, _img) {
-        let texture = textureArr[_index];
-        texture.image = _img;
-        texture.needsUpdate = true;
-        texture.anisotropy = this.renderer.getMaxAnisotropy();
+      // img.onload = function (_index, _img) {
+      //   console.warn('image loaded?', _index, _img)
+      //   let texture = textureArr[_index];
+      //   texture.image = _img;
+      //   texture.needsUpdate = true;
+      //   texture.anisotropy = this.renderer.getMaxAnisotropy();
 
-        cnt++;
-        if (cnt == 4) this.start();
-      }.bind(this, index, img);
+      //   cnt++;
+      //   if (cnt == 3) this.start();
+      // }.bind(this, index, img);
 
       img.crossOrigin = "Anonymous";
       img.src = url;
@@ -131,8 +139,8 @@ class ThreeScene extends Component {
 
     if (immediate && anim === 'shown') {
       tween({
-        from: { trans: 1 },
-        to: { trans: 0 },
+        from: { trans: 0 },
+        to: { trans: 1 },
         duration,
         ease: easing.quarticInOut
       }).start(({ trans }) => {
@@ -144,16 +152,17 @@ class ThreeScene extends Component {
   }
   componentWillUnmount() {
     this.stop()
+    this.renderer.forceContextLoss()
     this.mount.removeChild(this.renderer.domElement)
   }
   start = () => {
+    // console.warn('STARTING ANIMATION', new Date())
     const { anim } = this.props
     if (anim !== 'shown') {
       setTimeout(this.start, 10)
       return
     }
     if (!this.frameId) {
-      this.renderer.copyTextureToTexture( {x: 0, y: 0} , this.textureArr[3], this.textureArr[1] )
       this.frameId = requestAnimationFrame(this.animate)
     }
   }
@@ -192,6 +201,18 @@ class ThreeScene extends Component {
       this.renderScene()
     })
   }
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    // console.warn('componentDidUpdate')
+    const { toggle } = prevProps
+    if (this.props.toggle !== toggle) {
+      console.warn('toggle changed', toggle)
+      if (toggle) {
+        this.onMouseEnter()
+      } else {
+        this.onMouseLeave()
+      }
+    }
+  }
   render() {
     const { className } = this.props
     return (
@@ -211,37 +232,22 @@ export default class Peek extends Component {
   }
 
   componentDidMount() {
+    // Preload peek images
+    const peekUrls = [
+      require('../assets/grey.png'),
+      require('../assets/clear.png'),
+      require("../assets/motivote-hero-color.png"),
+      require('../assets/diffMap2.png'),
+      require("../assets/team/team-1.jpg"),
+      require('../assets/7.jpg')
+    ]
+    peekUrls.map(p => {
+      const img = new Image();
+      img.src = p;
+    })
+    console.warn('peekUrls', peekUrls)
     window.hoverFunction()
-    //
-    //
-    //     const tweenMax = document.createElement("tweenMax");
-    //     tweenMax.src = "https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js";
-    //     tweenMax.async = true;
-    //     document.body.appendChild(tweenMax);
-    //
-    //     const hover = document.createElement("hover");
-    //     hover.src = "../vendor/displacement/hover.js";
-    //     hover.async = true;
-    //     document.body.appendChild(hover);
-    //
   }
-
-  //
-  // Array.from(document.querySelectorAll('.grid__item-img')).forEach((el) => {
-  //   const imgs = Array.from(el.querySelectorAll('img'));
-  //   new hoverEffect({
-  //     parent: el,
-  //     intensity: el.dataset.intensity || undefined,
-  //     speedin: el.dataset.speedin || undefined,
-  //     speedout: el.dataset.speedout || undefined,
-  //     easing: el.dataset.easing || undefined,
-  //     hover: el.dataset.hover || undefined,
-  //     image1: imgs[0].getAttribute('src'),
-  //     image2: imgs[1].getAttribute('src'),
-  //     displacementImage: el.dataset.displacement
-  //   });
-  // });
-
 
   render() {
 
@@ -258,39 +264,50 @@ export default class Peek extends Component {
         ${peekedWork && "peek-work"}
       `}>
           {route !== 'work' && <>
-            <Transporter name="caseStudyStrive" properties={['opacity', 'margin']} show={peekedWork} duration={250}>
+            <Transporter name="caseStudyStrive" properties={['opacity', 'margin']} show={peekedWork} duration={250} removeDelay={1000}>
               <ThreeScene
                 immediate
                 duration={1000}
                 bgColor='0xf0f2f5'
                 className="peek-case-study peek-case-study1 peeked"
-                firstImageURL={require('../assets/grey.png')}
+                firstImageURL={require('../assets/clear.png')}
                 secondImageURL={require("../assets/motivote-hero-color.png")}
                 dispMapURL={require('../assets/diffMap2.png')}
+                toggle={!peekedWork}
                 />
-              {/* <div className="peek-case-study peek-case-study1 peeked" data-displacement="../assets/displacement/4.png" data-intensity="0.2" data-speedin="1.6" data-speedout="1.6">
-                <img src={require("../assets/projects/motivote/motivote-hero.png")} />
-                <img src={require("../assets/projects/strive/strive-hero.png")} />
-              </div> */}
             </Transporter>
             <Transporter name="caseStudyStrive" properties={['opacity', 'margin']} show={!peekedWork && !['/work'].includes(route)} duration={250}>
               <div className="peek-case-study peek-case-study1 unpeeked">
               </div>
             </Transporter>
 
-            <Transporter name="caseStudyMotivote" properties={['opacity']} show={peekedWork} duration={100}>
-              <div className="peek-case-study peek-case-study2 peeked">
-                <img src={require("../assets/projects/motivote/motivote-hero.png")} />
-              </div>
+            <Transporter name="caseStudyMotivote" properties={['opacity']} show={peekedWork} duration={100} removeDelay={1000}>
+            <ThreeScene
+                immediate
+                duration={1000}
+                bgColor='0xf0f2f5'
+                className="peek-case-study peek-case-study2 peeked"
+                firstImageURL={require('../assets/clear.png')}
+                secondImageURL={require("../assets/motivote-hero-color.png")}
+                dispMapURL={require('../assets/diffMap2.png')}
+                toggle={!peekedWork}
+                />
             </Transporter>
             <Transporter name="caseStudyMotivote" properties={['opacity']} show={!peekedWork && !['/work'].includes(route)} duration={100}>
               <div className="peek-case-study peek-case-study2 unpeeked" />
             </Transporter>
 
-            <Transporter name="caseStudyBetterfin" properties={['opacity']} show={peekedWork} duration={150}>
-              <div className="peek-case-study peek-case-study3 peeked">
-                <img src={require("../assets/projects/betterfin/betterfin-hero.png")} />
-              </div>
+            <Transporter name="caseStudyBetterfin" properties={['opacity']} show={peekedWork} duration={150} removeDelay={1000}>
+            <ThreeScene
+                immediate
+                duration={1000}
+                bgColor='0xf0f2f5'
+                className="peek-case-study peek-case-study3 peeked"
+                firstImageURL={require('../assets/clear.png')}
+                secondImageURL={require("../assets/motivote-hero-color.png")}
+                dispMapURL={require('../assets/diffMap2.png')}
+                toggle={!peekedWork}
+                />
             </Transporter>
             <Transporter name="caseStudyBetterfin" properties={['opacity']} show={!peekedWork && !['/work'].includes(route)} duration={150}>
               <div className="peek-case-study peek-case-study3 unpeeked" />
@@ -301,15 +318,16 @@ export default class Peek extends Component {
         ${peekedAbout && "peek-about"}
       `}>
           {route !== 'about' && <>
-            <Transporter name="member-team" properties={['opacity', 'margin']} show={peekedAbout} duration={250}>
+            <Transporter name="member-team" properties={['opacity', 'margin']} show={peekedAbout} duration={250} removeDelay={1000}>
 						<ThreeScene
 							immediate
-							duration={2000}
+							duration={1000}
 							bgColor='0xf0f2f5'
 							className="peek-member-image peek-member-team peeked"
-							firstImageURL={require('../assets/grey.png')}
+							firstImageURL={require('../assets/clear.png')}
 							secondImageURL={require("../assets/team/team-1.jpg")}
-							dispMapURL={require('../assets/7.jpg')}
+              dispMapURL={require('../assets/7.jpg')}
+              toggle={!peekedAbout}
 							/>
 						{/* <div className="peek-member-image peek-member-team peeked"> </div>*/}
             </Transporter>
