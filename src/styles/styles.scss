@@ -512,6 +512,18 @@ button:focus {
 
 .featured-image {
   position: relative;
+  &.featured-project {
+    @include transition;
+    clip-path: inset(0);
+    &:hover {
+      .image-background {
+        -webkit-transform: scale(1.01);
+        @include transition;
+      }
+      clip-path: inset($buffer*2);
+      @include transition;
+    }
+  }
   .project-details {
     position: absolute;
     margin-bottom: 0;
