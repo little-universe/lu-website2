@@ -142,7 +142,7 @@ export class Transporter extends React.Component {
     const { name, properties } = this.props
     const { anim } = this.state
     console.warn('scrolling', name, anim, anim === "shown",  this.childRef && this.childRef.current && ReactDOM.findDOMNode(this.childRef.current))
-    if (anim === "shown" && this.childRef && this.childRef.current && ReactDOM.findDOMNode(this.childRef.current)) {
+    if (this.childRef && this.childRef.current && ReactDOM.findDOMNode(this.childRef.current)) {
       nodes[name] = { // Set entry in nodes object
         styles: getStyles(ReactDOM.findDOMNode(this.childRef.current), properties),
         position: ReactDOM.findDOMNode(this.childRef.current).getBoundingClientRect()
