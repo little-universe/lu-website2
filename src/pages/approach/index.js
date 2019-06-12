@@ -7,12 +7,21 @@ import ImageWithText from '../../components/ImageWithText';
 import { Transporter } from '../../orbit';
 import Fade from 'react-reveal/Fade';
 import Footer from '../../components/Footer';
+import { preloadImage } from '../../preload'
 
 class Approach extends Component {
   state = {
     hovered: undefined,
     route: 'betterfin'
+  }
 
+  componentDidMount() {
+    [
+      require("../../assets/office/desk.jpg"),
+      require("../../assets/office/process.jpg"),
+      require("../../assets/office/intention.jpg"),
+      require("../../assets/office/office.jpg")
+    ].forEach(preloadImage)
   }
 
   render() {

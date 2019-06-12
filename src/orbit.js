@@ -122,10 +122,10 @@ export class Transporter extends React.Component {
       this.setState({ anim: 'shown' })
       return
     }
-    console.warn('mounting', name, nodes[name])
+    // console.warn('mounting', name, nodes[name])
     if (show && this.childRef.current) {
       if (nodes[name] && !guaranteedFirst) { // If entry already exists, transform from it
-        console.warn('previous entry exists', name)
+        // console.warn('previous entry exists', name)
         this.animateChild()
         this.animateGrowingPhantom()
       }
@@ -141,13 +141,13 @@ export class Transporter extends React.Component {
   onScroll = () => {
     const { name, properties } = this.props
     const { anim } = this.state
-    console.warn('scrolling', name, anim, anim === "shown",  this.childRef && this.childRef.current && ReactDOM.findDOMNode(this.childRef.current))
+    // console.warn('scrolling', name, anim, anim === "shown",  this.childRef && this.childRef.current && ReactDOM.findDOMNode(this.childRef.current))
     if (this.childRef && this.childRef.current && ReactDOM.findDOMNode(this.childRef.current)) {
       nodes[name] = { // Set entry in nodes object
         styles: getStyles(ReactDOM.findDOMNode(this.childRef.current), properties),
         position: ReactDOM.findDOMNode(this.childRef.current).getBoundingClientRect()
       }
-      console.warn('updating due to scroll', name, nodes[name])
+      // console.warn('updating due to scroll', name, nodes[name])
     }
   }
   componentWillUnmount() {
@@ -158,10 +158,10 @@ export class Transporter extends React.Component {
           styles: getStyles(ReactDOM.findDOMNode(this.childRef.current), properties),
           position: ReactDOM.findDOMNode(this.childRef.current).getBoundingClientRect()
         }
-        console.warn('unmounting', name, nodes[name])
+        // console.warn('unmounting', name, nodes[name])
       }
     } else {
-      console.warn("unlistening", name)
+      // console.warn("unlistening", name)
       window.removeEventListener("scroll", this.onScroll)
     }
 
@@ -237,11 +237,11 @@ export class Transporter extends React.Component {
 
   animateChild = () => {
     if (freeze) {
-      console.warn('animation frozen, skipping', this.props.name)
+      // console.warn('animation frozen, skipping', this.props.name)
       this.setState({ anim: 'shown' })
       return null
     } else {
-      console.warn('not frozen', this.props.name)
+      // console.warn('not frozen', this.props.name)
     }
     const { name, duration = 1000, ease=easing.easeInOut, properties, onlyX, onlyY, overrides, overrideOldPosition } = this.props
     const oldNode = nodes[name]
@@ -266,7 +266,7 @@ export class Transporter extends React.Component {
       ...oldNode.styles,
       transform: `translate(${translateX}px, ${translateY}px) scale(${scaleX}, ${scaleY})`
     }
-    console.warn('animating child', name, oldNode, newNode, translateX, translateY, scaleX, scaleY)
+    // console.warn('animating child', name, oldNode, newNode, translateX, translateY, scaleX, scaleY)
     // debugger
     this.setState({ anim: 'showing' })
     tween({

@@ -5,6 +5,7 @@ import FeaturedImage from '../../components/FeaturedImage';
 import FeaturedText from '../../components/FeaturedText';
 import ImageWithText from '../../components/ImageWithText';
 import Footer from '../../components/Footer';
+import { preloadImage } from '../../preload'
 
 import { Transporter } from '../../orbit';
 import Fade from 'react-reveal/Fade';
@@ -13,7 +14,14 @@ class About extends Component {
   state = {
     hovered: undefined,
     route: 'about'
+  }
 
+  componentDidMount() {
+    [
+      require("../../assets/team/team-1-small.jpg"),
+      require("../../assets/team/zach.png"),
+      require("../../assets/team/adrian.png")
+    ].forEach(preloadImage)
   }
 
   render() {

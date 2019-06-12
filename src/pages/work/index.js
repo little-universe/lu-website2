@@ -7,12 +7,19 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import { Transporter } from '../../orbit'
 import {Link} from "react-router-dom";
 import Fade from 'react-reveal/Fade';
+import { preloadImage } from '../../preload'
 
 class Work extends Component {
   state = {
     hovered: undefined,
     route: 'work'
 
+  }
+  componentDidMount() {
+    [
+      require("../../assets/projects/strive/strive-hero.png"),
+      require("../../assets/projects/motivote/motivote-hero.png")
+    ].forEach(preloadImage)
   }
 
   render() {

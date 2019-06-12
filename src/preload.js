@@ -1,4 +1,4 @@
-function preloadImage(url, debug) {
+export function preloadImage(url, debug) {
     const img = new Image()
     if (debug) {
         const now = new Date()
