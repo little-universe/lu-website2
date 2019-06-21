@@ -1111,3 +1111,41 @@ button {
     text-align: center;
   }
 }
+
+//// MOTIF ANIMATIONS
+
+.motif-animation {
+  height: 100vh;
+  background: $yellow;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  .motif-layer {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    &.gravity-1 {
+      background-image: url("../../src/assets/animations/gravity/gravity-1.svg");
+      @include rotate(2s,1%);
+      animation-direction: reverse;
+    }
+    &.gravity-2 {
+      background-image: url("../../src/assets/animations/gravity/gravity-2.svg");
+      @include rotate(5s,2%);
+    }
+    &.gravity-3 {
+      background-image: url("../../src/assets/animations/gravity/gravity-3.svg");
+      width: 30%;
+      @include yAxisMove(3s, 5%)
+      // @include rotate(2s, 5%);
+    }
+  }
+}
+
+//// CLOSE MOTIF ANIMATIONS

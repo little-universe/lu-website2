@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Nav from '../../components/Nav';
 import Logo from '../../components/Logo';
 import Hero from '../../components/Hero';
+import MotifAnimation from '../../components/MotifAnimation';
 import FeaturedText from '../../components/FeaturedText';
 import Fade from 'react-reveal/Fade';
 import Grid from '@material-ui/core/Grid';
@@ -19,7 +20,11 @@ class Homepage extends Component {
           headline={<>We're doing impact <span className="headline-emphasis">differently</span></>}
           subhead="Little Universe is a digital product design and development agency located in Brooklyn, NY."
         />
-
+        <Grid container className="team-motif">
+          <Grid item md={8}>
+            <MotifAnimation gravityAnimation/>
+          </Grid>
+        </Grid>
         <Grid container className="callout-statement" alignItems="center">
           <Grid item xs={12} md={8}>
             <div className="callout-text">
