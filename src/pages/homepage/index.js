@@ -21,13 +21,13 @@ class Homepage extends Component {
           subhead="Little Universe is a digital product design and development agency located in Brooklyn, NY."
         />
         <Grid container className="team-motif">
-          <Grid item md={8}>
+          <Grid item md={6}>
             <MotifAnimation gravityAnimation/>
           </Grid>
         </Grid>
         <Grid container className="team-motif">
-          <Grid item md={4} />
-          <Grid item md={8}>
+          <Grid item md={6} />
+          <Grid item md={6}>
             <MotifAnimation orbitAnimation/>
           </Grid>
         </Grid>
