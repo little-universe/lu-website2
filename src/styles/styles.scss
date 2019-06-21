@@ -1152,12 +1152,11 @@ button {
     &.orbit-1 {
       background-image: url("../../src/assets/animations/orbit/orbit-1.svg");
       animation: orbit1 2.5s infinite $easing alternate;
-      width: 60%;
+      width: 70%;
     }
     &.orbit-2 {
       background-image: url("../../src/assets/animations/orbit/orbit-2.svg");
-      animation: orbit2 2.5s infinite $easing alternate;
-      width: 80%;
+      animation: orbit2 2s infinite $easing alternate;
     }
     &.orbit-3 {
       background-image: url("../../src/assets/animations/orbit/orbit-3.svg");

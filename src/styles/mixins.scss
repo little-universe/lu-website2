@@ -160,15 +160,15 @@
 }
 
 @keyframes orbit1 {
-  0% {transform: translateY(5%);}
-  100% {transform: translateY( -5%);}
+  0% {transform: translateY(5%) rotate(0deg);}
+  100% {transform: translateY( -5%) rotate(180deg);}
 }
 @keyframes orbit2 {
-  0% {transform: translateX(5%) translateY(-5%);}
-  100% {transform: translateX( -5%) translateY(5%);}
+  0% {transform: translateX(-5%) translateY(5%);}
+  100% {transform: translateX( 5%) translateY(-5%);}
 }
 @keyframes orbit3 {
-  0% {transform: translateY(5%) translateX(100%);}
-  100% {transform: translateY( -5%) translateX(-100%);}
+  0% {transform: translateY(5%) translateX(125%);}
+  100% {transform: translateY( -5%) translateX(-125%);}
 }
 //CLOSE MOTIF ANIMATIONS
