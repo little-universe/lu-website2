@@ -1116,13 +1116,18 @@ button {
 
 .motif-animation {
   height: 100vh;
-  background: $yellow;
   width: 100%;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
+  &.gravity-animation {
+    background: $yellow;
+  }
+  &.orbit-animation {
+    background: $pink;
+  }
   .motif-layer {
     background-size: contain;
     background-repeat: no-repeat;
@@ -1132,18 +1137,32 @@ button {
     height: 80%;
     &.gravity-1 {
       background-image: url("../../src/assets/animations/gravity/gravity-1.svg");
-      @include rotate(2s,1%);
+      animation: gravity1 2.25s infinite linear;
       animation-direction: reverse;
     }
     &.gravity-2 {
       background-image: url("../../src/assets/animations/gravity/gravity-2.svg");
-      @include rotate(5s,2%);
+      animation: gravity2 2s infinite linear;
     }
     &.gravity-3 {
       background-image: url("../../src/assets/animations/gravity/gravity-3.svg");
       width: 30%;
-      @include yAxisMove(3s, 5%)
-      // @include rotate(2s, 5%);
+      animation: gravity3 1.5s infinite $easing alternate;
+    }
+    &.orbit-1 {
+      background-image: url("../../src/assets/animations/orbit/orbit-1.svg");
+      animation: orbit1 2.5s infinite $easing alternate;
+      width: 60%;
+    }
+    &.orbit-2 {
+      background-image: url("../../src/assets/animations/orbit/orbit-2.svg");
+      animation: orbit2 2.5s infinite $easing alternate;
+      width: 80%;
+    }
+    &.orbit-3 {
+      background-image: url("../../src/assets/animations/orbit/orbit-3.svg");
+      animation: orbit3 2.5s infinite $easing alternate;
+      width: 20%;
     }
   }
 }

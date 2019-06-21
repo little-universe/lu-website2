@@ -10,10 +10,19 @@ export default class MotifAnimation extends Component {
     <div className="margin-container">
       { gravityAnimation &&
         <div className="container">
-          <div className={`motif-animation ${className}`}>
+          <div className={`motif-animation gravity-animation ${className}`}>
             <div className="motif-layer gravity-1"></div>
             <div className="motif-layer gravity-2"></div>
             <div className="motif-layer gravity-3"></div>
+          </div>
+        </div>
+      }
+      { orbitAnimation &&
+        <div className="container">
+          <div className={`motif-animation orbit-animation ${className}`}>
+            <div className="motif-layer orbit-1"></div>
+            <div className="motif-layer orbit-2"></div>
+            <div className="motif-layer orbit-3"></div>
           </div>
         </div>
       }

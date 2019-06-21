@@ -25,6 +25,12 @@ class Homepage extends Component {
             <MotifAnimation gravityAnimation/>
           </Grid>
         </Grid>
+        <Grid container className="team-motif">
+          <Grid item md={4} />
+          <Grid item md={8}>
+            <MotifAnimation orbitAnimation/>
+          </Grid>
+        </Grid>
         <Grid container className="callout-statement" alignItems="center">
           <Grid item xs={12} md={8}>
             <div className="callout-text">

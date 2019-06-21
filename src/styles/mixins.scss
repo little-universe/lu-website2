@@ -128,31 +128,47 @@
 
 //MOTIF ANIMATIONS
 
-
-@mixin yAxisMove($duration, $translation) {
-  @keyframes yAxisMove {
-    0% {margin-top: $translation;}
-    100% {margin-top: -$translation; }
+@keyframes gravity1 {
+  from {
+    transform: rotate(0deg)
+               translate(-2%)
+               rotate(0deg);
   }
-  animation: yAxisMove $duration infinite ease-in-out alternate;
+  to {
+    transform: rotate(360deg)
+               translate(-2%)
+               rotate(-360deg);
+  }
 }
 
-
-@mixin rotate($duration, $translation) {
-  @keyframes rotate {
-    from {
-  		transform: rotate(0deg)
-  		           translate(-$translation)
-  		           rotate(0deg);
-  	}
-  	to {
-  		transform: rotate(360deg)
-  		           translate(-$translation)
-  		           rotate(-360deg);
-  	}
+@keyframes gravity2 {
+  from {
+    transform: rotate(0deg)
+               translate(-3%)
+               rotate(0deg);
   }
-  animation: rotate $duration infinite linear;
+  to {
+    transform: rotate(360deg)
+               translate(-3%)
+               rotate(-360deg);
+  }
 }
 
+@keyframes gravity3 {
+  0% {transform: translateY(5%);}
+  100% {transform: translateY( -5%);}
+}
 
+@keyframes orbit1 {
+  0% {transform: translateY(5%);}
+  100% {transform: translateY( -5%);}
+}
+@keyframes orbit2 {
+  0% {transform: translateX(5%) translateY(-5%);}
+  100% {transform: translateX( -5%) translateY(5%);}
+}
+@keyframes orbit3 {
+  0% {transform: translateY(5%) translateX(100%);}
+  100% {transform: translateY( -5%) translateX(-100%);}
+}
 //CLOSE MOTIF ANIMATIONS
