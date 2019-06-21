@@ -13,7 +13,12 @@ class Homepage extends Component {
 
     return (
       <>
-      <Hero heroText className="homepage-hero" headline="We Make Digital Products" subhead="Little Universe is a digital product design and development agency located in Brooklyn, NY."/>
+        <Hero
+          heroText
+          className="homepage-hero"
+          headline={<>We're doing impact <span className="headline-emphasis">differently</span></>}
+          subhead="Little Universe is a digital product design and development agency located in Brooklyn, NY."
+        />
       </>
     )
   }

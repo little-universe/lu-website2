@@ -427,41 +427,29 @@ button:focus {
     }
   }//project-details
   &.text-hero {
-    text-align: center;
+    padding: $buffer*3 $buffer*12;
+    .headline-text-container {
+      margin-top: $navHeight;
+    }
     .headline {
       font-size: $fontSizeHeadline;
       line-height: $lineHeightHeadline;
+      font-weight: $fontWeightHeavy;
+      margin-top: 0;
       @include breakpoint(sm) {
         font-size: $fontSizeHeadline*.5;
       }
     }
     .subhead {
       font-size: $fontSizeSubHeadline;
-      color: $fontColorLightened;
-      @include breakpoint(sm) {
-        font-size: $fontSizeDesktop;
-      }
-    }
-  }
-  &.homepage-hero {
-    height: 100vh;
-    padding: $buffer*3;
-    .headline {
-      font-size: $fontSizeHeadline*.5;
-      line-height: $lineHeightHeadline*.5;
-      @include breakpoint(sm) {
-        font-size: $fontSizeHeadline*.5;
-      }
-    }
-    .subhead {
-      font-size: $fontSizeSubHeadline*.75;
-      color: $fontColorLightened;
       line-height: $lineHeightDesktop;
+      color: $fontColorLightened;
       @include breakpoint(sm) {
         font-size: $fontSizeDesktop;
       }
     }
   }
+
   &.image-hero {
     height: 100vh;
     background: $bgColorWork;

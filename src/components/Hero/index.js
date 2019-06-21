@@ -11,16 +11,18 @@ export default class Hero extends Component {
             <div className="nomargin-container" style={style}>
                 {heroText && headline && subhead &&
                   <div classname="container">
-                      <Grid className={`hero text-hero ${className}`} container justify="center" alignItems="center">
-                          <Grid item md={12} xs={12}>
-                          <Fade top distance="30px" duration={500} delay={350}>
-                            <p className="headline">{headline}</p>
-                            </Fade>
-                            <Fade top distance="30px" duration={500} delay={300}>
+                    <Grid className={`hero text-hero ${className}`} container alignItems="center">
+                      <Grid item md={6} xs={12}  className="headline-text-container">
+                        <Fade top distance="30px" duration={500} delay={300}>
+                          <p className="headline">{headline}</p>
+                        </Fade>
+                        <Fade top distance="30px" duration={500} delay={400}>
+                          <Grid container xs={7}>
                             <p className="subhead">{subhead}</p>
-                            </Fade>
                           </Grid>
+                        </Fade>
                       </Grid>
+                    </Grid>
                   </div>
                 }
                 {heroImage &&

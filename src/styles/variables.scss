@@ -44,10 +44,10 @@ $fontWeightLight: 200;
 $lineHeight: 22px;
 $lineHeightDesktop: 32px;
 $lineHeightLargeDesktop: $fontSizeLargeDesktop*2;
-$fontSizeHeadline: 100px;
+$fontSizeHeadline: 50px;
 // $fontSizeHeadline: 20px;
 $lineHeightHeadline: $fontSizeHeadline*1.5;
-$fontSizeSubHeadline: 28px;
+$fontSizeSubHeadline: 18px;
 $fontSizeStatement: 32px;
 $lineHeightStatement: $fontSizeStatement*1.5;
 
@@ -62,6 +62,7 @@ $easing: cubic-bezier(0.645, 0.045, 0.355, 1);;
 $transition: all $timing $easing;
 
 $maxPageWidth: 1400px;
+$navHeight: 170px;
 $navWidth: 300px;
 $navWidthMobile: 200px;
 $navHeightMobile: 90px;
