@@ -131,12 +131,12 @@
 @keyframes gravity1 {
   from {
     transform: rotate(0deg)
-               translate(-2%)
+               translate(-3%)
                rotate(0deg);
   }
   to {
     transform: rotate(360deg)
-               translate(-2%)
+               translate(-3%)
                rotate(-360deg);
   }
 }
@@ -144,12 +144,12 @@
 @keyframes gravity2 {
   from {
     transform: rotate(0deg)
-               translate(-3%)
+               translate(-5%)
                rotate(0deg);
   }
   to {
     transform: rotate(360deg)
-               translate(-3%)
+               translate(-5%)
                rotate(-360deg);
   }
 }
