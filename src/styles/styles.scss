@@ -403,7 +403,7 @@ button:focus {
 
 
 .hero {
-  height: 80vh;
+  height: 100vh;
   position: relative;
   .project-details {
     position: absolute;
@@ -427,9 +427,9 @@ button:focus {
     }
   }//project-details
   &.text-hero {
-    padding: $buffer*3 $buffer*12;
     .headline-text-container {
       margin-top: $navHeight;
+      padding: $buffer*3 $buffer*12;
     }
     .headline {
       font-size: $fontSizeHeadline;
@@ -1096,3 +1096,18 @@ button {
   }
 }
 ///// REFACTOR 190529
+
+
+// CALLOUTS
+
+.callout-statement {
+  .callout-text {
+    background-color: $bgColorLightened;
+    padding: $buffer*12;
+    font-size: $fontSizeLarge;
+    line-height: $lineHeightLarge;
+  }
+  .callout-cta {
+    text-align: center;
+  }
+}
