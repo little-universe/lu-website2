@@ -1137,31 +1137,31 @@ button {
     height: 80%;
     &.gravity-1 {
       background-image: url("../../src/assets/animations/gravity/gravity-1.svg");
-      animation: gravity1 2.25s infinite linear;
+      animation: gravity1 5s infinite linear;
       animation-direction: reverse;
     }
     &.gravity-2 {
       background-image: url("../../src/assets/animations/gravity/gravity-2.svg");
-      animation: gravity2 2s infinite linear;
+      animation: gravity2 5s infinite linear;
     }
     &.gravity-3 {
       background-image: url("../../src/assets/animations/gravity/gravity-3.svg");
       width: 30%;
-      animation: gravity3 1.5s infinite $easing alternate;
+      animation: gravity3 2.5s infinite $easing alternate;
     }
     &.orbit-1 {
       background-image: url("../../src/assets/animations/orbit/orbit-1.svg");
-      animation: orbit1 2s infinite $easing alternate;
+      animation: orbit1 2.5s infinite $easing alternate;
       width: 70%;
     }
     &.orbit-2 {
       background-image: url("../../src/assets/animations/orbit/orbit-2.svg");
-      animation: orbit2 2s infinite $easing alternate;
+      animation: orbit2 5s infinite $easing alternate;
     }
     &.orbit-3 {
       background-image: url("../../src/assets/animations/orbit/orbit-3.svg");
-      animation: orbit3 2s infinite $easing alternate;
-      width: 20%;
+      animation: orbit3 2.5s infinite $easing alternate;
+      width: 30%;
     }
   }
 }

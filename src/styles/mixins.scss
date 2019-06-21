@@ -144,19 +144,19 @@
 @keyframes gravity2 {
   from {
     transform: rotate(0deg)
-               translate(-3%)
+               translate(-5%)
                rotate(0deg);
   }
   to {
     transform: rotate(360deg)
-               translate(-3%)
+               translate(-5%)
                rotate(-360deg);
   }
 }
 
 @keyframes gravity3 {
-  0% {transform: translateY(5%);}
-  100% {transform: translateY( -5%);}
+  0% {transform: translateY(15%) translateX(10%);}
+  100% {transform: translateY( -15%) translateX(-10%);}
 }
 
 @keyframes orbit1 {
@@ -168,7 +168,7 @@
   100% {transform: translateX( 5%) translateY(-5%);}
 }
 @keyframes orbit3 {
-  0% {transform: translateY(5%) translateX(125%);}
-  100% {transform: translateY( -5%) translateX(-125%);}
+  0% {transform: translateY(5%) translateX(67%);}
+  100% {transform: translateY( -5%) translateX(-67%);}
 }
 //CLOSE MOTIF ANIMATIONS
