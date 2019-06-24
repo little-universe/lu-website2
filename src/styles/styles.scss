@@ -446,10 +446,9 @@ button:focus {
           font-size: $fontSizeSubHeadline;
           line-height: $lineHeightSubHeadline;
           font-weight: $fontWeightLight;
-          color: darken($lightGreen, 40%);
+          color: #888;
           @include breakpoint(sm) {
             font-size: $fontSizeDesktop;
-            // width: 100%;
           }
         }
       }
@@ -1119,8 +1118,9 @@ button {
   }
 }//button
 .footer-area {
-  padding: $buffer*6;
-  // background: $bgColorWork;
+  padding: $buffer*18;
+  background: $fontColorLight;
+  border-top: 2px solid $fontColor;
   color: $fontColor;
   font-size: $fontSize;
   line-height: $lineHeight;

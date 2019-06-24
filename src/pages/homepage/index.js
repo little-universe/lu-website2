@@ -5,6 +5,7 @@ import Hero from '../../components/Hero';
 import MotifAnimation from '../../components/MotifAnimation';
 import FeaturedText from '../../components/FeaturedText';
 import WorkFeatured from '../../components/WorkFeatured';
+import Footer from '../../components/Footer';
 import Button from '../../components/ui/Button';
 import Fade from 'react-reveal/Fade';
 import Grid from '@material-ui/core/Grid';
@@ -73,6 +74,7 @@ class Homepage extends Component {
             </div>
           </Grid>
         </Grid>
+        <Footer />
       </>
     )
   }
