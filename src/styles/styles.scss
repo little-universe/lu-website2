@@ -1275,8 +1275,67 @@ button {
     }
   }
 }
-
 //WORKS CAROUSEL
+//WORK FEATURED
+.work-featured-project {
+  background: $darkBlue;
+  padding: $buffer*6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  .featured-card {
+    background-color: $lightBlue;
+    .featured-image {
+      height: 50vh;
+      .image-background {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: url("../../src/assets/projects/strive/strive-hero.png");
+      }
+    }
+    .featured-project-label {
+      background: $bgColorLight;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: row;
+      padding: $buffer*3;
+      font-size: $fontSizeDesktop;
+      &:hover {
+        cursor: pointer;
+        .label-arrow {
+          margin-right: -$buffer*1;
+          @include transition;
+        }
+      }
+      .label-details {
+        color: $darkBlue;
+        span {
+          color: $fontColorLightened;
+        }
+      }
+      .label-arrow {
+        @include transition;
+        color: $darkBlue;
+        height: 20px;
+      }
+    }
+  }
+  .featured-card-caption {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    font-weight: 100;
+    padding: $buffer*6 0 0 0;
+    color: $fontColorLight;
+    font-size: $fontSizeDesktop;
+    .caption-filing {}
+    .caption-text {}
+  }
+}
+//WORK FEATURED
 
 //// MOTIF ANIMATIONS
 

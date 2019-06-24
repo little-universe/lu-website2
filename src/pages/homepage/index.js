@@ -4,6 +4,7 @@ import Logo from '../../components/Logo';
 import Hero from '../../components/Hero';
 import MotifAnimation from '../../components/MotifAnimation';
 import FeaturedText from '../../components/FeaturedText';
+import WorkFeatured from '../../components/WorkFeatured';
 import Button from '../../components/ui/Button';
 import Fade from 'react-reveal/Fade';
 import Grid from '@material-ui/core/Grid';
@@ -49,6 +50,11 @@ class Homepage extends Component {
         <Grid container className="text-section page-section">
           <Grid item md={11} className="text-statement">The most useful products are usually the ones you didn't know you needed, and that didn't exist when you started.</Grid>
         </Grid>
+        <WorkFeatured
+          projectName="Strive Digital"
+          projectCategory="Digital Product"
+          projectIndustry="Advocacy Tech"
+        />
 
 
         <Grid container className="callout-statement" alignItems="center">

@@ -15,13 +15,18 @@ export default class Hero extends Component {
                   <div classname="container">
                     <Grid className={`hero text-hero ${className}`} container alignItems="center">
                       <Grid item md={7} xs={12}  className="headline-text-container">
+                          <Fade left distance="10px" duration={500} delay={400}>
                           <p className="headline">{headline}</p>
+                          </Fade>
                           <Grid container className="subhead-text-container">
                           <Grid item lg={4} md={8} xs={8}>
+                          <Fade left distance="10px" duration={500} delay={500}>
                             <p className="subhead">{subhead}</p>
+                            </Fade>
                           </Grid>
                           </Grid>
                       </Grid>
+
                       <Grid item md={5} xs={12} className="works-carousel-container">
                         <WorksCarousel
                           projectName="Motivote"

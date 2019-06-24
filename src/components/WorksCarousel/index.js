@@ -3,6 +3,7 @@ import { ArrowRight } from "react-feather";
 import Grid from '@material-ui/core/Grid';
 import { Transporter } from '../../orbit'
 import {Link} from "react-router-dom";
+import Fade from 'react-reveal/Fade';
 
 export default class WorksCarousel extends Component {
   render() {
