@@ -96,7 +96,6 @@ class App extends Component {
       <Logo/>
         <Router>
           <RouterScroll />
-
           <Route exact path="/" component={Homepage}/>
           <Route path="/work" component={Work}/>
           <Route path="/about" component={About}/>

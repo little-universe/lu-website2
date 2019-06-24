@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import WorksCarousel from '../WorksCarousel'
 import Grid from '@material-ui/core/Grid'
 import Fade from 'react-reveal/Fade';
 
@@ -6,21 +7,26 @@ import Fade from 'react-reveal/Fade';
 
 export default class Hero extends Component {
     render() {
-        const { heroText, heroImage, className, headline, subhead, projectName, projectCategory, projectIndustry, style, anim } = this.props
+        const { heroText, heroImage, className, headline, subhead, projectName, projectCategory, projectIndustry, featuredWorks, style, anim } = this.props
         return (
             <div className="nomargin-container" style={style}>
-                {heroText && headline && subhead &&
+                {heroText && headline && subhead && featuredWorks &&
                   <div classname="container">
                     <Grid className={`hero text-hero ${className}`} container alignItems="center">
-                      <Grid item md={6} xs={12}  className="headline-text-container">
-                        <Fade top distance="30px" duration={500} delay={300}>
+                      <Grid item md={7} xs={12}  className="headline-text-container">
                           <p className="headline">{headline}</p>
-                        </Fade>
-                        <Fade top distance="30px" duration={500} delay={400}>
-                          <Grid container xs={7}>
+                          <Grid container className="subhead-text-container">
+                          <Grid item md={4} xs={6}>
                             <p className="subhead">{subhead}</p>
                           </Grid>
-                        </Fade>
+                          </Grid>
+                      </Grid>
+                      <Grid item md={5} xs={12} className="works-carousel-container">
+                        <WorksCarousel
+                          projectName="Motivote"
+                          projectCategory="Digital Product"
+                          projectIndustry="Advocacy Tech"
+                        />
                       </Grid>
                     </Grid>
                   </div>

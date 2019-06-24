@@ -16,6 +16,7 @@ class Homepage extends Component {
       <>
         <Hero
           heroText
+          featuredWorks
           className="homepage-hero"
           headline={<>We're doing impact <span className="headline-emphasis">differently</span></>}
           subhead="Little Universe is a digital product design and development agency located in Brooklyn, NY."

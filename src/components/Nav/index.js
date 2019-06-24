@@ -28,19 +28,19 @@ export default class Nav extends Component {
   }
 
   // Hide or show the menu.
-  handleScroll = () => {
-    const { prevScrollpos } = this.state;
-
-    const currentScrollPos = window.pageYOffset;
-    const visible = prevScrollpos > currentScrollPos;
-    const scrolledUp = prevScrollpos > currentScrollPos;
-
-    this.setState({
-      prevScrollpos: currentScrollPos,
-      visible,
-      scrolledUp
-    });
-  };
+  // handleScroll = () => {
+  //   const { prevScrollpos } = this.state;
+  //
+  //   const currentScrollPos = window.pageYOffset;
+  //   const visible = prevScrollpos > currentScrollPos;
+  //   const scrolledUp = prevScrollpos > currentScrollPos;
+  //
+  //   this.setState({
+  //     prevScrollpos: currentScrollPos,
+  //     visible,
+  //     scrolledUp
+  //   });
+  // };
 
 
 getInitialState(){

@@ -42,12 +42,12 @@ body {
   .universe {
     width: 6px; height: 6px;
     border-radius: $radiusFull;
-    background: $primaryColor;
+    background: $fontColorLight;
     margin: 0 auto;
   }
   .agency-name {
     margin-top: $buffer*2;
-    color: $primaryColor;
+    color: $fontColorLight;
     font-weight: $fontWeightNormal;
   }
   @include breakpoint(xs) {
@@ -107,7 +107,7 @@ body {
             height: 6px;
             margin: 3px;
             border-radius: $radius;
-            background: $primaryColor;
+            background: $lightGreen;
             @include transition;
           }
         }
@@ -134,7 +134,7 @@ body {
         }
         .nav-mobile-menu {
           visibility: visible;
-          background: $primaryColor;
+          background: $darkGreen;
           opacity: 1;
           @include transition;
           .mobile-menu-list {
@@ -185,24 +185,18 @@ body {
     display: flex;
     .nav-link {
       float: left;
-      padding: $buffer*2 $buffer*4;
+      padding: 0 0 0 $buffer*8;
       text-decoration: none;
-      color: $fontColorLight;
-      background: $primaryColor;
+      color: $darkGreen;
+      @include transition;
       &.active {
-        background: $primaryColorInteracted;
+        color: $fontColorLight;
       }
       &:active {
-        background: $primaryColorInteracted;
-      }
-      &:first-child {
-        border-radius: $radius 0 0 $radius;
-      }
-      &:last-child {
-        border-radius: 0 $radius $radius 0;
+        color: $fontColorLight;
       }
       &:hover {
-        background: $secondaryColor;
+        color: $fontColorLight;
         @include transition;
       }
       .nav-item {
@@ -428,24 +422,33 @@ button:focus {
   }//project-details
   &.text-hero {
     .headline-text-container {
-      margin-top: $navHeight;
-      padding: $buffer*3 $buffer*12;
-    }
-    .headline {
-      font-size: $fontSizeHeadline;
-      line-height: $lineHeightHeadline;
-      font-weight: $fontWeightHeavy;
-      margin-top: 0;
-      @include breakpoint(sm) {
-        font-size: $fontSizeHeadline*.5;
+      height: 100%; width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 $buffer*6;
+      position: relative;
+      .headline {
+        font-size: $fontSizeHeadline;
+        line-height: $lineHeightHeadline;
+        font-weight: $fontWeightHeavy;
+        margin-top: 0;
+        @include breakpoint(sm) {
+          font-size: $fontSizeHeadline*.5;
+        }
       }
-    }
-    .subhead {
-      font-size: $fontSizeSubHeadline;
-      line-height: $lineHeightDesktop;
-      color: $fontColorLightened;
-      @include breakpoint(sm) {
-        font-size: $fontSizeDesktop;
+      .subhead-text-container {
+        bottom: $buffer*6;
+        position: absolute;
+        .subhead {
+          font-size: $fontSizeSubHeadline;
+          line-height: $lineHeightSubHeadline;
+          color: $fontColorLightened;
+          @include breakpoint(sm) {
+            font-size: $fontSizeDesktop;
+            // width: 100%;
+          }
+        }
       }
     }
   }
@@ -462,6 +465,8 @@ button:focus {
     background-repeat: no-repeat;
   }
   &.homepage-hero {
+    background-color: $darkGreen;
+    color: $lightGreen;
     .image-background {
     }
   }
@@ -1111,6 +1116,53 @@ button {
     text-align: center;
   }
 }
+
+//WORKS CAROUSEL
+.works-carousel-container {
+  width: 100%; height: 100%;
+  // background-color: $lightGreen;
+  .works-carousel-wrapper {
+    width: 100%; height: 100%;
+    background-color: $lightGreen;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column-reverse;
+    overflow: hidden;
+    position: relative;
+    .image-background {
+      position: absolute;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-image: url("../../src/assets/projects/motivote/motivote-hero.png");
+    }
+    .carousel-indicators {
+      background-color: $darkGreen;
+      padding: $buffer*3;
+    }
+    .carousel-label {
+      background-color: $bgColorLight;
+      padding: $buffer*3;
+      .label-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row;
+        .label-details {
+          color: $darkGreen;
+          span {
+            color: $fontColorLightened;
+          }
+        }
+        .label-arrow {
+          color: $darkGreen;
+        }
+      }
+    }
+  }
+}
+
+//WORKS CAROUSEL
 
 //// MOTIF ANIMATIONS
 

@@ -25,12 +25,23 @@ $accentColorLight: #ECECE6;
 $accentColor: #ffde7c;
 
 
-//NEWSITE COLOR
+//NEWSITE
 
-$yellow:          #F5E1A4;
-$pink:            #D7A9E3;
+$yellow:                #F5E1A4;
+$pink:                  #D7A9E3;
+$darkGreen:             #18332F;
+$lightGreen:            #D1E0D7;
+$darkBlue:              #142E7B;
+$lightBlue:             #C6DAE7;
 
-//NEWSITE COLOR
+$bgColor:               #ffffff;
+
+$fontSizeHeadline:      72px;
+$lineHeightHeadline:    $fontSizeHeadline*1.5;
+$fontSizeSubHeadline:   16px;
+$lineHeightSubHeadline: $fontSizeSubHeadline*2;
+
+//NEWSITE
 
 $fontColor: #222222;
 $fontColorLight: #fff;
@@ -53,10 +64,10 @@ $lineHeight: 22px;
 $lineHeightLarge: 42px;
 $lineHeightDesktop: 32px;
 $lineHeightLargeDesktop: $fontSizeLargeDesktop*2;
-$fontSizeHeadline: 50px;
+// $fontSizeHeadline: 50px;
 // $fontSizeHeadline: 20px;
-$lineHeightHeadline: $fontSizeHeadline*1.5;
-$fontSizeSubHeadline: 18px;
+
+
 $fontSizeStatement: 32px;
 $lineHeightStatement: $fontSizeStatement*1.5;
 
