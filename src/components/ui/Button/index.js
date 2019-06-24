@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Grid from '@material-ui/core/Grid';
 import { CopyToClipboard } from 'react-copy-to-clipboard'
+import { ArrowRight } from "react-feather";
 class Button extends Component {
 
   state = {
@@ -18,22 +19,28 @@ class Button extends Component {
     }
 
   render() {
-    const { children, className, mailUs } = this.props;
-
+    const { children, className, mailUs, callToAction, actionText } = this.props;
     return (
       <>
-      <CopyToClipboard text="agency@littleuniverse.com"
-        onCopy={this.setCopy}
-      >
-      <button
-        className={`
-          ${className}
-        `}
-      >
-        {children}
-      </button>
-      </CopyToClipboard>
-      <p className={ this.state.copiedText ? "copiedText" : "copiedText fadeOut"}>Email Copied To Clipboard</p>
+      { mailUs &&
+        <>
+        <CopyToClipboard text="agency@littleuniverse.com"
+          onCopy={this.setCopy}
+        >
+        <button
+          className={`
+            ${className}
+          `}
+          >
+          {children}
+        </button>
+        </CopyToClipboard>
+        <p className={ this.state.copiedText ? "copiedText" : "copiedText fadeOut"}>Email Copied To Clipboard</p>
+        </>
+      }
+      { callToAction && actionText &&
+        <button className={`cta ${className}`}>{actionText}<span><ArrowRight size={20}/></span></button>
+      }
       </>
     )
   }

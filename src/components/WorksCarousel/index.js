@@ -13,7 +13,7 @@ export default class WorksCarousel extends Component {
         <Grid className={`works-carousel-wrapper ${className}`} container>
         <Grid item md={12} className="image-background"></Grid>
         <Grid className={`carousel-indicators`} container>
-          <Grid item md={12}>indicators</Grid>
+          <Grid item md={12}>1</Grid>
         </Grid>
           <Grid className={`carousel-label`} container>
             <Grid item className="label-row" md={12}>

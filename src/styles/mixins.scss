@@ -155,8 +155,8 @@
 }
 
 @keyframes gravity3 {
-  0% {transform: translateY(15%) translateX(10%);}
-  100% {transform: translateY( -15%) translateX(-10%);}
+  0% {transform: translateY(15%);}
+  100% {transform: translateY( -15%);}
 }
 
 @keyframes orbit1 {

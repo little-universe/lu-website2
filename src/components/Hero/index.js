@@ -6,6 +6,7 @@ import Fade from 'react-reveal/Fade';
 
 
 export default class Hero extends Component {
+
     render() {
         const { heroText, heroImage, className, headline, subhead, projectName, projectCategory, projectIndustry, featuredWorks, style, anim } = this.props
         return (
@@ -16,7 +17,7 @@ export default class Hero extends Component {
                       <Grid item md={7} xs={12}  className="headline-text-container">
                           <p className="headline">{headline}</p>
                           <Grid container className="subhead-text-container">
-                          <Grid item md={4} xs={6}>
+                          <Grid item lg={4} md={8} xs={8}>
                             <p className="subhead">{subhead}</p>
                           </Grid>
                           </Grid>

@@ -4,17 +4,17 @@
 // GLOBAL STYLES
 
 @font-face {
-    font-family: 'Marr Sans Web';
-    src: url('https://s3.us-east-2.amazonaws.com/lu-assets/fonts/MarrSansWeb-Regular.woff2') format('woff2'),
-        url('https://s3.us-east-2.amazonaws.com/lu-assets/fonts/MarrSansWeb-Regular.woff') format('woff');
+    font-family: 'Founders Grotesk';
+    // src: url('https://s3.us-east-2.amazonaws.com/lu-assets/fonts/MarrSansWeb-Regular.woff2') format('woff2'),
+    //     url('https://s3.us-east-2.amazonaws.com/lu-assets/fonts/MarrSansWeb-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'Marr Sans Web';
-    src: url('https://s3.us-east-2.amazonaws.com/lu-assets/fonts/MarrSansWeb-Medium.woff2') format('woff2'),
-        url('https://s3.us-east-2.amazonaws.com/lu-assets/fonts/MarrSansWeb-Medium.woff') format('woff');
+    font-family: 'Founders Grotesk';
+    // src: url('https://s3.us-east-2.amazonaws.com/lu-assets/fonts/MarrSansWeb-Medium.woff2') format('woff2'),
+    //     url('https://s3.us-east-2.amazonaws.com/lu-assets/fonts/MarrSansWeb-Medium.woff') format('woff');
     font-weight: 500;
     font-style: normal;
 }
@@ -26,7 +26,7 @@
 body {
   margin: 0 auto;
   font-family: $fontFamily;
-  font-weight: $fontWeightLight;
+  // font-weight: $fontWeightLight;
   overflow-x: hidden;
   // background: $primaryColor;
 }
@@ -58,7 +58,7 @@ body {
 // NAV STYLES
 
 .nav {
-  padding: $buffer*6;
+  padding: $buffer*4;
   font-size: $fontSize;
   position: fixed;
   right: 0;
@@ -377,7 +377,7 @@ button:focus {
   margin: 0;
 }// wrapper for full width elements
 .margin-container {
-  margin: $buffer*10;
+  margin: $buffer*6;
   @include breakpoint(xs) {
     margin: $buffer*2;
   }
@@ -430,7 +430,7 @@ button:focus {
       position: relative;
       .headline {
         font-size: $fontSizeHeadline;
-        line-height: $lineHeightHeadline;
+        // line-height: $lineHeightHeadline;
         font-weight: $fontWeightHeavy;
         margin-top: 0;
         @include breakpoint(sm) {
@@ -443,7 +443,7 @@ button:focus {
         .subhead {
           font-size: $fontSizeSubHeadline;
           line-height: $lineHeightSubHeadline;
-          color: $fontColorLightened;
+          color: $lightGreen;
           @include breakpoint(sm) {
             font-size: $fontSizeDesktop;
             // width: 100%;
@@ -1088,6 +1088,30 @@ button {
         @include transition;
       }
     }
+  }//mailUs
+  &.cta {
+    background: $darkBlue;
+    border: none;
+    border-radius: 0;
+    color: $fontColorLight;
+    font-family: $fontFamily;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: $buffer*2 $buffer*3;
+    width: 20vw;
+    min-width: 300px;
+    font-size: $fontSizeDesktop;
+    span {
+    @include transition;
+    }
+    &:hover {
+      cursor: pointer;
+      span {
+        margin-right: -$buffer;
+        @include transition;
+      }
+    }
   }
 }//button
 .footer-area {
@@ -1117,6 +1141,80 @@ button {
   }
 }
 
+// SECTIONS
+
+.page-section {
+  .section-left {
+    p {
+      margin-right: 12%;
+    }
+  }
+  .overlap-left {
+    .motif-animation {
+      width: 136%;
+      margin-left: -24%;
+    }
+  }
+
+  .section-right {
+    p {
+      margin-left: 12%;
+    }
+  }
+  .overlap-right {
+    .motif-animation {
+      width: 136%;
+      margin-left: -12%;
+    }
+    // margin-right: -12%;
+  }
+  .overlap-bottom {
+    z-index: 2;
+    position: relative;
+    button {
+      // position: absolute;
+      // top: -$buffer*3;
+    }
+  }
+  &.movement-section {
+    .movement-statement {
+      background: $lightBlue;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      p {
+        font-size: $fontSizeStatement;
+        width: 60%;
+        line-height: $lineHeightStatement;
+        color: $darkGreen;
+      }
+    }
+  }
+  &.statement-section {
+    font-size: $fontSizeHeadline;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: $buffer*20 0;
+    color: $darkGreen;
+  }
+  &.text-section {
+    margin-top: $buffer*10;
+    background: $yellow;
+    padding: $buffer*6 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // text-align: center;
+    .text-statement {
+      background: $fontColorLight;
+      font-size: $fontSizeStatement;
+      padding: $buffer*12;
+    }
+  }
+}
+
 //WORKS CAROUSEL
 .works-carousel-container {
   width: 100%; height: 100%;
@@ -1124,6 +1222,7 @@ button {
   .works-carousel-wrapper {
     width: 100%; height: 100%;
     background-color: $lightGreen;
+    font-size: $fontSizeDesktop;
     display: flex;
     align-items: flex-end;
     flex-direction: column-reverse;
@@ -1134,15 +1233,28 @@ button {
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
+      // animation: gravity2 25s infinite linear;
       background-image: url("../../src/assets/projects/motivote/motivote-hero.png");
     }
     .carousel-indicators {
       background-color: $darkGreen;
+      z-index: 1;
       padding: $buffer*3;
+      text-align: center;
     }
     .carousel-label {
+      z-index: 1;
       background-color: $bgColorLight;
       padding: $buffer*3;
+      &:hover {
+        cursor: pointer;
+        .label-row {
+          .label-arrow {
+            margin-right: -$buffer*1;
+            @include transition;
+          }
+        }
+      }
       .label-row {
         display: flex;
         align-items: center;
@@ -1155,7 +1267,9 @@ button {
           }
         }
         .label-arrow {
+          @include transition;
           color: $darkGreen;
+          height: 20px;
         }
       }
     }
@@ -1167,7 +1281,7 @@ button {
 //// MOTIF ANIMATIONS
 
 .motif-animation {
-  height: 100vh;
+  height: 90vh;
   width: 100%;
   overflow: hidden;
   display: flex;
@@ -1189,17 +1303,17 @@ button {
     height: 80%;
     &.gravity-1 {
       background-image: url("../../src/assets/animations/gravity/gravity-1.svg");
-      animation: gravity1 5s infinite linear;
+      animation: gravity1 2s infinite linear;
       animation-direction: reverse;
     }
     &.gravity-2 {
       background-image: url("../../src/assets/animations/gravity/gravity-2.svg");
-      animation: gravity2 5s infinite linear;
+      animation: gravity2 2s infinite linear;
     }
     &.gravity-3 {
       background-image: url("../../src/assets/animations/gravity/gravity-3.svg");
       width: 30%;
-      animation: gravity3 2.5s infinite $easing alternate;
+      animation: gravity3 1s infinite $easing alternate;
     }
     &.orbit-1 {
       background-image: url("../../src/assets/animations/orbit/orbit-1.svg");
@@ -1208,7 +1322,7 @@ button {
     }
     &.orbit-2 {
       background-image: url("../../src/assets/animations/orbit/orbit-2.svg");
-      animation: orbit2 5s infinite $easing alternate;
+      animation: orbit2 2s infinite $easing alternate;
     }
     &.orbit-3 {
       background-image: url("../../src/assets/animations/orbit/orbit-3.svg");
