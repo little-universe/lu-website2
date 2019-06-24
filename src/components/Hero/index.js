@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import WorksCarousel from '../WorksCarousel'
 import Grid from '@material-ui/core/Grid'
 import Fade from 'react-reveal/Fade';
-
+import { CSSTransition, TransitionGroup } from 'react-transition-group'
 
 
 export default class Hero extends Component {

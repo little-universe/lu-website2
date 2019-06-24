@@ -4,7 +4,7 @@
 // GLOBAL STYLES
 
 @font-face {
-    font-family: 'Founders Grotesk';
+    font-family: 'Founders Grotesk Test';
     // src: url('https://s3.us-east-2.amazonaws.com/lu-assets/fonts/MarrSansWeb-Regular.woff2') format('woff2'),
     //     url('https://s3.us-east-2.amazonaws.com/lu-assets/fonts/MarrSansWeb-Regular.woff') format('woff');
     font-weight: normal;
@@ -12,10 +12,10 @@
 }
 
 @font-face {
-    font-family: 'Founders Grotesk';
+    font-family: 'Founders Grotesk X-Condensed Test';
     // src: url('https://s3.us-east-2.amazonaws.com/lu-assets/fonts/MarrSansWeb-Medium.woff2') format('woff2'),
     //     url('https://s3.us-east-2.amazonaws.com/lu-assets/fonts/MarrSansWeb-Medium.woff') format('woff');
-    font-weight: 500;
+    font-weight: normal;
     font-style: normal;
 }
 
@@ -429,9 +429,11 @@ button:focus {
       padding: 0 $buffer*6;
       position: relative;
       .headline {
-        font-size: $fontSizeHeadline;
+        font-family: "Founders Grotesk X-Condensed Test";
+        font-size: $fontSizeHeadline*1.75;
+        font-weight: 500;
         // line-height: $lineHeightHeadline;
-        font-weight: $fontWeightHeavy;
+        // font-weight: $fontWeightHeavy;
         margin-top: 0;
         @include breakpoint(sm) {
           font-size: $fontSizeHeadline*.5;
@@ -443,7 +445,8 @@ button:focus {
         .subhead {
           font-size: $fontSizeSubHeadline;
           line-height: $lineHeightSubHeadline;
-          color: $lightGreen;
+          font-weight: $fontWeightLight;
+          color: darken($lightGreen, 40%);
           @include breakpoint(sm) {
             font-size: $fontSizeDesktop;
             // width: 100%;
@@ -1104,6 +1107,7 @@ button {
     font-size: $fontSizeDesktop;
     span {
     @include transition;
+    height: 20px;
     }
     &:hover {
       cursor: pointer;
@@ -1191,7 +1195,8 @@ button {
     }
   }
   &.statement-section {
-    font-size: $fontSizeHeadline;
+    font-size: $fontSizeHeadline*1.5;
+    font-family: "Founders Grotesk X-Condensed Test";
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1208,8 +1213,10 @@ button {
     justify-content: center;
     // text-align: center;
     .text-statement {
-      background: $fontColorLight;
-      font-size: $fontSizeStatement;
+      // background: $fontColorLight;
+      font-size: $fontSizeHeadline;
+      color: $darkGreen;
+      font-family: "Founders Grotesk X-Condensed Test";
       padding: $buffer*12;
     }
   }
@@ -1218,6 +1225,8 @@ button {
 //WORKS CAROUSEL
 .works-carousel-container {
   width: 100%; height: 100%;
+  display: flex;
+  justify-content: flex-end;
   // background-color: $lightGreen;
   .works-carousel-wrapper {
     width: 100%; height: 100%;
@@ -1362,16 +1371,16 @@ button {
     height: 80%;
     &.gravity-1 {
       background-image: url("../../src/assets/animations/gravity/gravity-1.svg");
-      animation: gravity1 2s infinite linear;
+      animation: gravity1 6s infinite linear;
       animation-direction: reverse;
     }
     &.gravity-2 {
-      background-image: url("../../src/assets/animations/gravity/gravity-2.svg");
-      animation: gravity2 2s infinite linear;
+      background-image: url("../../src/assets/animations/gravity/gravity-2b.svg");
+      animation: gravity2 6s infinite linear;
     }
     &.gravity-3 {
       background-image: url("../../src/assets/animations/gravity/gravity-3.svg");
-      width: 30%;
+      width: 50%;
       animation: gravity3 1s infinite $easing alternate;
     }
     &.orbit-1 {

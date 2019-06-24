@@ -10,6 +10,6 @@
         </mask>
     </defs>
     <g id="Page-4" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-dasharray="4">
-        <use id="Oval" stroke="#D7A9E3" mask="url(#mask-2)" stroke-width="300" xlink:href="#path-1"></use>
+        <use id="Oval" stroke="#D1E0D7" mask="url(#mask-2)" stroke-width="400" xlink:href="#path-1"></use>
     </g>
 </svg>

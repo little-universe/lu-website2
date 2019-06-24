@@ -26,7 +26,9 @@ class Homepage extends Component {
         />
         <Grid container className="movement-section page-section">
           <Grid item md={5} className="overlap-right">
-            <MotifAnimation gravityAnimation/>
+            <Fade left distance="50px" duration={500} delay={0}>
+              <MotifAnimation gravityAnimation/>
+            </Fade>
           </Grid>
           <Grid item md={7} className="section-right movement-statement"><p>Movements need fast, responsive, deeply knowledgeable technologists who can build world class products that connect the dots, meet real, immediate needs, and deliver impact as efficiently as possible—they need custom solutions that don't break the bank.</p></Grid>
           <Grid container className="overlap-bottom">
@@ -40,7 +42,9 @@ class Homepage extends Component {
         <Grid container className="movement-section page-section">
           <Grid item md={7} className="section-left movement-statement"><p>We don’t believe impact is achieved by raising tons of money to build and scale products. While vendors are trying to optimize for profitability and expand into other markets to keep up with their burn rate and appease investors, we are already building 5 other things that progressive orgs need.</p></Grid>
           <Grid item md={5} className="overlap-left">
-            <MotifAnimation orbitAnimation/>
+            <Fade right distance="50px" duration={500} delay={0}>
+              <MotifAnimation orbitAnimation/>
+            </Fade>
           </Grid>
           <Grid container className="overlap-bottom">
             <Grid item md={5}></Grid>
@@ -48,7 +52,7 @@ class Homepage extends Component {
           </Grid>
         </Grid>
         <Grid container className="text-section page-section">
-          <Grid item md={11} className="text-statement">The most useful products are usually the ones you didn't know you needed, and that didn't exist when you started.</Grid>
+          <Grid item md={8} className="text-statement">The most useful products are usually the ones you didn't know you needed, and that didn't exist when you started.</Grid>
         </Grid>
         <WorkFeatured
           projectName="Strive Digital"
