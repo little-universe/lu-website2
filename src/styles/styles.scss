@@ -37,19 +37,28 @@ body {
   margin: $buffer*6;
   position: fixed;
   z-index: $navZIndex;
+  width: 50px; height: 50px;
   top: 0;
   left: 0;
-  .universe {
-    width: 6px; height: 6px;
-    border-radius: $radiusFull;
-    background: $primaryColor;
-    margin: 0 auto;
+  background: url('../assets/icons/02_LU_MARK_Black.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  svg {
+    path {
+      color: red;
+    }
   }
-  .agency-name {
-    margin-top: $buffer*2;
-    color: $primaryColor;
-    font-weight: $fontWeightNormal;
-  }
+  // .universe {
+  //   width: 6px; height: 6px;
+  //   border-radius: $radiusFull;
+  //   background: $primaryColor;
+  //   margin: 0 auto;
+  // }
+  // .agency-name {
+  //   margin-top: $buffer*2;
+  //   color: $primaryColor;
+  //   font-weight: $fontWeightNormal;
+  // }
   @include breakpoint(xs) {
     margin: $buffer*3;
   }
