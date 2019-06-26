@@ -5,7 +5,7 @@ import {Link} from "react-router-dom";
 
 export default class MotifAnimation extends Component {
   render() {
-    const { className, orbitAnimation, gravityAnimation } = this.props
+    const { className, orbitAnimation, gravityAnimation, planetAnimation } = this.props
     return (
     <div className="margin-container">
       { gravityAnimation &&
@@ -23,6 +23,16 @@ export default class MotifAnimation extends Component {
             <div className="motif-layer orbit-1"></div>
             <div className="motif-layer orbit-2"></div>
             <div className="motif-layer orbit-3"></div>
+          </div>
+        </div>
+      }
+      {
+        planetAnimation &&
+        <div className="container">
+          <div className={`motif-animation planet-animation ${className}`}>
+            <div className="motif-layer planet-1"></div>
+            <div className="motif-layer planet-2"></div>
+            <div className="motif-layer planet-3"></div>
           </div>
         </div>
       }

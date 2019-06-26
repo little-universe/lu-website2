@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="224px" height="128px" viewBox="0 0 224 128" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 3</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-3" transform="translate(7.000000, 0.000000)">
+            <path d="M210,66 C210,51.0883118 162.989899,39 105,39 C47.0101013,39 0,51.0883118 0,66" id="Oval-Copy-6" stroke="#D7A9E3" stroke-width="13" stroke-linecap="round" stroke-linejoin="round" transform="translate(105.000000, 52.500000) rotate(-360.000000) translate(-105.000000, -52.500000) "></path>
+            <circle id="Oval-Copy" fill="#D7A9E3" transform="translate(104.000000, 64.000000) rotate(-360.000000) translate(-104.000000, -64.000000) " cx="104" cy="64" r="64"></circle>
+            <path d="M210,93 C210,78.0883118 162.989899,66 105,66 C47.0101013,66 0,78.0883118 0,93" id="Oval-Copy-6" stroke="#D7A9E3" stroke-width="13" stroke-linecap="round" stroke-linejoin="round" transform="translate(105.000000, 79.500000) rotate(-180.000000) translate(-105.000000, -79.500000) "></path>
+        </g>
+    </g>
+</svg>

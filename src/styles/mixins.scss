@@ -144,13 +144,11 @@
 @keyframes gravity2 {
   from {
     transform: rotate(0deg)
-               translate(-5%)
-               rotate(0deg);
+               translate(-5%);
   }
   to {
     transform: rotate(360deg)
-               translate(-5%)
-               rotate(-360deg);
+               translate(-5%);
   }
 }
 
@@ -171,4 +169,26 @@
   0% {transform: translateY(5%) translateX(67%);}
   100% {transform: translateY( -5%) translateX(-67%);}
 }
+
+@keyframes planet1 {
+  0% {
+    transform: rotate(0deg)
+  }
+  100% {
+    transform: rotate(360deg)
+  }
+}
+
+@keyframes planet2 {
+  0% {
+    transform: translate(-5%);
+  }
+  50% {
+    transform: translate(5%);
+  }
+  100% {
+    transform: translate(-5%);
+  }
+}
+
 //CLOSE MOTIF ANIMATIONS
