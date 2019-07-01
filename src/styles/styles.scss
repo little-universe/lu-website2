@@ -1166,6 +1166,11 @@ button {
 
 //WORKS CAROUSEL
 .works-carousel-container {
+  .works-carousel-container-slide {
+    @include animation(.25s, 1s, worksCarouselSlide);
+    // transform: translateX(100%);
+    width: 0%; height: 100%;
+  }
   width: 100%; height: 100%;
   display: flex;
   justify-content: flex-end;
@@ -1187,13 +1192,24 @@ button {
       // animation: gravity2 25s infinite linear;
       background-image: url("../../src/assets/projects/motivote/motivote-hero.png");
     }
+    .carousel-indicators-slideUp { //animation
+      // @include animation(.25s, 4s, carouselIndicatorSlideUp);
+      // transform: translateY(200%);
+      width: 100%;
+    }
     .carousel-indicators {
       background-color: $darkGreen;
       z-index: 1;
       padding: $buffer*3;
       text-align: center;
     }
+    .carousel-label-slideUp { //animation
+      @include animation(.25s, 1.5s, carouselLabelSlideUp);
+      transform: translateY(200%);
+      width: 100%;
+    }
     .carousel-label {
+      width: 100%;
       z-index: 1;
       background-color: $bgColorLight;
       padding: $buffer*3;
@@ -1294,20 +1310,18 @@ button {
     position: relative;
     .product-card-image {
       overflow: hidden;
-      height: 300px; width: 100%;
+      height: 250px; width: 100%;
       background: grey;
       position: relative;
       .image-cover {
         height: 100%; width: 100%;
         position: absolute;
         z-index: 1;
-        transform: translateX(0);
       }
       .product-card-swipe {
         .image-cover {
-          transition: all .5s $easing;
-          transition-delay: .25s;
-          transform: translateX(100%);
+          transform: translateX(0);
+          @include animation(.5s, .25s, imageCoverSlide);
         }
       }
       .image-background {

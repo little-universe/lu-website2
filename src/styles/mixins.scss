@@ -63,7 +63,7 @@
 }
 
 @mixin animation($duration, $delay, $animation) {
-  animation: $duration $easing $delay 1 $animation forwards;
+  animation: $duration $easing $delay 1 $animation forwards !important;
 }
 
 
@@ -172,3 +172,22 @@
   100% {transform: translateY( -5%) translateX(-67%);}
 }
 //CLOSE MOTIF ANIMATIONS
+
+//REACT REVEAL ANIMATIONS
+
+@keyframes imageCoverSlide {
+  0% {transform: translateX(0);}
+  100% {transform: translateX(100%);}
+}
+
+@keyframes worksCarouselSlide {
+  0% {width:0%;}
+  100%{width:100%;}
+}
+
+@keyframes carouselLabelSlideUp {
+  0% {transform: translateY(200%);}
+  100% {transform: translateY(0);}
+}
+
+//REACT REVEAL ANIMATIONS
