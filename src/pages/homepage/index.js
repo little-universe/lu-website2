@@ -10,7 +10,6 @@ import Button from '../../components/ui/Button';
 import Fade from 'react-reveal/Fade';
 import Grid from '@material-ui/core/Grid';
 
-
 class Homepage extends Component {
 
 
