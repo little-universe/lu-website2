@@ -30,6 +30,7 @@ $accentColor: #ffde7c;
 $yellow:                #F5E1A4;
 $pink:                  #D7A9E3;
 $darkGreen:             #18332F;
+$darkGreenLightened:    lighten($darkGreen, 20%);
 $lightGreen:            #D1E0D7;
 $darkBlue:              #142E7B;
 $lightBlue:             #C6DAE7;

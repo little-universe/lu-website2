@@ -14,7 +14,7 @@ export default class Hero extends Component {
                 {heroText && headline && subhead && featuredWorks &&
                   <div classname="container">
                     <Grid className={`hero text-hero ${className}`} container alignItems="center">
-                      <Grid item md={7} xs={12}  className="headline-text-container">
+                      <Grid item md={7} xs={6}  className="headline-text-container">
                           <Fade left distance="10px" duration={500} delay={400}>
                           <p className="headline">{headline}</p>
                           </Fade>
@@ -27,7 +27,7 @@ export default class Hero extends Component {
                           </Grid>
                       </Grid>
 
-                      <Grid item md={5} xs={12} className="works-carousel-container">
+                      <Grid item md={5} xs={6} className="works-carousel-container">
                         <WorksCarousel
                           projectName="Motivote"
                           projectCategory="Digital Product"

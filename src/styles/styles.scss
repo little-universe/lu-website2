@@ -430,7 +430,7 @@ button:focus {
       position: relative;
       .headline {
         font-family: "Founders Grotesk X-Condensed Test";
-        font-size: $fontSizeHeadline*1.75;
+        font-size: $fontSizeHeadline*1.5;
         font-weight: 500;
         // line-height: $lineHeightHeadline;
         // font-weight: $fontWeightHeavy;
@@ -443,10 +443,10 @@ button:focus {
         bottom: $buffer*6;
         position: absolute;
         .subhead {
-          font-size: $fontSizeSubHeadline;
-          line-height: $lineHeightSubHeadline;
+          font-size: $fontSize;
+          line-height: $lineHeight;
           font-weight: $fontWeightLight;
-          color: #888;
+          color: $darkGreenLightened;
           @include breakpoint(sm) {
             font-size: $fontSizeDesktop;
           }
@@ -1119,9 +1119,8 @@ button {
 }//button
 .footer-area {
   padding: $buffer*18;
-  background: $fontColorLight;
-  border-top: 2px solid $fontColor;
-  color: $fontColor;
+  background: $fontColor;
+  color: $fontColorLight;
   font-size: $fontSize;
   line-height: $lineHeight;
   p {
@@ -1148,76 +1147,19 @@ button {
 // SECTIONS
 
 .page-section {
-  .section-left {
-    p {
-      margin-right: 12%;
-    }
+  .section-head {
+    margin: 0;
   }
-  .overlap-left {
-    .motif-animation {
-      width: 136%;
-      margin-left: -24%;
-    }
-  }
-
-  .section-right {
-    p {
-      margin-left: 12%;
-    }
-  }
-  .overlap-right {
-    .motif-animation {
-      width: 136%;
-      margin-left: -12%;
-    }
-    // margin-right: -12%;
-  }
-  .overlap-bottom {
-    z-index: 2;
+  .section-body {
+    margin: $buffer*12 0;
     position: relative;
-    button {
-      // position: absolute;
-      // top: -$buffer*3;
-    }
+    height: auto !important;
   }
-  &.movement-section {
-    .movement-statement {
-      background: $lightBlue;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      p {
-        font-size: $fontSizeStatement;
-        width: 60%;
-        line-height: $lineHeightStatement;
-        color: $darkGreen;
-      }
-    }
-  }
-  &.statement-section {
-    font-size: $fontSizeHeadline*1.5;
-    font-family: "Founders Grotesk X-Condensed Test";
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: $buffer*20 0;
-    color: $darkGreen;
-  }
-  &.text-section {
-    margin-top: $buffer*10;
-    background: $yellow;
-    padding: $buffer*6 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    // text-align: center;
-    .text-statement {
-      // background: $fontColorLight;
-      font-size: $fontSizeHeadline;
-      color: $darkGreen;
-      font-family: "Founders Grotesk X-Condensed Test";
-      padding: $buffer*12;
+  &.products-section {
+    padding: $buffer*6;
+    p {
+      font-size: $fontSizeDesktop;
+      line-height: $lineHeightDesktop;
     }
   }
 }
@@ -1343,6 +1285,92 @@ button {
     .caption-filing {}
     .caption-text {}
   }
+}
+.work-featured-product {
+  overflow: hidden;
+  .featured-product-card {
+    padding: 0 $buffer*6;
+    height: 100%; width: 100%;
+    position: relative;
+    .product-card-image {
+      overflow: hidden;
+      height: 300px; width: 100%;
+      background: grey;
+      position: relative;
+      .image-cover {
+        height: 100%; width: 100%;
+        position: absolute;
+        z-index: 1;
+        transform: translateX(0);
+      }
+      .product-card-swipe {
+        .image-cover {
+          transition: all .5s $easing;
+          transition-delay: .25s;
+          transform: translateX(100%);
+        }
+      }
+      .image-background {
+        position: absolute;
+        margin: 0 auto;
+        height: 100%; width: 100%;
+      }
+    }
+    .product-card-caption {
+      .product-caption-name {
+        .caption-name-header {
+            font-size: $fontSizeDesktop*1.25;
+            font-weight: 500;
+            margin-bottom: 0; padding-bottom: 0;
+        }
+      }
+      .product-caption-description {
+        .caption-description-body {
+            font-size: $fontSize;
+            line-height: $lineHeight;
+        }
+      }
+    }
+  }//featured-product-card
+  &.sentiment-analysis {
+    .product-card-image {
+      .image-cover {
+        background: $yellow;
+      }
+      .image-background {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: url("../../src/assets/projects/strive/strive-hero.png");
+      }
+    }
+  }//sentiment-analysis
+  &.data-tracking {
+    .product-card-image {
+      .image-cover {
+        background: $lightGreen;
+      }
+      .image-background {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: url("../../src/assets/projects/strive/strive-hero.png");
+      }
+    }
+  }//data-tracking
+  &.messaging-infrastructure {
+    .product-card-image {
+      .image-cover {
+        background: $lightBlue;
+      }
+      .image-background {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: url("../../src/assets/projects/strive/strive-hero.png");
+      }
+    }
+  }//messaging-infrastructure
 }
 //WORK FEATURED
 
