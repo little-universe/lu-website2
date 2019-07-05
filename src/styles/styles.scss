@@ -993,28 +993,47 @@ button:focus {
 }//iwt-container
 
 .featured-text {
-  // height: 70vh;
+  height: 80vh;
   position: relative;
   overflow: visible;
   &.color-text {
-    padding: $buffer*20 0;
     &.pink {
       background: $pink;
       color: $yellow;
+      .works-carousel-container {
+        .works-carousel-wrapper {
+          margin-top: $offsetValue;
+          background: $darkBlue;
+          .carousel-label {
+            background: $yellow;
+            color: $darkBlue;
+
+          }
+        }
+      }
     }
     .text-body {
       display: flex;
       justify-content: center;
+      .text-body-slide {
+        display: flex;
+        justify-content: center;
+        .text-statement {
+          opacity: 0;
+        @include animation(.5s, .75s, textBodySlide);
+        }
+      }
       .text-statement {
-        padding: $buffer*6;
+        // padding: $buffer*20 0;
         font-family: $fontFamily;
-        font-size: $fontSizeStatement;
+        font-size: 2vw;
+        line-height: 2vw*1.5;
       }
     }
     .text-motif {
-      // height: 80vh !important;
+      height: 100%;
+      width: 100%;
       position: relative;
-      margin-top: $buffer*6;
     }
   }
   &.text-with-list-mobile {
@@ -1275,7 +1294,7 @@ button {
         .label-arrow {
           @include transition;
           color: $darkGreen;
-          height: 20px;
+          height: 20px !important;
         }
       }
     }
@@ -1401,7 +1420,7 @@ button {
   &.data-tracking {
     .product-card-image {
       .image-cover {
-        background: $pink;
+        background: $lightGreen;
       }
       .image-background {
         background-size: cover;
@@ -1426,62 +1445,3 @@ button {
   }//messaging-infrastructure
 }
 //WORK FEATURED
-
-//// MOTIF ANIMATIONS
-
-.motif-animation {
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  &.gravity-animation {
-    background: $yellow;
-  }
-  &.orbit-animation {
-    background: $pink;
-  }
-  &.motif-with-cta {
-    background: blue;
-  }
-  .motif-layer {
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    position: absolute;
-    width: 80%;
-    height: 80%;
-    &.gravity-1 {
-      background-image: url("../../src/assets/animations/gravity/gravity-1.svg");
-      animation: gravity1 6s infinite linear;
-      animation-direction: reverse;
-    }
-    &.gravity-2 {
-      background-image: url("../../src/assets/animations/gravity/gravity-2b.svg");
-      animation: gravity2 6s infinite linear;
-    }
-    &.gravity-3 {
-      background-image: url("../../src/assets/animations/gravity/gravity-3.svg");
-      width: 50%;
-      animation: gravity3 1s infinite $easing alternate;
-    }
-    &.orbit-1 {
-      background-image: url("../../src/assets/animations/orbit/orbit-1.svg");
-      animation: orbit1 2.5s infinite $easing alternate;
-      width: 70%;
-    }
-    &.orbit-2 {
-      background-image: url("../../src/assets/animations/orbit/orbit-2.svg");
-      animation: orbit2 2s infinite $easing alternate;
-    }
-    &.orbit-3 {
-      background-image: url("../../src/assets/animations/orbit/orbit-3.svg");
-      animation: orbit3 2.5s infinite $easing alternate;
-      width: 30%;
-    }
-  }
-}
-
-//// CLOSE MOTIF ANIMATIONS

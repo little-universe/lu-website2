@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import MotifAnimation from '../MotifAnimation';
+import WorksCarousel from '../WorksCarousel'
+import Reveal from 'react-reveal/Reveal';
 import Grid from '@material-ui/core/Grid'
 import {Link} from "react-router-dom";
 
@@ -68,11 +69,15 @@ export default class FeaturedText extends Component {
                   <div classname="nomargin-container">
                     <Grid container className={`featured-text color-text ${className} ${dominantColor}`} alignItems="center">
                       <Grid item className="text-body" md={6} justify="center">
-                        <Grid item className="text-statement" md={10} xs={12}>{text}</Grid>
+                        <Reveal effect="text-body-slide">
+                          <Grid item className="text-statement" md={8} xs={12}>{text}</Grid>
+                        </Reveal>
                       </Grid>
                       <Grid item md={1}/>
-                      <Grid item className="text-motif" md={5} justify="center">
-                        <MotifAnimation motifWithCTA/>
+                      <Grid item md={5} xs={6} className="works-carousel-container">
+                        <Reveal effect="works-carousel-container-slide">
+                          <WorksCarousel className="movements" ctaLabel="Meet Our Team"/>
+                        </Reveal>
                       </Grid>
                     </Grid>
                   </div>

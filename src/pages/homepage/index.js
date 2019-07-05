@@ -35,6 +35,16 @@ class Homepage extends Component {
           </Grid>
         </Grid>
         <FeaturedText textWithMotif text="Movements need fast, responsive, deeply knowledgeable technologists who can build world class products that connect the dots, meet real, immediate needs, and deliver impact as efficiently as possible—they need custom solutions that don't break the bank." dominantColor="pink"/>
+        <Grid container className="page-section products-section">
+          <Grid container className="section-head">
+            <Grid item md={4}><p>We build products and integrations progressive organizations need whether they ask us to or not.</p></Grid>
+          </Grid>
+          <Grid container className="section-body">
+            <Grid item md={4} xs={12}><ProductFeatured className="sentiment-analysis" productName="Sentiment Analysis" productDescription="Built on the Strive Platform to track sentiment of sent messages."/></Grid>
+            <Grid item md={4} xs={12}><ProductFeatured className="data-tracking" productName="Data Tracking" productDescription="Built on the Strive Platform to track sentiment of sent messages."/></Grid>
+            <Grid item md={4} xs={12}><ProductFeatured className="messaging-infrastructure" productName="Messaging Infrastructure" productDescription="Built on the Strive Platform to track sentiment of sent messages."/></Grid>
+          </Grid>
+        </Grid>
       </>
     )
   }

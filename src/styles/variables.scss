@@ -74,6 +74,7 @@ $fontSizeStatement: 38px;
 $lineHeightStatement: $fontSizeStatement*1.5;
 
 $buffer: 10px;
+$offsetValue: $buffer*6;
 $radius: 4px;
 $radiusFull: 100px;
 $border: 1px solid $stroke;
