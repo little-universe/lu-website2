@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
+import MotifAnimation from '../MotifAnimation';
 import Grid from '@material-ui/core/Grid'
 import {Link} from "react-router-dom";
 
 export default class FeaturedText extends Component {
     render() {
-        const { textWithList, textWithHeader, textWithCaption, list, header, caption, text, status, linkTo, linkName, className, style, anim } = this.props
+        const { textWithList, textWithHeader, textWithCaption, textWithMotif, list, header, caption, text, status, linkTo, linkName, className, style, anim, dominantColor } = this.props
         return (
             <div className="nomargin-container" style={style}>
                 {textWithList && list && text &&
@@ -59,6 +60,19 @@ export default class FeaturedText extends Component {
                           <Grid item md={2} xs={0}></Grid>
                           <Grid item className="text-statement" md={8} xs={12}>{text}</Grid>
                         </Grid>
+                      </Grid>
+                    </Grid>
+                  </div>
+                }
+                { textWithMotif && text && dominantColor &&
+                  <div classname="nomargin-container">
+                    <Grid container className={`featured-text color-text ${className} ${dominantColor}`} alignItems="center">
+                      <Grid item className="text-body" md={6} justify="center">
+                        <Grid item className="text-statement" md={10} xs={12}>{text}</Grid>
+                      </Grid>
+                      <Grid item md={1}/>
+                      <Grid item className="text-motif" md={5} justify="center">
+                        <MotifAnimation motifWithCTA/>
                       </Grid>
                     </Grid>
                   </div>

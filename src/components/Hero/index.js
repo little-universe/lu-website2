@@ -14,12 +14,14 @@ export default class Hero extends Component {
                   <div classname="container">
                     <Grid className={`hero text-hero ${className}`} container alignItems="center">
                       <Grid item md={7} xs={6}  className="headline-text-container">
-                          <p className="headline">{headline}</p>
+                        <Reveal effect="hero-headline-fade">
+                            <p className="headline">{headline}</p>
                           <Grid container className="subhead-text-container">
-                          <Grid item lg={4} md={8} xs={8}>
-                            <p className="subhead">{subhead}</p>
+                            <Grid item lg={5} md={8} xs={8}>
+                              <p className="subhead">{subhead}</p>
+                            </Grid>
                           </Grid>
-                          </Grid>
+                        </Reveal>
                       </Grid>
 
                       <Grid item md={5} xs={6} className="works-carousel-container">

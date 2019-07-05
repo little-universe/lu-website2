@@ -5,9 +5,9 @@ import {Link} from "react-router-dom";
 
 export default class MotifAnimation extends Component {
   render() {
-    const { className, orbitAnimation, gravityAnimation } = this.props
+    const { className, orbitAnimation, gravityAnimation, motifWithCTA } = this.props
     return (
-    <div className="margin-container">
+      <>
       { gravityAnimation &&
         <div className="container">
           <div className={`motif-animation gravity-animation ${className}`}>
@@ -26,7 +26,12 @@ export default class MotifAnimation extends Component {
           </div>
         </div>
       }
-    </div>
+      { motifWithCTA &&
+
+          <div className={`motif-animation motif-with-cta ${className}`}>1</div>
+
+      }
+    </>
     )
   }
 }

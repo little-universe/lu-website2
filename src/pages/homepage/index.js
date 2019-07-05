@@ -21,7 +21,7 @@ class Homepage extends Component {
           heroText
           featuredWorks
           className="homepage-hero"
-          headline={<>We're doing impact <span className="headline-emphasis">differently</span></>}
+          headline={<>Were Doing Impact <span className="headline-emphasis">Differently</span></>}
           subhead="Little Universe is a digital product design and development agency located in Brooklyn, NY."
         />
         <Grid container className="page-section products-section">
@@ -34,6 +34,7 @@ class Homepage extends Component {
             <Grid item md={4} xs={12}><ProductFeatured className="messaging-infrastructure" productName="Messaging Infrastructure" productDescription="Built on the Strive Platform to track sentiment of sent messages."/></Grid>
           </Grid>
         </Grid>
+        <FeaturedText textWithMotif text="Movements need fast, responsive, deeply knowledgeable technologists who can build world class products that connect the dots, meet real, immediate needs, and deliver impact as efficiently as possible—they need custom solutions that don't break the bank." dominantColor="pink"/>
       </>
     )
   }

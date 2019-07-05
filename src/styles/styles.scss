@@ -39,6 +39,11 @@ body {
   z-index: $navZIndex;
   top: 0;
   left: 0;
+  opacity: 0 !important;
+  &.nav-animation {
+    @include animation(.5s, 1.5s, navAnimation);
+    opacity: 1;
+  }
   .universe {
     width: 6px; height: 6px;
     border-radius: $radiusFull;
@@ -179,7 +184,12 @@ body {
       }
     }
   }
+  .nav-animation {
+    @include animation(.5s, 1.5s, navAnimation);
+    opacity: 1;
+  }
   .nav-list {
+    opacity: 0 !important;
     list-style-type: none;
     margin: 0; padding: 0;
     display: flex;
@@ -428,12 +438,21 @@ button:focus {
       justify-content: center;
       padding: 0 $buffer*6;
       position: relative;
+      .hero-headline-fade {
+        &.headline {
+          @include animation(.5s, 2s, heroHeadlineFade);
+          opacity: 0;
+        }
+        .subhead {
+          @include animation(.5s, 2.25s, heroHeadlineFade);
+          opacity: 0;
+        }
+      }
       .headline {
+        opacity: 0 !important;
         font-family: "Founders Grotesk X-Condensed Test";
         font-size: $fontSizeHeadline*1.5;
         font-weight: 500;
-        // line-height: $lineHeightHeadline;
-        // font-weight: $fontWeightHeavy;
         margin-top: 0;
         @include breakpoint(sm) {
           font-size: $fontSizeHeadline*.5;
@@ -443,8 +462,8 @@ button:focus {
         bottom: $buffer*6;
         position: absolute;
         .subhead {
-          font-size: $fontSize;
-          line-height: $lineHeight;
+          font-size: $fontSizeDesktop;
+          line-height: $lineHeightDesktop;
           font-weight: $fontWeightLight;
           color: $darkGreenLightened;
           @include breakpoint(sm) {
@@ -975,8 +994,29 @@ button:focus {
 
 .featured-text {
   // height: 70vh;
-  margin: $buffer*30 0;
   position: relative;
+  overflow: visible;
+  &.color-text {
+    padding: $buffer*20 0;
+    &.pink {
+      background: $pink;
+      color: $yellow;
+    }
+    .text-body {
+      display: flex;
+      justify-content: center;
+      .text-statement {
+        padding: $buffer*6;
+        font-family: $fontFamily;
+        font-size: $fontSizeStatement;
+      }
+    }
+    .text-motif {
+      // height: 80vh !important;
+      position: relative;
+      margin-top: $buffer*6;
+    }
+  }
   &.text-with-list-mobile {
     display: none;
   }
@@ -1167,8 +1207,7 @@ button {
 //WORKS CAROUSEL
 .works-carousel-container {
   .works-carousel-container-slide {
-    @include animation(.25s, 1s, worksCarouselSlide);
-    // transform: translateX(100%);
+    @include animation(.5s, .75s, worksCarouselSlide);
     width: 0%; height: 100%;
   }
   width: 100%; height: 100%;
@@ -1204,7 +1243,7 @@ button {
       text-align: center;
     }
     .carousel-label-slideUp { //animation
-      @include animation(.25s, 1.5s, carouselLabelSlideUp);
+      @include animation(.25s, 1.25s, carouselLabelSlideUp);
       transform: translateY(200%);
       width: 100%;
     }
@@ -1321,7 +1360,7 @@ button {
       .product-card-swipe {
         .image-cover {
           transform: translateX(0);
-          @include animation(.5s, .25s, imageCoverSlide);
+          @include animation(.5s, .5s, imageCoverSlide);
         }
       }
       .image-background {
@@ -1362,7 +1401,7 @@ button {
   &.data-tracking {
     .product-card-image {
       .image-cover {
-        background: $lightGreen;
+        background: $pink;
       }
       .image-background {
         background-size: cover;
@@ -1391,7 +1430,7 @@ button {
 //// MOTIF ANIMATIONS
 
 .motif-animation {
-  height: 90vh;
+  height: 100%;
   width: 100%;
   overflow: hidden;
   display: flex;
@@ -1403,6 +1442,9 @@ button {
   }
   &.orbit-animation {
     background: $pink;
+  }
+  &.motif-with-cta {
+    background: blue;
   }
   .motif-layer {
     background-size: contain;
