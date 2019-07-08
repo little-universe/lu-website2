@@ -6,7 +6,7 @@ import {Link} from "react-router-dom";
 
 export default class FeaturedText extends Component {
     render() {
-        const { textWithList, textWithHeader, textWithCaption, textWithMotifRight, textWithMotifLeft, textBigStatement, list, header, caption, text, ctaLabel, status, linkTo, linkName, className, style, anim, dominantColor } = this.props
+        const { textWithList, textWithHeader, textWithCaption, textWithMotifRight, textWithMotifLeft, textBigStatement, list, header, caption, text, ctaLabel, textForMemberLeft, textForMemberRight, memberName, memberTitle, status, linkTo, linkName, className, style, anim, dominantColor } = this.props
         return (
             <div className="nomargin-container" style={style}>
                 {textWithList && list && text &&
@@ -65,7 +65,7 @@ export default class FeaturedText extends Component {
                     </Grid>
                   </div>
                 }
-                { textWithMotifRight && text && dominantColor &&
+                { textWithMotifRight && text && dominantColor && ctaLabel &&
                   <div classname="nomargin-container">
                     <Grid container className={`featured-text color-text ${className} ${dominantColor}`} alignItems="center">
                       <Grid item className="text-body" md={6} justify="center">
@@ -76,7 +76,7 @@ export default class FeaturedText extends Component {
                       <Grid item md={1}/>
                       <Grid item md={5} xs={6} className="works-carousel-container right">
                         <Reveal effect="works-carousel-container-slide">
-                          <WorksCarousel className="movements" ctaLabel="Meet Our Team"/>
+                          <WorksCarousel className="movements" ctaLabel={ctaLabel}/>
                         </Reveal>
                       </Grid>
                     </Grid>
@@ -97,6 +97,56 @@ export default class FeaturedText extends Component {
                         </Reveal>
                       </Grid>
                     </Grid>
+                  </div>
+                }
+                { textForMemberLeft && memberTitle && memberName && text && dominantColor &&
+                  <div classname="nomargin-container">
+                  <Grid container className={`featured-text member-text color-text ${className} ${dominantColor}`} alignItems="center">
+                    <Grid item className="text-body" md={6} justify="center">
+                      <Reveal effect="text-body-slide">
+                        <Grid item className="text-statement" md={8} xs={12}>
+                          <div className="member-title">{memberTitle}</div>
+                          <div className="member-name">{memberName}</div>
+                          <div className="member-text">{text}</div>
+                        </Grid>
+                      </Reveal>
+                    </Grid>
+                    <Grid item md={1}/>
+                    <Grid item md={5} xs={6} className="member-image-container left">
+                      <Reveal effect="member-image-container-slide">
+                        <Grid item className="image-wrapper" md={12} alignItems="center">
+                          <Grid container justify="center" alignItems="center">
+                            <Grid item className="image-background image-background-full" md={12}></Grid>
+                          </Grid>
+                        </Grid>
+                      </Reveal>
+                    </Grid>
+                  </Grid>
+                  </div>
+                }
+                { textForMemberRight && memberTitle && memberName && text && dominantColor &&
+                  <div classname="nomargin-container">
+                  <Grid container className={`featured-text member-text color-text ${className} ${dominantColor}`} alignItems="center">
+                  <Grid item md={5} xs={6} className="member-image-container right">
+                    <Reveal effect="member-image-container-slide">
+                      <Grid item className="image-wrapper" md={12} alignItems="center">
+                        <Grid container justify="center" alignItems="center">
+                          <Grid item className="image-background image-background-full" md={12}></Grid>
+                        </Grid>
+                      </Grid>
+                    </Reveal>
+                  </Grid>
+                  <Grid item md={1}/>
+                    <Grid item className="text-body" md={6} justify="center">
+                      <Reveal effect="text-body-slide">
+                        <Grid item className="text-statement" md={8} xs={12}>
+                          <div className="member-title">{memberTitle}</div>
+                          <div className="member-name">{memberName}</div>
+                          <div className="member-text">{text}</div>
+                        </Grid>
+                      </Reveal>
+                    </Grid>
+                  </Grid>
                   </div>
                 }
                 { textBigStatement && text &&

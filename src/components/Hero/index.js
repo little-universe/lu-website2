@@ -7,7 +7,7 @@ import Reveal from 'react-reveal/Reveal';
 export default class Hero extends Component {
 
     render() {
-        const { heroText, heroImage, className, headline, subhead, projectName, projectCategory, projectIndustry, featuredWorks, style, anim } = this.props
+        const { heroText, heroImage, className, headline, subhead, projectName, projectCategory, projectIndustry, featuredWorks, noFeaturedWorks, style, anim } = this.props
         return (
             <div className="nomargin-container" style={style}>
                 {heroText && headline && subhead && featuredWorks &&
@@ -23,7 +23,6 @@ export default class Hero extends Component {
                           </Grid>
                         </Reveal>
                       </Grid>
-
                       <Grid item md={5} xs={6} className="works-carousel-container right">
                         <Reveal effect="works-carousel-container-slide">
                           <WorksCarousel
@@ -31,6 +30,22 @@ export default class Hero extends Component {
                             projectCategory="Digital Product"
                             projectIndustry="Advocacy Tech"
                           />
+                        </Reveal>
+                      </Grid>
+                    </Grid>
+                  </div>
+                }
+                {heroText && headline && subhead && noFeaturedWorks &&
+                  <div classname="container">
+                    <Grid className={`hero text-hero ${className}`} container alignItems="center">
+                      <Grid item md={7} xs={6}  className="headline-text-container">
+                        <Reveal effect="hero-headline-fade">
+                            <p className="headline">{headline}</p>
+                          <Grid container className="subhead-text-container">
+                            <Grid item lg={5} md={8} xs={8}>
+                              <p className="subhead">{subhead}</p>
+                            </Grid>
+                          </Grid>
                         </Reveal>
                       </Grid>
                     </Grid>

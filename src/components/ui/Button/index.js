@@ -32,7 +32,7 @@ class Button extends Component {
             ${className}
           `}
           >
-          {children}
+          <div><p>{children}</p></div>
         </button>
         </CopyToClipboard>
         <p className={ this.state.copiedText ? "copiedText" : "copiedText fadeOut"}>Email Copied To Clipboard</p>

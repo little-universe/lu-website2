@@ -14,8 +14,8 @@ export default class WorkTogether extends Component {
                         <Grid className={`work-together ${className}`} container justify="center" alignItems="center">
                             <Grid item md={12} xs={12}>
                                 <div className="container">
-                                        <h1 className="headline">{headline}</h1>
-                                        <Button className="mailUs"><Mail size={24}/></Button>
+                                        <p className="headline">{headline}</p>
+                                        <Button mailUs className="mailUs">Send Us Mail</Button>
                                 </div>
                             </Grid>
                         </Grid>

@@ -39,7 +39,7 @@ body {
   z-index: $navZIndex;
   top: 0;
   left: 0;
-  opacity: 0 !important;
+  opacity: 0;
   &.nav-animation {
     @include animation(.5s, 1.5s, navAnimation);
     opacity: 1;
@@ -201,7 +201,7 @@ body {
     flex-direction: row;
     margin-right: $buffer*6; //not sure why necessary, fix because of weird width of parent.
     .nav-link {
-      padding: 0 0 0 $buffer*3;
+      padding: 0 0 0 $buffer*6;
       text-decoration: none;
       color: $darkGreen;
       @include transition;
@@ -212,7 +212,7 @@ body {
         color: $fontColorLight;
       }
       &:hover {
-        color: $fontColorLight;
+        color: $lightGreen;
         @include transition;
       }
     }
@@ -463,8 +463,6 @@ button:focus {
         .subhead {
           font-size: $fontSizeDesktop;
           line-height: $lineHeightDesktop;
-          font-weight: $fontWeightLight;
-          color: $darkGreenLightened;
           @include breakpoint(sm) {
             font-size: $fontSizeDesktop;
           }
@@ -487,7 +485,22 @@ button:focus {
   &.homepage-hero {
     background-color: $darkGreen;
     color: $lightGreen;
+    .subhead-text-container {
+      .subhead {
+        color: $darkGreenLightened;
+      }
+    }
     .image-background {
+    }
+  }
+  &.about-hero {
+    height: 80vh;
+    background-color: $lightBlue;
+    color: $darkBlue;
+    .subhead-text-container {
+      .subhead {
+        color: $darkBlue;
+      }
     }
   }
   &.strive-hero {
@@ -997,8 +1010,6 @@ button:focus {
   position: relative;
   overflow: visible;
   &.color-text {
-    height: 80vh;
-    padding: 0;
     .works-carousel-container {
       z-index: 5;
       .works-carousel-wrapper {
@@ -1008,9 +1019,14 @@ button:focus {
         }
       }
     }
+    height: 80vh;
+    padding: 0;
     &.pink {
       background: $pink;
       color: $darkBlue;
+      .member-image-container {
+        background: $lightGreen;
+      }
       .works-carousel-container {
         .works-carousel-wrapper {
           background: $yellow;
@@ -1026,6 +1042,9 @@ button:focus {
     &.darkBlue {
       background: $darkBlue;
       color: $lightGreen;
+      .member-image-container {
+        background: $pink;
+      }
       .works-carousel-container {
         .works-carousel-wrapper {
           background: $lightGreen;
@@ -1041,6 +1060,27 @@ button:focus {
     &.lightBlue {
       background: $lightBlue;
       color: $darkGreen;
+      .member-image-container {
+        background: $yellow;
+      }
+      .works-carousel-container {
+        .works-carousel-wrapper {
+          background: $darkGreen;
+          .carousel-label {
+            background: $yellow;
+            .label-details, .label-arrow {
+            color: $darkGreen;
+            }
+          }
+        }
+      }
+    }
+    &.yellow {
+      background: $yellow;
+      color: $darkBlue;
+      .member-image-container {
+        background: $darkGreen;
+      }
       .works-carousel-container {
         .works-carousel-wrapper {
           background: $darkGreen;
@@ -1087,6 +1127,71 @@ button:focus {
       position: relative;
     }
   }//color-text
+  &.member-text {
+    .text-body {
+      .text-statement {
+        .member-title {
+          font-size: $fontSizeDesktop;
+          font-weight: 500;
+          line-height: $lineHeightDesktop;
+        }
+        .member-name {
+          font-size: $fontSizeHeadline;
+          line-height: $lineHeightHeadline;
+          font-family: $fontFamilyCond;
+        }
+        .member-text {
+          font-size: $fontSizeDesktop;
+          line-height: $lineHeightDesktop;
+        }
+      }
+    }
+    .member-image-container {
+      width: 100%; height: 100%;
+      &.right {
+        .image-wrapper {
+          .image-background {
+            background-position: left;
+          }
+        }
+      }
+      &.left {
+        .image-wrapper {
+          .image-background {
+            background-position: right;
+          }
+        }
+      }
+      .member-image-container-slide {
+        // .image-wrapper {
+        //   @include animation(.25s, 0, imageCoverSlideRight);
+        //   transform: translateX(0);
+        // }
+      }
+      .image-wrapper {
+        margin-top: -$offsetValue;
+        // transform: translateX(100%);
+        .image-background {
+          height: 80vh;
+          width: 100%;
+          background-size: contain;
+          background-repeat: no-repeat;
+        }
+      }
+    }
+    &.zach-member {
+      .image-background {background-image: url("../../src/assets/team/zach.png");}
+    }
+    &.adrian-member {
+      .image-background {background-image: url("../../src/assets/team/adrian.png");}
+    }
+    &.alana-member {
+      .image-background {background-image: url("../../src/assets/team/alana.png");}
+    }
+    &.taylor-member {
+      .image-background {background-image: url("../../src/assets/team/taylor.png");}
+    }
+  }
   &.big-statement {
     .text-body {
       text-align: center;
@@ -1166,44 +1271,67 @@ button:focus {
 }//featured-text
 
 .work-together {
-  padding: $buffer*30 $buffer*3;
+  padding: $buffer*10 $buffer*3;
+  color: $fontColorLight;
+  background: $bgColorDark;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   @include breakpoint(xs) {
     padding: $buffer*3 $buffer*2;
   }
   text-align: center;
-  h1 {
-    font-weight: 300;
-    font-size: $fontSizeStatement;
+  p {
+    font-size: $fontSizeHeadline;
+    font-family: $fontFamilyCond;
+    padding: 0;
+    margin: 0;
     @include breakpoint(sm) {
       font-size: $fontSizeLargeDesktop;
       padding-bottom: $buffer*5;
     }
+  }
+  .copiedText {
+    font-size: $fontSize;
+    font-family: $fontFamily;
+    @include transition;
   }
   @include breakpoint(xs) {
     height: 90vh;
   }
 }//work-together
 button {
-  border-radius: $radius*10;
-  padding: $buffer*2 $buffer*4;
+  border: none;
+  background: $bgColorDark;
+  color: $fontColorLight;
+  padding: $buffer*2 $buffer*2;
+  display: flex;
   align-items: center;
-  box-shadow: none;
-  border: $border;
+  justify-content: space-between;
+  flex-direction: row;
   cursor: pointer;
+  position: relative;
+  font-size: $fontSizeSmallDesktop;
   &.mailUs {
-    background: $bgColorLight;
-    width: 200px !important;
+    // background: $darkGreen;
+    // width: 50% !important;
+    display: inline-block;
     @include transition;
+    p {
+      font-size: $fontSizeDesktop;
+      font-family: $fontFamily;
+      border-bottom: 2px solid white;
+    }
     svg {
-      stroke: $stroke;
+      padding-left: $buffer*3;
       @include transition;
     }
     &:hover {
       cursor: pointer;
-      border: 1px solid $fontColor;
       @include transition;
       svg {
-        stroke: $fontColor;
+        padding-left: $buffer*6;
+        stroke: $fontColorLight;
         @include transition;
       }
     }
@@ -1235,7 +1363,7 @@ button {
   }
 }//button
 .footer-area {
-  padding: $buffer*20;
+  padding: 0 $buffer*6 $buffer*6 $buffer*6;
   background: $bgColorDark;
   color: $fontColorLight;
   font-size: $fontSize;
