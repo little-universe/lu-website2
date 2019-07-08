@@ -14,6 +14,7 @@ $bgColorDarker: darken($bgColor, 1%);
 $bgColorHeavy: $secondaryColor;
 $bgColorWorkCard: #f0f2f5;
 
+
 $bgColorNextWork: #ccc;
 
 $bgColorWork: #f0f2f5;
@@ -36,8 +37,9 @@ $darkBlue:              #142E7B;
 $lightBlue:             #C6DAE7;
 
 $bgColor:               #ffffff;
+$bgColorDark:           #11111a;
 
-$fontSizeHeadline:      72px;
+$fontSizeHeadline:      8vw;
 $lineHeightHeadline:    $fontSizeHeadline*1.5;
 $fontSizeSubHeadline:   22px;
 $lineHeightSubHeadline: $fontSizeSubHeadline*1.5;
@@ -49,9 +51,9 @@ $fontColorLight: #fff;
 $fontColorLightened: #aaa;
 $fontColorLightest: #ddd;
 $fontSize: 18px;
-$fontSizeDesktop: 22px;
+$fontSizeDesktop: 1.5vw;
 $fontSizeSmall: 18px;
-$fontSizeSmallDesktop: 18px;
+$fontSizeSmallDesktop: 1.25vw;
 $fontSizeExtraSmall: 11px;
 $fontSizeExtraSmallDesktop: 12px;
 $fontSizeLarge: 24px;
@@ -64,7 +66,7 @@ $fontWeightNormal: 400;
 $fontWeightLight: 200;
 $lineHeight: 22px;
 $lineHeightLarge: 42px;
-$lineHeightDesktop: 32px;
+$lineHeightDesktop: $fontSizeDesktop*1.5;
 $lineHeightLargeDesktop: $fontSizeLargeDesktop*2;
 // $fontSizeHeadline: 50px;
 // $fontSizeHeadline: 20px;

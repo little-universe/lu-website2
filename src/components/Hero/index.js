@@ -24,7 +24,7 @@ export default class Hero extends Component {
                         </Reveal>
                       </Grid>
 
-                      <Grid item md={5} xs={6} className="works-carousel-container">
+                      <Grid item md={5} xs={6} className="works-carousel-container right">
                         <Reveal effect="works-carousel-container-slide">
                           <WorksCarousel
                             projectName="Motivote"

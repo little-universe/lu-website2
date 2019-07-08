@@ -3,6 +3,7 @@ import {Link} from "react-router-dom";
 import Grid from '@material-ui/core/Grid';
 import Fade from 'react-reveal/Fade';
 import Reveal from 'react-reveal/Reveal';
+import Logo from '../Logo';
 import classnames from "classnames";
 
 
@@ -62,10 +63,11 @@ toggleSidenav = () => {
 
     return (
       <>
+      <Reveal effect="nav-animation">
       <div className={classnames("nav", "nav-desktop",{
           "is-collapsed": !this.state.visible
         }, {"is-uncollapsed" : this.state.scrolledUp})}>
-        <Reveal effect="nav-animation">
+        <Logo/>
         <ul className="nav-list">
           <Link
             // onClick={() => onRouteChange('work')}
@@ -92,8 +94,8 @@ toggleSidenav = () => {
               <li className="nav-item">Approach</li>
           </Link>
         </ul>
-        </Reveal>
       </div>
+      </Reveal>
       <div className={`nav nav-mobile ${this.state.showHideSidenav}`} onClick={this.toggleSidenav}>
         <Fade top distance="10px" duration={500} delay={250}>
         <div className="" onClick={this.toggleSidenav}>

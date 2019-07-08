@@ -30,14 +30,14 @@ export default class WorksCarousel extends Component {
       }
       { className && ctaLabel &&
         <Grid className={`works-carousel-wrapper ${className}`} container>
-        <Grid item md={12} className="image-background"></Grid>
-        <Reveal effect="carousel-label-slideUp" >
-          <Grid className={`carousel-label`} container>
-              <Grid item className="label-row" md={12}>
-                <div className="label-details">{ctaLabel}</div>
-                <div className="label-arrow"><ArrowRight size={20}/></div>
-              </Grid>
-          </Grid>
+          <Grid item md={12} className="image-background"></Grid>
+          <Reveal effect="carousel-label-slideUp" >
+            <Grid className={`carousel-label`} container>
+                <Grid item className="label-row" md={12}>
+                  <div className="label-details">{ctaLabel}</div>
+                  <div className="label-arrow"><ArrowRight size={20}/></div>
+                </Grid>
+            </Grid>
           </Reveal>
         </Grid>
       }

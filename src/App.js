@@ -93,7 +93,6 @@ class App extends Component {
     return (
       <div className="App" >
       <BackListener />
-      <Logo/>
         <Router>
           <RouterScroll />
           <Route exact path="/" component={Homepage}/>

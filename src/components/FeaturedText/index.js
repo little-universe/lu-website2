@@ -6,7 +6,7 @@ import {Link} from "react-router-dom";
 
 export default class FeaturedText extends Component {
     render() {
-        const { textWithList, textWithHeader, textWithCaption, textWithMotif, list, header, caption, text, status, linkTo, linkName, className, style, anim, dominantColor } = this.props
+        const { textWithList, textWithHeader, textWithCaption, textWithMotifRight, textWithMotifLeft, textBigStatement, list, header, caption, text, ctaLabel, status, linkTo, linkName, className, style, anim, dominantColor } = this.props
         return (
             <div className="nomargin-container" style={style}>
                 {textWithList && list && text &&
@@ -65,7 +65,7 @@ export default class FeaturedText extends Component {
                     </Grid>
                   </div>
                 }
-                { textWithMotif && text && dominantColor &&
+                { textWithMotifRight && text && dominantColor &&
                   <div classname="nomargin-container">
                     <Grid container className={`featured-text color-text ${className} ${dominantColor}`} alignItems="center">
                       <Grid item className="text-body" md={6} justify="center">
@@ -74,11 +74,35 @@ export default class FeaturedText extends Component {
                         </Reveal>
                       </Grid>
                       <Grid item md={1}/>
-                      <Grid item md={5} xs={6} className="works-carousel-container">
+                      <Grid item md={5} xs={6} className="works-carousel-container right">
                         <Reveal effect="works-carousel-container-slide">
                           <WorksCarousel className="movements" ctaLabel="Meet Our Team"/>
                         </Reveal>
                       </Grid>
+                    </Grid>
+                  </div>
+                }
+                { textWithMotifLeft && text && dominantColor && ctaLabel &&
+                  <div classname="nomargin-container">
+                    <Grid container className={`featured-text color-text color-text-right ${className} ${dominantColor}`} alignItems="center">
+                      <Grid item md={5} xs={6} className="works-carousel-container left">
+                        <Reveal effect="works-carousel-container-slide">
+                          <WorksCarousel fromRight className="movements" ctaLabel={ctaLabel}/>
+                        </Reveal>
+                      </Grid>
+                      <Grid item md={1}/>
+                      <Grid item className="text-body" md={6} justify="center">
+                        <Reveal effect="text-body-slide">
+                          <Grid item className="text-statement" md={8} xs={12}>{text}</Grid>
+                        </Reveal>
+                      </Grid>
+                    </Grid>
+                  </div>
+                }
+                { textBigStatement && text &&
+                  <div classname="nomargin-container">
+                    <Grid container className={`featured-text big-statement ${className}`} alignItems="center">
+                      <Grid item className="text-body" md={12} justify="center"><p>{text}</p></Grid>
                     </Grid>
                   </div>
                 }
