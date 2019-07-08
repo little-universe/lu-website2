@@ -439,11 +439,11 @@ button:focus {
       position: relative;
       .hero-headline-fade {
         &.headline {
-          @include animation(.5s, 2s, heroHeadlineFade);
+          @include animation(.5s, 0s, heroHeadlineFade);
           opacity: 0;
         }
         .subhead {
-          @include animation(.5s, 2.25s, heroHeadlineFade);
+          @include animation(.5s, .25s, heroHeadlineFade);
           opacity: 0;
         }
       }
@@ -493,13 +493,30 @@ button:focus {
     .image-background {
     }
   }
-  &.about-hero {
+  &.secondary-hero {
     height: 80vh;
+    .headline-text-container {
+      .headline {
+        align-items: flex-end;
+        margin-bottom: 0;
+      }
+    }
+  }
+  &.about-hero {
     background-color: $lightBlue;
     color: $darkBlue;
     .subhead-text-container {
       .subhead {
         color: $darkBlue;
+      }
+    }
+  }
+  &.work-hero {
+    background-color: $yellow;
+    color: $darkGreen;
+    .subhead-text-container {
+      .subhead {
+        color: $darkGreen;
       }
     }
   }
@@ -1098,7 +1115,7 @@ button:focus {
         .text-body-slide {
           .text-statement {
             opacity: 0;
-            @include animation(.5s, .75s, textBodySlide);
+            @include animation(.5s, .5s, textBodySlide);
           }
         }
       }
@@ -1111,7 +1128,7 @@ button:focus {
         justify-content: center;
         .text-statement {
           opacity: 0;
-          @include animation(.5s, .75s, textBodySlide);
+          @include animation(.5s, .5s, textBodySlide);
         }
       }
       .text-statement {
@@ -1147,11 +1164,12 @@ button:focus {
       }
     }
     .member-image-container {
-      width: 100%; height: 100%;
+      width: 100%;
+      height: 100%;
+      background: transparent !important;
       &.right {
         .image-wrapper {
           .image-background {
-            background-position: left;
           }
         }
       }
@@ -1607,7 +1625,7 @@ button {
     .product-card-image {
       overflow: hidden;
       height: 250px; width: 100%;
-      background: grey;
+      background: $bgColorWorkCard;
       position: relative;
       .image-cover {
         height: 100%; width: 100%;

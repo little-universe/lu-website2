@@ -27,6 +27,7 @@ $accentColor: #ffde7c;
 
 
 //NEWSITE
+$buffer: 10px;
 
 $yellow:                #F5E1A4;
 $pink:                  #D7A9E3;
@@ -72,10 +73,10 @@ $lineHeightLargeDesktop: $fontSizeLargeDesktop*2;
 // $fontSizeHeadline: 20px;
 
 
+
 $fontSizeStatement: 38px;
 $lineHeightStatement: $fontSizeStatement*1.5;
 
-$buffer: 10px;
 $offsetValue: $buffer*6;
 $radius: 4px;
 $radiusFull: 100px;

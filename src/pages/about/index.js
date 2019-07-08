@@ -20,7 +20,9 @@ class About extends Component {
     [
       require("../../assets/team/team-1-small.jpg"),
       require("../../assets/team/zach.png"),
-      require("../../assets/team/adrian.png")
+      require("../../assets/team/adrian.png"),
+      require("../../assets/team/alana.png"),
+      require("../../assets/team/taylor.png")
     ].forEach(preloadImage)
   }
 
@@ -31,7 +33,7 @@ class About extends Component {
       <>
         <Hero
           heroText
-          noFeaturedWorks
+          secondaryHero
           className="about-hero"
           headline={<>Small Team. <span className="headline-emphasis">Big Impact.</span></>}
           subhead="We're startup industry veterans who care deeply about Making A Difference."

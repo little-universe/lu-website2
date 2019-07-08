@@ -27,40 +27,14 @@ class Work extends Component {
 
     return (
       <>
-        <Hero heroText className="about-hero" headline="Our Work" subhead="We make a difference for our clients"/>
-        <Fade bottom distance="30px" duration={500}>
-        <Link to="../strive" className="work-card-link">
-          <Transporter name="caseStudyStrive" show={true} duration={250} properties={['margin']} unstableOnUnmount>
-            <FeaturedImage featuredFullProject className="featured-project featured-strive" projectName="Strive Digital" projectCategory="Digital Product" projectIndustry="Advocacy Tech"/>
-          </Transporter>
-        </Link>
-        <Link to="../motivote" className="work-card-link">
-          <Transporter name="caseStudyMotivote" show={true} duration={250} properties={['margin']} unstableOnUnmount>
-            <FeaturedImage featuredFullProject className="featured-project featured-motivote" projectName="Motivote" projectCategory="Digital Product" projectIndustry="Advocacy Tech"/>
-          </Transporter>
-        </Link>
-        <Link to="../betterfin" className="work-card-link">
-          <Transporter name="caseStudyBetterfin" show={true} duration={250} properties={['margin']} unstableOnUnmount>
-            <FeaturedImage featuredFullProject className="featured-project featured-betterfin" projectName="Betterfin" projectCategory="Digital Product" projectIndustry="Fintech"/>
-          </Transporter>
-        </Link>
-        <Link to="../votecrew" className="work-card-link">
-        <Transporter name="caseStudyVotecrew" show={true} duration={250} properties={['margin']} unstableOnUnmount>
-          <FeaturedImage featuredFullProject className="featured-project featured-votecrew" projectName="Votecrew" projectCategory="Digital Product" projectIndustry="Advocacy Tech"/>
-        </Transporter>
-        </Link>
-        <Link to="../farmigo" className="work-card-link">
-          <Transporter name="caseStudyFarmigo" show={true} duration={250} properties={['margin']} unstableOnUnmount>
-            <FeaturedImage featuredFullProject className="featured-project featured-farmigo" projectName="Farmigo" projectCategory="Digital Product" projectIndustry="Food"/>
-          </Transporter>
-        </Link>
-        <Link to="../instructrr" className="work-card-link">
-          <Transporter name="caseStudyInstructrr" show={true} duration={250} properties={['margin']} unstableOnUnmount>
-            <FeaturedImage featuredFullProject className="featured-project featured-instructrr" projectName="Instructrr" projectCategory="Digital Product" projectIndustry="Fitness"/>
-          </Transporter>
-        </Link>
+        <Hero
+          heroText
+          secondaryHero
+          className="work-hero"
+          headline={<>We make a <span className="headline-emphasis">difference</span> for our clients.</>}
+          subhead="We build trust to deliver impactful results."
+        />
         <WorkTogether headline="Let's get to know each other"/>
-        </Fade>
         <Footer/>
       </>
     )
