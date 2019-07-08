@@ -451,7 +451,7 @@ button:focus {
         opacity: 0 !important;
         font-family: "Founders Grotesk X-Condensed Test";
         font-size: $fontSizeHeadline;
-        font-weight: 500;
+        // font-weight: 500;
         margin-top: 0;
         @include breakpoint(sm) {
           font-size: $fontSizeHeadline;
@@ -512,11 +512,11 @@ button:focus {
     }
   }
   &.work-hero {
-    background-color: $yellow;
-    color: $darkGreen;
+    background-color: $darkBlue;
+    color: $lightGreen;
     .subhead-text-container {
       .subhead {
-        color: $darkGreen;
+        color: $lightGreen;
       }
     }
   }
