@@ -54,14 +54,7 @@ export default class Hero extends Component {
                 {heroImage &&
                   <div classname="container">
                       <Grid className={`hero image-hero ${className}`} container justify="center" alignItems="center">
-                          <Grid item className="image-background" md={12}>
-                          {anim === "shown" &&
-                            <div className="project-details">
-                              <span className="project-name">{projectName}</span><br/>
-                              <span className="project-type">{projectCategory} • {projectIndustry}</span>
-                            </div>
-                          }
-                          </Grid>
+                          <Grid item className="image-background" md={12}></Grid>
                       </Grid>
                   </div>
                 }

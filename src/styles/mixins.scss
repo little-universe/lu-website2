@@ -180,12 +180,6 @@
   100% {transform: translateY(100%);}
 }
 
-@keyframes imageCoverSlideRight {
-  0% {transform: translateX(100%);}
-  100% {transform: translateX(0%);}
-}
-
-
 @keyframes worksCarouselSlide {
   0% {width:0%;}
   100%{width:100%;}
@@ -209,6 +203,11 @@
 @keyframes textBodySlide {
   0% {opacity: 0; transform: translateX(-$buffer*6);}
   100% {opacity: 1; transform: translateX(0);}
+}
+
+@keyframes cardSlideFromLeft {
+  0% {transform: translate(-100%);}
+  100% {transform: translate(0%) !important;}
 }
 
 //REACT REVEAL ANIMATIONS

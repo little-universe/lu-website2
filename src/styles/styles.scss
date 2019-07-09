@@ -473,7 +473,7 @@ button:focus {
 
   &.image-hero {
     height: 100vh;
-    background: $bgColorWork;
+    background: $lightGreen;
   }
   .image-background {
     width: 100%;
@@ -517,6 +517,15 @@ button:focus {
     .subhead-text-container {
       .subhead {
         color: $lightGreen;
+      }
+    }
+  }
+  &.approach-hero {
+    background-color: $lightGreen;
+    color: $darkBlue;
+    .subhead-text-container {
+      .subhead {
+        color: $darkBlue;
       }
     }
   }
@@ -597,7 +606,7 @@ button:focus {
     @include transition;
   }
   &.featured-full { //style for full width images
-    background: $bgColorWork;
+    background: $yellow;
     height: 90vh;
     @include breakpoint(sm) {
       height: 60vh;
@@ -605,7 +614,7 @@ button:focus {
     &.featured-full-matte {
       .image-background {
         margin: 0 auto;
-        max-width: 50%;
+        max-width: 80%;
         background-size: contain;
         @include breakpoint(sm) {
           max-width: 90%;
@@ -834,192 +843,6 @@ button:focus {
     color: $fontColorLightened;
   }
 } //featured-caption
-.iwt-container {
-  // height: 100vh;
-  position: relative;
-  &.iwt-right-mobile {
-    display: none;
-  }
-  @include breakpoint(sm) {
-    &.iwt-right-desktop {
-      display: none !important;
-    }
-    &.iwt-right-mobile {
-      display: block !important;
-    }
-  }
-  .image-image-wrapper {
-    background: $bgColorWork;
-    width: 100%;
-    height: 100%;
-    .image-background {
-      height: 100vh;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      @include breakpoint(sm) {
-        height: 60vh;
-      }
-      &.image-background-full {
-        width: 100%;
-      }
-      &.image-background-matte {
-        width: 80% !important;
-        margin: 0 auto;
-        max-width: 80% !important;
-        background-size: contain;
-        @include breakpoint(sm) {
-          max-width: 50%;
-        }
-      }
-    }
-  }
-  .image-text-wrapper {
-    .image-text {
-      line-height: $lineHeightDesktop;
-      .text-headline, .member-name{
-        font-size: $fontSizeLargeDesktop;
-      }
-      .text-description{
-        font-size: $fontSizeDesktop;
-        color: $fontColorLightened;
-      }
-    }
-  }
-  //STRIVE
-  &.strive-2 {
-    .image-background {
-      background-image: url("../../src/assets/projects/strive/strive-2.png");
-    }
-  }
-  &.strive-4 {
-    .image-background {
-      background-image: url("../../src/assets/projects/strive/strive-4.png");
-    }
-  }
-  //MOTIVOTE
-  &.motivote-1 {
-    .image-background {
-      background-image: url("../../src/assets/projects/motivote/motivote-1.png");
-    }
-  }
-  &.motivote-2 {
-    .image-background {
-      background-image: url("../../src/assets/projects/motivote/motivote-2.png");
-    }
-  }
-  //BETTERFIN
-  &.betterfin-1 {
-    .image-background {
-      background-image: url("../../src/assets/projects/betterfin/betterfin-1.png");
-    }
-  }
-  &.betterfin-2 {
-    .image-background {
-      background-image: url("../../src/assets/projects/betterfin/betterfin-2.png");
-    }
-  }
-  &.betterfin-3 {
-    .image-background {
-      background-image: url("../../src/assets/projects/betterfin/betterfin-3.png");
-    }
-  }
-  //VOTECREW
-  &.votecrew-2 {
-    .image-background {
-      background-image: url("../../src/assets/projects/votecrew/votecrew-2.png");
-    }
-  }
-  &.votecrew-3 {
-    .image-background {
-      background-image: url("../../src/assets/projects/votecrew/votecrew-3.png");
-    }
-  }
-  //FARMIGO
-  &.farmigo-2 {
-    .image-background {
-      background-image: url("../../src/assets/projects/farmigo/farmigo-2.png");
-    }
-  }
-  &.farmigo-3 {
-    .image-background {
-      background-image: url("../../src/assets/projects/farmigo/farmigo-3.png");
-    }
-  }
-  &.farmigo-m-4 {
-    .image-background {
-      background-image: url("../../src/assets/projects/farmigo/farmigo-m-4.png");
-    }
-  }
-  &.farmigo-m-5 {
-    .image-background {
-      background-image: url("../../src/assets/projects/farmigo/farmigo-m-5.png");
-    }
-  }
-  //INSTRUCTRR
-  &.instructrr-1 {
-    .image-background {
-      background-image: url("../../src/assets/projects/instructrr/instructrr-1.png");
-    }
-  }
-  &.instructrr-2 {
-    .image-background {
-      background-image: url("../../src/assets/projects/instructrr/instructrr-2.png");
-    }
-  }
-  &.instructrr-3 {
-    .image-background {
-      background-image: url("../../src/assets/projects/instructrr/instructrr-3.png");
-    }
-  }
-  //ABOUT
-  &.zach-member {
-    .image-background {
-      background-image: url("../../src/assets/team/zach.png");
-    }
-  }
-  &.adrian-member {
-    .image-background {
-      background-image: url("../../src/assets/team/adrian.png");
-    }
-  }
-  &.eugene-member {
-    .image-background {
-      background-image: url("../../src/assets/team/eugene.png");
-    }
-  }
-  &.alana-member {
-    .image-background {
-      background-image: url("../../src/assets/team/alana.png");
-    }
-  }
-  &.taylor-member {
-    .image-background {
-      background-image: url("../../src/assets/team/taylor.png");
-    }
-  }
-  //APPROACH
-  &.approach-1 {
-    .image-background {
-      background-image: url("../../src/assets/office/desk.jpg");
-    }
-  }
-  &.approach-2 {
-    .image-background {
-      background-image: url("../../src/assets/office/process.jpg");
-    }
-  }
-  &.approach-3 {
-    .image-background {
-      background-image: url("../../src/assets/office/intention.jpg");
-    }
-  }
-  &.approach-4 {
-    .image-background {
-      background-image: url("../../src/assets/office/office.jpg");
-    }
-  }
-}//iwt-container
 
 .featured-text {
   // height: 80vh;
@@ -1030,7 +853,7 @@ button:focus {
     .works-carousel-container {
       z-index: 5;
       .works-carousel-wrapper {
-        margin-top: $offsetValue;
+        margin-top: -$offsetValue;
         .carousel-label-slideUp {
           @include animation(.5s, 1s, carouselLabelSlideUp);
         }
@@ -1040,7 +863,7 @@ button:focus {
     padding: 0;
     &.pink {
       background: $pink;
-      color: $darkBlue;
+      color: $darkGreen;
       .member-image-container {
         background: $lightGreen;
       }
@@ -1102,7 +925,25 @@ button:focus {
         .works-carousel-wrapper {
           background: $darkGreen;
           .carousel-label {
-            background: $yellow;
+            background: $lightBlue;
+            .label-details, .label-arrow {
+            color: $darkGreen;
+            }
+          }
+        }
+      }
+    }
+    &.lightGrey {
+      background: $bgColorLightened;
+      color: $darkBlue;
+      .member-image-container {
+        background: $bgColorLight;
+      }
+      .works-carousel-container {
+        .works-carousel-wrapper {
+          background: $bgColorLight;
+          .carousel-label {
+            background: $lightBlue;
             .label-details, .label-arrow {
             color: $darkGreen;
             }
@@ -1158,6 +999,7 @@ button:focus {
           font-family: $fontFamilyCond;
         }
         .member-text {
+          margin-top: -$lineHeightDesktop/2;
           font-size: $fontSizeDesktop;
           line-height: $lineHeightDesktop;
         }
@@ -1168,27 +1010,35 @@ button:focus {
       height: 100%;
       background: transparent !important;
       &.right {
+        .member-image-container-slide {
+          .image-wrapper {
+            transform: translateX(0%) !important;
+            transition: .5s $easing all;
+          }
+        }
         .image-wrapper {
+          transform: translateX(-100%);
           .image-background {
+            background-position: left;
           }
         }
       }
       &.left {
+        .member-image-container-slide {
+          .image-wrapper {
+            transform: translateX(0%) !important;
+            transition: .5s $easing all;
+          }
+        }
         .image-wrapper {
+          transform: translateX(100%);
           .image-background {
             background-position: right;
           }
         }
       }
-      .member-image-container-slide {
-        // .image-wrapper {
-        //   @include animation(.25s, 0, imageCoverSlideRight);
-        //   transform: translateX(0);
-        // }
-      }
       .image-wrapper {
         margin-top: -$offsetValue;
-        // transform: translateX(100%);
         .image-background {
           height: 80vh;
           width: 100%;
@@ -1210,6 +1060,70 @@ button:focus {
       .image-background {background-image: url("../../src/assets/team/taylor.png");}
     }
   }
+  &.project-text {
+    height: 100vh;
+    .works-carousel-container {
+      .works-carousel-wrapper {
+        margin-top: -$offsetValue;
+        .carousel-label-slideUp {
+          @include animation(.5s, .5s, carouselLabelSlideUp);
+        }
+      }
+    }
+  }
+  &.project-text-card {
+    .text-card {
+      width: 100%;
+      height: 100%;
+      // background: white;
+      .text-card-slide {
+        height: 100%; width: 100%;
+      }
+      &.left {
+        .text-card-slide {
+          .card-inner-wrapper {
+            transform: translateX(0%);
+            transition: .5s $easing all;
+            transition-delay: .75s;
+          }
+        }
+        .card-inner-wrapper {
+          transform: translateX(-100%);
+        }
+      }
+      &.right {}
+      .card-inner-wrapper {
+        margin-top: -$offsetValue;
+        height: 100%;
+        color: $darkBlue;
+        background: white;
+        padding: $buffer*6;
+        .status-items {
+          p {
+            font-size: $fontSizeDesktop;
+            font-weight: 500;
+          }
+        }
+        .services-list {
+          display: flex;
+          align-items: flex-end;
+          .services-list-content {
+            p {
+              font-size: $fontSizeDesktop;
+              font-weight: 500;
+            }
+            ul {
+              list-style-type: none;
+              margin: 0; padding: 0;
+              line-height: $lineHeight;
+              li {}
+            }
+          }
+        }
+      }
+    }
+  }
+
   &.big-statement {
     .text-body {
       text-align: center;
@@ -1244,6 +1158,7 @@ button:focus {
     }
     .text-statement {
       font-size: $fontSizeStatement;
+      font-family: $fontFamilyCond;
       line-height: $lineHeightStatement;
       @include breakpoint(sm) {
         padding: $buffer*2;

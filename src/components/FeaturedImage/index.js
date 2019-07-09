@@ -7,7 +7,7 @@ export default class FeaturedImage extends Component {
   render() {
     const { featuredFull, featuredFullProject, featuredFullMatte, featuredCenter, featuredLeft, featuredRight, className, projectName, projectCategory, projectIndustry, caption, destination, caseStudyName, style, anim} = this.props
     return (
-    <div className="margin-container" style={style}>
+    <div className="nomargin-container" style={style}>
       { featuredFullProject && projectName && projectCategory && projectIndustry &&
         <div className="container">
           <Grid className={`featured-image featured-full ${className}`} container>

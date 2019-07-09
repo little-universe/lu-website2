@@ -6,13 +6,13 @@ import {Link} from "react-router-dom";
 
 export default class FeaturedText extends Component {
     render() {
-        const { textWithList, textWithHeader, textWithCaption, textWithMotifRight, textWithMotifLeft, textBigStatement, list, header, caption, text, ctaLabel, textForMemberLeft, textForMemberRight, memberName, memberTitle, status, linkTo, linkName, className, style, anim, dominantColor } = this.props
+        const { textWithList, textWithHeader, textWithCaption, textWithMotifRight, textWithMotifLeft, textBigStatement, list, header, caption, text, ctaLabel, textForMemberLeft, textForMemberRight, memberName, memberTitle, textForProjectLeft, textForProjectRight, projectTitle, projectType, status, linkTo, linkName, className, style, anim, dominantColor, textWithCardRight } = this.props
         return (
             <div className="nomargin-container" style={style}>
                 {textWithList && list && text &&
                   <div classname="container">
                     <Grid container className={`featured-text text-with-list text-with-list-desktop ${className}`} justify="center" alignItems="center">
-                      <Grid item className="text-body" md={8} xs={12} justify="center" alignItems="center">
+                      <Grid item className="text-body" md={12} xs={12} justify="center" alignItems="center">
                         <Grid container justify="center" alignItems="flex-start">
                           <Grid item className="text-list" md={2} xs={12}>
                             <ul>
@@ -102,6 +102,7 @@ export default class FeaturedText extends Component {
                 { textForMemberLeft && memberTitle && memberName && text && dominantColor &&
                   <div classname="nomargin-container">
                   <Grid container className={`featured-text member-text color-text ${className} ${dominantColor}`} alignItems="center">
+                    <Grid item md={1}/>
                     <Grid item className="text-body" md={6} justify="center">
                       <Reveal effect="text-body-slide">
                         <Grid item className="text-statement" md={8} xs={12}>
@@ -111,7 +112,6 @@ export default class FeaturedText extends Component {
                         </Grid>
                       </Reveal>
                     </Grid>
-                    <Grid item md={1}/>
                     <Grid item md={5} xs={6} className="member-image-container left">
                       <Reveal effect="member-image-container-slide">
                         <Grid item className="image-wrapper" md={12} alignItems="center">
@@ -127,21 +127,95 @@ export default class FeaturedText extends Component {
                 { textForMemberRight && memberTitle && memberName && text && dominantColor &&
                   <div classname="nomargin-container">
                   <Grid container className={`featured-text member-text color-text ${className} ${dominantColor}`} alignItems="center">
-                  <Grid item md={5} xs={6} className="member-image-container right">
-                    <Reveal effect="member-image-container-slide">
-                      <Grid item className="image-wrapper" md={12} alignItems="center">
-                        <Grid container justify="center" alignItems="center">
-                          <Grid item className="image-background image-background-full" md={12}></Grid>
+                    <Grid item md={5} xs={6} className="member-image-container right">
+                      <Reveal effect="member-image-container-slide">
+                        <Grid item className="image-wrapper" md={12} alignItems="center">
+                          <Grid container justify="center" alignItems="center">
+                            <Grid item className="image-background image-background-full" md={12}></Grid>
+                          </Grid>
                         </Grid>
-                      </Grid>
-                    </Reveal>
-                  </Grid>
-                  <Grid item md={1}/>
+                      </Reveal>
+                    </Grid>
                     <Grid item className="text-body" md={6} justify="center">
                       <Reveal effect="text-body-slide">
                         <Grid item className="text-statement" md={8} xs={12}>
                           <div className="member-title">{memberTitle}</div>
                           <div className="member-name">{memberName}</div>
+                          <div className="member-text">{text}</div>
+                        </Grid>
+                      </Reveal>
+                    </Grid>
+                  </Grid>
+                  </div>
+                }
+                { textForProjectLeft && projectType && projectTitle && text && dominantColor &&
+                  <div classname="nomargin-container">
+                  <Grid container className={`featured-text project-text member-text color-text ${className} ${dominantColor}`} alignItems="center">
+                    <Grid item className="text-body" md={6} justify="center">
+                      <Reveal effect="text-body-slide">
+                        <Grid item className="text-statement" md={8} xs={12}>
+                          <div className="member-title">{projectType}</div>
+                          <div className="member-name">{projectTitle}</div>
+                          <div className="member-text">{text}</div>
+                        </Grid>
+                      </Reveal>
+                    </Grid>
+                    <Grid item md={1}/>
+                    <Grid item md={5} xs={6} className="works-carousel-container right">
+                      <Reveal effect="works-carousel-container-slide">
+                        <WorksCarousel className="movements" ctaLabel={ctaLabel}/>
+                      </Reveal>
+                    </Grid>
+                  </Grid>
+                  </div>
+                }
+                { textForProjectRight && projectType && projectTitle && text && dominantColor &&
+                  <div classname="nomargin-container">
+                  <Grid container className={`featured-text project-text member-text color-text ${className} ${dominantColor}`} alignItems="center">
+                    <Grid item md={5} xs={6} className="works-carousel-container left">
+                      <Reveal effect="works-carousel-container-slide">
+                        <WorksCarousel className="movements" ctaLabel={ctaLabel}/>
+                      </Reveal>
+                    </Grid>
+                    <Grid item md={1}/>
+                    <Grid item className="text-body" md={6} justify="center">
+                      <Reveal effect="text-body-slide">
+                        <Grid item className="text-statement" md={8} xs={12}>
+                          <div className="member-title">{projectType}</div>
+                          <div className="member-name">{projectTitle}</div>
+                          <div className="member-text">{text}</div>
+                        </Grid>
+                      </Reveal>
+                    </Grid>
+                  </Grid>
+                  </div>
+                }
+                { textWithCardRight && projectType && projectTitle && text && dominantColor && list &&
+                  <div classname="nomargin-container">
+                  <Grid container className={`featured-text project-text-card member-text color-text ${className} ${dominantColor}`} alignItems="center">
+                    <Grid item md={5} xs={6} className="text-card left">
+                      <Reveal effect="text-card-slide">
+                        <Grid container className="card-inner-wrapper">
+                          <Grid item md={12} className="status-items"><p>{status}</p></Grid>
+                          <Grid item md={12} className="services-list">
+                            <div className="services-list-content">
+                              <p>Services</p>
+                              <ul>
+                                { list.map((listItem) =>
+                                  <li>{listItem}</li>
+                                )}
+                              </ul>
+                            </div>
+                          </Grid>
+                        </Grid>
+                      </Reveal>
+                    </Grid>
+                    <Grid item md={1}/>
+                    <Grid item className="text-body" md={6} justify="center">
+                      <Reveal effect="text-body-slide">
+                        <Grid item className="text-statement" md={8} xs={12}>
+                          <div className="member-title">{projectType}</div>
+                          <div className="member-name">{projectTitle}</div>
                           <div className="member-text">{text}</div>
                         </Grid>
                       </Reveal>
