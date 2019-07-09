@@ -6,7 +6,7 @@ import {Link} from "react-router-dom";
 
 export default class FeaturedText extends Component {
     render() {
-        const { textWithList, textWithHeader, textWithCaption, textWithMotifRight, textWithMotifLeft, textBigStatement, list, header, caption, text, ctaLabel, textForMemberLeft, textForMemberRight, memberName, memberTitle, textForProjectLeft, textForProjectRight, projectTitle, projectType, status, linkTo, linkName, className, style, anim, dominantColor, textWithCardRight } = this.props
+        const { textWithList, textWithHeader, textWithCaption, textWithMotifRight, textWithMotifLeft, textBigStatement, list, header, caption, text, ctaLabel, textForMemberLeft, textForMemberRight, memberName, memberTitle, textForProjectLeft, textForProjectRight, textForProductImageLeft, textForProductImageRight, projectTitle, projectType, status, linkTo, linkName, className, style, anim, dominantColor, textWithCardRight } = this.props
         return (
             <div className="nomargin-container" style={style}>
                 {textWithList && list && text &&
@@ -52,14 +52,13 @@ export default class FeaturedText extends Component {
                 }
                 {textWithHeader && header && text &&
                   <div classname="container">
-                    <Grid container className={`featured-text text-with-list ${className}`} justify="center" alignItems="center">
+                    <Grid container className={`featured-text text-with-header ${className}`} justify="center" alignItems="center">
                       <Grid item className="text-body" md={8} xs={12} justify="center" alignItems="center">
                         <Grid container justify="center" alignItems="flex-start">
-                          <Grid item className="text-header" md={2} xs={12}>
+                          <Grid item className="text-header" md={12} xs={12}>
                             {header}
                           </Grid>
-                          <Grid item md={2} xs={0}></Grid>
-                          <Grid item className="text-statement" md={8} xs={12}>{text}</Grid>
+                          <Grid item className="text-statement" md={12} xs={12}>{text}</Grid>
                         </Grid>
                       </Grid>
                     </Grid>
@@ -217,6 +216,52 @@ export default class FeaturedText extends Component {
                           <div className="member-title">{projectType}</div>
                           <div className="member-name">{projectTitle}</div>
                           <div className="member-text">{text}</div>
+                        </Grid>
+                      </Reveal>
+                    </Grid>
+                  </Grid>
+                  </div>
+                }
+                { textForProductImageLeft && header && text && dominantColor &&
+                  <div classname="nomargin-container">
+                  <Grid container className={`featured-text project-text-image color-text ${className} ${dominantColor}`} alignItems="center">
+                    <Grid item className="text-body" md={6} justify="center">
+                      <Reveal effect="text-body-slide">
+                        <Grid item className="text-statement" md={8} xs={12}>
+                          <div className="image-title">{header}</div>
+                          <div className="image-text">{text}</div>
+                        </Grid>
+                      </Reveal>
+                    </Grid>
+                    <Grid item md={6} xs={6} className="product-image-container left">
+                      <Reveal effect="product-image-container-slide">
+                        <Grid item className="image-wrapper" md={12} alignItems="center">
+                          <Grid container justify="center" alignItems="center">
+                            <Grid item className="image-background image-background-full" md={12}></Grid>
+                          </Grid>
+                        </Grid>
+                      </Reveal>
+                    </Grid>
+                  </Grid>
+                  </div>
+                }
+                { textForProductImageRight && header && text && dominantColor &&
+                  <div classname="nomargin-container">
+                  <Grid container className={`featured-text project-text-image color-text ${className} ${dominantColor}`} alignItems="center">
+                    <Grid item md={6} xs={6} className="product-image-container right">
+                      <Reveal effect="product-image-container-slide">
+                        <Grid item className="image-wrapper" md={12} alignItems="center">
+                          <Grid container justify="center" alignItems="center">
+                            <Grid item className="image-background image-background-full" md={12}></Grid>
+                          </Grid>
+                        </Grid>
+                      </Reveal>
+                    </Grid>
+                    <Grid item className="text-body" md={6} justify="center">
+                      <Reveal effect="text-body-slide">
+                        <Grid item className="text-statement" md={8} xs={12}>
+                          <div className="image-title">{header}</div>
+                          <div className="image-text">{text}</div>
                         </Grid>
                       </Reveal>
                     </Grid>

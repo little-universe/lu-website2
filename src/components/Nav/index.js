@@ -30,19 +30,19 @@ export default class Nav extends Component {
   }
 
   // Hide or show the menu.
-  // handleScroll = () => {
-  //   const { prevScrollpos } = this.state;
-  //
-  //   const currentScrollPos = window.pageYOffset;
-  //   const visible = prevScrollpos > currentScrollPos;
-  //   const scrolledUp = prevScrollpos > currentScrollPos;
-  //
-  //   this.setState({
-  //     prevScrollpos: currentScrollPos,
-  //     visible,
-  //     scrolledUp
-  //   });
-  // };
+  handleScroll = () => {
+    const { prevScrollpos } = this.state;
+
+    const currentScrollPos = window.pageYOffset;
+    const visible = prevScrollpos > currentScrollPos;
+    const scrolledUp = prevScrollpos > currentScrollPos;
+
+    this.setState({
+      prevScrollpos: currentScrollPos,
+      visible,
+      scrolledUp
+    });
+  };
 
 
 getInitialState(){
@@ -63,7 +63,7 @@ toggleSidenav = () => {
 
     return (
       <>
-      <Reveal effect="nav-animation">
+
       <div className={classnames("nav", "nav-desktop",{
           "is-collapsed": !this.state.visible
         }, {"is-uncollapsed" : this.state.scrolledUp})}>
@@ -95,7 +95,7 @@ toggleSidenav = () => {
           </Link>
         </ul>
       </div>
-      </Reveal>
+
       <div className={`nav nav-mobile ${this.state.showHideSidenav}`} onClick={this.toggleSidenav}>
         <Fade top distance="10px" duration={500} delay={250}>
         <div className="" onClick={this.toggleSidenav}>

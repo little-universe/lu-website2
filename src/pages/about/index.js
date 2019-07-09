@@ -3,7 +3,6 @@ import Hero from '../../components/Hero';
 import WorkTogether from '../../components/WorkTogether';
 import FeaturedImage from '../../components/FeaturedImage';
 import FeaturedText from '../../components/FeaturedText';
-import ImageWithText from '../../components/ImageWithText';
 import Footer from '../../components/Footer';
 import { preloadImage } from '../../preload'
 
@@ -40,8 +39,10 @@ class About extends Component {
         />
         <FeaturedText textForMemberLeft className="adrian-member" memberTitle="Founder" memberName="Adrian Del Balso" text="Movements need fast, responsive, deeply knowledgeable technologists who can build world class products that connect the dots, meet real, immediate needs, and deliver impact as efficiently as possible—they need custom solutions that don't break the bank." dominantColor="darkBlue"/>
         <FeaturedText textForMemberRight className="zach-member" memberTitle="Founder" memberName="Zach Smith" text="Movements need fast, responsive, deeply knowledgeable technologists who can build world class products that connect the dots, meet real, immediate needs, and deliver impact as efficiently as possible—they need custom solutions that don't break the bank." dominantColor="lightBlue"/>
+        <FeaturedText textBigStatement text="We are partners, not vendors."/>
         <FeaturedText textForMemberLeft className="alana-member" memberTitle="Senior Developer" memberName="Alana Simoncelli" text="Movements need fast, responsive, deeply knowledgeable technologists who can build world class products that connect the dots, meet real, immediate needs, and deliver impact as efficiently as possible—they need custom solutions that don't break the bank." dominantColor="pink"/>
         <FeaturedText textForMemberRight className="taylor-member" memberTitle="Senior Designer" memberName="Taylor Zanke" text="Movements need fast, responsive, deeply knowledgeable technologists who can build world class products that connect the dots, meet real, immediate needs, and deliver impact as efficiently as possible—they need custom solutions that don't break the bank." dominantColor="yellow"/>
+        <FeaturedText textBigStatement text="We are partners, not vendors."/>
         <WorkTogether headline="Lets Work Together"/>
         <Footer/>
       </>
