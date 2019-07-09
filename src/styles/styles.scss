@@ -1140,12 +1140,13 @@ button:focus {
         margin-top: -$offsetValue;
         .image-background {
           height: 80vh;
-          width: 100%;
+          max-width: 80%;
           background-size: contain;
           background-repeat: no-repeat;
         }
       }
     }
+    //MOTIVOTE
     &.motivote-1 {
       .image-wrapper {
         background: $yellow;
@@ -1156,6 +1157,31 @@ button:focus {
       .image-wrapper {
         background: $lightBlue;
         .image-background {background-image: url("../../src/assets/projects/motivote/motivote-2.png");}
+      }
+    }
+    //BETTERFIN
+    &.betterfin-1 {
+      .image-wrapper {
+        background: $yellow;
+        .image-background {background-image: url("../../src/assets/projects/betterfin/betterfin-1.png");}
+      }
+    }
+    &.betterfin-2 {
+      .image-wrapper {
+        background: $lightGreen;
+        .image-background {background-image: url("../../src/assets/projects/betterfin/betterfin-2.png");}
+      }
+    }
+    &.betterfin-3 {
+      .image-wrapper {
+        background: $lightGreen;
+        .image-background {background-image: url("../../src/assets/projects/betterfin/betterfin-3.png");}
+      }
+    }
+    &.betterfin-4 {
+      .image-wrapper {
+        background: $lightGreen;
+        .image-background {background-image: url("../../src/assets/projects/betterfin/betterfin-4.png");}
       }
     }
   }
