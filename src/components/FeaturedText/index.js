@@ -6,7 +6,7 @@ import {Link} from "react-router-dom";
 
 export default class FeaturedText extends Component {
     render() {
-        const { textWithList, textWithHeader, textWithCaption, textWithMotifRight, textWithMotifLeft, textBigStatement, list, header, caption, text, ctaLabel, textForMemberLeft, textForMemberRight, memberName, memberTitle, textForProjectLeft, textForProjectRight, textForProductImageLeft, textForProductImageRight, projectTitle, projectType, status, linkTo, linkName, className, style, anim, dominantColor, textWithCardRight } = this.props
+        const { textWithList, textWithHeader, textWithCaption, quoteTextRight, textWithMotifRight, textWithMotifLeft, textBigStatement, list, header, caption, text, ctaLabel, textForMemberLeft, textForMemberRight, memberName, memberTitle, textForProjectLeft, textForProjectRight, textForProductImageLeft, textForProductImageRight, projectTitle, projectType, status, linkTo, linkName, className, style, anim, dominantColor, textWithCardRight } = this.props
         return (
             <div className="nomargin-container" style={style}>
                 {textWithList && list && text &&
@@ -70,6 +70,27 @@ export default class FeaturedText extends Component {
                       <Grid item className="text-body" md={6} justify="center">
                         <Reveal effect="text-body-slide">
                           <Grid item className="text-statement" md={8} xs={12}>{text}</Grid>
+                        </Reveal>
+                      </Grid>
+                      <Grid item md={1} xs={12}/>
+                      <Grid item md={5} xs={12} className="works-carousel-container right">
+                        <Reveal effect="works-carousel-container-slide">
+                          <WorksCarousel className="movements" ctaLabel={ctaLabel}/>
+                        </Reveal>
+                      </Grid>
+                    </Grid>
+                  </div>
+                }
+                { quoteTextRight && text && dominantColor && ctaLabel &&
+                  <div classname="nomargin-container">
+                    <Grid container className={`featured-text color-text quote-text ${className} ${dominantColor}`} alignItems="center">
+                      <Grid item className="text-body" md={6} justify="center">
+                        <Reveal effect="text-body-slide">
+                          <Grid item className="text-statement" md={8} xs={12}>
+                          <p className="quote-header">People talk.</p>
+                            "{text}"
+                            <p className="quote-author">Jedd Countey <br/>Founder, Strive Digital</p>
+                          </Grid>
                         </Reveal>
                       </Grid>
                       <Grid item md={1} xs={12}/>

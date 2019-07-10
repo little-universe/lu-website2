@@ -35,7 +35,7 @@ class Homepage extends Component {
             <Grid item md={4} xs={12}><ProductFeatured className="messaging-infrastructure" productName="Data + Infrastructure" productDescription="Get more out of your data with advanced architecture and machine learning."/></Grid>
           </Grid>
         </Grid>
-        <FeaturedText textWithMotifRight text="'Little Universe was a game-changer for Strive Digital. As a young startup, we needed an agency that could step in and make an immediate impact. Perfectly balancing strategy with execution, they went far beyond our expectations by establishing a strategic foundation and product vision we're still benefitting from today.'" dominantColor="pink" ctaLabel="Read the Case Study"/>
+        <FeaturedText quoteTextRight text="Little Universe was a game-changer for Strive Digital. As a young startup, we needed an agency that could step in and make an immediate impact. Perfectly balancing strategy with execution, they went far beyond our expectations by establishing a strategic foundation and product vision we're still benefitting from today." dominantColor="pink" ctaLabel="Read the Case Study"/>
         <FeaturedText textBigStatement text="We're organizers, not vendors."/>
         <FeaturedText textWithMotifLeft text="We are a team of  designers, engineers, data scientists, and organizers with deep experience in both high-tech startups and high-stakes campaigns. We're working to democratize innovation so that more campaigns and organizations have the tools they need to win, at the moment they need them most." dominantColor="darkBlue" ctaLabel="Learn More About Us"/>
 

@@ -1091,6 +1091,27 @@ button:focus {
       position: relative;
     }
   }//color-text
+  &.quote-text {
+    .text-body {
+      .text-statement {
+        .quote-header {
+          font-size: $fontSizeDesktop;
+          font-family: $fontFamily;
+          color: lighten($pink, 10%);
+          @include breakpoint(sm) {
+            font-size: $fontSizeMobile;
+          }
+        }
+        .quote-author {
+          font-size: $fontSizeDesktop;
+          font-family: $fontFamily;
+          line-height: $lineHeightDesktop;
+          // color: lighten($pink, 10%);
+        }
+      }
+      .works-carousel-container {}
+    }
+  }
   &.member-text {
     height: auto !important;
     .text-body {
