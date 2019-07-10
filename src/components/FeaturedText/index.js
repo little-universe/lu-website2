@@ -6,7 +6,7 @@ import {Link} from "react-router-dom";
 
 export default class FeaturedText extends Component {
     render() {
-        const { textWithList, textWithHeader, textWithCaption, quoteTextRight, textWithMotifRight, textWithMotifLeft, textBigStatement, list, header, caption, text, ctaLabel, textForMemberLeft, textForMemberRight, memberName, memberTitle, textForProjectLeft, textForProjectRight, textForProductImageLeft, textForProductImageRight, projectTitle, projectType, status, linkTo, linkName, className, style, anim, dominantColor, textWithCardRight, destination } = this.props
+        const { textWithList, textWithHeader, textWithCaption, quoteTextRight, textWithMotifRight, textWithMotifLeft, textBigStatement, list, header, caption, text, ctaLabel, textForMemberLeft, textForMemberRight, memberName, memberTitle, textForProjectLeft, textForProjectRight, textForProductImageLeft, textForProductImageRight, projectTitle, projectType, status, linkTo, linkName, className, style, anim, dominantColor, textWithCardRight, destination, textLongStatement } = this.props
         return (
             <div className="nomargin-container" style={style}>
                 {textWithList && list && text &&
@@ -295,6 +295,26 @@ export default class FeaturedText extends Component {
                   <div classname="nomargin-container">
                     <Grid container className={`featured-text big-statement ${className}`} alignItems="center">
                       <Grid item className="text-body" md={12} justify="center"><p>{text}</p></Grid>
+                    </Grid>
+                  </div>
+                }
+                { textLongStatement && list &&
+                  <div classname="nomargin-container">
+                    <Grid container className={`featured-text long-statement ${className}`} alignItems="center">
+                      <Grid item className="text-body" md={8} justify="center">
+                      { list.map((listItem) =>
+                        <p>{listItem}</p>
+                      )}
+                      </Grid>
+                      <Grid item className="text-group-image" md={10}>
+                      <Reveal effect="text-group-image-slide">
+                        <Grid item className="image-wrapper" md={12} alignItems="center">
+                          <Grid container justify="center" alignItems="center">
+                            <Grid item className="image-background image-background-full" md={12}></Grid>
+                          </Grid>
+                        </Grid>
+                      </Reveal>
+                      </Grid>
                     </Grid>
                   </div>
                 }

@@ -1597,6 +1597,34 @@ button:focus {
       }
     }
   }//big-statement
+  &.long-statement {
+    display: flex;
+    justify-content: center;
+    padding: $buffer*6;
+    background: $bgColorLightened;
+    color: $darkBlue;
+    .text-body {
+      font-size: $fontSizeDesktop;
+      line-height: $lineHeightDesktop;
+      @include breakpoint(sm) {
+        font-size: $fontSizeMobile;
+        line-height: $lineHeightMobile;
+      }
+    }
+    .text-group-image {
+      .text-group-image-slide {
+        height: 100%; width: 100%;
+        .image-wrapper {
+          background: blue;
+          height: 100%;
+          width: 100%;
+          .image-background {
+
+          }
+        }
+      }
+    }
+  }
   &.text-with-list-mobile {
     display: none;
   }
