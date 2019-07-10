@@ -89,9 +89,9 @@ toggleSidenav = () => {
             // onClick={() => onRouteChange('approach')}
             onMouseEnter={() => onHovered('approach')}
             onMouseLeave={() => onHovered('')}
-            to="/approach"
+            to="/work-with-us"
             className={`nav-link ${location.pathname === "/approach" && "active"}`} href="">
-              <li className="nav-item">Approach</li>
+              <li className="nav-item">Work With Us</li>
           </Link>
         </ul>
       </div>
@@ -122,10 +122,10 @@ toggleSidenav = () => {
               <li className="menu-list-item">About Us</li>
             </Link>
             <Link
-              to="/approach"
-              className={`menu-nav-link ${location.pathname === "/approach" && "active"}`} href=""
+              to="/work-with-us"
+              className={`menu-nav-link ${location.pathname === "/work-with-us" && "active"}`} href=""
             >
-              <li className="menu-list-item">Approach</li>
+              <li className="menu-list-item">Work With Us</li>
             </Link>
           </ul>
           </Fade>
