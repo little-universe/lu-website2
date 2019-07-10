@@ -7,7 +7,7 @@ import Reveal from 'react-reveal/Reveal';
 
 export default class WorksCarousel extends Component {
   render() {
-    const { className, projectName, projectCategory, projectDescription, projectIndustry, destination, caseStudyName, ctaLabel, style, anim} = this.props
+    const { className, projectName, projectCategory, projectStatement, projectIndustry, destination, caseStudyName, ctaLabel, style, anim} = this.props
     return (
     <>
       { projectName && projectCategory && projectIndustry &&
@@ -21,7 +21,7 @@ export default class WorksCarousel extends Component {
         <Reveal effect="carousel-label-slideUp">
           <Grid className={`carousel-label`} container>
               <Grid item className="label-row" md={12}>
-                <div className="label-details">{projectName} <span>• {projectDescription}</span></div>
+                <div className="label-details">{projectName} <span>• {projectStatement}</span></div>
                 <div className="label-arrow"><ArrowRight size={20}/></div>
               </Grid>
           </Grid>
