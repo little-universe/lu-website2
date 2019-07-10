@@ -12,6 +12,7 @@ import Farmigo from './pages/farmigo';
 import Instructrr from './pages/instructrr';
 import About from './pages/about';
 import Approach from './pages/approach';
+import WorkWithUs from './pages/work-with-us';
 import Logo from './components/Logo';
 import Nav from './components/Nav';
 import { freezeAnimation } from './orbit'
@@ -99,6 +100,7 @@ class App extends Component {
           <Route path="/work" component={Work}/>
           <Route path="/about" component={About}/>
           <Route path="/approach" component={Approach}/>
+          <Route path="/work-with-us" component={WorkWithUs}/>
           <Route path="/betterfin" component={Betterfin}/>
           <Route path="/strive" component={Strive}/>
           <Route path="/motivote" component={Motivote}/>

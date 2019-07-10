@@ -6,7 +6,7 @@ import { Mail } from "react-feather";
 
 export default class WorkTogether extends Component {
     render() {
-        const { className, headline } = this.props
+        const { className, headline, fullHeight } = this.props
         return (
             <>
                 {headline &&
