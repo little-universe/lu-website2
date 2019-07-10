@@ -26,15 +26,16 @@ class Homepage extends Component {
         />
         <Grid container className="page-section products-section">
           <Grid container className="section-head">
-            <Grid item md={4}><p>We build products and integrations progressive organizations need whether they ask us to or not.</p></Grid>
+            { /* <Grid item md={6}><p>We identify gaps between the tech you use and the results you need, and build efficient solutions that help you win.</p></Grid> */ }
+            <Grid item md={4}><p>We identify opportunities for innovation to make the difference that helps you win.</p></Grid>
           </Grid>
           <Grid container className="section-body">
-            <Grid item md={4} xs={12}><ProductFeatured className="sentiment-analysis" productName="Sentiment Analysis" productDescription="Built on the Strive Platform to track sentiment of sent messages."/></Grid>
-            <Grid item md={4} xs={12}><ProductFeatured className="data-tracking" productName="Data Tracking" productDescription="Built on the Strive Platform to track sentiment of sent messages."/></Grid>
-            <Grid item md={4} xs={12}><ProductFeatured className="messaging-infrastructure" productName="Messaging Infrastructure" productDescription="Built on the Strive Platform to track sentiment of sent messages."/></Grid>
+            <Grid item md={4} xs={12}><ProductFeatured className="sentiment-analysis" productName="Product Strategy" productDescription="Are there gaps between the tech you use and the results you need?"/></Grid>
+            <Grid item md={4} xs={12}><ProductFeatured className="data-tracking" productName="Design + Engineering" productDescription="Full stack and flexible, we can be your technical team or augment the one you have."/></Grid>
+            <Grid item md={4} xs={12}><ProductFeatured className="messaging-infrastructure" productName="Data + Infrastructure" productDescription="Get more out of your data with advanced architecture and machine learning."/></Grid>
           </Grid>
         </Grid>
-        <FeaturedText textWithMotifRight text="Movements need fast, responsive, deeply knowledgeable technologists who can build world class products that connect the dots, meet real, immediate needs, and deliver impact as efficiently as possible—they need custom solutions that don't break the bank." dominantColor="pink" ctaLabel="Meet Our Team"/>
+        <FeaturedText textWithMotifRight text="The greatest innovations in organizing technology during the last decade have come during big, important campaigns, fueled by the energy and urgency of the moment, built by talented teams with a shared purpose." dominantColor="pink" ctaLabel="Meet Our Team"/>
         <FeaturedText textBigStatement text="We are partners, not vendors."/>
         <FeaturedText textWithMotifLeft text="We don’t believe impact is achieved by raising tons of money to build and scale products. While vendors are trying to optimize for profitability and expand into other markets to keep up with their burn rate and appease investors, we are already building 5 other things that progressive orgs need." dominantColor="darkBlue" ctaLabel="See What We've Built"/>
         <FeaturedText textBigStatement text="Consider us your front lines."/>
