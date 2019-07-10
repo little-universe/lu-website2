@@ -43,7 +43,7 @@ class About extends Component {
         <FeaturedText textForMemberLeft className="alana-member" memberTitle="Senior Developer" memberName="Alana Simoncelli" text="Movements need fast, responsive, deeply knowledgeable technologists who can build world class products that connect the dots, meet real, immediate needs, and deliver impact as efficiently as possible—they need custom solutions that don't break the bank." dominantColor="pink"/>
         <FeaturedText textForMemberRight className="taylor-member" memberTitle="Senior Designer" memberName="Taylor Zanke" text="Movements need fast, responsive, deeply knowledgeable technologists who can build world class products that connect the dots, meet real, immediate needs, and deliver impact as efficiently as possible—they need custom solutions that don't break the bank." dominantColor="yellow"/>
         <FeaturedText textBigStatement text="We are partners, not vendors."/>
-        <WorkTogether headline="Lets Work Together"/>
+        <WorkTogether headline="Let's Work Together"/>
         <Footer/>
       </>
     )

@@ -35,7 +35,7 @@ class Instructrr extends Component {
             <FeaturedImage featuredFullMatte className="instructrr-5"/>
             <FeaturedImage featuredCenter className="strive-next" projectName="Strive Digital" projectCategory="Digital Product" projectIndustry="Advocacy Tech" destination="../strive" caseStudyName="caseStudyStrive"/>
 
-          <WorkTogether headline="Let's get to know each other"/>
+          <WorkTogether headline="Let's Work Together"/>
           </Fade>
           <Footer/>
       </>

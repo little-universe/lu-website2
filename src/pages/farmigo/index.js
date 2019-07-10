@@ -36,7 +36,7 @@ class Farmigo extends Component {
             <FeaturedText textWithHeader header="Packing, Shipping, Handing Off" text="Farmigo's fulfillment team needed to keep up to demand in order to ensure orders were being packed and delivered to be picked up on time. In order to help with this process we designed a UI for in-house use which tracked how far ahead or behind food was being packed."/>
             <FeaturedImage featuredFullMatte className="farmigo-4"/>
             <FeaturedImage featuredCenter className="instructrr-next" projectName="Instructrr" projectCategory="Mobile Application" projectIndustry="Fitness" destination="../instructrr" caseStudyName="caseStudyInstructrr"/>
-          <WorkTogether headline="Let's get to know each other"/>
+          <WorkTogether headline="Let's Work Together"/>
           </Fade>
           <Footer/>
       </>

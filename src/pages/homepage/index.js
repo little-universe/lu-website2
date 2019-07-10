@@ -56,7 +56,7 @@ class Homepage extends Component {
             </Grid>
           </Grid>
         </Grid>
-        <WorkTogether headline="Lets Work Together"/>
+        <WorkTogether headline="Let's Work Together"/>
         <Footer/>
       </>
     )

@@ -32,7 +32,7 @@ class Strive extends Component {
           {/*<ImageWithText imageRight imageMatte className="strive-2" headline="Multi Channel" description="Strive allowed users to Design and develop custom messaging capabilities optimized for their needs, including powerful machine learning, platform extensions, and deep integrations with a CRM."/>*/}
           <FeaturedImage featuredFullMatte className="strive-3"/>
           <FeaturedImage featuredCenter className="motivote-next" projectName="Motivote" projectCategory="Digital Product" projectIndustry="Advocacy Tech" destination="../motivote" caseStudyName="caseStudyMotivote"/>
-        <WorkTogether headline="Let's get to know each other"/>
+        <WorkTogether headline="Let's Work Together"/>
         </Fade>
         <Footer/>
       </>

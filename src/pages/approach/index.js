@@ -35,7 +35,7 @@ class Approach extends Component {
           headline={<>We build trust for <span className="headline-emphasis">impact.</span></>}
           subhead="The most useful products are usually the ones you didnt know you needed, and that didnt exist when you started."
         />
-        <WorkTogether headline="Lets Work Together"/>
+        <WorkTogether headline="Let's Work Together"/>
         <Footer/>
       </>
     )

@@ -36,7 +36,7 @@ class Betterfin extends Component {
 
           <FeaturedImage featuredCenter className="votecrew-next" projectName="Vote Crew" projectCategory="Digital Product" projectIndustry="Advocacy Tech" destination="../votecrew" caseStudyName="caseStudyVotecrew"/>
 
-          <WorkTogether headline="Let's get to know each other"/>
+          <WorkTogether headline="Let's Work Together"/>
           <Footer/>
       </>
     )

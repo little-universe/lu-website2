@@ -35,7 +35,7 @@ class Motivote extends Component {
         <FeaturedImage featuredFullMatte className="motivote-5"/>
         <FeaturedImage featuredCenter className="betterfin-next" projectName="Betterfin" projectCategory="Digital Product" projectIndustry="Fintech" destination="../betterfin" caseStudyName="caseStudyBetterfin"/>
 
-        <WorkTogether headline="Let's get to know each other"/>
+        <WorkTogether headline="Let's Work Together"/>
         <Footer/>
       </>
     )
