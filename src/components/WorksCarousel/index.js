@@ -19,12 +19,14 @@ export default class WorksCarousel extends Component {
           </Grid>
         </Reveal>
         <Reveal effect="carousel-label-slideUp">
-          <Grid className={`carousel-label`} container>
-              <Grid item className="label-row" md={12}>
-                <div className="label-details">{projectName} <span>• {projectStatement}</span></div>
-                <div className="label-arrow"><ArrowRight size={20}/></div>
-              </Grid>
-          </Grid>
+          <Link to={destination} className="carousel-label-link">
+            <Grid className={`carousel-label`} container>
+                <Grid item className="label-row" md={12}>
+                  <div className="label-details">{projectName} <span>• {projectStatement}</span></div>
+                  <div className="label-arrow"><ArrowRight size={20}/></div>
+                </Grid>
+            </Grid>
+          </Link>
           </Reveal>
         </Grid>
       }
@@ -32,12 +34,14 @@ export default class WorksCarousel extends Component {
         <Grid className={`works-carousel-wrapper ${className}`} container>
           <Grid item md={12} className="image-background"></Grid>
           <Reveal effect="carousel-label-slideUp" >
-            <Grid className={`carousel-label`} container>
-                <Grid item className="label-row" md={12}>
-                  <div className="label-details">{ctaLabel}</div>
-                  <div className="label-arrow"><ArrowRight size={20}/></div>
-                </Grid>
-            </Grid>
+            <Link to={destination} className="carousel-label-link">
+              <Grid className={`carousel-label`} container>
+                  <Grid item className="label-row" md={12}>
+                    <div className="label-details">{ctaLabel}</div>
+                    <div className="label-arrow"><ArrowRight size={20}/></div>
+                  </Grid>
+              </Grid>
+            </Link>
           </Reveal>
         </Grid>
       }

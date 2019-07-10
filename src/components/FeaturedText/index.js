@@ -6,7 +6,7 @@ import {Link} from "react-router-dom";
 
 export default class FeaturedText extends Component {
     render() {
-        const { textWithList, textWithHeader, textWithCaption, quoteTextRight, textWithMotifRight, textWithMotifLeft, textBigStatement, list, header, caption, text, ctaLabel, textForMemberLeft, textForMemberRight, memberName, memberTitle, textForProjectLeft, textForProjectRight, textForProductImageLeft, textForProductImageRight, projectTitle, projectType, status, linkTo, linkName, className, style, anim, dominantColor, textWithCardRight } = this.props
+        const { textWithList, textWithHeader, textWithCaption, quoteTextRight, textWithMotifRight, textWithMotifLeft, textBigStatement, list, header, caption, text, ctaLabel, textForMemberLeft, textForMemberRight, memberName, memberTitle, textForProjectLeft, textForProjectRight, textForProductImageLeft, textForProductImageRight, projectTitle, projectType, status, linkTo, linkName, className, style, anim, dominantColor, textWithCardRight, destination } = this.props
         return (
             <div className="nomargin-container" style={style}>
                 {textWithList && list && text &&
@@ -168,7 +168,7 @@ export default class FeaturedText extends Component {
                   </Grid>
                   </div>
                 }
-                { textForProjectLeft && projectType && projectTitle && text && dominantColor &&
+                { textForProjectLeft && projectType && projectTitle && text && dominantColor && destination &&
                   <div classname="nomargin-container">
                   <Grid container className={`featured-text project-text member-text color-text ${className} ${dominantColor}`} alignItems="center">
                     <Grid item className="text-body" md={6} xs={12} justify="center">
@@ -183,7 +183,7 @@ export default class FeaturedText extends Component {
                     <Grid item md={1}/>
                     <Grid item md={5} xs={12} className="works-carousel-container right">
                       <Reveal effect="works-carousel-container-slide">
-                        <WorksCarousel className="movements" ctaLabel={ctaLabel}/>
+                        <WorksCarousel className="movements" ctaLabel={ctaLabel} destination={destination}/>
                       </Reveal>
                     </Grid>
                   </Grid>

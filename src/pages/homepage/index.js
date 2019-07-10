@@ -21,6 +21,7 @@ class Homepage extends Component {
           heroText
           featuredWorks
           className="homepage-hero"
+          destination="/motivote"
           headline={<>We're your <span className="headline-emphasis">innovation partner</span></>}
           subhead="Little Universe builds technology for the progressive movement."
         />

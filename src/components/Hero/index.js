@@ -7,10 +7,10 @@ import Reveal from 'react-reveal/Reveal';
 export default class Hero extends Component {
 
     render() {
-        const { heroText, heroImage, className, headline, subhead, projectName, projectCategory, projectIndustry, featuredWorks, secondaryHero, style, anim } = this.props
+        const { heroText, heroImage, className, headline, subhead, projectName, projectCategory, projectIndustry, featuredWorks, secondaryHero, style, anim, destination } = this.props
         return (
             <div className="nomargin-container" style={style}>
-                {heroText && headline && subhead && featuredWorks &&
+                {heroText && headline && subhead && featuredWorks && destination &&
                   <div classname="container">
                     <Grid className={`hero text-hero ${className}`} container alignItems="center">
                       <Grid item md={7} xs={12}  className="headline-text-container">
@@ -30,6 +30,7 @@ export default class Hero extends Component {
                             projectCategory="Digital Product"
                             projectStatement="Engaging young voters with behavioral design"
                             projectIndustry="Advocacy Tech"
+                            destination={destination}
                           />
                         </Reveal>
                       </Grid>

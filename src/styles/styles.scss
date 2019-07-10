@@ -1925,6 +1925,9 @@ button {
     flex-direction: column-reverse;
     overflow: hidden;
     position: relative;
+    .carousel-label-link {
+      text-decoration: none !important;
+    }
     @include breakpoint(sm) {
       height: 50vh;
       .image-background {
@@ -1935,6 +1938,8 @@ button {
       .carousel-label {
         .label-row {
           font-size: $fontSizeMobile !important;
+          .label-details {
+          }
         }
       }
     }
