@@ -497,6 +497,7 @@ button:focus {
         .subhead {
           font-size: $fontSizeDesktop;
           line-height: $lineHeightDesktop;
+          font-family: $fontFamily;
         }
       }
     }
@@ -1158,6 +1159,7 @@ button:focus {
       width: 100%;
       height: 100%;
       background: transparent !important;
+      @include breakpoint(sm) {height: auto !important;}
       &.right {
         .member-image-container-slide {
           .image-wrapper {
@@ -1168,7 +1170,10 @@ button:focus {
         .image-wrapper {
           transform: translateX(-100%);
           .image-background {
-            background-position: left;
+            background-position: left top;
+            @include breakpoint(sm) {
+              background-position: left !important;
+            }
           }
         }
       }
@@ -1182,12 +1187,18 @@ button:focus {
         .image-wrapper {
           transform: translateX(100%);
           .image-background {
-            background-position: right;
+            background-position: right top;
+            @include breakpoint(sm) {
+              background-position: right !important;
+            }
           }
         }
       }
       .image-wrapper {
         margin-top: -$offsetValue;
+        @include breakpoint(sm) {
+          margin-top: 0 !important; 
+        }
         .image-background {
           height: 80vh;
           width: 100%;
