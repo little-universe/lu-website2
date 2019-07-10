@@ -885,6 +885,26 @@ button:focus {
   padding: $buffer*10 0;
   position: relative;
   overflow: visible;
+  @include breakpoint(sm) {
+    padding: 0;
+    .text-body {
+    height: 50% !important;
+    .text-header {}
+    .text-statement {
+      font-size: $fontSizeMobile !important;
+      line-height: $lineHeightMobile !important;
+      display: flex;
+      align-items: center;
+      padding: $buffer*6 $buffer*3 !important;
+    }
+    }
+    .works-carousel-container {
+      height: 50% !important;
+      .works-carousel-wrapper {
+        margin-top: 0 !important;
+      }
+    }
+  }
   &.text-with-header {
     background: $bgColorLightened;
     color: $darkBlue;
@@ -911,6 +931,9 @@ button:focus {
           @include animation(.5s, 1s, carouselLabelSlideUp);
         }
       }
+    }
+    @include breakpoint(sm) {
+      height: auto;
     }
     height: 80vh;
     padding: 0;
@@ -1296,13 +1319,16 @@ button:focus {
       text-align: center;
       font-size: $fontSizeHeadline;
       font-family: $fontFamilyCond;
+      @include breakpoint(sm) {
+        font-size: $fontSizeHeadlineMobile;
+      }
     }
   }//big-statement
   &.text-with-list-mobile {
     display: none;
   }
   @include breakpoint(sm) {
-    margin: $buffer*5 0;
+    padding: $buffer*5 $buffer*3;
     &.text-with-list-desktop {
       display: none;
     }
@@ -1591,7 +1617,6 @@ button {
     @include breakpoint(sm) {
       height: 50vh;
       .image-background {
-        top: -5vh;
       }
       .carousel-indicators {
         display: none;

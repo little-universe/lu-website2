@@ -72,8 +72,8 @@ export default class FeaturedText extends Component {
                           <Grid item className="text-statement" md={8} xs={12}>{text}</Grid>
                         </Reveal>
                       </Grid>
-                      <Grid item md={1}/>
-                      <Grid item md={5} xs={6} className="works-carousel-container right">
+                      <Grid item md={1} xs={12}/>
+                      <Grid item md={5} xs={12} className="works-carousel-container right">
                         <Reveal effect="works-carousel-container-slide">
                           <WorksCarousel className="movements" ctaLabel={ctaLabel}/>
                         </Reveal>
@@ -84,7 +84,7 @@ export default class FeaturedText extends Component {
                 { textWithMotifLeft && text && dominantColor && ctaLabel &&
                   <div classname="nomargin-container">
                     <Grid container className={`featured-text color-text color-text-right ${className} ${dominantColor}`} alignItems="center">
-                      <Grid item md={5} xs={6} className="works-carousel-container left">
+                      <Grid item md={5} xs={12} className="works-carousel-container left">
                         <Reveal effect="works-carousel-container-slide">
                           <WorksCarousel fromRight className="movements" ctaLabel={ctaLabel}/>
                         </Reveal>
