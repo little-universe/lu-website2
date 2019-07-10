@@ -43,21 +43,21 @@ class Homepage extends Component {
         <FeaturedText textBigStatement text="There is no recipe for change."/>
           <Grid container className="page-section what-we-do">
           <Grid container className="section-body">
-            <Grid item md={4} className="service-card">
+            <Grid item md={4} xs={12} className="service-card">
               <div className="card-header">Digital</div>
               <div className="card-expanded">We do it all: Design, Development, Data, and everything in between. Build the tools you need to succeed.</div>
             </Grid>
-            <Grid item md={4} className="service-card">
+            <Grid item md={4} xs={12} className="service-card">
               <div className="card-header">Strategy</div>
               <div className="card-expanded">Getting you from A to B, means thinking about Z. We're your technical advocate so you know where to make the call.</div>
             </Grid>
-            <Grid item md={4} className="service-card">
+            <Grid item md={4} xs={12} className="service-card">
               <div className="card-header">Impact</div>
               <div className="card-expanded">We define metrics for success and execute towards them. We balance foresight with opportunism to create impact.</div>
             </Grid>
           </Grid>
         </Grid>
-        <WorkTogether headline="Lets Work Together"/>
+        <WorkTogether headline="Let's Work Together"/>
         <Footer/>
       </>
     )

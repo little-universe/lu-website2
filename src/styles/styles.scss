@@ -86,7 +86,7 @@ body {
   padding: $buffer*3;
   font-size: $fontSize;
   position: fixed;
-  width: 100%;
+  width: 100vw;
   // background: white;
   display: flex;
   justify-content: flex-end;
@@ -105,8 +105,10 @@ body {
       display: none;
     }
     &.nav-mobile {
-      display: block;
+      // display: block;
       padding: 0;
+      display: flex;
+      justify-content: flex-end;
       .nav-mobile-menu {
         display: flex;
         justify-content: center;
@@ -138,7 +140,7 @@ body {
             height: 6px;
             margin: 3px;
             border-radius: $radius;
-            background: $darkGreen;
+            background: $lightGreen;
             @include transition;
           }
         }
@@ -453,6 +455,22 @@ button:focus {
       justify-content: center;
       padding: 0 $buffer*6;
       position: relative;
+      @include breakpoint(sm) {
+        padding: 0 $buffer*3;
+        height: 50vh;
+        .headline {
+          font-size: $fontSizeHeadlineMobile !important;
+          line-height: $lineHeightHeadlineMobile !important;
+        }
+        .subhead-text-container {
+          bottom: $buffer*3 !important;
+          .subhead {
+            font-size: $fontSizeMobile !important;
+            line-height: $lineHeightMobile !important;
+            margin: 0;
+          }
+        }
+      }
       .hero-headline-fade {
         &.headline {
           @include animation(.5s, 0s, heroHeadlineFade);
@@ -479,9 +497,6 @@ button:focus {
         .subhead {
           font-size: $fontSizeDesktop;
           line-height: $lineHeightDesktop;
-          @include breakpoint(sm) {
-            font-size: $fontSizeDesktop;
-          }
         }
       }
     }
@@ -507,6 +522,11 @@ button:focus {
       }
     }
     .image-background {
+    }
+    .carousel-label {
+      @include breakpoint(sm) {
+      border-bottom: 2px solid $lightGreen;
+      }
     }
   }
   &.secondary-hero {
@@ -865,6 +885,26 @@ button:focus {
   padding: $buffer*10 0;
   position: relative;
   overflow: visible;
+  @include breakpoint(sm) {
+    padding: 0;
+    .text-body {
+    height: 50% !important;
+    .text-header {}
+    .text-statement {
+      font-size: $fontSizeMobile !important;
+      line-height: $lineHeightMobile !important;
+      display: flex;
+      align-items: center;
+      padding: $buffer*6 $buffer*3 !important;
+    }
+    }
+    .works-carousel-container {
+      height: 50% !important;
+      .works-carousel-wrapper {
+        margin-top: 0 !important;
+      }
+    }
+  }
   &.text-with-header {
     background: $bgColorLightened;
     color: $darkBlue;
@@ -891,6 +931,9 @@ button:focus {
           @include animation(.5s, 1s, carouselLabelSlideUp);
         }
       }
+    }
+    @include breakpoint(sm) {
+      height: auto;
     }
     height: 80vh;
     padding: 0;
@@ -1276,13 +1319,16 @@ button:focus {
       text-align: center;
       font-size: $fontSizeHeadline;
       font-family: $fontFamilyCond;
+      @include breakpoint(sm) {
+        font-size: $fontSizeHeadlineMobile;
+      }
     }
   }//big-statement
   &.text-with-list-mobile {
     display: none;
   }
   @include breakpoint(sm) {
-    margin: $buffer*5 0;
+    padding: $buffer*5 $buffer*3;
     &.text-with-list-desktop {
       display: none;
     }
@@ -1359,18 +1405,21 @@ button:focus {
   align-items: center;
   @include breakpoint(xs) {
     padding: $buffer*3 $buffer*2;
+    .headline {
+      font-size: $fontSizeHeadlineMobile !important;
+    }
+    .copiedText {
+      font-size: $fontSizeMobile !important;
+    }
   }
   text-align: center;
-  p {
+  .headline {
     font-size: $fontSizeHeadline;
     font-family: $fontFamilyCond;
     padding: 0;
     margin: 0;
-    @include breakpoint(sm) {
-      font-size: $fontSizeLargeDesktop;
-      padding-bottom: $buffer*5;
-    }
   }
+  .mailUs {}
   .copiedText {
     font-size: $fontSize;
     font-family: $fontFamily;
@@ -1392,13 +1441,16 @@ button {
   cursor: pointer;
   position: relative;
   font-size: $fontSizeSmallDesktop;
+  @include breakpoint(sm) {
+    font-size: $fontSizeMobile !important;
+  }
   &.mailUs {
     // background: $darkGreen;
     // width: 50% !important;
     display: inline-block;
     @include transition;
     p {
-      font-size: $fontSizeDesktop;
+
       font-family: $fontFamily;
       border-bottom: 2px solid white;
     }
@@ -1448,6 +1500,9 @@ button {
   color: $fontColorLight;
   font-size: $fontSize;
   line-height: $lineHeight;
+  @include breakpoint(sm) {
+    padding: 0 $buffer*3 $buffer*3 $buffer*3;
+  }
   p {
     margin-bottom: 0;
   }
@@ -1479,12 +1534,22 @@ button {
     margin: $buffer*12 0;
     position: relative;
     height: auto !important;
+    @include breakpoint(sm) {
+      margin: $buffer*3 0;
+    }
   }
   &.products-section {
     padding: $buffer*6;
     p {
       font-size: $fontSizeDesktop;
       line-height: $lineHeightDesktop;
+    }
+    @include breakpoint(sm) {
+      padding: $buffer*3;
+      p {
+        font-size: $fontSizeMobile;
+        line-height: $lineHeightMobile;
+      }
     }
   }
   &.what-we-do {
@@ -1501,6 +1566,24 @@ button {
         text-align: center;
         font-size: $fontSizeStatement;
         @include transition;
+        @include breakpoint(sm) {
+          padding: $buffer*6 0;
+          pointer-events: none !important;
+          flex-direction: column;
+          .card-header {
+            opacity: 1;
+            position: relative !important;
+            top: 0;
+          }
+          .card-expanded {
+            margin-top: 0 !important;
+            padding: $buffer*3 !important;
+            opacity: 1 !important;
+            font-size: $fontSizeMobile !important;
+            line-height: $lineHeightMobile !important;
+            position: relative !important;
+          }
+        }
         &:hover {
           background: $lightGreen;
           @include transition;
@@ -1558,6 +1641,19 @@ button {
     flex-direction: column-reverse;
     overflow: hidden;
     position: relative;
+    @include breakpoint(sm) {
+      height: 50vh;
+      .image-background {
+      }
+      .carousel-indicators {
+        display: none;
+      }
+      .carousel-label {
+        .label-row {
+          font-size: $fontSizeMobile !important;
+        }
+      }
+    }
     .image-background {
       position: absolute;
       background-size: cover;
@@ -1597,6 +1693,7 @@ button {
         }
       }
       .label-row {
+        width: 100%;
         font-size: $fontSizeSmallDesktop;
         display: flex;
         align-items: center;
@@ -1684,6 +1781,9 @@ button {
     padding: 0 $buffer*6;
     height: 100%; width: 100%;
     position: relative;
+    @include breakpoint(sm) {
+      padding: 0;
+    }
     .product-card-image {
       overflow: hidden;
       height: 250px; width: 100%;
@@ -1718,6 +1818,15 @@ button {
         .caption-description-body {
             font-size: $fontSize;
             line-height: $lineHeight;
+        }
+      }
+      @include breakpoint(sm) {
+        margin-bottom: $buffer*3;
+        .product-caption-name {
+          .caption-name-header {
+            font-size: $fontSizeMobile;
+            font-family: $fontFamilyMedium;
+          }
         }
       }
     }

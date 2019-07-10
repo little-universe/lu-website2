@@ -33,7 +33,7 @@ class Votecrew extends Component {
             <FeaturedText textWithHeader header="Including Guidance" text="For young voters some of the primary uncertainty in voting comes from not knowing who is on the ballot, what their policies are, and how to make a decision about them. We included a ballot guide for upcoming elections that users could look through and use to make conclusions about which candidates they liked."/>
             <FeaturedImage featuredFullMatte className="votecrew-4"/>
             <FeaturedImage featuredCenter className="farmigo-next" projectName="Farmigo" projectCategory="Digital Product" projectIndustry="Food" destination="../farmigo" caseStudyName="caseStudyFarmigo"/>
-          <WorkTogether headline="Let's get to know each other"/>
+          <WorkTogether headline="Let's Work Together"/>
           </Fade>
           <Footer/>
       </>
