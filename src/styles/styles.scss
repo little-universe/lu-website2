@@ -1304,7 +1304,10 @@ button:focus {
     }
   }
   &.project-text {
-    height: 100vh;
+    height: 100vh !important;
+    @include breakpoint(sm) {
+      height: auto !important;
+    }
     .works-carousel-container {
       .works-carousel-wrapper {
         margin-top: -$offsetValue;

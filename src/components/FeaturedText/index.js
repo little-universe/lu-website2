@@ -132,7 +132,7 @@ export default class FeaturedText extends Component {
                         </Grid>
                       </Reveal>
                     </Grid>
-                    <Grid item md={5} xs={6} className="member-image-container left">
+                    <Grid item md={5} xs={12} className="member-image-container left">
                       <Reveal effect="member-image-container-slide">
                         <Grid item className="image-wrapper" md={12} alignItems="center">
                           <Grid container justify="center" alignItems="center">
@@ -147,7 +147,7 @@ export default class FeaturedText extends Component {
                 { textForMemberRight && memberTitle && memberName && text && dominantColor &&
                   <div classname="nomargin-container">
                   <Grid container className={`featured-text member-text color-text ${className} ${dominantColor}`} alignItems="center">
-                    <Grid item md={5} xs={6} className="member-image-container right">
+                    <Grid item md={5} xs={12} className="member-image-container right">
                       <Reveal effect="member-image-container-slide">
                         <Grid item className="image-wrapper" md={12} alignItems="center">
                           <Grid container justify="center" alignItems="center">
