@@ -1092,11 +1092,33 @@ button:focus {
     }
   }//color-text
   &.member-text {
+    height: auto !important;
     .text-body {
+      height: auto !important;
       .text-statement {
+        @include breakpoint(sm) {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          .member-title {
+            font-size: $fontSizeMobile !important;
+            font-family: $fontFamilyMedium;
+            line-height: $lineHeightMobile !important;
+            margin-bottom: $lineHeightMobile !important;
+          }
+          .member-name {
+            font-size: $fontSizeHeadlineMobile !important;
+          }
+          .member-text {
+            margin-top: $lineHeightMobile !important;
+            font-size: $fontSizeMobile !important;
+            font-family: $fontFamily;
+            line-height: $lineHeightMobile !important;
+          }
+        }
         .member-title {
           font-size: $fontSizeDesktop;
-          font-weight: 500;
+          font-family: $fontFamilyMedium;
           line-height: $lineHeightDesktop;
         }
         .member-name {

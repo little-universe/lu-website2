@@ -150,7 +150,7 @@ export default class FeaturedText extends Component {
                 { textForProjectLeft && projectType && projectTitle && text && dominantColor &&
                   <div classname="nomargin-container">
                   <Grid container className={`featured-text project-text member-text color-text ${className} ${dominantColor}`} alignItems="center">
-                    <Grid item className="text-body" md={6} justify="center">
+                    <Grid item className="text-body" md={6} xs={12} justify="center">
                       <Reveal effect="text-body-slide">
                         <Grid item className="text-statement" md={8} xs={12}>
                           <div className="member-title">{projectType}</div>
@@ -160,7 +160,7 @@ export default class FeaturedText extends Component {
                       </Reveal>
                     </Grid>
                     <Grid item md={1}/>
-                    <Grid item md={5} xs={6} className="works-carousel-container right">
+                    <Grid item md={5} xs={12} className="works-carousel-container right">
                       <Reveal effect="works-carousel-container-slide">
                         <WorksCarousel className="movements" ctaLabel={ctaLabel}/>
                       </Reveal>
@@ -171,13 +171,13 @@ export default class FeaturedText extends Component {
                 { textForProjectRight && projectType && projectTitle && text && dominantColor &&
                   <div classname="nomargin-container">
                   <Grid container className={`featured-text project-text member-text color-text ${className} ${dominantColor}`} alignItems="center">
-                    <Grid item md={5} xs={6} className="works-carousel-container left">
+                    <Grid item md={5} xs={12} className="works-carousel-container left">
                       <Reveal effect="works-carousel-container-slide">
                         <WorksCarousel className="movements" ctaLabel={ctaLabel}/>
                       </Reveal>
                     </Grid>
                     <Grid item md={1}/>
-                    <Grid item className="text-body" md={6} justify="center">
+                    <Grid item className="text-body" md={6} xs={12} justify="center">
                       <Reveal effect="text-body-slide">
                         <Grid item className="text-statement" md={8} xs={12}>
                           <div className="member-title">{projectType}</div>
