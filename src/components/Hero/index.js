@@ -13,7 +13,7 @@ export default class Hero extends Component {
                 {heroText && headline && subhead && featuredWorks &&
                   <div classname="container">
                     <Grid className={`hero text-hero ${className}`} container alignItems="center">
-                      <Grid item md={7} xs={6}  className="headline-text-container">
+                      <Grid item md={7} xs={12}  className="headline-text-container">
                         <Reveal effect="hero-headline-fade">
                             <p className="headline">{headline}</p>
                           <Grid container className="subhead-text-container">
@@ -23,7 +23,7 @@ export default class Hero extends Component {
                           </Grid>
                         </Reveal>
                       </Grid>
-                      <Grid item md={5} xs={6} className="works-carousel-container right">
+                      <Grid item md={5} xs={12} className="works-carousel-container right">
                         <Reveal effect="works-carousel-container-slide">
                           <WorksCarousel
                             projectName="Motivote"

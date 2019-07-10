@@ -86,7 +86,7 @@ body {
   padding: $buffer*3;
   font-size: $fontSize;
   position: fixed;
-  width: 100%;
+  width: 100vw;
   // background: white;
   display: flex;
   justify-content: flex-end;
@@ -105,7 +105,7 @@ body {
       display: none;
     }
     &.nav-mobile {
-      display: block;
+      // display: block;
       padding: 0;
       display: flex;
       justify-content: flex-end;
@@ -140,7 +140,7 @@ body {
             height: 6px;
             margin: 3px;
             border-radius: $radius;
-            background: $darkGreen;
+            background: $lightGreen;
             @include transition;
           }
         }
@@ -455,6 +455,22 @@ button:focus {
       justify-content: center;
       padding: 0 $buffer*6;
       position: relative;
+      @include breakpoint(sm) {
+        padding: 0 $buffer*3;
+        height: 50vh;
+        .headline {
+          font-size: $fontSizeHeadlineMobile !important;
+          line-height: $lineHeightHeadlineMobile !important;
+        }
+        .subhead-text-container {
+          bottom: $buffer*3 !important;
+          .subhead {
+            font-size: $fontSizeMobile !important;
+            line-height: $lineHeightMobile !important;
+            margin: 0;
+          }
+        }
+      }
       .hero-headline-fade {
         &.headline {
           @include animation(.5s, 0s, heroHeadlineFade);
@@ -481,9 +497,6 @@ button:focus {
         .subhead {
           font-size: $fontSizeDesktop;
           line-height: $lineHeightDesktop;
-          @include breakpoint(sm) {
-            font-size: $fontSizeDesktop;
-          }
         }
       }
     }
@@ -1560,6 +1573,19 @@ button {
     flex-direction: column-reverse;
     overflow: hidden;
     position: relative;
+    @include breakpoint(sm) {
+      height: 50vh;
+      .image-background {
+      }
+      .carousel-indicators {
+        display: none;
+      }
+      .carousel-label {
+        .label-row {
+          font-size: $fontSizeMobile !important;
+        }
+      }
+    }
     .image-background {
       position: absolute;
       background-size: cover;
@@ -1599,6 +1625,7 @@ button {
         }
       }
       .label-row {
+        width: 100%;
         font-size: $fontSizeSmallDesktop;
         display: flex;
         align-items: center;
