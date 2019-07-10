@@ -501,7 +501,6 @@ button:focus {
       }
     }
   }
-
   &.image-hero {
     height: 100vh;
     background: $lightGreen;
@@ -531,10 +530,23 @@ button:focus {
   }
   &.secondary-hero {
     height: 80vh;
-    .headline-text-container {
-      .headline {
-        align-items: flex-end;
-        margin-bottom: 0;
+    @include breakpoint(sm) {
+      padding: 0;
+      height: 80vh;
+      .headline-text-container {
+        height: 100% !important;
+        .headline {
+          font-size: $fontSizeHeadlineMobile !important;
+          line-height: $lineHeightHeadlineMobile !important;
+        }
+      }
+      .subhead-text-container {
+        bottom: 0 !important;
+        .subhead {
+          font-size: $fontSizeMobile !important;
+          line-height: $lineHeightMobile !important;
+          margin: 0;
+        }
       }
     }
   }
