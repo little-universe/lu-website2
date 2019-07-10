@@ -27,7 +27,7 @@ class Homepage extends Component {
         <Grid container className="page-section products-section">
           <Grid container className="section-head">
             { /* <Grid item md={6}><p>We identify gaps between the tech you use and the results you need, and build efficient solutions that help you win.</p></Grid> */ }
-            <Grid item md={4}><p>We identify opportunities for innovation to make the difference that helps you win.</p></Grid>
+            <Grid item md={6}><p>We identify opportunities for innovation to make the difference that helps you win.</p></Grid>
           </Grid>
           <Grid container className="section-body">
             <Grid item md={4} xs={12}><ProductFeatured className="sentiment-analysis" productName="Product Strategy" productDescription="Are there gaps between the tech you use and the results you need?"/></Grid>

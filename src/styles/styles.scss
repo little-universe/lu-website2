@@ -1563,9 +1563,17 @@ button {
 .page-section {
   .section-head {
     margin: 0;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    p {
+    font-size: $fontSizeStatement !important;
+    line-height: $lineHeightStatement !important;
+    font-family: $fontFamily;
+    }
   }
   .section-body {
-    margin: $buffer*12 0;
+    margin: $buffer*6 0;
     position: relative;
     height: auto !important;
     @include breakpoint(sm) {
@@ -1573,7 +1581,7 @@ button {
     }
   }
   &.products-section {
-    padding: $buffer*6;
+    padding: $buffer*6 0;
     p {
       font-size: $fontSizeDesktop;
       line-height: $lineHeightDesktop;
