@@ -4,17 +4,37 @@
 // GLOBAL STYLES
 
 @font-face {
-    font-family: 'Founders Grotesk Test';
-    // src: url('https://s3.us-east-2.amazonaws.com/lu-assets/fonts/MarrSansWeb-Regular.woff2') format('woff2'),
-    //     url('https://s3.us-east-2.amazonaws.com/lu-assets/fonts/MarrSansWeb-Regular.woff') format('woff');
+    font-family: 'Founders Grotesk Regular';
+    src: url('../assets/type/FoundersGroteskWeb-Regular.woff2') format('woff2'),
+         url('../assets/type/FoundersGroteskWeb-Regular.woff') format('woff'),
+         url('../assets/type/FoundersGroteskWeb-Regular.eot') format('eot');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'Founders Grotesk X-Condensed Test';
-    // src: url('https://s3.us-east-2.amazonaws.com/lu-assets/fonts/MarrSansWeb-Medium.woff2') format('woff2'),
-    //     url('https://s3.us-east-2.amazonaws.com/lu-assets/fonts/MarrSansWeb-Medium.woff') format('woff');
+    font-family: 'Founders Grotesk Medium';
+    src: url('../assets/type/FoundersGroteskWeb-Medium.woff2') format('woff2'),
+         url('../assets/type/FoundersGroteskWeb-Medium.woff') format('woff'),
+         url('../assets/type/FoundersGroteskWeb-Medium.eot') format('eot');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Founders Grotesk X-Condensed Regular';
+    src: url('../assets/type/FoundersGroteskX-CondensedWeb-Regular.woff2') format('woff2'),
+         url('../assets/type/FoundersGroteskX-CondensedWeb-Regular.woff') format('woff'),
+         url('../assets/type/FoundersGroteskX-CondensedWeb-Regular.eot') format('eot');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Founders Grotesk X-Condensed Medium';
+    src: url('../assets/type/FoundersGroteskX-CondensedWeb-Medium.woff2') format('woff2'),
+         url('../assets/type/FoundersGroteskX-CondensedWeb-Medium.woff') format('woff'),
+         url('../assets/type/FoundersGroteskX-CondensedWeb-Medium.eot') format('eot');
     font-weight: normal;
     font-style: normal;
 }
@@ -445,7 +465,7 @@ button:focus {
       }
       .headline {
         opacity: 0 !important;
-        font-family: "Founders Grotesk X-Condensed Test";
+        font-family: $fontFamilyCond;
         font-size: $fontSizeHeadline;
         // font-weight: 500;
         margin-top: 0;
