@@ -28,6 +28,7 @@ export default class Hero extends Component {
                           <WorksCarousel
                             projectName="Motivote"
                             projectCategory="Digital Product"
+                            projectStatement="Engaging young voters with behavioral design"
                             projectIndustry="Advocacy Tech"
                           />
                         </Reveal>

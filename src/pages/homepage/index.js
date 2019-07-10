@@ -21,8 +21,8 @@ class Homepage extends Component {
           heroText
           featuredWorks
           className="homepage-hero"
-          headline={<>Were Doing Impact <span className="headline-emphasis">Differently</span></>}
-          subhead="Little Universe is a digital product design and development agency located in Brooklyn, NY."
+          headline={<>We're your <span className="headline-emphasis">innovation partner</span></>}
+          subhead="Little Universe builds technology for the progressive movement."
         />
         <Grid container className="page-section products-section">
           <Grid container className="section-head">
