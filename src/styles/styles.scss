@@ -528,6 +528,9 @@ button:focus {
       border-bottom: 2px solid $lightGreen;
       }
     }
+    .image-background {
+      background-image: url("../../src/assets/projects/motivote/motivote-hero.png") !important;
+    }
   }
   &.secondary-hero {
     height: 80vh;
@@ -1359,11 +1362,46 @@ button:focus {
     @include breakpoint(sm) {
       height: auto !important;
     }
+    &.motivote-project {
+      .image-background {
+        background-image: url("../../src/assets/projects/motivote/motivote-hero.png") !important;
+      }
+    }
+    &.strive-project {
+      .image-background {
+        background-image: url("../../src/assets/projects/strive/strive-hero.png") !important;
+      }
+    }
+    &.betterfin-project {
+      .image-background {
+        background-image: url("../../src/assets/projects/betterfin/betterfin-hero.png") !important;
+      }
+    }
+    &.votecrew-project {
+      .image-background {
+        background-image: url("../../src/assets/projects/votecrew/votecrew-hero.png") !important;
+      }
+    }
+    &.farmigo-project {
+      .image-background {
+        background-image: url("../../src/assets/projects/farmigo/farmigo-hero.png") !important;
+      }
+    }
+    &.instructrr-project {
+      .image-background {
+        background-image: url("../../src/assets/projects/instructrr/instructrr-hero.png") !important;
+      }
+    }
     .works-carousel-container {
       .works-carousel-wrapper {
         margin-top: -$offsetValue;
         .carousel-label-slideUp {
           @include animation(.5s, .5s, carouselLabelSlideUp);
+        }
+        .image-background {
+          width: 100%;
+          height: 100%;
+
         }
       }
     }
@@ -1532,6 +1570,9 @@ button:focus {
   display: flex;
   justify-content: center;
   align-items: center;
+  &.work-together-page {
+    height: 100vh;
+  }
   @include breakpoint(xs) {
     padding: $buffer*3 $buffer*2;
     .headline {
@@ -1797,7 +1838,6 @@ button {
       background-position: center;
       background-repeat: no-repeat;
       // animation: gravity2 25s infinite linear;
-      background-image: url("../../src/assets/projects/motivote/motivote-hero.png");
     }
     .carousel-indicators-slideUp { //animation
       // @include animation(.25s, 4s, carouselIndicatorSlideUp);

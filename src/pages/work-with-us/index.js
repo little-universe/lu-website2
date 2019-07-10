@@ -28,7 +28,7 @@ class WorkWithUs extends Component {
 
     return (
       <>
-        <WorkTogether headline="Let's Work Together" fullHeight/>
+        <WorkTogether className="work-together-page" headline="Let's Work Together" fullHeight/>
         <Footer/>
       </>
     )

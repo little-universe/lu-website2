@@ -15,7 +15,7 @@ export default class WorksCarousel extends Component {
         <Grid item md={12} className="image-background"></Grid>
         <Reveal effect="carousel-label-slideUp">
           <Grid className={`carousel-indicators`} container>
-            <Grid item md={12}>1</Grid>
+            <Grid item md={12}></Grid>
           </Grid>
         </Reveal>
         <Reveal effect="carousel-label-slideUp">
