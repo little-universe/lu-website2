@@ -1334,26 +1334,45 @@ button:focus {
     //BETTERFIN
     &.betterfin-1 {
       .image-wrapper {
-        background: $yellow;
+        background: $pink;
         .image-background {background-image: url("../../src/assets/projects/betterfin/betterfin-1.png");}
       }
     }
     &.betterfin-2 {
       .image-wrapper {
-        background: $lightGreen;
+        background: $pink;
         .image-background {background-image: url("../../src/assets/projects/betterfin/betterfin-2.png");}
       }
     }
     &.betterfin-3 {
       .image-wrapper {
-        background: $lightGreen;
+        background: $pink;
         .image-background {background-image: url("../../src/assets/projects/betterfin/betterfin-3.png");}
       }
     }
     &.betterfin-4 {
       .image-wrapper {
-        background: $lightGreen;
+        background: $pink;
         .image-background {background-image: url("../../src/assets/projects/betterfin/betterfin-4.png");}
+      }
+    }
+    //VOTECREW
+    &.votecrew-1 {
+      .image-wrapper {
+        background: $pink;
+        .image-background {background-image: url("../../src/assets/projects/votecrew/votecrew-1.png");}
+      }
+    }
+    &.votecrew-2 {
+      .image-wrapper {
+        background: $lightBlue;
+        .image-background {background-image: url("../../src/assets/projects/votecrew/votecrew-2.png");}
+      }
+    }
+    &.votecrew-3 {
+      .image-wrapper {
+        background: $lightBlue;
+        .image-background {background-image: url("../../src/assets/projects/votecrew/votecrew-3.png");}
       }
     }
   }
