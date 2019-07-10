@@ -919,8 +919,26 @@ button:focus {
     }
   }
   &.text-with-header {
+    padding: $buffer*12 0;
     background: $bgColorLightened;
     color: $darkBlue;
+    @include breakpoint(sm) {
+      padding: $buffer*3 !important;
+      .text-body {
+        .text-header {
+          font-size: $fontSizeMobile !important;
+          font-family: $fontFamilyMedium !important;
+          margin: 0 !important;
+          padding: $buffer*3 0 !important;
+        }
+        .text-statement {
+          padding: 0 !important;
+          font-size: $fontSizeStatement;
+          font-family: $fontFamily;
+          line-height: $lineHeightStatement;
+        }
+      }
+    }
     .text-body {
       .text-header {
         font-size: $fontSizeDesktop;
@@ -1197,7 +1215,7 @@ button:focus {
       .image-wrapper {
         margin-top: -$offsetValue;
         @include breakpoint(sm) {
-          margin-top: 0 !important; 
+          margin-top: 0 !important;
         }
         .image-background {
           height: 80vh;
@@ -1221,15 +1239,32 @@ button:focus {
     }
   }
   &.project-text-image {
+    @include breakpoint(sm) {
+      height: auto !important;
+      .text-body {
+        .text-statement {
+          flex-direction: column;
+          align-items: flex-start;
+          .image-title {
+            font-size: $fontSizeMobile !important;
+            font-family: $fontFamilyMedium;
+          }
+          .image-text {
+
+          }
+        }
+      }
+    }
     .text-body {
       .text-body-slide {
         .text-statement {
           .image-title {
             font-size: $fontSizeDesktop;
-            font-weight: 500;
+            font-family: $fontFamilyMedium;
             margin-bottom: $buffer*3;
           }
-          .image-text {}
+          .image-text {
+          }
         }
       }
     }
@@ -1246,6 +1281,7 @@ button:focus {
           transform: translateX(-100%);
           .image-background {
             background-position: left;
+            width: 100%;
           }
         }
       }
@@ -1260,6 +1296,7 @@ button:focus {
           transform: translateX(100%);
           .image-background {
             background-position: right;
+            width: 100%;
           }
         }
       }
@@ -1267,6 +1304,9 @@ button:focus {
         background: $yellow;
         width: 100%; height: 100%;
         margin-top: -$offsetValue;
+        @include breakpoint(sm) {
+          margin-top: 0 !important;
+        }
         .image-background {
           height: 80vh;
           max-width: 80%;
@@ -1331,6 +1371,10 @@ button:focus {
   &.project-text-card {
     overflow: visible;
     z-index: 100;
+    height: 80vh !important;
+    @include breakpoint(sm) {
+      height: auto !important;
+    }
     .text-card {
       width: 100%;
       height: 100%;
@@ -1357,10 +1401,26 @@ button:focus {
         color: $darkBlue;
         background: white;
         padding: $buffer*6;
+        @include breakpoint(sm) {
+        flex-direction: column;
+        padding: $buffer*3;
+          .status-items {
+            p {
+              margin: 0;
+              font-size: $fontSizeMobile !important;
+            }
+            margin-bottom: $buffer*12;
+          }
+          .services-list {
+            p {
+              font-size: $fontSizeMobile !important;
+            }
+          }
+        }
         .status-items {
           p {
             font-size: $fontSizeDesktop;
-            font-weight: 500;
+            font-family: $fontFamilyMedium;
           }
         }
         .services-list {
@@ -1369,7 +1429,7 @@ button:focus {
           .services-list-content {
             p {
               font-size: $fontSizeDesktop;
-              font-weight: 500;
+              font-family: $fontFamilyMedium;
             }
             ul {
               list-style-type: none;

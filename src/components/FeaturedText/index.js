@@ -213,7 +213,7 @@ export default class FeaturedText extends Component {
                 { textWithCardRight && projectType && projectTitle && text && dominantColor && list &&
                   <div classname="nomargin-container">
                   <Grid container className={`featured-text project-text-card member-text color-text ${className} ${dominantColor}`} alignItems="center">
-                    <Grid item md={5} xs={6} className="text-card left">
+                    <Grid item md={5} xs={12} className="text-card left">
                       <Reveal effect="text-card-slide">
                         <Grid container className="card-inner-wrapper">
                           <Grid item md={12} className="status-items"><p>{status}</p></Grid>
@@ -255,7 +255,7 @@ export default class FeaturedText extends Component {
                       </Reveal>
                     </Grid>
                     <Grid item md={1}/>
-                    <Grid item md={5} xs={6} className="product-image-container left">
+                    <Grid item md={5} xs={12} className="product-image-container left">
                       <Reveal effect="product-image-container-slide">
                         <Grid item className="image-wrapper" md={12} alignItems="center">
                           <Grid container justify="center" alignItems="center">
@@ -270,7 +270,7 @@ export default class FeaturedText extends Component {
                 { textForProductImageRight && header && text && dominantColor &&
                   <div classname="nomargin-container">
                   <Grid container className={`featured-text project-text-image color-text ${className} ${dominantColor}`} alignItems="center">
-                    <Grid item md={5} xs={6} className="product-image-container right">
+                    <Grid item md={5} xs={12} className="product-image-container right">
                       <Reveal effect="product-image-container-slide">
                         <Grid item className="image-wrapper" md={12} alignItems="center">
                           <Grid container justify="center" alignItems="center">
