@@ -1375,6 +1375,37 @@ button:focus {
         .image-background {background-image: url("../../src/assets/projects/votecrew/votecrew-3.png");}
       }
     }
+    //FARMIGO
+    &.farmigo-1 {
+      .image-wrapper {
+        background: $lightBlue;
+        .image-background {background-image: url("../../src/assets/projects/farmigo/farmigo-1.png");}
+      }
+    }
+    &.farmigo-2 {
+      .image-wrapper {
+        background: $lightBlue;
+        .image-background {background-image: url("../../src/assets/projects/farmigo/farmigo-2.png");}
+      }
+    }
+    &.farmigo-3 {
+      .image-wrapper {
+        background: $lightBlue;
+        .image-background {background-image: url("../../src/assets/projects/farmigo/farmigo-3.png");}
+      }
+    }
+    &.farmigo-4 {
+      .image-wrapper {
+        background: $lightBlue;
+        .image-background {background-image: url("../../src/assets/projects/farmigo/farmigo-m-4.png");}
+      }
+    }
+    &.farmigo-5 {
+      .image-wrapper {
+        background: $lightBlue;
+        .image-background {background-image: url("../../src/assets/projects/farmigo/farmigo-m-5.png");}
+      }
+    }
   }
   &.project-text {
     height: 100vh !important;
