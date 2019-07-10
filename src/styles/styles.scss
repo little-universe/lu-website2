@@ -1557,6 +1557,24 @@ button {
         text-align: center;
         font-size: $fontSizeStatement;
         @include transition;
+        @include breakpoint(sm) {
+          padding: $buffer*6 0;
+          pointer-events: none !important;
+          flex-direction: column;
+          .card-header {
+            opacity: 1;
+            position: relative !important;
+            top: 0;
+          }
+          .card-expanded {
+            margin-top: 0 !important;
+            padding: $buffer*3 !important;
+            opacity: 1 !important;
+            font-size: $fontSizeMobile !important;
+            line-height: $lineHeightMobile !important;
+            position: relative !important;
+          }
+        }
         &:hover {
           background: $lightGreen;
           @include transition;
