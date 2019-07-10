@@ -1576,6 +1576,7 @@ button {
     @include breakpoint(sm) {
       height: 50vh;
       .image-background {
+        top: -5vh;
       }
       .carousel-indicators {
         display: none;
