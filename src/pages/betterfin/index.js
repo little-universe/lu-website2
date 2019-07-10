@@ -3,7 +3,6 @@ import Hero from '../../components/Hero';
 import WorkTogether from '../../components/WorkTogether';
 import FeaturedImage from '../../components/FeaturedImage';
 import FeaturedText from '../../components/FeaturedText';
-import ImageWithText from '../../components/ImageWithText';
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import { Transporter } from '../../orbit'
 import Grid from '@material-ui/core/Grid';

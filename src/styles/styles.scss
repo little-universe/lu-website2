@@ -67,7 +67,7 @@ body {
   font-size: $fontSize;
   position: fixed;
   width: 100%;
-  background: white;
+  // background: white;
   display: flex;
   justify-content: flex-end;
   top: 0;
@@ -157,7 +157,7 @@ body {
     }
   }//breakpoint
   &.is-collapsed {
-    background: white;
+    // background: white;
     transform: translateY(-100%);
     @include transition;
     &.nav:hover {

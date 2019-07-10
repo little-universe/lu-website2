@@ -3,7 +3,6 @@ import Hero from '../../components/Hero';
 import WorkTogether from '../../components/WorkTogether';
 import FeaturedImage from '../../components/FeaturedImage';
 import FeaturedText from '../../components/FeaturedText';
-import ImageWithText from '../../components/ImageWithText';
 import { Transporter } from '../../orbit';
 import Fade from 'react-reveal/Fade';
 import Footer from '../../components/Footer';
