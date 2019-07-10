@@ -523,6 +523,11 @@ button:focus {
     }
     .image-background {
     }
+    .carousel-label {
+      @include breakpoint(sm) {
+      border-bottom: 2px solid $lightGreen;
+      }
+    }
   }
   &.secondary-hero {
     height: 80vh;
@@ -1494,12 +1499,22 @@ button {
     margin: $buffer*12 0;
     position: relative;
     height: auto !important;
+    @include breakpoint(sm) {
+      margin: $buffer*3 0;
+    }
   }
   &.products-section {
     padding: $buffer*6;
     p {
       font-size: $fontSizeDesktop;
       line-height: $lineHeightDesktop;
+    }
+    @include breakpoint(sm) {
+      padding: $buffer*3;
+      p {
+        font-size: $fontSizeMobile;
+        line-height: $lineHeightMobile;
+      }
     }
   }
   &.what-we-do {
@@ -1714,6 +1729,9 @@ button {
     padding: 0 $buffer*6;
     height: 100%; width: 100%;
     position: relative;
+    @include breakpoint(sm) {
+      padding: 0;
+    }
     .product-card-image {
       overflow: hidden;
       height: 250px; width: 100%;
@@ -1748,6 +1766,15 @@ button {
         .caption-description-body {
             font-size: $fontSize;
             line-height: $lineHeight;
+        }
+      }
+      @include breakpoint(sm) {
+        margin-bottom: $buffer*3;
+        .product-caption-name {
+          .caption-name-header {
+            font-size: $fontSizeMobile;
+            font-family: $fontFamilyMedium;
+          }
         }
       }
     }
