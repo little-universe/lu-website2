@@ -107,6 +107,8 @@ body {
     &.nav-mobile {
       display: block;
       padding: 0;
+      display: flex;
+      justify-content: flex-end;
       .nav-mobile-menu {
         display: flex;
         justify-content: center;
