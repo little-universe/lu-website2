@@ -922,6 +922,11 @@ button:focus {
   font-size: $fontSizeDesktop;
   line-height: $lineHeightDesktop;
   // margin-top: $buffer*20;
+  @include breakpoint(sm) {
+    font-size: $fontSizeMobile;
+    line-height: $lineHeightMobile;
+    padding: $buffer*3;
+  }
   height: 100vh;
   @include breakpoint(sm) {
     max-width: 100vw !important;
