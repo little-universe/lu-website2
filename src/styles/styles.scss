@@ -60,6 +60,9 @@ body {
   top: 0;
   left: 0;
   opacity: 0;
+  @include breakpoint(sm) {
+    margin: 0 !important;
+  }
   &.nav-animation {
     // @include animation(.5s, 1.5s, navAnimation);
     opacity: 1;
@@ -111,7 +114,7 @@ body {
       display: none;
     }
     &.nav-mobile {
-      // display: block;
+      display: block;
       padding: 0;
       display: flex;
       justify-content: flex-end;
@@ -146,7 +149,7 @@ body {
             height: 6px;
             margin: 3px;
             border-radius: $radius;
-            background: $lightGreen;
+            background: white;
             @include transition;
           }
         }
