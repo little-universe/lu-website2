@@ -194,7 +194,7 @@ export default class FeaturedText extends Component {
                   <Grid container className={`featured-text project-text member-text color-text ${className} ${dominantColor}`} alignItems="center">
                     <Grid item md={5} xs={12} className="works-carousel-container left">
                       <Reveal effect="works-carousel-container-slide">
-                        <WorksCarousel className="movements" ctaLabel={ctaLabel}/>
+                        <WorksCarousel className="movements" ctaLabel={ctaLabel} destination={destination}/>
                       </Reveal>
                     </Grid>
                     <Grid item md={1}/>
