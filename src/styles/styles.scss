@@ -47,7 +47,7 @@ body {
   margin: 0 auto;
   font-family: $fontFamily;
   // font-weight: $fontWeightLight;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
   // background: $primaryColor;
 }
 
@@ -114,10 +114,13 @@ body {
 .headroom--unpinned {
   position: fixed;
   transform: translateY(-100%);
+  @include transition;
 }
 .headroom--pinned {
   position: fixed;
   transform: translateY(0%);
+  @include transition;
+  background: white;
 }
 .headroom-wrapper {
   height: 0 !important;
@@ -126,8 +129,7 @@ body {
   // position: relative;
   padding: $buffer*3;
   font-size: $fontSize;
-  width: 100vw;
-  background: white;
+  width: 100%;
   display: flex;
   justify-content: flex-end;
   // top: 0;
@@ -146,9 +148,20 @@ body {
     }
     &.nav-mobile {
       display: block;
-      padding: 0;
+      padding: $buffer*2; margin: 0;
+      background: transparent;
       display: flex;
+      top: 0;
+      position: fixed;
       justify-content: flex-end;
+      .logo {
+        position: absolute;
+        top: $buffer*2;
+        left: $buffer*2;
+        .mark {
+          background-image: url('../assets/icons/LU_logo.svg');
+        }
+      }
       .nav-mobile-menu {
         display: flex;
         justify-content: center;
@@ -184,6 +197,9 @@ body {
             @include transition;
           }
         }
+        .mobile-nav-list {
+          margin-right: $buffer*4;
+        }
         .nav-mobile-menu {
           visibility: hidden;
           opacity: 0;
@@ -204,6 +220,9 @@ body {
             background: $bgColorLight;
             @include transition;
           }
+        }
+        .mobile-nav-list {
+          margin-right: $buffer*4;
         }
         .nav-mobile-menu {
           visibility: visible;
@@ -442,6 +461,7 @@ button:focus {
 
 .nomargin-container {
   margin: 0;
+  overflow-x: hidden !important;
 }// wrapper for full width elements
 .margin-container {
   margin: $buffer*6;
@@ -556,6 +576,10 @@ button:focus {
   &.homepage-hero {
     background-color: $darkGreen;
     color: $lightGreen;
+    height: 100vh;
+    @include breakpoint(sm) {
+      overflow: hidden;
+    }
     .subhead-text-container {
       .subhead {
         color: $lightGreen;
