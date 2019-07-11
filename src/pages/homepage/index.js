@@ -46,9 +46,9 @@ class Homepage extends Component {
             <Grid item md={4}><p>You're fighting the good fight. We want to help.</p></Grid>
           </Grid>
           <Grid container className="section-body">
-            <Grid item md={4} xs={12}><ProductFeatured className="sentiment-analysis" productName="Political Campaigns" productDescription="We work with campaigns in the heat of the battle to help you win."/></Grid>
-            <Grid item md={4} xs={12}><ProductFeatured className="data-tracking" productName="Nonprofit / Advocacy" productDescription="We help bring technology to your organization."/></Grid>
-            <Grid item md={4} xs={12}><ProductFeatured className="messaging-infrastructure" productName="Progressive Tech" productDescription="We help scale your technology for wider impact."/></Grid>
+            <Grid item md={4} xs={12}><ProductFeatured className="political-campaigns" productName="Political Campaigns" productDescription="We work with campaigns in the heat of the battle to help you win."/></Grid>
+            <Grid item md={4} xs={12}><ProductFeatured className="nonprofit" productName="Nonprofit / Advocacy" productDescription="We help bring technology to your organization."/></Grid>
+            <Grid item md={4} xs={12}><ProductFeatured className="progressive-tech" productName="Progressive Tech" productDescription="We help scale your technology for wider impact."/></Grid>
           </Grid>
         </Grid>
 

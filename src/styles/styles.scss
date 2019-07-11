@@ -1861,6 +1861,7 @@ button {
   }
   &.products-section {
     padding: $buffer*6 0;
+    background: $bgColorLightened;
     p {
       font-size: $fontSizeDesktop;
       line-height: $lineHeightDesktop;
@@ -2165,7 +2166,7 @@ button {
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        background-image: url("../../src/assets/projects/strive/strive-hero.png");
+        background-image: url("../../src/assets/office/strategy.jpg");
       }
     }
   }//sentiment-analysis
@@ -2178,7 +2179,7 @@ button {
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        background-image: url("../../src/assets/projects/strive/strive-hero.png");
+        background-image: url("../../src/assets/office/design.jpg");
       }
     }
   }//data-tracking
@@ -2191,9 +2192,49 @@ button {
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        background-image: url("../../src/assets/projects/strive/strive-hero.png");
+        background-image: url("../../src/assets/office/data.jpg");
       }
     }
   }//messaging-infrastructure
+  &.political-campaigns {
+    .product-card-image {
+      .image-cover {
+        background: $lightBlue;
+      }
+      .image-background {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: url("../../src/assets/office/political.jpg");
+      }
+    }
+  }//messaging-infrastructure
+  &.nonprofit {
+    .product-card-image {
+      .image-cover {
+        background: $lightGreen;
+      }
+      .image-background {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: url("../../src/assets/office/nonprofit.jpg");
+      }
+    }
+  }//messaging-infrastructure
+  &.progressive-tech {
+    .product-card-image {
+      .image-cover {
+        background: $yellow;
+      }
+      .image-background {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: url("../../src/assets/office/progressive.jpg");
+      }
+    }
+  }//messaging-infrastructure
+
 }
 //WORK FEATURED
