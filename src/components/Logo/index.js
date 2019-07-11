@@ -13,8 +13,9 @@ class Logo extends Component {
       <a href="/">
       <Reveal effect="nav-animation">
       <div className="logo">
-        <div className="universe"></div>
-        <div className="agency-name">Little Universe</div>
+        <div className="mark"/>
+        {/*<div className="universe"></div>*/}
+        {/*<div className="agency-name">Little Universe</div>*/}
       </div>
       </Reveal>
       </a>

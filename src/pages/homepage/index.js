@@ -9,9 +9,16 @@ import WorkTogether from '../../components/WorkTogether';
 import Footer from '../../components/Footer';
 import Button from '../../components/ui/Button';
 import Grid from '@material-ui/core/Grid';
+import { preloadImage } from '../../preload'
 
 class Homepage extends Component {
 
+  componentDidMount() {
+    [
+      require("../../assets/team/team-1-small.jpg"),
+      require("../../assets/office/desk.jpg")
+    ].forEach(preloadImage)
+  }
 
   render() {
 
@@ -36,9 +43,9 @@ class Homepage extends Component {
             <Grid item md={4} xs={12}><ProductFeatured className="messaging-infrastructure" productName="Data + Infrastructure" productDescription="Get more out of your data with advanced architecture and machine learning."/></Grid>
           </Grid>
         </Grid>
-        <FeaturedText quoteTextRight text="Little Universe was a game-changer for Strive Digital. As a young startup, we needed an agency that could step in and make an immediate impact. Perfectly balancing strategy with execution, they went far beyond our expectations by establishing a strategic foundation and product vision we're still benefitting from today." dominantColor="pink" ctaLabel="Read the Case Study"/>
+        <FeaturedText quoteTextRight destination="/strive" className="strive-hero" text="Little Universe was a game-changer for Strive Digital. As a young startup, we needed an agency that could step in and make an immediate impact. Perfectly balancing strategy with execution, they went far beyond our expectations by establishing a strategic foundation and product vision we're still benefitting from today." dominantColor="pink" ctaLabel="Read the Case Study"/>
         <FeaturedText textBigStatement text="We're organizers, not vendors."/>
-        <FeaturedText textWithMotifLeft text="We are a team of  designers, engineers, data scientists, and organizers with deep experience in both high-tech startups and high-stakes campaigns. We're working to democratize innovation so that more campaigns and organizations have the tools they need to win, at the moment they need them most." dominantColor="darkBlue" ctaLabel="Learn More About Us"/>
+        <FeaturedText textWithMotifLeft destination="/about" className="team-motif" text="We are a team of  designers, engineers, data scientists, and organizers with deep experience in both high-tech startups and high-stakes campaigns. We're working to democratize innovation so that more campaigns and organizations have the tools they need to win, at the moment they need them most." dominantColor="darkBlue" ctaLabel="Learn More About Us"/>
 
         <Grid container className="page-section products-section">
           <Grid container className="section-head">
@@ -46,13 +53,13 @@ class Homepage extends Component {
             <Grid item md={4}><p>You're fighting the good fight. We want to help.</p></Grid>
           </Grid>
           <Grid container className="section-body">
-            <Grid item md={4} xs={12}><ProductFeatured className="sentiment-analysis" productName="Political Campaigns" productDescription="We work with campaigns in the heat of the battle to help you win."/></Grid>
-            <Grid item md={4} xs={12}><ProductFeatured className="data-tracking" productName="Nonprofit / Advocacy" productDescription="We help bring technology to your organization."/></Grid>
-            <Grid item md={4} xs={12}><ProductFeatured className="messaging-infrastructure" productName="Progressive Tech" productDescription="We help scale your technology for wider impact."/></Grid>
+            <Grid item md={4} xs={12}><ProductFeatured className="political-campaigns" productName="Political Campaigns" productDescription="We work with campaigns in the heat of the battle to help you win."/></Grid>
+            <Grid item md={4} xs={12}><ProductFeatured className="nonprofit" productName="Nonprofit / Advocacy" productDescription="We help bring technology to your organization."/></Grid>
+            <Grid item md={4} xs={12}><ProductFeatured className="progressive-tech" productName="Progressive Tech" productDescription="We help scale your technology for wider impact."/></Grid>
           </Grid>
         </Grid>
 
-        <FeaturedText textWithMotifRight text="Movements need fast, responsive, deeply knowledgeable technologists who can build world class products that connect the dots, meet real, immediate needs, and deliver impact as efficiently as possible- they need custom solutions that don’t break the bank." dominantColor="lightBlue" ctaLabel="Learn About Our Approach"/>
+        <FeaturedText textWithMotifRight className="contact-motif" destination="/work-with-us" text="Movements need fast, responsive, deeply knowledgeable technologists who can build world class products that connect the dots, meet real, immediate needs, and deliver impact as efficiently as possible- they need custom solutions that don’t break the bank." dominantColor="lightBlue" ctaLabel="Learn About Our Approach"/>
 
         { /*
         <FeaturedText textBigStatement text="There is no recipe for change."/>

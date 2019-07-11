@@ -97,6 +97,7 @@ toggleSidenav = () => {
       </div>
 
       <div className={`nav nav-mobile ${this.state.showHideSidenav}`} onClick={this.toggleSidenav}>
+      <Logo/>
         <Fade top distance="10px" duration={500} delay={250}>
         <div className="" onClick={this.toggleSidenav}>
           <ul className="nav-list mobile-nav-list">
