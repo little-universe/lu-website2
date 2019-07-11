@@ -100,6 +100,11 @@ body {
   position: fixed;
   .nav {
     background: transparent;
+    .logo {
+      .mark {
+        background-image: url('../assets/icons/LU_logo.svg');
+      }
+    }
   }
   transform: translateY(0);
 }
@@ -113,6 +118,9 @@ body {
 .headroom--pinned {
   position: fixed;
   transform: translateY(0%);
+}
+.headroom-wrapper {
+  height: 0 !important;
 }
 .nav {
   // position: relative;
