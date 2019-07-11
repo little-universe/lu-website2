@@ -3,6 +3,7 @@ import {Link} from "react-router-dom";
 import Grid from '@material-ui/core/Grid';
 import Fade from 'react-reveal/Fade';
 import Reveal from 'react-reveal/Reveal';
+import Headroom from 'react-headroom';
 import Logo from '../Logo';
 import classnames from "classnames";
 
@@ -63,10 +64,8 @@ toggleSidenav = () => {
 
     return (
       <>
-
-      <div className={classnames("nav", "nav-desktop",{
-          "is-collapsed": !this.state.visible
-        }, {"is-uncollapsed" : this.state.scrolledUp})}>
+      <Headroom disableInlineStyles>
+      <div className={classnames("nav", "nav-desktop")}>
         <Logo/>
         <ul className="nav-list">
           <Link
@@ -95,6 +94,7 @@ toggleSidenav = () => {
           </Link>
         </ul>
       </div>
+      </Headroom>
 
       <div className={`nav nav-mobile ${this.state.showHideSidenav}`} onClick={this.toggleSidenav}>
       <Logo/>

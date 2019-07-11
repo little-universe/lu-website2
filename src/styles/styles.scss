@@ -68,8 +68,8 @@ body {
     opacity: 1;
   }
   .mark {
-    background-image: url('../assets/icons/LU_logo.svg');
-    width: 30px; height: 30px;
+    background-image: url('../assets/icons/LU_logo_dark.svg');
+    width: 20px; height: 20px;
     background-repeat: no-repeat;
     background-size: cover;
   }
@@ -90,17 +90,40 @@ body {
 }
 
 // NAV STYLES
+.headroom {
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+.headroom--unfixed {
+  position: fixed;
+  .nav {
+    background: transparent;
+  }
+  transform: translateY(0);
+}
+.headroom--scrolled {
+  @include transition;
+}
+.headroom--unpinned {
+  position: fixed;
+  transform: translateY(-100%);
+}
+.headroom--pinned {
+  position: fixed;
+  transform: translateY(0%);
+}
 .nav {
   // position: relative;
   padding: $buffer*3;
   font-size: $fontSize;
-  position: fixed;
   width: 100vw;
-  // background: white;
+  background: white;
   display: flex;
   justify-content: flex-end;
-  top: 0;
-  z-index: $navZIndex;
+  // top: 0;
+  z-index: 1000;
   opacity: 1;
   @include transition;
   @include breakpoint(md) {
