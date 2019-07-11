@@ -61,8 +61,14 @@ body {
   left: 0;
   opacity: 0;
   &.nav-animation {
-    @include animation(.5s, 1.5s, navAnimation);
+    // @include animation(.5s, 1.5s, navAnimation);
     opacity: 1;
+  }
+  .mark {
+    background-image: url('../assets/icons/LU_logo.svg');
+    width: 30px; height: 30px;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
   .universe {
     width: 6px; height: 6px;
