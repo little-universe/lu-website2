@@ -105,6 +105,14 @@ body {
         background-image: url('../assets/icons/LU_logo.svg');
       }
     }
+    .nav-list {
+      .nav-item {
+        &:hover {
+          color: white !important;
+          @include transition;
+        }
+      }
+    }
   }
   transform: translateY(0);
 }
@@ -519,8 +527,8 @@ button:focus {
         padding: 0 $buffer*3;
         height: 50vh;
         .headline {
-          font-size: $fontSizeHeadlineMobile !important;
-          line-height: $lineHeightHeadlineMobile !important;
+          font-size: $fontSizeHeadlineMobile/1.25 !important;
+          line-height: $lineHeightHeadlineMobile/1.5 !important;
         }
         .subhead-text-container {
           bottom: $buffer*3 !important;
