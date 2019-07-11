@@ -1188,19 +1188,28 @@ button:focus {
   &.quote-text {
     .text-body {
       .text-statement {
+        @include breakpoint(sm) {
+          flex-direction: column;
+          align-items: flex-start;
+        }
         .quote-header {
           font-size: $fontSizeDesktop;
           font-family: $fontFamily;
           color: lighten($pink, 10%);
           @include breakpoint(sm) {
-            font-size: $fontSizeMobile;
+            font-size: $fontSizeMobile !important;
           }
         }
         .quote-author {
           font-size: $fontSizeDesktop;
           font-family: $fontFamily;
           line-height: $lineHeightDesktop;
+          font-family: $fontFamilyMedium;
           // color: lighten($pink, 10%);
+          @include breakpoint(sm) {
+            font-size: $fontSizeMobile !important;
+            line-height: $lineHeightMobile !important;
+          }
         }
       }
       .works-carousel-container {
