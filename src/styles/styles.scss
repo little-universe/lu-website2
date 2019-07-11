@@ -1563,6 +1563,11 @@ button:focus {
       .image-background {
         background-image: url("../../src/assets/projects/motivote/motivote-hero.png") !important;
       }
+      .carousel-label {
+        @include breakpoint(sm){
+        border-bottom: 2px solid $darkGreen;  
+        }
+      }
     }
     &.strive-project {
       .image-background {
