@@ -1140,7 +1140,12 @@ button:focus {
           // color: lighten($pink, 10%);
         }
       }
-      .works-carousel-container {}
+      .works-carousel-container {
+      }
+    }
+    .image-background {
+      height: 100%; width: 100%;
+    background-image: url("../../src/assets/projects/strive/strive-hero.png") !important;
     }
   }
   &.member-text {
@@ -1704,6 +1709,20 @@ button:focus {
     }
   }
   &.text-with-list {}
+  &.team-motif {
+    .image-background {
+      width: 100%; height: 100%;
+      background-image: url("../../src/assets/team/team-1-small.jpg");
+
+    }
+  }
+  &.contact-motif {
+    .image-background {
+      width: 100%; height: 100%;
+      background-image: url("../../src/assets/office/desk.jpg");
+
+    }
+  }
 }//featured-text
 
 .work-together {
