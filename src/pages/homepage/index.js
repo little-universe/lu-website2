@@ -29,7 +29,7 @@ class Homepage extends Component {
           featuredWorks
           className="homepage-hero"
           destination="/motivote"
-          headline={<>We're your <span className="headline-emphasis">innovation partner</span></>}
+          headline={<>We're <span style={{ fontSize: 70 }}>👏</span> your <span style={{ fontSize: 70 }}>👏</span> <span className="headline-emphasis">innovation <span style={{ fontSize: 70 }}>👏</span> partner</span></>}
           subhead="Little Universe builds technology for the progressive movement."
         />
         <Grid container className="page-section products-section">

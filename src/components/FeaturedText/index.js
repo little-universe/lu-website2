@@ -87,7 +87,7 @@ export default class FeaturedText extends Component {
                       <Grid item className="text-body" md={6} justify="center">
                         <Reveal effect="text-body-slide">
                           <Grid item className="text-statement" md={8} xs={12}>
-                          <p className="quote-header">People talk.</p>
+                          { /* <p className="quote-header">People talk.</p> */ }
                             "{text}"
                             <p className="quote-author">Jedd Countey <br/>Founder, Strive Digital</p>
                           </Grid>
