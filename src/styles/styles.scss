@@ -557,6 +557,9 @@ button:focus {
         font-size: $fontSizeHeadline;
         // font-weight: 500;
         margin-top: 0;
+        span.emoji {
+          font-size: $fontSizeHeadline/1.5 !important;
+        }
         @include breakpoint(sm) {
           font-size: $fontSizeHeadline;
         }
@@ -1702,6 +1705,9 @@ button:focus {
     padding: $buffer*6;
     background: $bgColorLightened;
     color: $darkBlue;
+    @include breakpoint(sm) {
+      padding: $buffer*3;
+    }
     .text-body {
       font-size: $fontSizeDesktop;
       line-height: $lineHeightDesktop;
