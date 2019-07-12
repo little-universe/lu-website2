@@ -469,7 +469,9 @@ button:focus {
 
 .nomargin-container {
   margin: 0;
-  overflow-x: hidden !important;
+  @include breakpoint(sm) {
+  overflow-x: hidden;
+  }
 }// wrapper for full width elements
 .margin-container {
   margin: $buffer*6;
@@ -571,7 +573,7 @@ button:focus {
     }
   }
   &.image-hero {
-    height: 100vh;
+    height: 90vh;
     background: $lightGreen;
   }
   .image-background {
@@ -1565,7 +1567,7 @@ button:focus {
       }
       .carousel-label {
         @include breakpoint(sm){
-        border-bottom: 2px solid $darkGreen;  
+        border-bottom: 2px solid $darkGreen;
         }
       }
     }
@@ -1611,6 +1613,7 @@ button:focus {
   &.project-text-card {
     overflow: visible;
     z-index: 100;
+    // position: relative;
     height: 80vh !important;
     @include breakpoint(sm) {
       height: auto !important;
@@ -2102,10 +2105,13 @@ button {
     }
     .carousel-label-slideUp { //animation
       @include animation(.25s, 1.25s, carouselLabelSlideUp);
-      transform: translateY(200%);
+      transform: translateY(400%);
       width: 100%;
     }
     .carousel-label {
+      &.label-featured-additional {
+        background-color: transparent !important;
+      }
       width: 100%;
       z-index: 1;
       background-color: $bgColorLight;
