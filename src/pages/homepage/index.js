@@ -9,6 +9,7 @@ import WorkTogether from '../../components/WorkTogether';
 import Footer from '../../components/Footer';
 import Button from '../../components/ui/Button';
 import Grid from '@material-ui/core/Grid';
+import { ArrowDown } from "react-feather";
 import { preloadImage } from '../../preload'
 
 class Homepage extends Component {
@@ -32,6 +33,11 @@ class Homepage extends Component {
           headline={<>Hi <span className="emoji">👋</span> We're <span className="headline-emphasis">Little Universe.</span></>}
           subhead="We make innovation faster, cheaper, and easier for progressive causes."
         />
+        <Grid container className="page-section arrow-down">
+          <Grid item md={12}>
+            <div className="arrow-icon"><ArrowDown size={20}/></div>
+          </Grid>
+        </Grid>
         <Grid container className="page-section products-section">
           <Grid container className="section-head">
             { /* <Grid item md={6}><p>We identify gaps between the tech you use and the results you need, and build efficient solutions that help you win.</p></Grid> */ }
