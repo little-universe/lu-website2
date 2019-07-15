@@ -470,7 +470,7 @@ button:focus {
 .nomargin-container {
   margin: 0;
   @include breakpoint(sm) {
-  overflow-x: hidden;
+    overflow-x: hidden;
   }
 }// wrapper for full width elements
 .margin-container {
@@ -529,7 +529,7 @@ button:focus {
         padding: 0 $buffer*3;
         height: 50vh;
         .headline {
-          font-size: $fontSizeHeadlineMobile/1.25 !important;
+          font-size: $fontSizeHeadlineMobile/1.5 !important;
           line-height: $lineHeightHeadlineMobile/1.5 !important;
         }
         .subhead-text-container {
@@ -554,11 +554,13 @@ button:focus {
       .headline {
         opacity: 0 !important;
         font-family: $fontFamilyCond;
-        font-size: $fontSizeHeadline;
-        // font-weight: 500;
+        font-size: $fontSizeHeadline/1.25;
         margin-top: 0;
         span.emoji {
           font-size: $fontSizeHeadline/1.5 !important;
+        }
+        span.headline-emphasis {
+          color: $yellow;
         }
         @include breakpoint(sm) {
           font-size: $fontSizeHeadline;
@@ -568,8 +570,8 @@ button:focus {
         bottom: $buffer*6;
         position: absolute;
         .subhead {
-          font-size: $fontSizeDesktop;
-          line-height: $lineHeightDesktop;
+          font-size: $fontSizeDesktop*1.25;
+          line-height: $lineHeightDesktop*1.25;
           font-family: $fontFamily;
         }
       }
@@ -589,9 +591,11 @@ button:focus {
   &.homepage-hero {
     background-color: $darkGreen;
     color: $lightGreen;
-    height: 100vh;
+    height: 90vh;
     @include breakpoint(sm) {
       overflow: hidden;
+      z-index: 1000;
+      height: 100vh;
     }
     .subhead-text-container {
       .subhead {
@@ -1649,6 +1653,7 @@ button:focus {
         padding: $buffer*6;
         @include breakpoint(sm) {
         flex-direction: column;
+        margin-top: 0;
         padding: $buffer*3;
           .status-items {
             p {
@@ -1714,6 +1719,9 @@ button:focus {
       @include breakpoint(sm) {
         font-size: $fontSizeMobile;
         line-height: $lineHeightMobile;
+      }
+      span {
+        font-family: $fontFamilyMedium;
       }
     }
     .text-group-image {

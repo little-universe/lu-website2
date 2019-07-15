@@ -29,7 +29,7 @@ class Homepage extends Component {
           featuredWorks
           className="homepage-hero"
           destination="/motivote"
-          headline={<>Hi <span className="emoji">👋</span> <br/>We're Little Universe.<span className="headline-emphasis"></span></>}
+          headline={<>Hi <span className="emoji">👋</span> We're <span className="headline-emphasis">Little Universe.</span></>}
           subhead="We make innovation faster, cheaper, and easier for progressive causes."
         />
         <Grid container className="page-section products-section">
@@ -39,7 +39,7 @@ class Homepage extends Component {
           </Grid>
           <Grid container className="section-body">
             <Grid item md={4} xs={12}><ProductFeatured className="sentiment-analysis" productName="Product Strategy" productDescription="Are there gaps between the tech you use and the results you need? Could your dev team benefit from seasoned product leadership to meet the challenges of greater scale or a growing list of feature requests? You know your work best, but having tech partners who have written field plans, managed campaign staff and volunteers, and raised millions online helps ensure we are all focused on the outcomes that matter, not just building cool tech."/></Grid>
-            <Grid item md={4} xs={12}><ProductFeatured className="data-tracking" productName="Design + Engineering" productDescription="ull stack and flexible, we can be your technical team or augment the one you have. We’ll guide you to the best tech for the job, or work with what you already have. We are a cohesive team - we work fast, build to the highest standards of quality, and have the chops to tackle the hardest technical problems."/></Grid>
+            <Grid item md={4} xs={12}><ProductFeatured className="data-tracking" productName="Design + Engineering" productDescription="Full stack and flexible, we can be your technical team or augment the one you have. We’ll guide you to the best tech for the job, or work with what you already have. We are a cohesive team - we work fast, build to the highest standards of quality, and have the chops to tackle the hardest technical problems."/></Grid>
             <Grid item md={4} xs={12}><ProductFeatured className="messaging-infrastructure" productName="Data + Infrastructure" productDescription="Get more out of your data with advanced architecture and machine learning. Our back-end team specializes in working with YUGE data. We love unstructured, complex data sets, and messy integration challenges that are blocking our clients’ in-house developers. We have been working with progressive voter, volunteer, and donor data for a decade, and have a deep knowledge of the legal, technical, and personal landscapes that shape the space."/></Grid>
           </Grid>
         </Grid>
@@ -59,7 +59,7 @@ class Homepage extends Component {
           </Grid>
         </Grid>
 
-        <FeaturedText textWithMotifRight className="contact-motif" destination="/work-with-us" text="Movements need fast, responsive, deeply knowledgeable technologists who can build world class products that connect the dots, meet real, immediate needs, and deliver impact as efficiently as possible- they need custom solutions that don’t break the bank." dominantColor="lightBlue" ctaLabel="Learn About Our Approach"/>
+        <FeaturedText textWithMotifRight className="contact-motif" destination="/work-with-us" text="Movements need fast, responsive, deeply knowledgeable technologists who can build world class products that connect the dots, meet real, immediate needs, and deliver impact as efficiently as possible- they need custom solutions that don’t break the bank." dominantColor="lightBlue" ctaLabel="Work With Us"/>
 
         { /*
         <FeaturedText textBigStatement text="There is no recipe for change."/>

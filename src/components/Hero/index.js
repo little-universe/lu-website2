@@ -17,7 +17,7 @@ export default class Hero extends Component {
                         <Reveal effect="hero-headline-fade">
                             <p className="headline">{headline}</p>
                           <Grid container className="subhead-text-container">
-                            <Grid item lg={5} md={8} xs={8}>
+                            <Grid item lg={6} md={8} xs={8}>
                               <p className="subhead">{subhead}</p>
                             </Grid>
                           </Grid>
