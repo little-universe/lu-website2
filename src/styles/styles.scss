@@ -125,7 +125,8 @@ body {
 }
 .headroom--unpinned {
   position: fixed;
-  transform: translateY(-100%);
+  background: white;
+  // transform: translateY(-100%);
   @include transition;
 }
 .headroom--pinned {
@@ -1826,7 +1827,7 @@ button:focus {
   &.contact-motif {
     .image-background {
       width: 100%; height: 100%;
-      background-image: url("../../src/assets/office/desk.jpg");
+      background-image: url("../../src/assets/office/desk-compressor.jpg");
 
     }
   }
