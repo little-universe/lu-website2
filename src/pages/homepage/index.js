@@ -12,13 +12,23 @@ import Grid from '@material-ui/core/Grid';
 import { ArrowDown } from "react-feather";
 import { preloadImage } from '../../preload'
 
+const PAGE_IMAGES = [
+  require('../../assets/projects/motivote/motivote-hero.png'),
+  require('../../assets/projects/strive/strive-hero.png'),
+  require('../../assets/team/team-1-small.jpg'),
+  require('../../assets/office/strategy.jpg'),
+  require('../../assets/office/design.jpg'),
+  require('../../assets/office/data.jpg'),
+  require('../../assets/office/political.jpg'),
+  require('../../assets/office/nonprofit.jpg'),
+  require('../../assets/office/progressive.jpg'),
+  require('../../assets/office/desk.jpg'),
+]
+
 class Homepage extends Component {
 
   componentDidMount() {
-    [
-      require("../../assets/team/team-1-small.jpg"),
-      require("../../assets/office/desk.jpg")
-    ].forEach(preloadImage)
+    PAGE_IMAGES.forEach(preloadImage)
   }
 
   render() {
