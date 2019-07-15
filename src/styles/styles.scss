@@ -1293,7 +1293,7 @@ button:focus {
           .image-background {
             background-position: left top;
             @include breakpoint(sm) {
-              background-position: left !important;
+              background-position: center !important;
             }
           }
         }
@@ -1310,7 +1310,7 @@ button:focus {
           .image-background {
             background-position: right top;
             @include breakpoint(sm) {
-              background-position: right !important;
+              background-position: center !important;
             }
           }
         }
@@ -1325,6 +1325,10 @@ button:focus {
           width: 100%;
           background-size: contain;
           background-repeat: no-repeat;
+          @include breakpoint(sm) {
+            background-size: cover;
+            // background-position: center !important;
+          }
         }
       }
     }
