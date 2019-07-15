@@ -1052,7 +1052,7 @@ button:focus {
       .works-carousel-wrapper {
         margin-top: -$offsetValue;
         .carousel-label-slideUp {
-          @include animation(.5s, 1s, carouselLabelSlideUp);
+          @include animation(.5s, 0s, carouselLabelSlideUp);
         }
       }
     }
