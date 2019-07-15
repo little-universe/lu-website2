@@ -65,6 +65,7 @@ body {
   opacity: 0;
   @include breakpoint(sm) {
     margin: 0 !important;
+    align-items: flex-start;
   }
   &.nav-animation {
     opacity: 1;
