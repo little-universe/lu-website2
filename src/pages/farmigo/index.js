@@ -34,7 +34,7 @@ class Farmigo extends Component {
       <FeaturedText textForProductImageRight className="farmigo-5" header="Legit Delicious Food" text="Genuinely good food is an easy product to sell, the value speaks for itself. Given that the product had such an internal strength already, our job became about conveying that message as clearly and purely as possible. UI and UX were optimized for succinctness and openness." dominantColor="lightGreen"/>
       <FeaturedText textWithHeader header="Packing, Shipping, Handing Off" text="Farmigo's fulfillment team needed to keep up to demand in order to ensure orders were being packed and delivered to be picked up on time. In order to help with this process we designed a UI for in-house use which tracked how far ahead or behind food was being packed."/>
       <FeaturedImage featuredFullMatte className="farmigo-4"/>
-      <FeaturedImage featuredCenter className="instructrr-next" projectName="Instructrr" projectCategory="Mobile Application" projectIndustry="Fitness" destination="../instructrr" caseStudyName="caseStudyInstructrr"/>
+      <FeaturedImage featuredCenter className="motivote-next" projectName="Motivote" projectCategory="Digital Product" projectIndustry="Advocacy Tech" destination="../motivote" caseStudyName="caseStudyMotivote"/>
       <WorkTogether headline="Let's Work Together"/>
       <Footer/>
       </>

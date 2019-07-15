@@ -54,7 +54,7 @@ body {
 // LOGO STYLES
 
 .logo {
-  margin: $buffer*3;
+  margin: $buffer*2 $buffer*3;
   position: absolute;
   z-index: $navZIndex;
   top: 0;
@@ -64,7 +64,6 @@ body {
     margin: 0 !important;
   }
   &.nav-animation {
-    // @include animation(.5s, 1.5s, navAnimation);
     opacity: 1;
   }
   .mark {
@@ -95,25 +94,30 @@ body {
   left: 0;
   right: 0;
   z-index: 1000;
+  // opacity: 0;
+  // @include animation(.5s, 1.5s, navAnimation);
 }
 .headroom--unfixed {
   position: fixed;
-  .nav {
-    background: transparent;
-    .logo {
-      .mark {
-        background-image: url('../assets/icons/LU_logo.svg');
-      }
-    }
-    .nav-list {
-      .nav-item {
-        &:hover {
-          color: white !important;
-          @include transition;
-        }
-      }
-    }
-  }
+  background: white;
+  // opacity: 0;
+  // @include animation(.5s, 1.5s, navAnimation);
+  // .nav {
+  //   background: transparent;
+  //   .logo {
+  //     .mark {
+  //       background-image: url('../assets/icons/LU_logo.svg');
+  //     }
+  //   }
+  //   .nav-list {
+  //     .nav-item {
+  //       &:hover {
+  //         color: white !important;
+  //         @include transition;
+  //       }
+  //     }
+  //   }
+  // }
   transform: translateY(0);
 }
 .headroom--scrolled {
@@ -121,7 +125,8 @@ body {
 }
 .headroom--unpinned {
   position: fixed;
-  transform: translateY(-100%);
+  background: white;
+  // transform: translateY(-100%);
   @include transition;
 }
 .headroom--pinned {
@@ -135,7 +140,7 @@ body {
 }
 .nav {
   // position: relative;
-  padding: $buffer*3;
+  padding: $buffer*2 $buffer*3;
   font-size: $fontSize;
   width: 100%;
   display: flex;
@@ -527,7 +532,7 @@ button:focus {
       position: relative;
       @include breakpoint(sm) {
         padding: 0 $buffer*3;
-        height: 50vh;
+        height: 40vh;
         .headline {
           font-size: $fontSizeHeadlineMobile/1.5 !important;
           line-height: $lineHeightHeadlineMobile/1.5 !important;
@@ -552,7 +557,7 @@ button:focus {
         }
       }
       .headline {
-        opacity: 0 !important;
+        opacity: 0;
         font-family: $fontFamilyCond;
         font-size: $fontSizeHeadline/1.25;
         margin-top: 0;
@@ -595,7 +600,7 @@ button:focus {
     @include breakpoint(sm) {
       overflow: hidden;
       z-index: 1000;
-      height: 100vh;
+      height: 90vh;
     }
     .subhead-text-container {
       .subhead {
@@ -1048,7 +1053,7 @@ button:focus {
       .works-carousel-wrapper {
         margin-top: -$offsetValue;
         .carousel-label-slideUp {
-          @include animation(.5s, 1s, carouselLabelSlideUp);
+          @include animation(.5s, 0s, carouselLabelSlideUp);
         }
       }
     }
@@ -1822,7 +1827,7 @@ button:focus {
   &.contact-motif {
     .image-background {
       width: 100%; height: 100%;
-      background-image: url("../../src/assets/office/desk.jpg");
+      background-image: url("../../src/assets/office/desk-compressor.jpg");
 
     }
   }
@@ -1936,6 +1941,7 @@ button {
   font-size: $fontSize;
   line-height: $lineHeight;
   @include breakpoint(sm) {
+    border-top: 1px solid $bgColorDark;
     padding: 0 $buffer*3 $buffer*3 $buffer*3;
   }
   p {
@@ -1979,6 +1985,20 @@ button {
     height: auto !important;
     @include breakpoint(sm) {
       margin: $buffer*3 0;
+    }
+  }
+  &.arrow-down {
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $bgColorLightened;
+    .arrow-icon {
+      text-align: center;
+      color: $darkGreen;
+      @include animation(2s, 0s, gravity3);
+      animation-iteration-count: infinite !important;
+      animation-direction: alternate !important;
     }
   }
   &.products-section {
