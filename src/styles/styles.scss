@@ -54,7 +54,7 @@ body {
 // LOGO STYLES
 
 .logo {
-  margin: $buffer*3;
+  margin: $buffer*2 $buffer*3;
   position: absolute;
   z-index: $navZIndex;
   top: 0;
@@ -64,7 +64,6 @@ body {
     margin: 0 !important;
   }
   &.nav-animation {
-    // @include animation(.5s, 1.5s, navAnimation);
     opacity: 1;
   }
   .mark {
@@ -95,25 +94,30 @@ body {
   left: 0;
   right: 0;
   z-index: 1000;
+  // opacity: 0;
+  // @include animation(.5s, 1.5s, navAnimation);
 }
 .headroom--unfixed {
   position: fixed;
-  .nav {
-    background: transparent;
-    .logo {
-      .mark {
-        background-image: url('../assets/icons/LU_logo.svg');
-      }
-    }
-    .nav-list {
-      .nav-item {
-        &:hover {
-          color: white !important;
-          @include transition;
-        }
-      }
-    }
-  }
+  background: white;
+  // opacity: 0;
+  // @include animation(.5s, 1.5s, navAnimation);
+  // .nav {
+  //   background: transparent;
+  //   .logo {
+  //     .mark {
+  //       background-image: url('../assets/icons/LU_logo.svg');
+  //     }
+  //   }
+  //   .nav-list {
+  //     .nav-item {
+  //       &:hover {
+  //         color: white !important;
+  //         @include transition;
+  //       }
+  //     }
+  //   }
+  // }
   transform: translateY(0);
 }
 .headroom--scrolled {
@@ -135,7 +139,7 @@ body {
 }
 .nav {
   // position: relative;
-  padding: $buffer*3;
+  padding: $buffer*2 $buffer*3;
   font-size: $fontSize;
   width: 100%;
   display: flex;
