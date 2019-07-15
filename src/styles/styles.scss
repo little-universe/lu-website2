@@ -2258,6 +2258,13 @@ button {
     @include breakpoint(sm) {
       padding: 0;
     }
+    .product-card-swipe {
+      .image-cover {
+        transform: translateX(0);
+        will-change: transform !important;
+        @include animation(.5s, .5s, imageCoverSlide);
+      }
+    }
     .product-card-image {
       overflow: hidden;
       height: 250px; width: 100%;
@@ -2266,13 +2273,7 @@ button {
       .image-cover {
         height: 100%; width: 100%;
         position: absolute;
-        z-index: 1;
-      }
-      .product-card-swipe {
-        .image-cover {
-          transform: translateX(0);
-          @include animation(.5s, .5s, imageCoverSlide);
-        }
+        z-index: 1000;
       }
       .image-background {
         position: absolute;
