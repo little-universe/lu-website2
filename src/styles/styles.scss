@@ -54,7 +54,10 @@ body {
 // LOGO STYLES
 
 .logo {
-  margin: $buffer*2 $buffer*3;
+  margin-left: $buffer*3;
+  height: 100%;
+  display: flex;
+  align-items: center;
   position: absolute;
   z-index: $navZIndex;
   top: 0;
@@ -68,7 +71,7 @@ body {
   }
   .mark {
     background-image: url('../assets/icons/LU_logo_dark.svg');
-    width: 20px; height: 20px;
+    width: 30px; height: 30px;
     background-repeat: no-repeat;
     background-size: cover;
   }

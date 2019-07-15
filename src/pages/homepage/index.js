@@ -59,9 +59,9 @@ class Homepage extends Component {
             <Grid item md={4}><p>You're fighting the good fight. We want to help.</p></Grid>
           </Grid>
           <Grid container className="section-body">
-            <Grid item md={4} xs={12}><ProductFeatured className="political-campaigns" productName="Political Campaigns" productDescription="We work with campaigns in the heat of the battle to help you win."/></Grid>
-            <Grid item md={4} xs={12}><ProductFeatured className="nonprofit" productName="Nonprofit / Advocacy" productDescription="We help bring technology to your organization."/></Grid>
-            <Grid item md={4} xs={12}><ProductFeatured className="progressive-tech" productName="Progressive Tech" productDescription="We help scale your technology for wider impact."/></Grid>
+            <Grid item md={4} xs={12}><ProductFeatured className="political-campaigns" productName="Political Campaigns" productDescription="We  work with campaigns up and down the ballot to fill gaps in their technology tool set, seize opportunities to gain advantages in the field, and solve tricky integration problems so they can put their volunteers, donors, and supporters first."/></Grid>
+            <Grid item md={4} xs={12}><ProductFeatured className="nonprofit" productName="Nonprofit / Advocacy" productDescription="We work with progressive organizations of all kinds to ensure they have the tools they need to challenge the status quo."/></Grid>
+            <Grid item md={4} xs={12}><ProductFeatured className="progressive-tech" productName="Progressive Tech" productDescription="We’ve helped progressive technology startups build new products from scratch, address particularly vexing technical challenges, update and upgrade their infrastructure for scale, and more."/></Grid>
           </Grid>
         </Grid>
 
