@@ -15,8 +15,8 @@ export default class ProductFeatured extends Component {
             <Grid item md={12} className="featured-product-card">
               <Reveal effect="product-card-swipe">
                 <Grid container className="product-card-image">
-                  <Grid item md={12} className="image-cover"></Grid>
-                  <Grid item md={12} className="image-background"></Grid>
+                    <Grid item md={12} className="image-cover"></Grid>
+                    <Grid item md={12} className="image-background"></Grid>
                 </Grid>
               </Reveal>
               <Grid container className="product-card-caption">
