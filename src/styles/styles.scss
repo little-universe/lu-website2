@@ -323,134 +323,9 @@ body {
 
 // PEEK STYLES
 
-.peek-case-study {
-  width: 30vw;
-  height: 20vw;
-  position: fixed;
-  opacity: 0;
-  img {
-    width: 100%;
-  }
-  &.peek-case-study1 {
-    left: 40vw;
-    top: -5vw;
-    background: $bgColorWorkCard;
-  }
-  &.peek-case-study2 {
-    background: $bgColorWorkCard;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-  }
-  &.peek-case-study3 {
-    background: $bgColorWorkCard;
-    left: 20vw;
-    bottom: -5vw;
-  }
-}
-
-.peek-member-image {
-  // width: 60vw;
-  // position: fixed;
-  overflow: hidden;
-  opacity: 0;
-  &.peek-member-team {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -52%);
-    background-image: url("../../src/assets/team/team-1.jpg");
-    background-size: cover;
-    background-position: center;
-    height: 60vh;
-    width: 80vh;
-  }
-}
-
-.peek-approach-image {
-  overflow: hidden;
-  opacity: 0;
-  &.peek-approach-1{
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -52%);
-    background-image: url("../../src/assets/office/office-2.jpg");
-    background-size: cover;
-    background-position: center;
-    height: 60vh;
-    width: 80vh;
-  }
-}
 
 
-.peek {
-  z-index: $peekZIndex;
-  pointer-events: none;
-  height: 100vh;
-  width: 100vw;
-  position: fixed;
-  // display: flex;
-  .peeked, .unpeeked {
-    overflow: hidden;
-    img {
-      // width: 100%;
-    }
-  }
-    .peek-case-study.peeked {
-      opacity: 1;
-      img {
-        position: absolute;
-        height: 100%;
-        top: 50%;
-        left: 50%;
-        -webkit-transform: translate(-50%, -50%);
-      }
-      &.peek-case-study1 {
-        -webkit-transform: translateX($buffer) translateY($buffer);
-      }
-      &.peek-case-study2 {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        -webkit-transform: translate(-50%, -50%);
-      }
-      &.peek-case-study3 {
-        -webkit-transform: translateX($buffer) translateY($buffer);
-      }
-    }
-    .peek-member-image.peeked {
-      opacity: 1;
-      overflow: hidden;
-      &.peek-member-team{
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        -webkit-transform: translate(-50%, -50%);
-        background-image: url("../../src/assets/team/team-1.jpg");
-        background-size: cover;
-        background-position: center;
-        height: 60vh;
-        width: 80vh;
-      }
-    }
-    .peek-approach-image.peeked {
-      opacity: 1;
-      overflow: hidden;
-      &.peek-approach-1{
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        -webkit-transform: translate(-50%, -50%);
-        background-image: url("../../src/assets/office/office-2.jpg");
-        background-size: cover;
-        background-position: center;
-        height: 60vh;
-        width: 80vh;
-      }
-    }
-}
+
 
 
 p.copiedText {
@@ -868,13 +743,7 @@ button:focus {
         background-position: bottom;
       }
     }
-    //APPROACH PAGE
-    &.approach-photo {
-      .image-background {
-        background-image: url("../../src/assets/office/office-2-small.jpg");
-        background-position: bottom;
-      }
-    }
+
   } //featured-full
   &.featured-center { //style for centered images
     height: 50vh;
@@ -912,22 +781,6 @@ button:focus {
     &.farmigo-next {
       .image-background {
         background-image: url("../../src/assets/projects/farmigo/farmigo-hero.png");
-      }
-    }
-    //ABOUT US PAGE
-    &.zach-adrian {
-      .image-background {
-        background-image: url("../../src/assets/team/zach-adrian.jpg");
-      }
-    }
-    &.eugene-alana {
-      .image-background {
-        background-image: url("../../src/assets/team/eugene-alana.jpg");
-      }
-    }
-    &.taylor-adrian {
-      .image-background {
-        background-image: url("../../src/assets/team/taylor-adrian.jpg");
       }
     }
     //APPROACH PAGE
@@ -1831,7 +1684,7 @@ button:focus {
   &.contact-motif {
     .image-background {
       width: 100%; height: 100%;
-      background-image: url("../../src/assets/office/desk-compressor.jpg");
+      background-image: url("../../src/assets/office/desk.jpg");
 
     }
   }
@@ -2260,16 +2113,17 @@ button {
       padding: 0;
     }
     .product-card-swipe {
-      .image-cover {
-        transform: translateX(0);
-        will-change: transform !important;
-        @include animation(.5s, .5s, imageCoverSlide);
+      .product-card-image {
+        .image-cover {
+          transform: translateX(0);
+          @include animation(.5s, .5s, imageCoverSlide);
+        }
       }
     }
     .product-card-image {
       overflow: hidden;
       height: 250px; width: 100%;
-      background: $bgColorWorkCard;
+      // background: $bgColorWorkCard;
       position: relative;
       .image-cover {
         height: 100%; width: 100%;

@@ -22,7 +22,6 @@ const PAGE_IMAGES = [
   require('../../assets/office/political.jpg'),
   require('../../assets/office/nonprofit.jpg'),
   require('../../assets/office/progressive.jpg'),
-  require('../../assets/office/desk.jpg'),
 ]
 
 class Homepage extends Component {
@@ -54,9 +53,9 @@ class Homepage extends Component {
             <Grid item md={6}><p>We identify opportunities for innovation to make the difference that helps you win.</p></Grid>
           </Grid>
           <Grid container className="section-body">
-            <Grid item md={4} xs={12}><ProductFeatured className="sentiment-analysis" productName="Product Strategy" productDescription="Are there gaps between the tech you use and the results you need? Could your dev team benefit from seasoned product leadership to meet the challenges of greater scale or a growing list of feature requests? You know your work best, but having tech partners who have written field plans, managed campaign staff and volunteers, and raised millions online helps ensure we are all focused on the outcomes that matter, not just building cool tech."/></Grid>
-            <Grid item md={4} xs={12}><ProductFeatured className="data-tracking" productName="Design + Engineering" productDescription="Full stack and flexible, we can be your technical team or augment the one you have. We’ll guide you to the best tech for the job, or work with what you already have. We are a cohesive team - we work fast, build to the highest standards of quality, and have the chops to tackle the hardest technical problems."/></Grid>
-            <Grid item md={4} xs={12}><ProductFeatured className="messaging-infrastructure" productName="Data + Infrastructure" productDescription="Get more out of your data with advanced architecture and machine learning. Our back-end team specializes in working with YUGE data. We love unstructured, complex data sets, and messy integration challenges that are blocking our clients’ in-house developers. We have been working with progressive voter, volunteer, and donor data for a decade, and have a deep knowledge of the legal, technical, and personal landscapes that shape the space."/></Grid>
+            <Grid item md={4} sm={12}><ProductFeatured className="sentiment-analysis" productName="Product Strategy" productDescription="Are there gaps between the tech you use and the results you need? Could your dev team benefit from seasoned product leadership to meet the challenges of greater scale or a growing list of feature requests? You know your work best, but having tech partners who have written field plans, managed campaign staff and volunteers, and raised millions online helps ensure we are all focused on the outcomes that matter, not just building cool tech."/></Grid>
+            <Grid item md={4} sm={12}><ProductFeatured className="data-tracking" productName="Design + Engineering" productDescription="Full stack and flexible, we can be your technical team or augment the one you have. We’ll guide you to the best tech for the job, or work with what you already have. We are a cohesive team - we work fast, build to the highest standards of quality, and have the chops to tackle the hardest technical problems."/></Grid>
+            <Grid item md={4} sm={12}><ProductFeatured className="messaging-infrastructure" productName="Data + Infrastructure" productDescription="Get more out of your data with advanced architecture and machine learning. Our back-end team specializes in working with YUGE data. We love unstructured, complex data sets, and messy integration challenges that are blocking our clients’ in-house developers. We have been working with progressive voter, volunteer, and donor data for a decade, and have a deep knowledge of the legal, technical, and personal landscapes that shape the space."/></Grid>
           </Grid>
         </Grid>
         <FeaturedText quoteTextRight destination="/strive" className="strive-hero" text="Little Universe was a game-changer for Strive Digital. As a young startup, we needed an agency that could step in and make an immediate impact. Perfectly balancing strategy with execution, they went far beyond our expectations by establishing a strategic foundation and product vision we're still benefitting from today." dominantColor="pink" ctaLabel="Read the Case Study"/>
@@ -69,9 +68,9 @@ class Homepage extends Component {
             <Grid item md={4}><p>You're fighting the good fight. We want to help.</p></Grid>
           </Grid>
           <Grid container className="section-body">
-            <Grid item md={4} xs={12}><ProductFeatured className="political-campaigns" productName="Political Campaigns" productDescription="We  work with campaigns up and down the ballot to fill gaps in their technology tool set, seize opportunities to gain advantages in the field, and solve tricky integration problems so they can put their volunteers, donors, and supporters first."/></Grid>
-            <Grid item md={4} xs={12}><ProductFeatured className="nonprofit" productName="Nonprofit / Advocacy" productDescription="We work with progressive organizations of all kinds to ensure they have the tools they need to challenge the status quo."/></Grid>
-            <Grid item md={4} xs={12}><ProductFeatured className="progressive-tech" productName="Progressive Tech" productDescription="We’ve helped progressive technology startups build new products from scratch, address particularly vexing technical challenges, update and upgrade their infrastructure for scale, and more."/></Grid>
+            <Grid item md={4} sm={12}><ProductFeatured className="political-campaigns" productName="Political Campaigns" productDescription="We  work with campaigns up and down the ballot to fill gaps in their technology tool set, seize opportunities to gain advantages in the field, and solve tricky integration problems so they can put their volunteers, donors, and supporters first."/></Grid>
+            <Grid item md={4} sm={12}><ProductFeatured className="nonprofit" productName="Nonprofit / Advocacy" productDescription="We work with progressive organizations of all kinds to ensure they have the tools they need to challenge the status quo."/></Grid>
+            <Grid item md={4} sm={12}><ProductFeatured className="progressive-tech" productName="Progressive Tech" productDescription="We’ve helped progressive technology startups build new products from scratch, address particularly vexing technical challenges, update and upgrade their infrastructure for scale, and more."/></Grid>
           </Grid>
         </Grid>
 

@@ -16,10 +16,6 @@ class WorkWithUs extends Component {
 
   componentDidMount() {
     [
-      require("../../assets/office/desk.jpg"),
-      require("../../assets/office/process.jpg"),
-      require("../../assets/office/intention.jpg"),
-      require("../../assets/office/office.jpg")
     ].forEach(preloadImage)
   }
 

@@ -17,7 +17,6 @@ class About extends Component {
 
   componentDidMount() {
     [
-      require("../../assets/team/team-1-small.jpg"),
       require("../../assets/team/zach.png"),
       require("../../assets/team/adrian.png"),
       require("../../assets/team/alana.png"),

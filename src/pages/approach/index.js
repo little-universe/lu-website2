@@ -14,15 +14,6 @@ class Approach extends Component {
     route: 'betterfin'
   }
 
-  componentDidMount() {
-    [
-      require("../../assets/office/desk.jpg"),
-      require("../../assets/office/process.jpg"),
-      require("../../assets/office/intention.jpg"),
-      require("../../assets/office/office.jpg")
-    ].forEach(preloadImage)
-  }
-
   render() {
     const { hovered, route } = this.state;
 
