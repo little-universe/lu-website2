@@ -22,7 +22,7 @@ export default class WorksCarousel extends Component {
           <Link to={destination} className="carousel-label-link">
             <Grid className={`carousel-label label-featured-additional`} container>
                 <Grid item className="label-row" md={12}>
-                  <div className="label-details">Featured Case Study</div>
+                  <div className="label-details">Client Spotlight</div>
                 </Grid>
             </Grid>
             <Grid className={`carousel-label`} container>
