@@ -1862,6 +1862,20 @@ button {
     justify-content: center;
     background: $bgColorLightened;
     .arrow-icon {
+      .arrow-anchor {
+        &:link {
+          color: $darkGreen;
+        }
+        &:visited {
+          color: $darkGreen;
+        }
+        &:hover {
+          color: $darkGreen;
+        }
+        &:active {
+          color: $darkGreen;
+        }
+      }
       text-align: center;
       color: $darkGreen;
       @include animation(2s, 0s, gravity3);
