@@ -20,6 +20,11 @@ export default class WorksCarousel extends Component {
         </Reveal>
         <Reveal effect="carousel-label-slideUp">
           <Link to={destination} className="carousel-label-link">
+            <Grid className={`carousel-label label-featured-additional`} container>
+                <Grid item className="label-row" md={12}>
+                  <div className="label-details">Featured Case Study</div>
+                </Grid>
+            </Grid>
             <Grid className={`carousel-label`} container>
                 <Grid item className="label-row" md={12}>
                   <div className="label-details">{projectName} <span>• {projectStatement}</span></div>
@@ -28,15 +33,6 @@ export default class WorksCarousel extends Component {
             </Grid>
           </Link>
           </Reveal>
-          <Reveal effect="carousel-label-slideUp">
-            <Link to={destination} className="carousel-label-link">
-              <Grid className={`carousel-label label-featured-additional`} container>
-                  <Grid item className="label-row" md={12}>
-                    <div className="label-details">Featured Case Study</div>
-                  </Grid>
-              </Grid>
-            </Link>
-            </Reveal>
         </Grid>
       }
       { className && ctaLabel &&

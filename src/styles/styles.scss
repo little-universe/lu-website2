@@ -853,7 +853,9 @@ button:focus {
     padding: 0;
     .text-body {
     height: 50% !important;
-    .text-header {}
+    .text-header {
+      line-height: $lineHeightMobile !important;
+    }
     .text-statement {
       font-size: $fontSizeMobile !important;
       line-height: $lineHeightMobile !important;
@@ -1861,6 +1863,7 @@ button {
   &.products-section {
     padding: $buffer*6 0;
     background: $bgColorLightened;
+    position: relative;
     p {
       font-size: $fontSizeDesktop;
       line-height: $lineHeightDesktop;
@@ -1968,6 +1971,7 @@ button {
     @include breakpoint(sm) {
       height: 50vh;
       .image-background {
+        width: 100%; height: 100%;
       }
       .carousel-indicators {
         display: none;
@@ -2005,7 +2009,16 @@ button {
     }
     .carousel-label {
       &.label-featured-additional {
-        background-color: transparent !important;
+        background-color: $yellow !important;
+        padding: $buffer $buffer*3;
+        border-bottom: 0;
+        .label-row {
+          .label-details {
+          color: $darkGreen;
+          font-size: $fontSize;
+          }
+          // justify-content: center;
+        }
       }
       width: 100%;
       z-index: 1;

@@ -65,7 +65,7 @@ class Homepage extends Component {
         <Grid container className="page-section products-section">
           <Grid container className="section-head">
             { /* <Grid item md={6}><p>We identify gaps between the tech you use and the results you need, and build efficient solutions that help you win.</p></Grid> */ }
-            <Grid item md={4}><p>You're fighting the good fight. We want to help.</p></Grid>
+            <Grid item md={4}><p>You're fighting the good fight.<br/>We want to help.</p></Grid>
           </Grid>
           <Grid container className="section-body">
             <Grid item md={4} sm={12}><ProductFeatured className="political-campaigns" productName="Political Campaigns" productDescription="We  work with campaigns up and down the ballot to fill gaps in their technology tool set, seize opportunities to gain advantages in the field, and solve tricky integration problems so they can put their volunteers, donors, and supporters first."/></Grid>
