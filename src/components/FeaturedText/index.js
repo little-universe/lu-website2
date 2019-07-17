@@ -75,7 +75,7 @@ export default class FeaturedText extends Component {
                       <Grid item md={1} xs={12}/>
                       <Grid item md={5} xs={12} className="works-carousel-container right">
                         <Reveal effect="works-carousel-container-slide">
-                          <WorksCarousel className="movements" ctaLabel={ctaLabel} destination={destination}/>
+                          <WorksCarousel className="movements" ctaBox ctaLabel={ctaLabel} destination={destination}/>
                         </Reveal>
                       </Grid>
                     </Grid>
@@ -96,7 +96,7 @@ export default class FeaturedText extends Component {
                       <Grid item md={1} xs={12}/>
                       <Grid item md={5} xs={12} className="works-carousel-container right">
                         <Reveal effect="works-carousel-container-slide">
-                          <WorksCarousel className="movements" ctaLabel={ctaLabel} destination={destination}/>
+                          <WorksCarousel caseStudy className="strive-case" ctaLabel={ctaLabel} destination={destination}/>
                         </Reveal>
                       </Grid>
                     </Grid>
@@ -107,7 +107,7 @@ export default class FeaturedText extends Component {
                     <Grid container className={`featured-text color-text color-text-right ${className} ${dominantColor}`} alignItems="center">
                       <Grid item md={5} xs={12} className="works-carousel-container left">
                         <Reveal effect="works-carousel-container-slide">
-                          <WorksCarousel fromRight className="movements" ctaLabel={ctaLabel} destination={destination}/>
+                          <WorksCarousel fromRight ctaBox className="movements" ctaLabel={ctaLabel} destination={destination}/>
                         </Reveal>
                       </Grid>
                       <Grid item md={1}/>
@@ -183,7 +183,7 @@ export default class FeaturedText extends Component {
                     <Grid item md={1}/>
                     <Grid item md={5} xs={12} className="works-carousel-container right">
                       <Reveal effect="works-carousel-container-slide">
-                        <WorksCarousel className="movements" ctaLabel={ctaLabel} destination={destination}/>
+                        <WorksCarousel className="movements" ctaBox ctaLabel={ctaLabel} destination={destination}/>
                       </Reveal>
                     </Grid>
                   </Grid>
@@ -194,7 +194,7 @@ export default class FeaturedText extends Component {
                   <Grid container className={`featured-text project-text member-text color-text ${className} ${dominantColor}`} alignItems="center">
                     <Grid item md={5} xs={12} className="works-carousel-container left">
                       <Reveal effect="works-carousel-container-slide">
-                        <WorksCarousel className="movements" ctaLabel={ctaLabel} destination={destination}/>
+                        <WorksCarousel className="movements" ctaBox ctaLabel={ctaLabel} destination={destination}/>
                       </Reveal>
                     </Grid>
                     <Grid item md={1}/>
