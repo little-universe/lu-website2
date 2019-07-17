@@ -11,6 +11,10 @@ import Button from '../../components/ui/Button';
 import Grid from '@material-ui/core/Grid';
 import { ArrowDown } from "react-feather";
 import { preloadImage } from '../../preload';
+import * as Scroll from 'react-scroll';
+
+let Element = Scroll.Element;
+let Link    = Scroll.Link;
 
 const PAGE_IMAGES = [
   require('../../assets/projects/motivote/motivote-hero.png'),
@@ -44,9 +48,10 @@ class Homepage extends Component {
         />
         <Grid container className="page-section arrow-down">
           <Grid item md={12}>
-            <div className="arrow-icon"><ArrowDown size={20}/></div>
+            <div className="arrow-icon"><Link to={`#products-section`} smooth={true}><ArrowDown size={20}/></Link></div>
           </Grid>
         </Grid>
+        <Element name={`#products-section`}>
         <Grid container className="page-section products-section">
           <Grid container className="section-head">
             { /* <Grid item md={6}><p>We identify gaps between the tech you use and the results you need, and build efficient solutions that help you win.</p></Grid> */ }
@@ -58,6 +63,7 @@ class Homepage extends Component {
             <Grid item md={4} sm={12}><ProductFeatured className="messaging-infrastructure" productName="Data + Infrastructure" productDescription="Get more out of your data with advanced architecture and machine learning. Our back-end team specializes in working with YUGE data. We love unstructured, complex data sets, and messy integration challenges that are blocking our clients’ in-house developers. We have been working with progressive voter, volunteer, and donor data for a decade, and have a deep knowledge of the legal, technical, and personal landscapes that shape the space."/></Grid>
           </Grid>
         </Grid>
+        </Element>
         <FeaturedText quoteTextRight destination="/strive" className="strive-hero" text="Little Universe was a game-changer for Strive Digital. As a young startup, we needed an agency that could step in and make an immediate impact. Perfectly balancing strategy with execution, they went far beyond our expectations by establishing a strategic foundation and product vision we're still benefitting from today." dominantColor="pink" ctaLabel="Strive Digital"/>
         <FeaturedText textBigStatement text="We're organizers, not vendors."/>
         <FeaturedText textWithMotifLeft destination="/about" className="team-motif" text="We are a team of  designers, engineers, data scientists, and organizers with deep experience in both high-tech startups and high-stakes campaigns. We're working to democratize innovation so that more campaigns and organizations have the tools they need to win, at the moment they need them most." dominantColor="darkBlue" ctaLabel="Learn More About Us"/>
