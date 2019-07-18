@@ -1871,6 +1871,7 @@ button {
         }
         &:hover {
           color: $darkGreen;
+          cursor: pointer !important;
         }
         &:active {
           color: $darkGreen;
