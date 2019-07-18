@@ -824,7 +824,7 @@ button:focus {
   .featured-center-nextwork {
     clip-path: inset(0);
     height: 50vh;
-    background: $bgColorWork;
+    background: $lightGreen;
     margin-bottom: $buffer*3;
     @include transition;
     &:hover {
@@ -2164,6 +2164,9 @@ button {
       overflow: hidden;
       height: 250px; width: 100%;
       position: relative;
+      @include breakpoint(lg) {
+        height: 350px !important;
+      }
       .image-cover {
         height: 100%; width: 100%;
         position: absolute;
