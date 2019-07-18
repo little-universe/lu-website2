@@ -2167,6 +2167,10 @@ button {
       @include breakpoint(lg) {
         height: 350px !important;
       }
+      @include breakpoint(xl) {
+        height: 500px !important;
+      }
+
       .image-cover {
         height: 100%; width: 100%;
         position: absolute;
