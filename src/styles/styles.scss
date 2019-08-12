@@ -454,8 +454,8 @@ button:focus {
         bottom: $buffer*6;
         position: absolute;
         .subhead {
-          font-size: $fontSizeDesktop*1.25;
-          line-height: $lineHeightDesktop*1.25;
+          font-size: $fontSizeDesktop;
+          line-height: $lineHeightDesktop;
           font-family: $fontFamily;
         }
       }
