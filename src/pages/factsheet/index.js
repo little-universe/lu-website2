@@ -9,14 +9,29 @@ import { preloadImage } from '../../preload'
 import { Transporter } from '../../orbit';
 import Fade from 'react-reveal/Fade';
 
+const API_KEY = 'keyGyn4TYZT9Doyvw'
+const BASE_ID = 'appCRZ4w4ZUY8ioUr'
+
 class Factsheet extends Component {
   state = {
     hovered: undefined,
-    route: 'factsheet'
+    route: 'factsheet',
+    capabilities: null,
+    isLoaded: false
+  }
+
+  async componentWillMount() {
+    let response = await fetch(`https://api.airtable.com/v0/${BASE_ID}/Capabilities?api_key=${API_KEY}`)
+    let { records } = await response.json()
+
+    this.setState({
+      capabilities: records,
+      isLoaded: true
+    })
   }
 
   render() {
-    const { hovered, route } = this.state;
+    const { hovered, route, capabilities, isLoaded } = this.state;
 
     return (
       <>
@@ -45,9 +60,12 @@ class Factsheet extends Component {
             </Grid>
           </Grid>
         </div>
-        <SimpleList header="Data Visualizations" list={["Interactive Data Visualizations"]}/>
-        <SimpleList header="Data Engineering" list={["Apache Spark", "Databricks", "Airflow", "ETL", "Feature Engineering", "Model productionization", "web scraping", "data standardization and normalization", "data automation", "productionization"]}/>
-        <SimpleList header="SQL Analytics" list={["High performance data analytics SQL", "Column store databases", "Microsoft SQL Server", "Redshift", "spark SQL"]}/>
+        {
+          isLoaded ?
+            <SimpleList listData={capabilities} />
+            :
+            <div>Loading...</div>
+        }
         <WorkTogether headline="Let's Work Together"/>
         <Footer/>
       </>
