@@ -549,6 +549,15 @@ button:focus {
       }
     }
   }
+  &.factsheet-hero {
+    background-color: $lightGreen;
+    color: $darkBlue;
+    .subhead-text-container {
+      .subhead {
+        color: $darkBlue;
+      }
+    }
+  }
   &.strive-hero {
     .image-background {
     background-image: url("../../src/assets/projects/strive/strive-hero.png");
@@ -2285,6 +2294,65 @@ button {
       }
     }
   }//messaging-infrastructure
-
 }
 //WORK FEATURED
+
+.factsheet-description {
+  padding: $buffer*6;
+  background: $bgColorLightened;
+  @include breakpoint(sm) {padding: $buffer*3;}
+  .description-text {
+    .text-header {
+      font-size: $fontSizeDesktop;
+      font-family: $fontFamily;
+      margin-bottom: $lineHeight;
+      @include breakpoint(sm) {font-size: $fontSizeMobile; line-height: $lineHeightMobile;}
+    }
+    .text-body {
+      font-size: $fontSizeDesktop;
+      line-height: $lineHeightDesktop;
+      @include breakpoint(sm) {font-size: $fontSizeMobile; line-height: $lineHeightMobile;}
+    }
+  }//description-text
+  .description-list {
+    .list-text {
+      margin: $buffer*3 0;
+      ul {
+        list-style-type: none;
+        font-family: $fontFamilyCond;
+        font-size: $fontSizeHeadline/1.25;
+        padding: 0; margin: 0;
+        color: $lightBlue;
+        @include breakpoint(sm) {font-size: $fontSizeHeadlineMobile; line-height: $lineHeightHeadlineMobile;}
+        li {}
+      }
+    }
+  }//description-list
+}//factsheet-description
+.simple-list-container {
+  padding: $buffer*6;
+  padding-bottom: 0;
+  background: $bgColorLightened;
+  @include breakpoint(sm) {padding: $buffer*3;}
+  &:last-child {
+    padding-bottom: $buffer*6;
+  }
+  .list-section {
+    .section-header {
+      font-size: $fontSizeDesktop;
+      font-family: $fontFamily;
+      margin-bottom: $lineHeight;
+      @include breakpoint(sm) {font-size: $fontSizeMobile; line-height: $lineHeightMobile;}
+    }
+    .section-list {
+      ul {
+        list-style-type: none;
+        font-family: $fontFamilyCond;
+        font-size: $fontSizeStatement;
+        padding: 0; margin: 0;
+        color: $darkBlue;
+        li {}
+      }
+    }
+  }
+}
