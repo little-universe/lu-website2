@@ -13,11 +13,11 @@ export default class SimpleList extends Component {
                 { listData.map(listItem =>
                   <Grid container className="list-section">
                     <Grid item md={4} xs={12} className="section-header">
-                      {listItem.fields.Name}
+                      {listItem.Name}
                     </Grid>
                     <Grid item md={8} xs={12} className="section-list">
                       <ul>
-                        { listItem.fields.Details.map(detail =>
+                        { listItem.Details.map(detail =>
                           <li>{detail}</li>
                         )}
                       </ul>
