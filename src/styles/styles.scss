@@ -552,6 +552,9 @@ button:focus {
   &.factsheet-hero {
     background-color: $lightGreen;
     color: $darkBlue;
+    @include breakpoint(sm) {
+      overflow: hidden;
+    }
     .subhead-text-container {
       .subhead {
         color: $darkBlue;
@@ -1833,6 +1836,18 @@ button {
   p {
     margin-bottom: 0;
   }
+  ul {
+    list-style-type: none;
+    margin: 0; padding: 0;
+    a:link {
+      color: white;
+      text-decoration: none;
+    }
+    a:visited {
+      color: white;
+      text-decoration: none;
+    }
+  }
 }
 ///// REFACTOR 190529
 
@@ -2340,10 +2355,13 @@ button {
 }//factsheet-description
 .simple-list-container {
   background: $bgColorLightened;
-  @include breakpoint(sm) {padding: $buffer*3;}
+  @include breakpoint(sm) {padding: $buffer*3}
   .list-section {
     padding: $buffer*6;
     padding-bottom: 0;
+    @include breakpoint(sm) {
+      padding: $buffer*2;
+    }
     &:last-child {
       padding-bottom: $buffer*6;
     }

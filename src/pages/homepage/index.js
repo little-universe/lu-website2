@@ -80,7 +80,7 @@ class Homepage extends Component {
           </Grid>
         </Grid>
 
-        <FeaturedText textWithMotifRight className="contact-motif" destination="/work-with-us" text="Movements need fast, responsive, deeply knowledgeable technologists who can build world class products that connect the dots, meet real, immediate needs, and deliver impact as efficiently as possible- they need custom solutions that don’t break the bank." dominantColor="lightBlue" ctaLabel="Work With Us"/>
+        <FeaturedText textWithMotifRight className="contact-motif" destination="/capabilities" text="Movements need fast, responsive, deeply knowledgeable technologists who can build world class products that connect the dots, meet real, immediate needs, and deliver impact as efficiently as possible- they need custom solutions that don’t break the bank." dominantColor="lightBlue" ctaLabel="See What We Do"/>
 
         { /*
         <FeaturedText textBigStatement text="There is no recipe for change."/>

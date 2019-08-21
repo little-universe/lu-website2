@@ -15,9 +15,19 @@ export default class Footer extends Component {
               <p>Little Universe</p>
               <p>260 Ainslie Street, 3rd Floor <br/> Brooklyn NY, 11211 <br /></p>
             </Grid>
-            <Grid md={1}/>
+
             <Grid item className="footer-col footer-contact" md={3} xs={12}>
             <p>agency@littleuniverse.com <br/>@littleuniverseagency</p>
+            </Grid>
+            <Grid item className="footer-col footer-links" md={3} xs={12}>
+            <p>
+              <ul>
+                <Link to="/work"><li>Our Work</li></Link>
+                <Link to="/about"><li>About Us</li></Link>
+                <Link to="/work-with-us"><li>Work With Us</li></Link>
+                <Link to="/capabilities"><li>What We Do</li></Link>
+              </ul>
+            </p>
             </Grid>
           </Grid>
         </div>
