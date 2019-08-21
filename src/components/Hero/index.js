@@ -7,7 +7,7 @@ import Reveal from 'react-reveal/Reveal';
 export default class Hero extends Component {
 
     render() {
-        const { heroText, heroImage, className, headline, subhead, projectName, projectCategory, projectIndustry, featuredWorks, secondaryHero, style, anim, destination } = this.props
+        const { heroText, heroImage, heroTextImage, className, headline, subhead, projectName, projectCategory, projectIndustry, featuredWorks, secondaryHero, style, anim, destination } = this.props
         return (
             <div className="nomargin-container" style={style}>
                 {heroText && headline && subhead && featuredWorks && destination &&
@@ -49,6 +49,25 @@ export default class Hero extends Component {
                             </Grid>
                           </Grid>
                         </Reveal>
+                      </Grid>
+                    </Grid>
+                  </div>
+                }
+                {heroTextImage && headline && subhead && secondaryHero &&
+                  <div classname="container">
+                    <Grid className={`hero text-hero secondary-hero ${className}`} container alignItems="center">
+                      <Grid item md={7} xs={12}  className="headline-text-container">
+                        <Reveal effect="hero-headline-fade">
+                            <p className="headline">{headline}</p>
+                          <Grid container className="subhead-text-container">
+                            <Grid item lg={5} md={8} xs={8}>
+                              <p className="subhead">{subhead}</p>
+                            </Grid>
+                          </Grid>
+                        </Reveal>
+                      </Grid>
+                      <Grid item md={5} xs={12} className="headline-image-container">
+                        <div className="image-background"></div>
                       </Grid>
                     </Grid>
                   </div>

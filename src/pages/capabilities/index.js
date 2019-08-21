@@ -36,28 +36,16 @@ class Capabilities extends Component {
     return (
       <>
         <Hero
-          heroText
+          heroTextImage
           secondaryHero
           className="factsheet-hero"
-          headline={<>Need help building a new product?<span className="headline-emphasis"></span></>}
+          headline={<>Need product help?<span className="headline-emphasis"></span></>}
           subhead="We're here for you. Check out our capabilities below."
         />
         <div className="factsheet-description">
           <Grid container className="description-text">
             <Grid item md={4} className="text-header">Overview</Grid>
             <Grid item md={8} className="text-body">We're a small digital agency with a big focus on impact. We want to work with you in order to build stronger movements, more impactful products, with leaner product strategies and thinking. Heres what we do and what we use to do it.</Grid>
-          </Grid>
-          <Grid container className="description-list">
-            <Grid item md={4}></Grid>
-            <Grid item md={8} className="list-text">
-              <ul>
-                <li>Product Strategy</li>
-                <li>MVP Development</li>
-                <li>Customer Development</li>
-                <li>Scaling Your Product</li>
-                <li>Scaling Your Team</li>
-              </ul>
-            </Grid>
           </Grid>
         </div>
         {
