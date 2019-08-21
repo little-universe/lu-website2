@@ -12,7 +12,7 @@ import Fade from 'react-reveal/Fade';
 const API_KEY = 'keyGyn4TYZT9Doyvw'
 const BASE_ID = 'appCRZ4w4ZUY8ioUr'
 
-class Factsheet extends Component {
+class Capabilities extends Component {
   state = {
     hovered: undefined,
     route: 'factsheet',
@@ -73,4 +73,4 @@ class Factsheet extends Component {
   }
 }
 
-export default Factsheet;
+export default Capabilities;

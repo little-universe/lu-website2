@@ -2330,14 +2330,14 @@ button {
   }//description-list
 }//factsheet-description
 .simple-list-container {
-  padding: $buffer*6;
-  padding-bottom: 0;
   background: $bgColorLightened;
   @include breakpoint(sm) {padding: $buffer*3;}
-  &:last-child {
-    padding-bottom: $buffer*6;
-  }
   .list-section {
+    padding: $buffer*6;
+    padding-bottom: 0;
+    &:last-child {
+      padding-bottom: $buffer*6;
+    }
     .section-header {
       font-size: $fontSizeDesktop;
       font-family: $fontFamily;

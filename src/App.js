@@ -13,7 +13,7 @@ import Instructrr from './pages/instructrr';
 import About from './pages/about';
 import Approach from './pages/approach';
 import WorkWithUs from './pages/work-with-us';
-import Factsheet from './pages/factsheet';
+import Capabilities from './pages/capabilities';
 import Logo from './components/Logo';
 import Nav from './components/Nav';
 import { freezeAnimation } from './orbit'
@@ -108,7 +108,7 @@ class App extends Component {
           <Route path="/votecrew" component={VoteCrew}/>
           <Route path="/farmigo" component={Farmigo}/>
           <Route path="/instructrr" component={Instructrr}/>
-          <Route path="/factsheet" component={Factsheet}/>
+          <Route path="/capabilities" component={Capabilities}/>
 
           <RouterNav
             onHovered={this.updateHovered}
