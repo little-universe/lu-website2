@@ -30,7 +30,7 @@ class Strive extends Component {
       <FeaturedText textWithHeader header="Jedd Countey, Strive Founder" text="Little Universe was a game-changer for Strive Digital. As a young startup, we needed an agency that could step in and make an immediate impact. Perfectly balancing strategy with execution, they went far beyond our expectations by establishing a strategic foundation and product vision we're still benefitting from today."/>
       <FeaturedText textForProductImageRight className="strive-2" header="Multi Channel" text="Strive allowed users to Design and develop custom messaging capabilities optimized for their needs, including powerful machine learning, platform extensions, and deep integrations with a CRM." dominantColor="lightGreen"/>
       <FeaturedImage featuredFullMatte className="strive-3"/>
-      <FeaturedImage featuredCenter className="motivote-next" projectName="Motivote" projectCategory="Digital Product" projectIndustry="Advocacy Tech" destination="../motivote" caseStudyName="caseStudyMotivote"/>
+      <FeaturedImage featuredCenter className="outraise-next" projectName="OutRaise" projectCategory="Digital Product" projectIndustry="Advocacy Tech" destination="../outraise" caseStudyName="caseStudyOutraise"/>
       <WorkTogether headline="Let's Work Together"/>
       <Footer/>
       </>

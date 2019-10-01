@@ -33,7 +33,7 @@ class Motivote extends Component {
 
         <FeaturedText textWithHeader header="Making A Good First Impression" text="We were aware that while working on Motivote's product they were in the midst of fundraising, which meant pitch decks. We designed a deck in close collaboration with Jess, Motivote's CEO, in order to make sure visual design and layout of her deck was slick and covered all the bases."/>
         <FeaturedImage featuredFullMatte className="motivote-5"/>
-        <FeaturedImage featuredCenter className="betterfin-next" projectName="Betterfin" projectCategory="Digital Product" projectIndustry="Fintech" destination="../betterfin" caseStudyName="caseStudyBetterfin"/>
+        <FeaturedImage featuredCenter className="strive-next" projectName="Strive Digital" projectCategory="Digital Product" projectIndustry="Advocacy" destination="../strive" caseStudyName="caseStudyStrive"/>
 
         <WorkTogether headline="Let's Work Together"/>
         <Footer/>
