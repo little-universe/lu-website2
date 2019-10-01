@@ -600,6 +600,11 @@ button:focus {
     background-image: url("../../src/assets/projects/instructrr/instructrr-hero.png");
     }
   }
+  &.outraise-hero {
+    .image-background {
+    background-image: url("../../src/assets/projects/outraise/outraise-hero.png");
+    }
+  }
 }//hero
 
 
@@ -758,6 +763,17 @@ button:focus {
     &.instructrr-5 {
       .image-background {
       background-image: url("../../src/assets/projects/instructrr/instructrr-5.png");
+      }
+    }
+    //OUTRAISE
+    &.outraise-4 {
+      .image-background {
+      background-image: url("../../src/assets/projects/outraise/outraise-4.png");
+      }
+    }
+    &.outraise-5 {
+      .image-background {
+      background-image: url("../../src/assets/projects/outraise/outraise-5.png");
       }
     }
     //ABOUT US PAGE
@@ -1281,7 +1297,8 @@ button:focus {
         .image-wrapper {
           transform: translateX(-100%);
           .image-background {
-            background-position: left;
+            // background-position: left;
+            background-position: center center;
             width: 100%;
           }
         }
@@ -1296,7 +1313,8 @@ button:focus {
         .image-wrapper {
           transform: translateX(100%);
           .image-background {
-            background-position: right;
+            // background-position: right;
+            background-position: center center;
             width: 100%;
           }
         }
@@ -1313,6 +1331,7 @@ button:focus {
           max-width: 80%;
           background-size: contain;
           background-repeat: no-repeat;
+          background-position: center center;
         }
       }
     }
@@ -1433,6 +1452,27 @@ button:focus {
       .image-wrapper {
         background: $lightBlue;
         .image-background {background-image: url("../../src/assets/projects/instructrr/instructrr-5.png");}
+      }
+    }
+    //OUTRAISE
+    &.outraise-1 {
+      .image-wrapper {
+        .image-background {background-image: url("../../src/assets/projects/outraise/outraise-1.png");}
+      }
+    }
+    &.outraise-2 {
+      .image-wrapper {
+        .image-background {background-image: url("../../src/assets/projects/outraise/outraise-2.png");}
+      }
+    }
+    &.outraise-3 {
+      .image-wrapper {
+        .image-background {background-image: url("../../src/assets/projects/outraise/outraise-3.png");}
+      }
+    }
+    &.outraise-4 {
+      .image-wrapper {
+        .image-background {background-image: url("../../src/assets/projects/outraise/outraise-4.png");}
       }
     }
     //STRIVE

@@ -10,6 +10,7 @@ import Motivote from './pages/motivote';
 import VoteCrew from './pages/votecrew';
 import Farmigo from './pages/farmigo';
 import Instructrr from './pages/instructrr';
+import Outraise from './pages/outraise';
 import About from './pages/about';
 import Approach from './pages/approach';
 import WorkWithUs from './pages/work-with-us';
@@ -108,6 +109,7 @@ class App extends Component {
           <Route path="/votecrew" component={VoteCrew}/>
           <Route path="/farmigo" component={Farmigo}/>
           <Route path="/instructrr" component={Instructrr}/>
+          <Route path="/outraise" component={Outraise}/>
           <Route path="/capabilities" component={Capabilities}/>
 
           <RouterNav
