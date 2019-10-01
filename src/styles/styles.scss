@@ -1526,6 +1526,11 @@ button:focus {
         background-image: url("../../src/assets/projects/betterfin/betterfin-hero.png") !important;
       }
     }
+    &.outraise-project {
+      .image-background {
+        background-image: url("../../src/assets/projects/outraise/outraise-hero-noconfetti.png") !important;
+      }
+    }
     &.votecrew-project {
       .image-background {
         background-image: url("../../src/assets/projects/votecrew/votecrew-hero.png") !important;
