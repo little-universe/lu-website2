@@ -20,7 +20,8 @@ class About extends Component {
       require("../../assets/team/zach.png"),
       require("../../assets/team/adrian.png"),
       require("../../assets/team/alana.png"),
-      require("../../assets/team/taylor.png")
+      require("../../assets/team/taylor.png"),
+      require("../../assets/team/eugene.png")
     ].forEach(preloadImage)
   }
 
@@ -46,6 +47,7 @@ class About extends Component {
         <FeaturedText textForMemberRight className="zach-member" memberTitle="Founder" memberName="Zach Smith" text="Zach has a proven record and mastery of full-stack development and thoughtful engineering architecture for projects at all scales. He has architected large scale data applications in the healthcare, financial, and political tech industries." dominantColor="lightBlue"/>
         <FeaturedText textForMemberLeft className="alana-member" memberTitle="Senior Developer" memberName="Alana Simoncelli" text="Alana develops products across platforms and formats with close attention to detail and thoughtful responsiveness to context. She's an experience team leader and communicator, and structures development processes with intelligence and conviction." dominantColor="pink"/>
         <FeaturedText textForMemberRight className="taylor-member" memberTitle="Senior Designer" memberName="Taylor Zanke" text="Taylor is a designer passionate about doing work that matters. With a background in Architecture and Graphic Design, he brings a rigorous yet flexible process to every project. He creates clean visual design and thoughtful UX." dominantColor="yellow"/>
+        <FeaturedText textForMemberLeft className="eugene-member" memberTitle="Senior Developer" memberName="Eugene Butler" text="Eugene is a meticulous and detail-oriented developer with deep experience in full-stack development environments. He brings a scalability mindset to product problems, offering broad value to all product cycles." dominantColor="darkBlue"/>
         <WorkTogether headline="Let's Work Together"/>
         <Footer/>
       </>

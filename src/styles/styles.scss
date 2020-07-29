@@ -1259,6 +1259,9 @@ button:focus {
     &.taylor-member {
       .image-background {background-image: url("../../src/assets/team/taylor.png");}
     }
+    &.eugene-member {
+      .image-background {background-image: url("../../src/assets/team/eugene.png");}
+    }
   }
   &.project-text-image {
     @include breakpoint(sm) {

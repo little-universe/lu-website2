@@ -63,7 +63,7 @@
 }
 
 @mixin animation($duration, $delay, $animation) {
-  animation: $duration $easing $delay 1 $animation forwards !important;
+  animation: $duration $easing $delay $animation forwards !important;
 }
 
 
